@@ -1,0 +1,80 @@
+#NEXUS
+begin data;
+  dimensions ntax=14 nchar=40;
+  format datatype=standard gap=- missing=? Interleave=no;
+  matrix
+    Aristonerilla_brevis    131101010111001110001110000110111111113-
+    Leptonerilla_prospera   11110101001100100010010000011011212?1111
+    Longipalpa_saltatrix    1210-11110110011110200-000011011111?1131
+    Meganerilla_swedmarki   1110-0-0--1100110101012000000011313?1111
+    Mesonerilla_intermedia  1110-10100110011000201000001101121211261
+    Mesonerilla_roscovita   1110-10110110011000001000011101111111241
+    Mesonerilla_sp.         1110-10100110011000001000001101111111??1
+    Micronerilla_minuta     121101010111001010001110000110???????221
+    Nerillidium_sp.         1210-100--110011011011000000001101111151
+    Nothria_conchilega      000111010210110------1011101-100-0-00000
+    Paranerilla_limicola    1310-0-0--11001102100100000110?12121?17-
+    Trochonerilla_mobilis   1211011110110011100011100000001121211221
+    Troglochaetus_beranecki 1210-0-0--110011121011?0001000110??11151
+    Xenonerilla_bactericola 1110-0-0--11001111110120001000?????-?111
+ ;                                                                     
+end;                                                                       
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                                            
+                                                               
+                                                               
+                                                               
+                                                               
+                                                               
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,16 @@
+#NEXUS
+begin data;
+  dimensions ntax=9 nchar=18;
+  format datatype=standard gap=x missing=? Interleave=no;
+  matrix            [123456789012345>67][15 ordered, recoded here accordingly]
+    Courtessolea     00-11----0----0000
+    Asturicystis     10-11----0----0000
+    Castericystis    11-0000--22-301001
+    Helicoplacus     210001011001001102
+    Helicocystis     211001111000111102
+    Camptostroma     211001101011001112
+    Lepidocystis     211001100120201112
+    Gogia            21100010-12-111112
+    Stromatocystites 211001100001001112
+  ; [3 dependent on char 1 = 2 (radial)]
+end;
