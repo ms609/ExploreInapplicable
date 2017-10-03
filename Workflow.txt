@@ -17,6 +17,7 @@ For each matrix:
     Conduct comprehensive TNT search
     
   Case 3: [ Probably do one by one in R, to supervise completion ]
+          [ Get this going before TNT searches - it'll need longer to run ]
     
     Conduct comprehensive tree search in R::inapplicable
     Calculate scores of optimal trees from cases 1a, 1b, 2
