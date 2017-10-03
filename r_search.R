@@ -23,12 +23,13 @@ for (i in 1:10000) {
   treeScore <- attr(best, 'pscore')
   if (treeScore < bestScore) {
     bestScore <- treeScore
-    bestHits <- 1
+    bestHits <- 0
   }
+  bestHits <- bestHits + 1
   resultsFile <- paste0('inapplicable/', filename, '-', treeScore, '.tre')
   write.tree(best, resultsFile, append=file.exists(resultsFile))
   write.table(data.frame(maxHits, secsTaken, filename, treeScore), file="inapplicable/searchTimes.csv", sep=',', col.names=FALSE, row.names=FALSE, append=TRUE)
-  if (bestHits >= 1000) break;
+  if (bestHits >= 100) break;
   cat ("; found best score", treeScore, "in", secsTaken, 's; hit', bestHits)
 }
 
