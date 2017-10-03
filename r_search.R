@@ -5,10 +5,11 @@ devtools::install_github('ms609/inapplicable')
 require(inapplicable)
 
 inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
-filename <- inappFiles[1]
+filename <- inappFiles[2]
 
 rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
 phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
+phyData
 best <- ape::root(ape::nj(phangorn::dist.hamming(phyData)), names(rawData)[1], resolve.root=TRUE)
 attr(best, 'pscore') <- 1e+7
 bestScore <- 1e+7
