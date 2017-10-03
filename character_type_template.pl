@@ -6,7 +6,6 @@ $CHAR_TYPE_DIR = "charType/";
 print " Finding matrices in ". $ROOT . $MATRIX_DIR;
 find (\&char_template, $ROOT . $MATRIX_DIR);
 
-@characters = ();
 print "\n Copying matrix for R";
 open (NEXSRC, "<" . $dir . "/../lobo.nex") or warn " ERROR: Can't find NEXUS file $dir/../lobo.nex.\n";
 @lines = <NEXSRC>;
@@ -32,7 +31,6 @@ sub char_template() {
     $outfile_path =~ s/\.nex$/.txt/i;
     $infile_path = $ROOT . $MATRIX_DIR . $infile;
     $i = 0;
-    undef(@characters);
     print "\n- Processing $infile ... ";
     if (-e $outfile_path) {
       print "$outfile_path already exists."
