@@ -38,7 +38,9 @@ sub char_template() {
         } else {
           if ($line =~ /^\s*[A-z_]+\s+(.+)$/) {
             $chars = $1;
-            $chars =~ s/\{[\}]+\}/?/;
+            $chars =~ s/\{[^\}]+?\}/?/g;
+            $chars =~ s/\([^\)]+?\)/?/g;
+            $chars =~ s/\[[^\]]+?\]/?/g;
             $i = 0;
             for my $char (split //, $chars) {
               if ($char =~ /\-/) {
@@ -59,6 +61,7 @@ sub char_template() {
             . ' [' . ++$i . "]\n";
       }
       close OUTFILE;
+      print "Template written."
     }
   }
 }
