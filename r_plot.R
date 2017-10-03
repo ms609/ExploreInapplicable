@@ -31,6 +31,21 @@ RFDistances <- function(treeList) {
   distances[lower.tri(distances)] <- t(distances)[lower.tri(distances)] # Hat tip https://stackoverflow.com/questions/18165320/creating-a-symmetric-matrix-in-r
   distances
 }
+PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft') {
+  x <- pcs$vectors[, 1]
+  y <- pcs$vectors[, 2]
+  plot(x, y, type = "p", xlab = "", ylab = "",
+       axes = FALSE, main = paste(nexusName, "MDS tree space"), col=treeCol, pch=treePCh)
+  legend(legendPos, legend=c(tntDirectories, rDirectories), cex = 1, pch = plotChars, col=treePalette)
+  for (i in seq_along(nTrees)) {
+    firstTree = if (i == 1) 1 else cumsum(nTrees)[i-1] + 1
+    lastTree = cumsum(nTrees)[i]
+    iTrees <- firstTree:lastTree
+    convexHull <- chull(x[iTrees], y[iTrees])
+    convexHull <- c(convexHull, convexHull[1])
+    lines(x[iTrees][convexHull], y[iTrees][convexHull], col=treePalette[i])
+  }
+}
 
 
 tntDirectories <- c('ambiguous', 'ambigAbsent', 'extraState')
@@ -50,13 +65,10 @@ treeCol <- paste(rep(treePalette, nTrees))
 treePCh <- rep(plotChars, nTrees)
 
 # Crude analysis inspired by http://www.kmeverson.org/blog/visualizing-tree-space-in-r
+allDistances <- RFDistances(flatTrees); 
 
-allDistances <- RFDistances(flatTrees)
-allPcoa<-pcoa(allDistances)
-plot(allPcoa$vectors[, 1], allPcoa$vectors[, 2], type = "p", xlab = "", ylab = "",
-     axes = FALSE, main = paste(nexusName, "MDS tree space"), col=treeCol, pch=treePCh)
-legend('top', legend=c(tntDirectories, rDirectories), cex = 1, pch = plotChars, col=treePalette)
-
+PlotTreeSpace(pcoa(allDistances), nTrees)
+dev.copy2pdf(file=paste0('treeSpaces/', nexusName, '.pdf', collapse=''))
 
 # Really we want to something more sophisticated: e.g.
 # HILLIS, D. M., HEATH, T. A., JOHN, K. St. and ANDERSON, F. 2005. Analysis and Visualization of Tree Space. Systematic Biology, 54, 471–482.
