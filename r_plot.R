@@ -25,8 +25,8 @@ rDirectories <- c('inapplicable')
 
 
 
-nexusName <- 'Aguado2009.nex' # TODO foreach (file in inapplicable directory)
-
+nexusFiles <- list.files('matrices', pattern='.*\\.nex$')
+nexusName <- nexusFiles[1]
 
 trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), 
               lapply(rDirectories, readRTrees, nexusName=nexusName))
