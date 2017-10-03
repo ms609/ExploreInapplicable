@@ -24,7 +24,7 @@ sub char_template() {
     my @chartype = <CHARTYPE>;
     close CHARTYPE;
     foreach (@chartype) {
-      if (length ($_) && !($_ =~ /^[NTX]/i)) {warn ("!! Invalid chartype!");};
+      if (length ($_) && !($_ =~ /^[INTX]/i)) {warn ("!! Invalid chartype!");};
     }
     
     open (MATRIX, "<$raw_matrix_path") or warn " ERROR: Can't open $raw_matrix_path.\n";
@@ -54,12 +54,17 @@ sub char_template() {
         $taxon_name = $1;
         my @tokens = $2 =~ /\{[^\}]+\}|[^\{]/g;
         for (my $i = 0; $i < scalar(@tokens); $i++) {
-          if ($tokens[$i] eq '-' && (substr $chartype[$i], 0, 1) =~ /([NT])/) {
+          if ($tokens[$i] eq '-' && (substr $chartype[$i], 0, 1) =~ /([INT])/) {
             if ($1 eq 'N') { # Neomorphic character
               print $AMBIGUOUS  '?';
               print $AMBIGABS   '0';
               print $EXTRASTATE '0';
               print $INAPPLIC   '0';
+            } elsif($1 eq 'I') { # Inversely-coded transformational character
+              print $AMBIGUOUS  '?';
+              print $AMBIGABS   '1';
+              print $EXTRASTATE '1';
+              print $INAPPLIC   '1';
             } elsif($1 eq 'T') { # Transformational character
               print $AMBIGUOUS  '?';
               print $AMBIGABS   '?';
