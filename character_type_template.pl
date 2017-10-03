@@ -5,23 +5,6 @@ $MATRIX_DIR = "matrices/";
 $CHAR_TYPE_DIR = "charType/";
 print " Finding matrices in ". $ROOT . $MATRIX_DIR;
 find (\&char_template, $ROOT . $MATRIX_DIR);
-
-print "\n Copying matrix for R";
-open (NEXSRC, "<" . $dir . "/../lobo.nex") or warn " ERROR: Can't find NEXUS file $dir/../lobo.nex.\n";
-@lines = <NEXSRC>;
-close NEXSRC;
-open (NEXR, ">$dir/../plot/lobo.nex")  or warn "!! Can't open ../plot/lobo.nex: $!\n";
-for (@lines) {
-  s/^([A-z_\s\(\)]{44})\s+/\1/g;
-  s/\{\-,0\}/-/g;
-  s/\{\-,1\}/-/g;
-  s/\{0,2\}/A/g;
-  s/\{3,4\}/B/g;
-  s/\{1,2\}/C/g;
-  s/\{0,1\}/D/g;
-  print NEXR $_;
-}
-close NEXR;
 print "\nDone.";
 
 sub char_template() {
