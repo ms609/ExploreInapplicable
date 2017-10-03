@@ -80,7 +80,7 @@ BEGIN CHARACTERS;
 	TITLE Table_2;
 	LINK TAXA = TaxonLabelSet9758;
 	DIMENSIONS NCHAR=104;
-	FORMAT DATATYPE=Standard SYMBOLS= "012345*" MISSING=? GAP= -;
+	FORMAT DATATYPE=Standard SYMBOLS= "012345*9" MISSING=? GAP= -;
 	CHARSTATELABELS
 		1  Habit / 'shrub (n)' tree herb,
 		2  Stem_vasculature / circular cortical scattered,
