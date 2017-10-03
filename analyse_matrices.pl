@@ -60,11 +60,14 @@ sub char_template() {
               print $AMBIGABS   '0';
               print $EXTRASTATE '0';
               print $INAPPLIC   '0';
-            } else { # Transformational character
+            } elsif($1 eq 'T') { # Transformational character
               print $AMBIGUOUS  '?';
               print $AMBIGABS   '?';
               print $EXTRASTATE '9';
               print $INAPPLIC   '-';
+            } else {
+              warn "!! Unspecified character type at character $i\n";
+              die;
             }
           } else {
             if ($tokens[$i] eq '9') {warn "!! Matrix already employs token '9'\n";}
