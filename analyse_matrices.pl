@@ -8,7 +8,7 @@ find (\&char_template, $ROOT . $MATRIX_DIR);
 print "\nDone.";
 
 sub char_template() {
-	if (-f and /V.*2008\.nex$/) {
+	if (-f and /\.nex$/) {
     $nexus_filename    = $_;
     $raw_matrix_path   = $ROOT . $MATRIX_DIR    . $nexus_filename;
     $chartype_path     = $ROOT . $CHAR_TYPE_DIR . $nexus_filename;
@@ -35,10 +35,12 @@ sub char_template() {
     open ($AMBIGABS  , ">$ambig_absent_path") or warn "!! Can't open $ambig_absent_path: $!\n";
     open ($EXTRASTATE, ">$extra_state_path" ) or warn "!! Can't open $extra_state_path: $!\n";
     open ($INAPPLIC  , ">$inapplicable_path") or warn "!! Can't open $inapplicable_path: $!\n";
-    my @all_files = ($AMBIGUOUS, $AMBIGABS, $EXTRASTATE, $INAPPLIC);
+    my @matrix_files = ($AMBIGUOUS, $AMBIGABS, $EXTRASTATE, $INAPPLIC);
     
+    # Write matrices for different analyses
+    my @taxa = ();
     my $in_matrix = 0;
-    foreach $line (@nexus) {   
+    foreach $line (@nexus) {
       $line_modified = 0;
       if ($line =~ /^\s*matrix\s*$/i) {
         $in_matrix = 1;
@@ -46,11 +48,12 @@ sub char_template() {
         $in_matrix = 0;
       } elsif ($in_matrix && $line =~ /^(\s*[A-z_]+\s+)(.+)$/) {
         $line_modified = 1;
-        for (@all_files) {
+        for (@matrix_files) {
           print $_ $1;
         }
+        $taxon_name = $1;
         my @tokens = $2 =~ /\{[^\}]+\}|[^\{]/g;
-        for (my $i = 0; $i < $#tokens; $i++) {
+        for (my $i = 0; $i < scalar(@tokens); $i++) {
           if ($tokens[$i] eq '-' && (substr $chartype[$i], 0, 1) =~ /([NT])/) {
             if ($1 eq 'N') { # Neomorphic character
               print $AMBIGUOUS  '?';
@@ -64,53 +67,72 @@ sub char_template() {
               print $INAPPLIC   '-';
             }
           } else {
-            print $tokens[$i];
-            for (@all_files) {print $_ $tokens[$i];}
+            if ($tokens[$i] eq '9') {warn "!! Matrix already employs token '9'\n";}
+            if ('{' eq substr $tokens[$i], 0, 1) {
+              for (@matrix_files) {print $_ '?';} # Multi-state ambuguities not readily supported in R
+            } else {
+              for (@matrix_files) {print $_ $tokens[$i];}
+            }
           }
         }
-        print "\n";
-        for (@all_files) {print $_ "\n"};
+        for (@matrix_files) {print $_ "\n"};
+        $taxon_name =~ s/^\s+//;
+        $taxon_name =~ s/\s+$//;
+        push @taxa, $taxon_name;
       }
       if (!$line_modified) {
-        for (@all_files) {
+        for (@matrix_files) {
           print $_ $line;
         }
       }
-    }
-    die;
-    
-    while (!(shift (@lines) =~ /^\s*matrix\s*$/i)) {
-      if (!$lines[0]) {
-        warn " ERROR: No matrix line found";
-        return;
-      }
-    }
-    
-    @char_is_inapp = ();
-    $reading_matrix = 1;
-    while ($reading_matrix) {
-      $line = shift(@lines);
-      if ($line =~ /;/) {
-        $reading_matrix = 0;
-      } else {
-        if ($line =~ /^\s*[A-z_]+\s+(.+)$/) {
-          $chars = $1;
-          $chars =~ s/\{[\}]+\}/?/;
-          $i = 0;
-          for my $char (split //, $chars) {
-            if ($char =~ /\-/) {
-              $char_is_inapp[$i] = 1;
-            } elsif ($char_is_inapp[$i] != 1) {
-              $char_is_inapp[$i] = 0;
-            }
-            $i++;
-          }
-        }
-      }      
     }
     close EXTRASTATE;
     close AMBIGUOUS ;
     close AMBIGABS  ;
     close INAPPLIC  ;
+    
+    chdir $ROOT;
+    # Now run analyses in TNT
+    my @tnt_dirs = ("extraState/", "ambiguous/", "ambigAbsent/");
+    foreach my $dir (@tnt_dirs) {
+      my $tnt_file = $dir . $nexus_filename;
+      system("tnt proc $tnt_file; run tnt_search.run $tnt_file;");
+      
+      open ($TNT_TREES, "<$tnt_file.tre") or warn ("!! Can't open $tnt_file.tre: $!\n");
+      @tnt_trees = <$TNT_TREES>;
+      close $TNT_TREES;
+      pop @tnt_trees;
+      shift @tnt_trees;
+      
+      open ($NEXUS_TREES, ">$tnt_file.nextrees") or warn ("!! Can't open $tnt_file.nextrees: $!\n");
+      print $NEXUS_TREES "#NEXUS\nbegin taxa;\n\tdimensions ntax=" . scalar(@taxa) . ";\n\ttaxlabels";
+      for (@taxa) {
+        print $NEXUS_TREES "\n\t\t" . $_;
+      }
+      print $NEXUS_TREES "\n\t;\nend;\n";
+      
+      print $NEXUS_TREES "begin trees;\n";
+      $i = 0;
+      for (@tnt_trees) {
+        ++$i;
+        # Replace taxon numbers with taxon names
+        s/([\s\(,])(\d+)(?= )/$1$taxa[$2],/g;
+        s/, ?\)/)/g;
+        # Annotations
+        s/(=\S*)\//$1;/g;
+        s/=(\S+)/[&Annot="$1"]/g;
+        s/;/; /g;
+        # Place commas between clades
+        s/\)\(/),(/g;
+        s/\]\s*\(/], (/g;
+        # Separate multiple trees
+        s/[\*; ]+;?$/;/;
+        # Name trees
+        s/^(.*?)([\d\w_]+)/tree tree$i = [&U] $1$2/;
+        print $NEXUS_TREES "\t" . $_;
+      }
+      print $NEXUS_TREES "\nend;";
+      close $NEXUS_TREES;
+    }
   }
 }
