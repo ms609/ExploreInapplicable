@@ -57,7 +57,7 @@ sub char_template() {
       $i = 0;
       open (OUTFILE, ">$outfile_path") or warn "!! Can't open $outfile_path: $!\n";
       foreach $this_char (@char_is_inapp) {
-        print OUTFILE ($this_char ? "NT" : "X")
+        print OUTFILE ($this_char ? "NT" : "XX")
             . ' [' . ++$i . "]\n";
       }
       close OUTFILE;
