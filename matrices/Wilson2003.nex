@@ -1,9 +1,4 @@
 #NEXUS
-Study reference:
-Wilson G., & Edgecombe G. 2003. The Triassic isopod Protamphisopus wianamattensis
-(Chilton) and comparison with extant taxa (Crustacea, phreatoicidea). Journal of
-Paleontology, 77(3): 454-470.
-
 BEGIN TAXA;
   DIMENSIONS NTAX=61 NCHAR=165;
   FORMAT DATATYPE=Standard SYMBOLS= "01234569" MISSING=? GAP= -;
@@ -71,4 +66,3 @@ BEGIN TAXA;
     Uramphisopus_pearsoni                 000002202400-222020020000325-----00-2004020202--222320222?020030020200020054232232---20302-030000222222000000222-302223402202222-33000023-000000023200300222000222222
   ;
 END;
-
