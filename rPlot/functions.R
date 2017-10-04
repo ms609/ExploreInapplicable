@@ -3,7 +3,7 @@ if (!require('ape')) install.packages('ape', '.', repos = 'http://ape-package.ir
 library(phangorn)
 devtools::install_github('ms609/inapplicable')
 require(inapplicable)
-if (!require(rtqdist)) install # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
+if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
 readTntTrees <- function (directory, nexusName) {
   unique(read.nexus(paste0(directory, '/', nexusName, '.nextrees', collapse='')))
@@ -11,6 +11,7 @@ readTntTrees <- function (directory, nexusName) {
 
 readRTrees <- function (directory, nexusName) {
   allResults <- list.files(directory, paste0(nexusName, '.*\\-[[:digit:]]+.tre', collapse=''))
+  if (length(allResults) == 0) return (NULL)
   resultScores <- vapply(allResults, function (string) {
     hits <- regexpr(pattern='\\-[[:digit:]]+', string)
     return(as.integer(substr(string, hits[1] + 1, hits[1] + attr(hits, 'match.length') - 1)))
