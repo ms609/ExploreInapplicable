@@ -1,0 +1,135 @@
+XX [1]   Prostomium: (0) distinct; (1) completely fused to peristomium; (2) frontal edge fused to peristomium.
+XX [2]   Shape of prostomium: (0) lobed-ridge-shaped; (1) limited to palps; (2) conical.
+XX [3]   Prostomial palps: (0) absent; (1) present.
+NT [4]   Prostomial palps: (0) paired and simple; (1) multiple; (2) crown with radioles.
+XX [5]   Prostomial antennae: (0) absent; (1) present.
+NT [6]   Number and arrangement of prostomial antennae: (0) one in the middle; (1) two and lateral; (2) one median and two lateral.
+XX [7]   Prostomial eyes: (0) absent; (1) present.
+NT [8]   Radiolar lobes: (0) separated; (1) fused dorsally.
+NT [9]   Lobes: (0) semicircular or slightly involuted; (1) spiral.
+NT [10]  Number of radioles: (0) few (fewer than 3); (1) many (more than 3).
+NT [11]  Branching radioles: (0) absent; (1) present.
+NT [12]  Palmate membrane: (0) absent (or reduced); (1) present.
+NT [13]  Radiolar flanges: (0) absent; (1) present.
+NT [14]  Stylodes: (0) absent; (1) present.
+NT [15]  Radiolar skeleton axis cells: (0) absent; (1) present.
+NT [16]  Radiolar skeleton type: (0) one or two; (1) four; (2) more than four.
+NT [17]  Radiolar eyes: (0) absent; (1) present.
+NT [18]  Radiolar eyes arrangement: (0) ocelli; (1) unpaired terminal compound eyes on inner peduncle; (2) unpaired compound eyes on inner radiolar margin without peduncle; (3) paired compound eyes; (4) unpaired compound eyes on proximal outer margin of radioles; (5) cluster of eyes in the base of dorsalmost radioles.
+NT [19]  Pinnules: (0) alternating; (1) paired.
+NT [20]  Branchial hearts: (0) absent; (1) present.
+NT [21]  Dorsal basal flanges: (0) absent; (1) present.
+NT [22]  Joint in dorsal basal flanges: (0) absent; (1) present.
+NT [23]  Ventral basal flanges: (0) absent; (1) present.
+NT [24]  Ventral radiolar appendages: (0) absent; (1) present.
+NT [25]  Ventral radiolar filamentous appendages: (0) absent; (1) present.
+NT [26]  Ventral radiolar filamentous appendages type: (0) vascularized, unbranched; (1) vascularized, branched.
+NT [27]  Operculum: (0) absent; (1) present.
+NT [28]  Dorsal lips: (0) absent; (1) present.
+NT [29]  Dorsal radiolar appendages: (0) absent; (1) present.
+NT [30]  Radiolar appendage skeleton: (0) absent; (1) present.
+NT [31]  Dorsal pinnular appendages: (0) absent; (1) present.
+NT [32]  Ventral lips: (0) absent; (1) present.
+NT [33]  Ventral sacs: (0) absent; (1) present.
+NT [34]  Position of ventral sacs: (0) inside the branchial crown; (1) outside the branchial crown.
+NT [35]  Parallel lamellae: (0) absent; (1) present.
+XX [36]  Nuchal organs: (0) absent; (1) present.
+NT [37]  Type of nuchal organs: (0) pits or grooves; (1) two posterior projections; (2) caruncle.
+XX [38]  Peristomium: (0) reduced lips; (1) extended upper and lower lips; (2) one ring; (3) two rings.
+XX [39]  Peristomial palps: (0) absent; (1) present.
+NT [40]  Number of peristomial palps: (0) paired; (1) single; (2) multiple.
+NT [41]  Peristomial palp pinnules: (0) absent; (1) present.
+XX [42]  Peristomial eyes: (0) absent; (1) present.
+NT [43]  Anterior peristomial ring collar: (0) absent; (1) present.
+NT [44]  Anterior peristomial ring: (0) low, even in height; (1) reduced to a wide ventral triangular lobe; (2) reduced to a narrow ventral triangular lobe.
+NT [45]  Posterior peristomial ring collar: (0) absent; (1) present.
+NT [46]  Dorsal margin or posterior peristomial ring collar: (0) widely separated; (1) narrowly separated and fused to the faecal groove.
+NT [47]  Ventral incision of collar: (0) absent; (1) present.
+XX [48]  Tentacular cirri: (0) absent; (1) present.
+XX [49]  Obturaculum: (0) absent; (1) present.
+XX [50]  Vestimentum: (0) absent; (1) present.
+XX [51]  Frenulum: (0) absent; (1) present as a continuous ridge; (2) scattered plaques only.
+XX [52]  Trophosome: (0) absent; (1) present.
+XX [53]  Epidermal papillae: (0) absent; (1) present.
+XX [54]  Body covering or tunic: (0) absent; (1) present.
+XX [55]  Anterior end: (0) non-retractile; (1) retractile.
+XX [56]  Cephalic cage: (0) absent; (1) present.
+XX [57]  Glandular girdle on segment 2: (0) absent; (1) present.
+XX [58]  Thoracic membrane on anterior segments: (0) absent; (1) present.
+XX [59]  Ventral glandular areas: (0) absent or undifferentiated; (1) present.
+XX [60]  Interramal eyespots: (0) absent; (1) present.
+XX [61]  Chaetal inversion: (0) absent; (1) present.
+XX [62]  Inverted faecal groove: (0) absent; (1) present.
+XX [63]  Parapodia: (0) absent; (1) present.
+NT [64]  Parapodia: (0) similar rami; (1) noto- and neuropodia differing.
+XX [65]  Dorsal cirri: (0) absent; (1) present.
+XX [66]  Ventral cirri: (0) absent; (1) present.
+XX [67]  Aciculae: (0) absent; (1) present.
+XX [68]  Compound chaetae: (0) absent; (1) present.
+NT [69]  Thoracic chaetal fascicles (notopodia): (0) transverse; (1) longitudinal; (2) irregular.
+NT [70]  Thoracic neuropodia: (0) short, truncate cylinders; (1) lobe like; (2) transverse ridges (tori); (3) inconspicuous, chaetae from body wall; (4) low ridges; (5) conical.
+XX [71]  Notochaetae in first chaetiger: (0) absent; (1) present.
+XX [72]  Neurochaetae in first chaetiger: (0) absent; (1) present.
+XX [73]  Superior thoracic notochaetae: (0) absent; (1) present.
+NT [74]  Superior thoracic notochaetae shape: (0) elongate, narrowly hooded; (1) broadly hooded.
+XX [75]  Inferior thoracic chaetae: (0) absent; (1) present.
+NT [76]  Inferior thoracic notochaetae shape: (0) broadly hooded; (1) paleate; (2) spine-like; (3) narrowly hooded; (4) serrated capillaries; (5) hooks; (6) camerate chaetae; (7) capillary barred chaetae.
+XX [77]  Anterior row (or group) of inferior thoracic notochaetae: (0) absent; (1) bayonet.
+XX [78]  Thoracic uncini / hooks: (0) absent; (1) present.
+NT [79]  Arrangement of thoracic hooks/ uncini: (0) discrete single rows; (1) discrete double rows; (2) dense fields; (3) form rings.
+NT [80]  Rostrum / main fang: (0) absent; (1) present.
+NT [81]  Capitium: (0) absent; (1) present.
+NT [82]  Thoracic uncini teeth: (0) equal size; (1) unequal size.
+NT [83]  Rows of teeth on thoracic uncini: (0) 1–5; (1) more than 5 (numerous).
+NT [84]  Thoracic uncini with rows on only one tooth above main fang: (0) absent (various teeth per row); (1) present (one tooth per row).
+NT [85]  Thoracic uncini breast: (0) absent; (1) present.
+NT [86]  Development of thoracic uncini breast: (0) slightly developed; (1) well developed.
+NT [87]  Thoracic uncini handle / manubrium: (0) absent; (1) present.
+NT [88]  Length handles/ manubrium: (0) very long; (1) medium length; (2) short.
+XX [89]  Companion chaetae: (0) absent; (1) present (in all chaetigers); (2) present in some chaetigers.
+XX [90]  Number of abdominal chaetigers: (0) 3; (1) numerous.
+XX [91]  Opisthosome: (0) absent; (1) present.
+XX [92]  Abdominal neuropodia: (0) transverse ridges (tori); (1) conical lobes; (2) low, circular elevations; (3) straight from body wall; (4) several lobes.
+XX [93]  Abdominal neurochaetal fascicles: (0) transverse; (1) spiralled; (2) irregular.
+XX [94]  Superior row of abdominal neuropodial fascicles: (0) absent; (1) present.
+XX [95]  Inferior row of abdominal neurochaetal fascicles: (0) absent; (1) present.
+NT [96]  Superior row of abdominal neurochaetal fascicles: (0) narrowly hooded; (1) paleate; (2) spine-like; (3) broadly hooded; (4) capillaries; (5) stout and spinous.
+XX [97]  Inferior row of abdominal chaetae: (0) needle-like; (1) narrowly hooded; (2) spine-like; (3) broadly hooded; (4) denticulated capillaries; (5) flat-trumpet shaped; (6) stout and spinous; (7) paleate.
+XX [98]  Uncini in abdominal neuropodia: (0) absent; (1) present.
+NT [99]  Arrangement of abdominal hooks/ uncini: (0) single rows; (1) double rows; (2) dense fields.
+NT [100] Abdominal uncini main fang: (0) absent; (1) present.
+NT [101] Capitium: (0) absent; (1) present.
+NT [102] Abdominal uncini number of rows: (0) few (1–5); (1) numerous (> 5).
+NT [103] Uncini breast: (0) absent; (1) present.
+NT [104] Abdominal uncini breast: (0) small, poorly developed; (1) well developed, expanded; (2) narrow, swelling; (3) proximal manubrium.
+NT [105] Abdominal uncini handle: (0) absent; (1) present.
+NT [106] Length of uncini handles: (0) short; (1) medium; (2) long.
+XX [107] Anal depression: (0) absent; (1) present.
+XX [108] Pygidial shape: (0) papilla; (1) rim; (2) bilobed.
+XX [109] Pygidial cirri: (0) absent; (1) present.
+XX [110] Pygidial eyes: (0) absent; (1) present.
+XX [111] Caudal region: (0) absent; (1) present.
+XX [112] Mouth: (0) axial proboscis; (1) simple tube non-eversible; (2) ventral buccal organ.
+XX [113] Jaws: (0) absent; (1) present.
+XX [114] Dorsolateral folds: (0) absent; (1) present.
+XX [115] Gut: (0) as a tube with two openings; (1) occluded.
+XX [116] Gut: (0) straight; (1) looped.
+XX [117] Gular membrane: (0) absent; (1) present.
+XX [118] Sexual mode: (0) gonochoric; (1) hermaphrodites.
+XX [119] Gamete distribution: (0) abdomen; (1) thorax and abdomen; (2) thorax.
+XX [120] Brooding: (0) absent; (1) present.
+NT [121] Brooding: (0) intratubular; (1) extratubular.
+XX [122] Spermiogenesis: (0) tetrads; (1) cytophore with more than 100 spermatids; (2) cytophore with fewer than 100 spermatids.
+XX [123] Sperm packaging: (0) absent; (1) present.
+XX [124] Larva: (0) trochophore; (1) mitraria.
+XX [125] Larvae: (0) planktotrophic; (1) lecithotrophic.
+XX [126] Lateral organs: (0) absent; (1) present.
+NT [127] Segmental nephridia: (0) several; (1) single pair opening into first segment.
+XX [128] Nephridia: (0) protonephridia; (1) metanephridia.
+XX [129] Intraepidermal cord: (0) absent; (1) present.
+XX [130] Branchiae: (0) absent; (1) present.
+NT [131] Arrangement of branchiae: (0) dorsal, along body; (1) paired in anterior segments; (2) anterior cluster.
+NT [132] Shape and number of of branchiae: (0) simple filaments; (1) multiple filaments; (2) laminate.
+XX [133] Building organ: (0) absent; (1) present.
+XX [134] Tube: (0) absent; (1) present.
+NT [135] Tube material: (0) soft and mucous; (1) chitinous; (2) calcareous
