@@ -7,23 +7,52 @@ X [6]   Nephridial attachment: 0 - mostly unattached, 1 - at least 50% attached
 X [7]   Nephridial shape: 0 - unilobed, 1 - bilobed
 X [8]   Position of nephridiopores: 0 - anterior to anus, 1 - same level as anus, 2 - posterior to anus
 X [9]   Coelomic extensions in body wall: 0 - absent, 1 - present
+T [10]  Type of coelomic extensions: 0 - sacs, 1 - canals
+T [11]  Orientation of coelomic canals: 0 - longitudinal, 1 - in bands
 X [12]  Longitudinal musculature: 0 - distinct, 1 - anastomosing
+T [13]  Number of longitudinal muscle bands: 0 - commonly < 25; 1 - 25-40, 2 - > 40
+T [14]  Longitudinal muscle bands: 0 - distinct, 1 - anastomosing
 X [15]  Circular musculature: 0 - continuous sheet, 1 - in bands
+T [16]  Circular muscle bands: 0 - distinct, 1 - anastomosing
 X [17]  Dorsal shield: 0 - absent, 1 - present
+T [18]  Shape of dorsal shield: 0 - flat, 1 - cone-shaped
+N [19]  Grooves in dorsal shield: 0 - absent, 1 - present
 X [20]  Pineapple shield: 0 - absent, 1 - present
 X [21]  Spindle muscle: 0 - absent, 1 - present
+T [22]  Anterior attachment of spindle muscle: 0 - body wall, 1 - on rectum
+T [23]  Level of attachment on body wall: 0 - anterior to anus, 1 - same level as anus, 2 - posterior to anus
+T [24]  Anterior roots of spindle muscle: 0 - one, 1 - two or more
+T [25]  Posterior attachment of spindle muscle: 0 - posterior body wall, 1 - within gut coil
 X [26]  Hooks on introvert in adults: 0 - absent, 1 - present
+N [27]  Hooks in rings: 0 - absent, 1 - present
+T [28]  Number of rings of hooks: 0 - < 50, 1 - > 50
+T [29]  Hook arrangement: 0 - some scattered, 1 - entirely in rows
+N [30]  Bidentate hooks: 0 - absent, 1 - present
+N [31]  Secondary tooth on hook: 0 - absent, 1 - present
+T [32]  Shape of secondary tooth: 0 - blunt, 1 - pointed
+N [33]  Hook interior: Anterior clear triangle: 0 - absent, 1 - present
+N [34]  Hook interior: Clear streak: 0 - absent, 1 - present
+N [35]  Hook interior: Crescent-shaped space: 0 - absent, 1 - present
+N [36]  Posterior basal structures: 0 - absent, 1 - present
+T [37]  Posterior basal structure type: 0 - warts, 1 - rootlets
+T [38]  Angle of hook: 0 - < 90%, 1 - > 90%
 X [39]  Pyramidal hooks: 0 - absent, 1 - present
 X [40]  Conical hooks: 0 - absent, 1 - present
 X [41]  Location of anus: 0 - on anterior trunk, 1 - on introvert
 X [42]  Pigmented introvert bands: 0 - absent, 1 - present
 X [43]  Contractile vessel villi: 0 - absent, 1 - 1 present
+T [44]  Type of contractile vessel villi: 0 - digitiform, 1 - elongate tubules 
 X [45]  Introvert retractor muscles in adult: 0 - two pairs, 1 - less than two pairs
+N [46]  Fusion of dorsal retractors: 0 - not fused (< 10%), 1 - partially fused, 2 - completely fused
 X [47]  Fusion in ventral retractors: 0 - not fused (< 10%), 1 - partially fused, 2 - completely fused
+N [48]  Fusion of dorsal and ventral retractors: 0 - absent, 1 - present
 X [49]  Retractor column: 0 - absent, 1 - present
+T [50]  Origin of dorsal retractor muscles: 0 - anterior 1/3 of body, 1 - middle 1/3 of body, 2 - posterior 1/3 of body
 X [51]  Origin of ventral retractor muscles: 0 - anterior 1/3 of body, 1 - middle 1/3 of body; 2 - posterior 1/3 of body 
 X [52]  Protractor muscle: 0 - absent, 1 - present
 X [53]  Ratio of introvert/trunk length: 0 - < 0.75, 1 - 0.75-2, 2 - > 2
 X [54]  Holdfast papillae with hardened borders: 0 - absent, 1 - present
 X [55]  Caudal appendage: 0 - absent, 1 - present
 X [56]  Nuchal organ: 0 - pit, 1 - ciliated band, 2 - patch or patches
+T [57]  Number of nuchal patches: 0 - one, 1 - two
+T [58]  Shape of nuchal patch: 0 - triangular, 1 - bilobed, 2 - multi-lobed
