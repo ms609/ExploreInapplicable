@@ -1,50 +1,50 @@
-X [1]
-NT [2]
-X [3]
-X [4]
-X [5]
-NT [6]
-NT [7]
-X [8]
-NT [9]
-X [10]
-X [11]
-X [12]
-NT [13]
-X [14]
-NT [15]
-NT [16]
-NT [17]
-NT [18]
-NT [19]
-NT [20]
-NT [21]
-NT [22]
-NT [23]
-X [24]
-NT [25]
-NT [26]
-NT [27]
-NT [28]
-NT [29]
-NT [30]
-NT [31]
-NT [32]
-NT [33]
-NT [34]
-NT [35]
-NT [36]
-NT [37]
-NT [38]
-NT [39]
-NT [40]
-NT [41]
-NT [42]
-NT [43]
-NT [44]
-X [45]
-NT [46]
-NT [47]
-NT [48]
-NT [49]
-NT [50]
+X [1]   I.1
+T [2]   I.2
+X [3]   I.3
+X [4]   I.4
+X [5]   I.5
+T [6]   I.6
+T [7]   I.7
+X [8]   I.8
+T [9]   II.1 
+X [10]  II.2 
+X [11]  II.3 
+X [12]  II.4 
+T [13]  II.5 - validated
+X [14]  II.6 
+N [15]  II.7 
+N [16]  II.8 
+N [17]  II.9 
+N [18]  II.10
+N [19]  III.1
+N [20]  III.2
+N [21]  III.3
+N [22]  III.4
+N [23]  Character description missing; assumed N , following others of group III
+X [24]  IV.1
+N [25]  IV.2
+N [26]  IV.3
+T [27]  IV.4 - incorrect
+N [28]  IV.5
+N [29]  IV.6
+N [30]  IV.7
+N [31]  V.1 
+N [32]  V.2 
+N [33]  V.3 
+N [34]  V.4 
+N [35]  V.5 
+N [36]  V.6 
+T [37]  V.7 
+T [38]  V.8 
+T [39]  V.9 
+N [40]  V.10
+T [41]  V.11
+N [42]  V.12
+N [43]  V.13
+T [44]  V.14
+X [45]  VI.1
+N [46]  VI.2
+N [47]  VI.3
+T [48]  VI.4
+T [49]  VI.5
+T [50]  VI.6
