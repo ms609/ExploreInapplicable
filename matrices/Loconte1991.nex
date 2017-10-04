@@ -1,6 +1,5 @@
 #NEXUS
-[Loconte H., & Stevenson D. 1991. Cladistics of the magnoliidae. Cladistics, 7: 267-296.]
-BEGIN data;
+BEGIN data; [Loconte H., & Stevenson D. 1991. Cladistics of the magnoliidae. Cladistics, 7: 267-296.]
   DIMENSIONS NTAX=56 NCHAR=104;
 	FORMAT DATATYPE=Standard SYMBOLS= "0123459" MISSING=? GAP= -;
 	MATRIX
