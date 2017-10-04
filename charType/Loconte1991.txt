@@ -1,104 +1,104 @@
-NT [1]
-NT [2]
-NT [3]
-XX [4]
-NT [5]
-XX [6]
-XX [7]
-XX [8]
-NT [9]
-XX [10]
-XX [11]
-XX [12]
-XX [13]
-XX [14]
-NT [15]
-XX [16]
-XX [17]
-XX [18]
-NT [19]
-XX [20]
-XX [21]
-XX [22]
-NT [23]
-XX [24]
-XX [25]
-XX [26]
-XX [27]
-XX [28]
-NT [29]
-NT [30]
-NT [31]
-NT [32]
-NT [33]
-NT [34]
-NT [35]
-NT [36]
-NT [37]
-NT [38]
-NT [39]
-NT [40]
-NT [41]
-NT [42]
-NT [43]
-NT [44]
-NT [45]
-NT [46]
-NT [47]
-NT [48]
-NT [49]
-NT [50]
-NT [51]
-NT [52]
-NT [53]
-NT [54]
-NT [55]
-NT [56]
-NT [57]
-NT [58]
-NT [59]
-XX [60]
-NT [61]
-NT [62]
-NT [63]
-NT [64]
-NT [65]
-NT [66]
-NT [67]
-NT [68]
-NT [69]
-NT [70]
-NT [71]
-NT [72]
-NT [73]
-NT [74]
-NT [75]
-NT [76]
-NT [77]
-NT [78]
-NT [79]
-NT [80]
-NT [81]
-NT [82]
-NT [83]
-XX [84]
-NT [85]
-NT [86]
-XX [87]
-NT [88]
-NT [89]
-XX [90]
-XX [91]
-XX [92]
-XX [93]
-XX [94]
-XX [95]
-XX [96]
-XX [97]
-XX [98]
-XX [99]
-XX [100]
-XX [101]
-XX [102]
-XX [103]
-XX [104]
+NT [1]    Habit / 'shrub (n)' tree herb,
+NT [2]    Stem_vasculature / circular cortical scattered,
+NT [3]    Cambial_initials / long short,
+X [4]    Xylem_conduction / tracheids 'vessels foraminate perforate (n' vessels_scalariform_perforate vessels_simple_perforate,
+NT [5]    Vessel_distribution / whole_plant roots_only,
+X [6]    Primary_pitting / late_ontogeny_of_tracheary_elem early_ontogeny_of_tracheary_ele,
+X [7]    'Sieve-tube element companion ce' / absent present,
+X [8]    Secondary_phloem / 'non-stratified' tangentially_stratified,
+NT [9]    'Sieve-tube plastic inclusions' / starch protein,
+X [10]   Pith_structure / nonseptate sclereid_septate,
+X [11]   Sclereids / 'non-hippocrepiform' hippocrepiform,
+X [12]   Corticalsclerenchyma_sheath / absent present,
+X [13]   Laticifers / absent present,
+X [14]   Oil_cells / absent present,
+NT [15]   Nodal_anatomy / 'unilacunar two-trace' 'unilacunar one-trace' trilacunar multilacunar,
+X [16]   Nodal_morphology / 'non-swollen' swollen,
+X [17]   Axillary_buds / absent present multiple,
+X [18]   Phyllotaxy / alternate opposite,
+NT [19]   Ptyxis / circinate adplicate conduplicate supervolute involute,
+X [20]   Leaf_type / compound simpl,
+X [21]   Leaf_peltate / absent present,
+X [22]   Leaf_base / simple 'sheathing (n)' stipulate,
+NT [23]   Leaf_venation / dichotomous pinnate palmate,
+X [24]   Leaf_margin / entire toothed,
+X [25]   Leaf_persistence / evergreen deciduous,
+X [26]   Leaf_pubescence / absent present,
+X [27]   Foliar_astrosclereids / absent present,
+X [28]   Foliar_cystoliths / absent present,
+NT [29]   Stomates / anomocytic paracytic laterocytic 'stephanocytic (n)' 'encyclocytic (n)',
+NT [30]   Infloresence / 'absent (flowers solitary)' present,
+NT [31]   Floral_pedicel / present absent,
+NT [32]   Floral_primordium_symmetry / radial 'bilateral (dorsiventral)',
+NT [33]   Calyptra / absent present,
+NT [34]   Perianth_arrangement / helical cyclic_and_trimerous cyclic_and_four_or_five_merous absent,
+NT [35]   Petals / absent tepaloid staminoidal,
+NT [36]   Perianth_androecium_alignment / alternate opposite,
+NT [37]   Sexual_expression / dioecious monoecious monoclinous,
+NT [38]   Stamen_type / connective_with_marginal_sporan 'laminar (with adaxial or abaxia' 'filamental (with terminal spora',
+NT [39]   Stamen_arrangement / helical cyclic,
+NT [40]   Staminal_osmophore / absent present,
+NT [41]   Monadelphy / absent present,
+NT [42]   Filament_appendage / absent present,
+NT [43]   Anther_dehiscence / longitudinal bifurcate valvate,
+NT [44]   Connective_hypodermic / absent 'endothecial-like',
+NT [45]   Tapetum / glandular amoeboid,
+NT [46]   Microsporogenesis / simultaneous successive,
+NT [47]   Pollen_unit / monads tetrads,
+NT [48]   Pollen_size / 'medium (20-50 pm)' 'large (greater than 50pm)' 'small (less than 20pm)',
+NT [49]   Pollen_shape / 'boat-shaped' intermediate globose,
+NT [50]   Pollen_saccate / absent present,
+NT [51]   Pollen_apertures / monosulcate 'disulcate (n)' tricolpate 'holoaperturate (n)' 'ulcerate (n)' 'polyaperturate (n)',
+NT [52]   Apertures / free fused,
+NT [53]   Examine_sculpture / psilate 'punctate (n)' reticulate 'striate (n)',
+NT [54]   Pollen_exine_surface / smooth spinulose spinose,
+NT [55]   Exine_structure / alveolar granular 'solid (n)' columellate 'chanellate (n)',
+NT [56]   Endexine / continuous discontinuous absent,
+NT [57]   Pollen_tube_growth / suspended penetrating,
+NT [58]   Microgametophyte / prothallial_and_sterile_cells_p sterile_cells_absent prothallial_and_sterile_cells_a,
+NT [59]   Microgametophyte_final_mitotic / 'post-pollination' prepollination,
+X [60]   Sperm / flagellated 'non-flagellated',
+NT [61]   Inner_staminodes / present absent,
+NT [62]   Carpel_type / open closed,
+NT [63]   Carpel_arrangement / helical 'cyclic (n)' solitary,
+NT [64]   Floral_cup / absent present,
+NT [65]   Gynoecial_nectaries / absent present,
+NT [66]   Placentation / marginal laminar apical basal parietal exile,
+NT [67]   Ovule_type / orthotropous anatropous,
+NT [68]   Ovule_number / uniovulate_or_biovulate multiovulate,
+NT [69]   Micropylar_tube / absent present,
+NT [70]   Integuments / unitegmic bitegmic,
+NT [71]   Nucellar_cuticle / thin thick,
+NT [72]   Megagametophyte_meiosis / monosporic tetrasporic,
+NT [73]   Megaspore_wall / thick thin,
+NT [74]   Megagametophyte_apex / cellular 'free-nuclear',
+NT [75]   Fertilization / single double,
+NT [76]   Fruit_type / dehiscent berry achene drupe,
+NT [77]   Seed_size / 'large (>5 mm)' 'small (<5 mm)',
+NT [78]   Seed_coat_anatomy / endotestal mesotestal exotestal tegmic,
+NT [79]   Seed_aril / exarillate arillate,
+NT [80]   Sarcotestum / absent present,
+NT [81]   Seed_chalazal_wings / absent present,
+NT [82]   Seeds_operculate / absent present,
+NT [83]   Endosperm_development / cellular nuclear helobial,
+X [84]   Endosperm_type / absent present perisperm,
+NT [85]   Ruminate_endosperm / absent present,
+NT [86]   Embryogenesis / 'free-nuclear' onagrad_type asterad_type caryophyllad_type solanum_type,
+X [87]   Embryo_size / minute large,
+NT [88]   Embryo_with_feeder / absent present,
+NT [89]   Germination / hypogeal epigeal,
+X [90]   Root_system / allorhizic homorhizic,
+X [91]   Cotyledon_number / two two_laterally_fused one 'three or more (n)',
+X [92]   Lignin_subunits / vanillin syringal_aldehyde,
+X [93]   Hydrolyzable_tannin / absent present,
+X [94]   Proanthocyanidin_leucoanthocyan / present absent,
+X [95]   Cyanidin / absent present,
+X [96]   'Methoxy-anthocyanidin' / absent present,
+X [97]   '3" 4" 5"-Methoxy-flavonol myric' / absent present,
+X [98]   '7 3" 4" or 5"-Methoxy-Ravonol' / absent present,
+X [99]   '8-Oxygenated-flavonol' / absent present,
+X [100]  Dihydrofiavonol / absent present,
+X [101]  Apigenin / absent present,
+X [102]  'C-Glycosylfavone' / absent present,
+X [103]  Isoflavone / absent present,
+X [104]  Benzylisoquinoline / absent present,
