@@ -1,0 +1,88 @@
+X [1]  Degree to which the introvert can be invaginated: no introvert, or introvert not invaginable at all (0), partially invaginable (i.e., part of zone I) (1), completely invaginable into the trunk (i.e., to the base of zone I) (2).
+X [2]  Anterior branched frontal appendages: absent (0), present (1).
+X [3]  Scalids (nonspecific and sensu lato, including both scalids and presumed scalid derivatives): absent (0), present and composed exclusively of cuticle (1), present and with cuticle limited to a thin outer covering (2). Schmidt-Rhaesa (1998) has demonstrated that, in comparison to the scalids of Scalidophora (Kinorhyncha +Loricifera+Priapulida), the scalids of nematoids (Nematoda+Nematomorpha) are composed exclusively of cuticle. The collapse and folding of the scalids in Markuelia indicates that they are hollow structures and, thus, not wholly composed of cuticle.
+X [4]  Mouth cone: absent (0), present but non-inversible (1), present and inversible (2). The mouth cone is the eversible (though not necessarily inversible) upstanding anterior limit of the pharynx. 
+NT [5]  Zone I: unarmed (0), armed (1).
+NT [6]  Arrangement of zone I armature: not in rows (0), discrete parallel longitudinal rows (1), rows aligned diagonal to the anterior-posterior axis of the animal (2). 
+NT [7]  Radial arrangement of armature: pentaradial (0), hexaradial (1). 
+NT [8]  Morphology of zone I armature: papillae (0), simple spines (1), hooks or spinose hooks (2), conical scalids (3), telescopiform scalids (4), curved scalids and dentoscalids (5), complex scalids (6), glandular scalids, trifid spines, sensory spines, and double, tentaculite scalids (7), scalids with pectinate hood (8)*, spinoscalids and clavoscalids (kinorhynchs and lorificerans) (9).
+NT [9]  Number of elements comprising the first three circlets and, hence, defining the number of longitudinal rows of elements on the introvert: none (0), < 20 (1), 25 (2), > 25 (3). In all extant priapulids there are eight elements in the most proximal circlet of the introvert, their number and position corresponding to innervation derived from the circumpharyngeal brain. 
+NT [10] Sequence of zone I elements: elements as a single series (all elements identical or with differing morphologies) (0), elements organized into two or more transverse bands or series, possibly with different element morphologies within each series, but the sequence of morphologies being comparable between subsequent series (1).
+NT [11] Basal circlet of zone I armature separated from more anterior by a constriction (as in loriciferans) or by insertion of longitudinal or circular muscles (kinorhynchs): absent (0), present (1).
+NT [12] Number of elements in the proximal circlet of zone II: none or zone unarmed (0), eight (1), more than eight (2). 
+NT [13] Elongate spines at the base of Zone II: absent (0), present (1).
+NT [14] Number of circlets of zone III armature: none or unarmed (0)*, one to four (1), six to fourteen (2), sixteen or more (3).
+NT [15] Morphology of proximal circlets of zone III armature ("teeth"): spines or papillae (0), multispinose (1), multispinose but massively reduced (2)*, hooks (3)*, conical with a fringe of spines (4)*, sclerotized trabeculae (5), pectinate (6)*, conical papillae terminating in a long spine (prickle) (7), oral stylets (8).
+NT [16] Morphology of middle circlets of zone III armature (teeth): absent (0), spines (of any length) or papillae (1), multispinose (reduced or otherwise) (2), pectinate (3).
+NT [17] Morphology of the distal circlets of zone III armature (teeth): absent (0), spines (of any length) (1), multispinose (reduced or otherwise) (2), pectinate (3).
+NT [18] Number of elements in first circlet of pharyngeal armature (base of zone III): elements absent (0), first circlet of 5 elements (1), first circlet of 8-10 elements (2), first circlet of numerous elements (more than 10) (3).
+NT [19] Number of proximal, pentagonal circlets in zone III of the proboscis: none (0), five (1), six (2), seven (3).
+NT [20] Width of zone III relative to zone II: zone III less than twice the width of zone II (0), zone III equal to or greater than twice the width of zone II (1).
+NT [21] Width of the distal portion of zone Ill: distal zone III parallel to proximal zone III or tapering gradually (0), distal zone III expanded into a bulb (1).
+NT [22] Eversibility of zone Ill: zone III completely eversible (0), zone III incompletely eversible, but eversible beyond the proximal teeth (1), zone III normally eversible only as far as the proximal teeth (2).
+NT [23] All zone III elements of approximately equal size (0), zone III elements decreasing regularly in size from the posterior to the anterior (anteriormost elements less than half the size of the posteriormost) (1).
+X [24] Armament of cervical region: none (0), cuticular plates (as in larvae/juveniles) (1).
+X [25] Aspect ratio of body length to width in adult: <10 (0), 10-20 (1), >20 (2).
+X [26] Paired, lateral, locomotory appendages: absent (0), present (1).
+X [27] Annulation: absent (0), homonomous (1), heteronomous (2). Budd (2003) has drawn comparison between the patterns of cuticular ornament in association with the trunk annulae in lobopods and palacoscolecids. However, although palaeoscolecids exhibit an alternating pattern of cuticular ornament (Conway Morris 1997) and although this varies from one body region to another, adjacent annulae are identical; they exhibit homomous annulation. This contrasts with the condition in lobopods where adjacent annulae vary both in terms of their axial length and their cuticular ornamentation.
+X [28] Number of trunk annuli: <7 (0), 7-11 (1)*, 30-60 (2), 61-120 (3), 140 or more (4).
+X [29] Trunk spines, fine spines, or setae in adult: absent (0), present (1).
+X [30] Trunk papillae in adult: absent (0), present and simple (1), extremely long and arranged into two discrete, longitudinal rows (2)*.
+X [31] Trunk sclerites in adult: absent (0), present and small to medium in size (1), present and greatly enlarged (2). 
+X [32] Trunk sclerites: absent (0), in two longitudinal rows (1), in annular rings (2).
+X [33] Trunk tumuli: absent (0), present (1).
+X [34] Trunk tubuli: absent (0), present (1).
+X [35] Trunk tubercles of soft, coriaceous consistency: absent (0), present (1). 
+X [36] Flosculi, N-flosculi or sensory spots: absent (0), flosculi present with between 7 and 11 petals (1), flosculi present and invariably with 8 petals (2).
+X [37] Clavulae: absent (0), present (1). 
+X [38] Tube: Absent (0), tube composed of plant debris: absent (1), tube flattened, annulated, tapering and chitinous (2). 
+X [39] Arc or ring of posterior spines or hooks (distinct from the bilaterally symmetrical structures present in Markuelia and many palaeoscolecids): absent (0), present (1).
+X [40] Posterior ring papillae: absent (0), present (1).
+X [41] Eversible bursa: absent (0), present (1).
+X [42] Posterior abdomen greatly extensible: no (0), yes (1).
+X [43] Position of the anus: anus terminal, whether within bursa or otherwise (0), anus in posterolateral or posteroventral surface of the abdomen (1).
+X [44] Posterior tubulae or setae: absent (0), present (1). 
+X [45] Caudal appendage(s): absent (0), present but less than the length of the body (1), present and up to three times the lenth of the body (2). Harvey et al. (2010) coded a caudal appendage as present in Kerygmachela. However, other characters contingent on the presence of a caudal appendage are coded as inapplicable for Kerygmachela by these authors (as for taxa lacking a caudal appendage). We therefore code an appendage as absent in Kerygmachela. 
+NT [46] Division of caudal appendage(s) or tail: undivided (0), pseudosegmented (1).
+NT [47] Caudal appendage(s): single and positioned terminally (0), single and positioned dorso-medially (1), bicaudal as in some species of Priapulopsis and Paratubiluchus (2). 
+NT [48] Surface of caudal appendage: smooth (0), vesiculae (1), large warts (2).
+X [49] Terminally posterior spines, hooks or cones of basal diameter >20% trunk diameter: absent (0), present and arranged in pairs about the sagittal plane (1). This definition of “spines, hooks or cones” excludes the posterior body bifurcations of Aysheaia, Kerygmachela, tardigrades, some nematomorphs, some kinorhynchs and gastrotrichs. The paired, peri-anal structures in Halicryptus and Maccabeus are much smaller relative to body width. 
+X [50] Posterior warts: absent (0), small (as in Halicryptus) (1), large (as in Priapulus) (2). 
+X [51] Polythyridium: absent (0), present (1).
+X [52] Ventral nerve cord unpaired throughout its length: absent (0), present (1). Living priapulids possess unpaired ventral nerve cords, whereas gastrotrichs, onychophorans and loriciferans possess ventral nerve cords that are paired throughout their length, and the ventral nerve cords of nematomorphs and nematodes divide at points along their length (Schmidt-Rhaesa, 1998); the situation in kinorhynchs is unresolved (paired according to Kristensen and Higgins, 1991; unpaired according to Neuhaus 1994). The condition in Ottoia is common to extant priapulids (Conway Morris, 1977).
+X [53] Ventral nerve cords merge caudally: absent (0), present (1).
+X [54] Dorsal nerve cord unpaired: absent (0), present (1).
+X [55] Circumpharyngeal brain: absent (0), present (1).
+X [56] Brain with anterior posterior sequence of perikarya-neuropil-perikarya: absent (0), present (1). Lemburg (1999) recognized this as a synapomorphy of Introverta (Nematoda + Nematomorpha + Kinorhyncha + Loricifera + Priapulida).
+X [57] Apical part of the brain composed of perikarya: absent (0), present (1). Lemburg (1999). 
+X [58] Pharyngeal nervous system composed of numerous tooth ganglia connected by a diagonal nerve net: absent (0), present (1). Lemburg (1999) recognizes the presence of this character as a synapomorphy of (extant) Priapulida.
+NT [59] Two rings of introvert retractors attached through the collar-shaped brain: absent (0), present (1). Proposed by Nielsen (2001) as a synapomorphy of kinorhynchs, loriciferans and extant priapulids.
+X [60] Developmental mode: direct (0), biphasic (1).
+X [61] Loricate stage: absent (0), present (1). 
+NT [62] Cuticle of the larva/juvenile dorso-ventrally flattened (at least in older stages), with six lateral plates in-folded and accordion like. Cuticle of the lorica thickened in dorsal and ventral plates (at least) with sculpture of four to six longitudinal rows of narrow, rectangular fields: absent (0), present (1).
+NT [63] Larvae/juveniles with six long pharynx retractor muscles: absent (0), present (1). Lemburg (1999) recognised the presence of this character as a synapomorphy of (extant) Priapulida. However, it has since been demonstrated that the larvae of nematomorphs also possess six pharyngeal retractor muscles (Kristensen, 2003; Muller et al., 2004). 
+NT [64] Teeth of second circle of the larvae/juveniles with very small median denticle: absent (0), present (1). Lemburg (1999) recognizes the presence of this character as a synapomorphy of Megaintroverta (Priapulopsis + Acanthopriapulus + Priapulus).
+X [65] Division of the body into a distinct proboscis and abdomen in larva/juvenile: absent (0), present (1).
+X [66] Cloaca in both sexes: absent (0), present (1).
+X [67] Protonephridia: absent (0), present but do not flow into the gonoduct and are not integrated into the gonad (1), present and flow into the gonoduct and/or are integrated into the gonad (2). Protonephridia are considered an apomorphy of the Bilateria (Ax, 1996) and are present in gastrotrichs, kinorhynchs, loriciferans and extant priapulids, but absent, presumably secondarily, from onychophorans, nematodes and nematomorphs. Lemburg (1999) recognized state 2 as a synapomorphy of lorciferans and extant priapulids.
+X [68] Urogenital system attached to the body wall by a ligament: absent (0), present (1). Lemburg (1999) recognized this as a synapomorphy of lorciferans and extant priapulids.
+X [69] Spermatozoa with a flagellum: absent (0), present (1). The presence of a flagellum in spermatozoa is a metazoan symplesiomorphy, but a flagellum is lacking from the spermatozoa of nematodes and nematomorphs (Schmidt-Rhaesa 1998).
+X [70] Genital field extremely simplified: no (0), yes (1).
+X [71] Copulatory organs: absent (0), present (1).
+X [72] Perigenital setae: absent or reduced (0), prominent (1).
+X [73] Cuticle predominantly containing collagen: absent (0), present (1). 
+X [74] Distribution of chitin in the cuticle: none (0)*, predominantly within the middle cuticle layer (exocuticle) (1), predominantly within the lowermost cuticle layer (endocuticle) (2). 
+X [75] Cuticle with homogeneous layer at surface/beneath epicuticle: absent (0), present (1). 
+X [76] Cuticle with middle layer of distinct composition: absent (0), present (1).
+NT [77] Cuticle with radially striated/vertical canal middle layer: absent (0), present (1).
+X [78] Cross-wise fibres in cuticle: absent (0), present (1). (Reported in Meiopriapulus by Storch et al. 1989). 
+X [79] Large helical fibres in the cuticle: absent (0), present and composed of platy subunits (1), present and composed of unpaired fibrils (2), present and composed of paired, wound fibrils (3). 
+X [80] Cuticle surface with ornament of tessellating polygons: absent (0), present (1).
+X [81] Division of the body into a distinct proboscis and abdomen in adult: absent (0), present (1).
+X [82] Terminal mouth: absent (0), present (1).
+X [83] Percentage of animal length taken up by the introvert: None (no introvert) (0), 2% (as in Halicryptus higginsi) (1)*, between 2% and 30% (2), 30 to 50% (3). Lemburg (1999) recognizes a very large introvert (state 3) as a synapomorphy of Megaintroverta (Priapulopsis + Acanthopriapulus + Priapulus).
+X [84] Voluminous primary body cavity: absent (0), present (1). Lemburg (1999) recognizes the presence of this character as a synapomorphy of (extant) Priapulida.
+X [85] Movement by peristaltic movement of the pharynx/introvert: absent (0), present (1).
+X [86] Pharyngeal lumina: round (0), triradiate (1).
+X [87] Circular body musculature: absent (0), present (1). Circular body musculature is present in all taxa of nemathelminth grade except nematodes and nematomorphs, and its absence has been considered both secondary and a synapomorphy of Nematoida (Schmidt-Rhaesa 1998).
+X [88] Nucleation of "peritoneal" membrane: membrane without nuclei or simply with amoebocytes in association with the surface (0), membrane containing scattered nuclei (1).
