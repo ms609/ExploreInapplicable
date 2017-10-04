@@ -18,14 +18,13 @@ bestHits <- 0
 
 maxHitMenu <- c(2:16, 25, 40, 60, 100, 150, 200)
 
-
 verbose <- 0
 for (i in 1:15000) {
   started <- Sys.time()
   cat ("\n > Setting maxHits =", maxHits <- sample(maxHitMenu, 1))
   best <- Ratchet(best, phyData, maxIt=1e+7, maxIter=5e+4, maxHits=maxHits, k = 1, verbosity=verbose) # Maxiter of 3e+7 was causing unhappy delays when there was a single best tree at a local optimum.
   secsTaken <- as.numeric(difftime(Sys.time(), started, units='secs'))
-  verbose <- if (secsTaken > 5) 3 else if (secsTaken > 3) 1 else if (secsTaken < 2) 0 else verbose
+  #verbose <- if (secsTaken > 5) 3 else if (secsTaken > 3) 1 else if (secsTaken < 2) 0 else verbose
   plot (best, cex=0.95, main=attr(best, 'pscore'))
   treeScore <- attr(best, 'pscore')
   if (treeScore < bestScore) {
@@ -39,4 +38,5 @@ for (i in 1:15000) {
   cat ("; found best score", treeScore, "in", secsTaken, 's; hit', bestHits)
   if (bestHits >= 100) break;
 }
+cat("\n\n ----- \n\n > Completed" , filename, "\n")
 
