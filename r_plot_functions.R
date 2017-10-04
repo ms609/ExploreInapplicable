@@ -18,7 +18,8 @@ readRTrees <- function (directory, nexusName) {
     hits <- regexpr(pattern='\\-[[:digit:]]+', string)
     return(as.integer(substr(string, hits[1] + 1, hits[1] + attr(hits, 'match.length') - 1)))
   }, integer(1))
-  unique(read.tree(paste0(directory, '/', allResults[which.min(resultScores)], collapse='')))
+  bestTreeFile <- paste0(directory, '/', allResults[which.min(resultScores)], collapse='')
+  unique(read.tree(bestTreeFile))
 }
 
 RFDistances <- function(treeList) {
