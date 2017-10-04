@@ -1,67 +1,150 @@
-NT [13]   012. Pachyosteosclerotic involucrum of bulla.----Absent (0); present (1) (Thewissen, 1994). 
-NT [14]   013. Lateral furrow of tympanic bulla.----Absent(0);present, forms a groove on the lateral surface of the ectotympanic bulla anterior to the base of the sigmoid process or meatal tube (1) (Geisler and Luo, 1998). 
-NT [15]   014. Median furrow of tympanic bulla for tympanohyal (ordered).----Absent (0); median notch on posterior rim of bulla (1);
-NT [16]   .... prominent anteroposteriorly ori- ented furrow splits the ventral surface of the bulla into medial and lateral halves (2) (Geisler and Luo, 1998).
-NT [17]   015. Articulation of ectotympanic bulla to squamosal (ordered).----Broad articulation with medial base of postglenoid process (0); circular facet on short entoglenoid process (1); 
-NT [18]   .... contact with a crest of the entoglenoid process (2); 
-NT [19]   .... contact absent(3)(Geisler and Luo, 1998).
-NT [20]   016. Contact between exoccipital and ectotympanic bulla.---- Absent (0); present (1) (Geisler and Luo, 1998). 
-NT [34]   028. Anterior opening of alisphenoid canal.----Within sphe- norbital ?ssure, cannot be distinguished from sphe- norbital ?ssure in lateral view (0); posterior to sphe- norbital ?ssure (1) (Novacek, 1982; Thewissen and Domning, 1992). 
-NT [35]   029. Posterior opening of alisphenoid canal.----Wellseparated from foramen ovale (0); within a deep groove or recess with the foramen ovale (1) (de- rived from Zhou et al., 1995). 
-NT [49]   041. Height of mandibular condyle relative to dentition (ordered).----Below level of the dentition (0); even with superior aspect of dentition (1); 
-NT [50]   ....substantially superior to dentition (2). 
-NT [52]   043. Upper incisors.----Present (0); absent (1). 
-NT [53]   044. Premaxillae.----Short with incisors arranged in trans- verse arc (0); elongate, incisors aligned longitu- dinally with intervening diastemata (1) (modi?ed from Prothero et al., 1988; Thewissen, 1994). 
-NT [54]   045. Embrasure pits on palate.----Absent (0); present (1) (modi?ed from Thewissen, 1994).
-NT [55]   046. P1 (ordered).----Absent (0); present, one-rooted (1);
-NT [56]   .... present, two-rooted (2) (Zhou et al., 1995). 
-NT [57]   047. P3 roots.----Three (0); two (1) (Zhou et al., 1995). 
-NT [58]   048. P4 protocone.----Present (0); absent (1) (Thewissen, 1994).
-NT [59]   049. P4 paracone.----Equal or subequal to height of para- cone of M1 (0); greater than twice the height of M1 paracone (1) (Thewissen, 1994). 
-NT [60]   050. P4 metacone.----Absent (0); present (1) (Thewissen, 1994).
-NT [61]   051. Stylar shelf.----Present (0); absent (1). 
-NT [62]   052. M2 metacone (ordered).----Distinct cusp, sub-equal to paracone (0); distinct cusp approximately half the size of the paracone (1);
-NT [63]   .... highly reduced, indistinct from paracone (2) (Zhou et al., 1995). 
-NT [64]   053. M1 parastyle (ordered).---- Absent (0); weak (1); 
-NT [65]   ... mod- erate to strong (2) (O'Leary, 1998a). 
-NT [66]   054. Lingual cingulum on M2 .----Present (0); absent (1) (O'Leary, 1998a). 
-NT [67]   055. Ectocingula.----Present (0); absent (1) (O'Leary, 1998a).
-NT [68]   056. M1 -M2 hypocone.----Absent (0); present (1) (Thewis- sen and Domning, 1992; O'Leary, 1998a). 
-NT [69]   057. Trigon basin (ordered).----Broad (0); somewhat nar- row (1);
-NT [70]   .... very narrow (2) (modi?ed from Thewissen, 1994; O'Leary, 1998). 
-NT [71]   058. Paraconule on M2 .----Absent (0); present (1) (O'Leary, 1998a).
-NT [72]   059. Metaconule on M2 .----Absent(0); present(1) (O'Leary, 1998a).
-NT [73]   060. M3 size (ordered).----Present, larger than M2 (0); present, approximately equal to M2 (1);
-NT [74]   .... present, small, maximum mesiodistal length than < 60% the length of M2 (2);
-NT [75]   .... absent (3) (modi?ed from Zhou et al., 1995).
-NT [78]   063. Lower canine cross-section shape.----Oval (0); triangular (1) (Gentry and Hooker, 1988). 
-NT [79]   064. P1.----Present (0); absent (1) (Zhou et al., 1995). 
-NT [80]   065. P3 metaconid.----Absent (0); present (1) (Thewissen and Domning, 1992). 
-NT [81]   066. P4 metaconid.----Absent (0); present (1) (Thewissen and Domning, 1992). 
-NT [82]   067. Lingual cingulid on lower molars.----Poorly de?ned or absent (0); continuous from mesial to distal extreme (1) (O'Leary, 1998a). 
-NT [83]   068. M1 paraconid.----Present (0); absent (1) (derived from O'Leary, 1998a).
-NT [84]   069. M1 paraconid/paracristid position.----Cusp lingual or paracristid winding lingually (or both) (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorlydeveloped (1) (derivedfrom O'Leary, 1998a). 
-NT [85]   070. M2 paraconid.----Present (0); absent (1) (derived from O'Leary, 1998a). 
-NT [86]   071. M2 paraconid/paracristid position.----Cusp lingual or paracristid (or both) winding lingually (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorly developed (1) (O'Leary, 1998a). 
-NT [87]   072. M3 paraconid.----Present (0); absent (1) (O'Leary, 1998a).
-NT [88]   073. M3 paraconid/paracristid position.----Cusp lingual or paracristid winding lingually (or both) (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorly developed (1) (O'Leary, 1998a). 
-NT [89]   074. M1 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (Thewissen, 1994; Zhou et al., 1995).
-NT [90]   075. M2 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (modi?ed from Zhou et al., 1995).
-NT [91]   076. M3 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (modi?ed from Zhou et al., 1995).
-NT [92]   077. M1 -M2 hypoconulid.----Absent (0); present (1) (The- wisen, 1994).
-NT [93]   078. Molar protoconid.----Subequal to height of talonid (0); closer to twice height of talonid or greater (1) (O'Leary, 1998a). 
-NT [120]  101. Third trochanter of femur (ordered).----Present (0); highly reduced (1);
-NT [121]  .... absent(2) (derived fromO'Leary and Rose, 1995b). 
-NT [122]  102. Patellar articular surface on femur.----Wide (0); narrow (1).
-NT [123]  103. Astragalar canal.----Present (0); absent (1) (derived from Shoshani, 1986). 
-NT [124]  104. Navicular facet of astragalus (ordered) (see Fig. 1).---- Convex (0); saddle-shaped(1);
-NT [125]  .... trochleated (2)(modi?ed from Thewissen and Domning, 1992; O'Leary and Rose, 1995b). 
-NT [126]  105. Sustentacular width.----Narrow, #50% width of the astragalus (0); wide, $70% width of the astragalus (1) (Geisler and Luo, 1998). 
-NT [127]  106. Contact of distal astragalus with cuboid (ordered) (see Fig. 1).----Absent (0); present but small, contact # 30% of the width of the distal articular surface (1); 
-NT [128]  .... present and large, contact $40% of the articular surface (2) (O'Leary and Rose, 1995b; Geisler and Luo, 1998).
-NT [129]  107. Lateral process of astragalus.----Present (0); absent (1) (Schaeffer, 1956). 
-NT [130]  108. Pes(ordered).----Mesaxonic, axis of symmetry of foot passes along center of digitthree (0); paraxonic, axis lies between digits three and four (1);
-NT [131]  ....  mesaxonic, axis passes along center of digit four (2) (derived from Gingerich et al., 1990; Thewissen, 1994; our interpretation of this character differs from that of these previous authors).
-NT [132]  109. Proximal astragalus (ordered).----Nearly flat to slightly concave (0); grooved, depth of trochlea < 25% width of trochlea (1);
-NT [133]  ....  deeply grooved, depth of trochlea > 30% width of trochlea (2) (derived from Schaeffer, 1947; O'Leary and Rose, 1995b). 
-NT [134]  110. Cuboid and navicular.----Unfused (0); fused (1) (Webb and Taylor, 1980).
+X [1]    001. Subarcuate fossa.----Present (0); absent (1) (Novacek, 1986).
+X [2]    002. Shape of tegmen tympani (ordered).----Uninflated, forms thin lamina lateral to facial nerve canal (0); inflated, forms barrel-shaped ossi?cation lateral to the facial nerve canal (1); 
+X [3]    .... hyperinflated, transverse width greater than or equal to width of promontorium  (2) (modi?ed from Cifelli, 1982; Geisler and Luo, 1998).
+X [4]    003. Anterior process of petrosal.----Absent (0); present, anterior edge of tegmen tympani extending far ante- rior to edge of pars cochlearis (1) (Luo and Marsh, 1996; Geisler and Luo, 1998). 
+X [5]    004. Fossa fortensortympanimuscle.----Shallow, anteroposteriorly elongate fossa (0); circular pit, no groove (1); circular pit with deep tubular anterior groove (2); long narrow groove between tegmen tympani and promontorium (3) (Luo and Marsh, 1996; Geisler and Luo, 1998). 
+X [6]    005. Transpromontorial sulcus for internal carotid artery.---- Present, forms anteroposterior groove on promontorium, medial to fenestrae rotunda and ovalis (0); absent (1) (Cifelli, 1982; Thewissen and Domning, 1992).
+X [7]    006. Sulcus on promontoriumfor proximalstapedial artery.---- Present, forms a groove that branches from the transpromontorial sulcus anteromedial to the fen- estra rotunda and extends to the medial edge of the fenestra vestibuli(0); absent (1) (Cifelli, 1982; Wible, 1987; Thewissen and Domning, 1992). 
+X [8]    007. Mastoid process of petrosal.----Exposed externally on posterior face of braincase as a triangle between lambdoidal crest of the squamosal dorsolaterally, the exoccipital ventrally, and the supraoccipital me- dially (0); not exposed posteriorly, lambdoidal crest of squamosal in continuous contact with exoccipital and supraoccipital (1). 
+X [9]    008. Stylomastoid foramen.----Complete, ectotympanic contacts tympanohyal laterally and petrosal me- dially, in some cases ectotympanic separated from petrosal by a narrow (< 1 mm) ?ssure (0); incom- plete, ectotympanic does not contact the petrosal either anterior or posterior to the fenestra rotunda, medial side of foramen open (1) (modi?ed from Geisler and Luo, 1998). 
+X [10]   009. Facial nerve sulcus distal to stylomastoid foramen.---- Absent (0); present, anterior wall of sulcus formed by squamosal (1); present, anterior wall formed by mastoid process of petrosal(2); anterior wallformed by meatal tube of ectotympanic (3) (modi?ed from Geisler and Luo, 1996, 1998). Some taxa coded as polymorphic for this character are not truly poly- morphic, and the character state is simply ambigu- ous, but certain states can be eliminated from the list of possibilities. 
+X [11]   010. Articulation of pars cochlearis with basisphenoid/basioc- cipital.----Present (0); absent (1) (Thewissen and Domning, 1992). 
+X [12]   011. Ectotympanic.----Simple ring, no bulla formation (0); medial edge expanded into bulla (1) (derived from Novacek, 1977; MacPhee, 1981; Geisler and Luo, 1998).
+N [13]   012. Pachyosteosclerotic involucrum of bulla.----Absent (0); present (1) (Thewissen, 1994). 
+N [14]   013. Lateral furrow of tympanic bulla.----Absent(0);present, forms a groove on the lateral surface of the ectotympanic bulla anterior to the base of the sigmoid process or meatal tube (1) (Geisler and Luo, 1998). 
+N [15]   014. Median furrow of tympanic bulla for tympanohyal (ordered).----Absent (0); median notch on posterior rim of bulla (1);
+N [16]   .... prominent anteroposteriorly ori- ented furrow splits the ventral surface of the bulla into medial and lateral halves (2) (Geisler and Luo, 1998).
+N [17]   015. Articulation of ectotympanic bulla to squamosal (ordered).----Broad articulation with medial base of postglenoid process (0); circular facet on short entoglenoid process (1); 
+N [18]   .... contact with a crest of the entoglenoid process (2); 
+N [19]   .... contact absent(3)(Geisler and Luo, 1998).
+N [20]   016. Contact between exoccipital and ectotympanic bulla.---- Absent (0); present (1) (Geisler and Luo, 1998). 
+X [21]   017. Sigmoid process(= anterior crus of tympanic ring).---- Absent (0); present, forms transverse plate that projects laterally from the anterior crus of the ectotympanic ring and forms the anterior wall of the external auditory meatus (1) (modi?ed from Thewis- sen, 1994; Geisler and Luo, 1998). 
+X [22]   018. Sigmoid process shape.----Thin and transverse plate (0); broad and flaring, base of the sigmoid process forms dorsoventral ridge on lateral surface of ectotympanic bulla (1) (Geisler and Luo, 1998). 
+X [23]   019. Ectotympanic part of the meatal tube (ordered).---- Absent (0); present but short, length of tube < 30% maximum width of bulla (1);
+X [24]   .... present and long, length > 60% maximum width of bulla (2) (Geisler and Luo, 1998). 
+X [25]   020. Squamosal portion of external auditory meatus.---- Absent or shallow, depth < 25% of transverse length (0); deep groove, depth > 35% of transverse length (1).
+X [26]   021. Basioccipital crests (falcate processes).----Absent (0); present, forming ventrolaterally flaring basioccipital processes (1) (derived from Barnes, 1984; modi- ?ed from Thewissen, 1994). 
+X [27]   022. Internal carotid foramen.----Absent or confluent with the piriform fenestra (0); present at basisphe- noid/basioccipital suture with lateral wall of fora- men formed by both these bones and thus sepa- rated from the piriform fenestra (1) (Geisler and Luo, 1998).
+X [28]   023. Postglenoid foramen (ordered).----Present, enclosed by squamosal, immediately posterior to post- glenoid process (0); present, medial to pet- rosal/squamosal suture (if bulla present, a sec- ondary ventral opening between bulla and squamosal may form) (1);
+X [29]   .... absent (2) (Novacek, 1986; Geisler and Luo, 1998). 
+X [30]   024. Foramen for ramus superior of stapedial artery.---- Present (0); absent (1) (modi?ed from Novacek, 1986; Thewissen and Domning, 1992). 
+X [31]   025. Position of foramen for ramus superior of stapedial artery.----In petrosal/squamosal suture on dorsolat- eral edge of epitympanic recesss (0); anterolateral to epitympanic recess (1) (modi?ed from Geisler and Luo, 1998). Cannotbescored fortaxa thatlack a fora- men for the ramus superior of the stapedial artery. 
+X [32]   026. Foramen ovale.----Anterior to glenoid fossa, posterior wall formed by alisphenoid (0); medial to glenoid fossa, posterior wall formed by alisphenoid (1); me- dial to glenoid fossa, posterior wall formed by pet- rosal (2); posterior to glenoid fossa (3). 
+X [33]   027. Alisphenoid canal (alar canal).----Absent (0); present (1) (Novacek, 1986; Thewissen and Domning, 1992). 
+T [34]   028. Anterior opening of alisphenoid canal.----Within sphe- norbital ?ssure, cannot be distinguished from sphe- norbital ?ssure in lateral view (0); posterior to sphe- norbital ?ssure (1) (Novacek, 1982; Thewissen and Domning, 1992). 
+T [35]   029. Posterior opening of alisphenoid canal.----Wellseparated from foramen ovale (0); within a deep groove or recess with the foramen ovale (1) (de- rived from Zhou et al., 1995). 
+X [36]   030. Foramen rotundum.----Absent, maxillary division of trigeminal nerve exits skull through sphenorbital fissure (0); present (1) (Novacek, 1986; Thewissen and Domning, 1992). 
+X [37]   031. Mastoid foramen.----Present, skull in posterior view (0); absent (1) (de?nition of structure follows MacPhee, 1994). 
+X [38]   032. Post-temporal canal (for arteria diploetica magna, also called pericranial foramen).----Present, occurs at petrosal/squamosal suture with skull in posterior view, the canal continuing within the pet- rosal/squamosal suture (0); absent (1) (Wible, 1990; MacPhee, 1994). 
+X [39]   033. Preglenoid process.----Absent(0);present, forms trans- verse, ventrally projecting ridge at anterior edge of glenoid fossa (1) (modi?ed from Thewissen, 1994). Cranial Characters
+X [40]   034. Supraorbital process.----Absent,region over orbit does not project laterally from sagittal plane (0); present, laterally elongate and tabular (1) (derived from Barnes, 1984). 
+X [41]   035. Postorbital bar (ordered).----Absent (0); present and almost complete (1);
+X [42]   .... present and complete (2). 
+X [43]   036. Contact of frontal and maxilla in orbit.----Absent (0); present (1). 
+X [44]   037. Lacrimal tubercle.----Absent (0); present, situated on anterior edge of orbit adjacent to the lacrimal fora- men (1) (Novacek, 1986). 
+X [45]   038. Palatine ?ssure.----Small (0); large (1). 
+X [46]   039. Posterior margin of external nares (ordered).---- Anteriorto or overthe canines, or at anterior edge of premaxilla if canine not present (0); between P1 and P2 (1);
+X [47]   .... posterior to P2 (2) (Geisler and Luo, 1998). 
+X [48]   040. Mandibular foramen.----Small, maximum height of opening #25% the height of the mandible at M3 (0); large, continuous with a large posterior fossa, maximum height $50% the height of the mandible at M3 (1) (modified from Thewissen, 1994; Geisler and Luo, 1998).
+T [49]   041. Height of mandibular condyle relative to dentition (ordered).----Below level of the dentition (0); even with superior aspect of dentition (1); 
+T [50]   ....substantially superior to dentition (2). 
+X [51]   042. Angle of dentary.----Distal end at same level as ventral edge of dentary below molars (0); forms distinct flange that projects posteroventrally well below ventral edge of dentary (1) (modi?ed from Gentry and Hooker, 1988). 
+N [52]   043. Upper incisors.----Present (0); absent (1). 
+T [53]   044. Premaxillae.----Short with incisors arranged in trans- verse arc (0); elongate, incisors aligned longitu- dinally with intervening diastemata (1) (modi?ed from Prothero et al., 1988; Thewissen, 1994). 
+N [54]   045. Embrasure pits on palate.----Absent (0); present (1) (modi?ed from Thewissen, 1994).
+N [55]   046. P1 (ordered).----Absent (0); present, one-rooted (1);
+T [56]   .... present, two-rooted (2) (Zhou et al., 1995). 
+T [57]   047. P3 roots.----Three (0); two (1) (Zhou et al., 1995). 
+T [58]   048. P4 protocone.----Present (0); absent (1) (Thewissen, 1994).
+T [59]   049. P4 paracone.----Equal or subequal to height of para- cone of M1 (0); greater than twice the height of M1 paracone (1) (Thewissen, 1994). 
+T [60]   050. P4 metacone.----Absent (0); present (1) (Thewissen, 1994).
+I [61]   051. Stylar shelf.----Present (0); absent (1). 
+T [62]   052. M2 metacone (ordered).----Distinct cusp, sub-equal to paracone (0); distinct cusp approximately half the size of the paracone (1);
+N [63]   .... highly reduced, indistinct from paracone (2) (Zhou et al., 1995). 
+N [64]   053. M1 parastyle (ordered).---- Absent (0); weak (1); 
+N [65]   ... mod- erate to strong (2) (O'Leary, 1998a). 
+I [66]   054. Lingual cingulum on M2 .----Present (0); absent (1) (O'Leary, 1998a). 
+I [67]   055. Ectocingula.----Present (0); absent (1) (O'Leary, 1998a).
+N [68]   056. M1 -M2 hypocone.----Absent (0); present (1) (Thewis- sen and Domning, 1992; O'Leary, 1998a). 
+T [69]   057. Trigon basin (ordered).----Broad (0); somewhat nar- row (1);
+T [70]   .... very narrow (2) (modified from Thewissen, 1994; O'Leary, 1998). 
+N [71]   058. Paraconule on M2 .----Absent (0); present (1) (O'Leary, 1998a).
+N [72]   059. Metaconule on M2 .----Absent(0); present(1) (O'Leary, 1998a).
+I [73]   060. M3 size (ordered).----Present, larger than M2 (0); present, approximately equal to M2 (1);
+N [74]   .... present, small, maximum mesiodistal length than < 60% the length of M2 (2);
+N [75]   .... absent (3) (modi?ed from Zhou et al., 1995).
+X [76]   061. Lower canines.----Approximately twice as large as in- cisors or larger (0); subequal in size to incisors, well separated from postcanine teeth (1). 
+X [77]   062. Lower incisors.----Small and vertical (0); tusk-like (1). 
+T [78]   063. Lower canine cross-section shape.----Oval (0); triangular (1) (Gentry and Hooker, 1988). 
+N [79]   064. P1.----Present (0); absent (1) (Zhou et al., 1995). [Assume that loss is secondary]
+N [80]   065. P3 metaconid.----Absent (0); present (1) (Thewissen and Domning, 1992). 
+N [81]   066. P4 metaconid.----Absent (0); present (1) (Thewissen and Domning, 1992). 
+N [82]   067. Lingual cingulid on lower molars.----Poorly de?ned or absent (0); continuous from mesial to distal extreme (1) (O'Leary, 1998a). 
+N [83]   068. M1 paraconid.----Present (0); absent (1) (derived from O'Leary, 1998a).
+T [84]   069. M1 paraconid/paracristid position.----Cusp lingual or paracristid winding lingually (or both) (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorlydeveloped (1) (derivedfrom O'Leary, 1998a). 
+N [85]   070. M2 paraconid.----Present (0); absent (1) (derived from O'Leary, 1998a). 
+T [86]   071. M2 paraconid/paracristid position.----Cusp lingual or paracristid (or both) winding lingually (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorly developed (1) (O'Leary, 1998a). 
+N [87]   072. M3 paraconid.----Present (0); absent (1) (O'Leary, 1998a).
+T [88]   073. M3 paraconid/paracristid position.----Cusp lingual or paracristid winding lingually (or both) (0); cusp anterior or paracristid (or both) straight mesiodistally, sometimes poorly developed (1) (O'Leary, 1998a). 
+N [89]   074. M1 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (Thewissen, 1994; Zhou et al., 1995).
+N [90]   075. M2 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (modi?ed from Zhou et al., 1995).
+N [91]   076. M3 metaconid.----Present, forms distinct cusp (0); absent or occasionally present as swelling on lingual side of protoconid (1) (modi?ed from Zhou et al., 1995).
+N [92]   077. M1 -M2 hypoconulid.----Absent (0); present (1) (The- wisen, 1994).
+T [93]   078. Molar protoconid.----Subequal to height of talonid (0); closer to twice height of talonid or greater (1) (O'Leary, 1998a). 
+X [94]   079. Protoloph.----Absent (0); present (1). 
+X [95]   080. Metaloph.----Absent (0); present (1). 
+X [96]   081. Metalophid formation on anterior aspect of lower teeth (between protoconid and metaconid).----Absent (0); present (1). 
+X [97]   082. Hypolophid formation on posterior aspect of lower teeth (between entoconid and hypoconid).----Absent (0); present (1) (Thewissen and Domning, 1992). 
+X [98]   083. Reentrant grooves.----Proximal (0); absent (1); distal (2) (Thewissen, 1994; O'Leary, 1998a). 
+X [99]   084. Molar talonid.----Basined, or slightly basined, hypoconid and entoconid present (0); reduced (1) (modi?ed from Thewissen, 1994).
+X [100]  085. M3 hypoconulid.----Long, protrudes as separate distal lobe (0); short, does not protrude substantially beyond rest of talonid (1); absent (2) (Thewissen, 1994).
+X [101]  086. dp4 .----Resembles M1 (0); six-cusped, additional neomorphic cusp on paracristid (1) (Gentry and Hooker, 1988; Luckett and Hong, 1998). 
+X [102]  087. Elongate shearing facets on lower molars extending below the gum line.----Absent (0); present (1). Postcranial Characters
+X [103]  088. Cervical vertebrae.----Long, length of centrum greater than or equal to the centra of the anterior thoracics (0); short, length shorter than centra of anterior tho- racics (1); very long (2) (derived from Gingerich et al., 1995).
+X [104]  089. Articulation between sacral vertebrae and ilium of pelvis (ordered).----Broad area of articulation between pelvis and S1 and sometimes S2 (0); narrow articulation of pelvis with end of transverse process of S1 (1);
+X [105]  .... articulation absent (2) (Geisler and Luo, 1998).
+X [106]  090. Number of sacral vertebrae (ordered).----One (0); two or three (1); 
+X [107]  .... four (2);
+X [108]  .... five or six (3); cannot be scored for taxa that lack an articulation between the verte- bral column and the ilium (Thewissen and Domning, 1992; Gingerich et al., 1995). 
+X [109]  091. Scapular spine.----Bears large acromion pro- cess that overhangs glenoid fossa (0); scapular spine with acromion process small or absent, does not encroach upon glenoid fossa (1); acromion process large, directed anteriorly and does not encroach upon the glenoid fossa (2) (O'Leary and Rose, 1995b; Geisler and Luo, 1998).
+X [110]  092. Entepicondyle of humerus.----Wide, $50% width of ul- nar and radial articular facets (0); narrow, #25% width of ulnar and radial articular facets (1) (de- rived from O'Leary and Rose, 1995b; Geisler and Luo, 1998).
+X [111]  093. Entepicondylar foramen.----Present (0); absent (1) (Thewissen and Domning, 1992). 
+X [112]  094. Length of olecranon process.----Short, < 10% total ul- nar length (0); long, > 20% total ulnar length (1) (derived from O'Leary and Rose, 1995b). 
+X [113]  095. Olecranon fossa.----Shallow (0); deep, sometimes perforate (1) (modi?ed from O'Leary and Rose, 1995b). 
+X [114]  096. Proximalend of radius.----Single fossa fortrochlea and capitulum of humerus (0); two fossae, one forthe ca- pitulum and one for the medial edge of trochlea (1); three fossae, same as (1) but with additional fossa for the lateral lip of the humeral articular surface (2) (O'Leary and Rose, 1995b; Geisler and Luo, 1998). 
+X [115]  097. Distal articular surface of radius.----Single concave fossa (0); split into scaphoid and lunate fossae (1); convex to flat, distinct facets (2) (derived from O'Leary and Rose, 1995b).
+X [116]  098. Centrale.----Present (0); (1) absent (Thewissen, 1994). 
+X [117]  099. Manus.----Mesaxonic, axis of symmetry passes along center of digit 3 (0); paraxonic, axis of symmetry passes between digits three and four (1). 
+X [118]  100. Height of greater trochanter of femur (ordered).---- Inferiorto head of femur(0); approximately equal to head of femur (1); 
+X [119]  .... above head of femur (2) (derived from O'Leary and Rose, 1995b). 
+N [120]  101. Third trochanter of femur (ordered).----Present (0); highly reduced (1);
+N [121]  .... absent(2) (derived from O'Leary and Rose, 1995b). 
+T [122]  102. Patellar articular surface on femur.----Wide (0); narrow (1).
+I [123]  103. Astragalar canal.----Present (0); absent (1) (derived from Shoshani, 1986). 
+T [124]  104. Navicular facet of astragalus (ordered) (see Fig. 1).---- Convex (0); saddle-shaped(1);
+T [125]  .... trochleated (2)(modi?ed from Thewissen and Domning, 1992; O'Leary and Rose, 1995b). 
+T [126]  105. Sustentacular width.----Narrow, #50% width of the astragalus (0); wide, $70% width of the astragalus (1) (Geisler and Luo, 1998). 
+N [127]  106. Contact of distal astragalus with cuboid (ordered) (see Fig. 1).----Absent (0); present but small, contact # 30% of the width of the distal articular surface (1); 
+T [128]  .... present and large, contact $40% of the articular surface (2) (O'Leary and Rose, 1995b; Geisler and Luo, 1998).
+I [129]  107. Lateral process of astragalus.----Present (0); absent (1) (Schaeffer, 1956). 
+T [130]  108. Pes(ordered).----Mesaxonic, axis of symmetry of foot passes along center of digitthree (0); paraxonic, axis lies between digits three and four (1);
+T [131]  ....  mesaxonic, axis passes along center of digit four (2) (derived from Gingerich et al., 1990; Thewissen, 1994; our interpretation of this character differs from that of these previous authors).
+T [132]  109. Proximal astragalus (ordered).----Nearly flat to slightly concave (0); grooved, depth of trochlea < 25% width of trochlea (1);
+T [133]  ....  deeply grooved, depth of trochlea > 30% width of trochlea (2) (derived from Schaeffer, 1947; O'Leary and Rose, 1995b). 
+N [134]  110. Cuboid and navicular.----Unfused (0); fused (1) (Webb and Taylor, 1980).
+X [135]  111. Proximal fusion of third and fourth metatarsals.---- Absent (0); present (1). 
+X [136]  112. First metatarsal (ordered).----Unreduced, length > 50% length of third metatarsal (0); reduced, length < 50% length of third metatarsal(1);
+X [137]  ....  highly reduced in form of nodule or small splint or absent (2).
+X [138]  113. Second metatarsal (ordered).----Unreduced, length $50% length of third metatarsal(0); reduced, length #50% length of third metatarsal (1);
+X [139]  ....  highly reduced in form of nodule, small splint or completely absent (2).
+X [140]  114. Fifth metatarsal (ordered).----Unreduced, length $50% length of third metatarsal (0); reduced, length #50% length of third metatarsal (1);
+X [141]  .... highly reduced in form of nodule or small splint or absent (2).
+X [142]  115. Ventral border of distal phalanges.----Curved inferiorly (0); straight (1) (derived from MacLeod and Rose, 1993).
+X [143]  116. Distal phalanges in dorsal view.----Phalanx com- pressed transversely (0); broad transversely, each phalanx bilaterally symmetricalwith central antero- posterior axis (1); broad transversely, each phalanx asymmetrical (2) (derived from MacLeod and Rose, 1993). Soft Tissue Characters
+X [144]  117. Stomach epithelium.----Nonglandular(strati?edsqua- mous epithelium) (0); composite (nonglandular and glandular mucosa) (1); discoglandular (small patches of glandular epithelium surrounded by nonglandular mucosa) (2); glandular (mucosa with glands) (3) (derived from Langer, 1988). 
+X [145]  118. Lumen.----Unilocular (stomach with simple cham- ber only) (0); plurilocular (lumen of stomach sub- divided by folds into two or more chambers) (1) (derived from Langer, 1988). 
+X [146]  119. Diverticulation of stomach lumen (blind tubes or sacs branching from the main gastric lumen).----Absent (0); present (1) (derived from Langer, 1988). 
+X [147]  120. Cavernous tissue of penis.----Abundant (0); sparse (1) (derived from Slijper, 1936; Thewissen, 1994). 
+X [148]  121. Hair.----Abundant to common on body (0); almost completely absent (1) (Gatesy, 1997). 
+X [149]  122. Sebaceous glands.----Present (0); absent (1) (Gatesy, 1997).
+X [150]  123. Primary bronchi of lung.----Two (0); three (1) (Thewis- sen, 1994)
