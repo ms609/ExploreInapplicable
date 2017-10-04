@@ -49,5 +49,6 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft') {
     lines(x[iTrees][convexHull], y[iTrees][convexHull], col=treePalette[i])
   }
   
-  legend(legendPos, legend=paste0(c(tntDirectories, rDirectories), ' (', nTrees, ')'), cex = 1, pch = plotChars, col=treePalette)
+  legend(legendPos, bty='n', legend=paste0(c(tntDirectories, rDirectories), ' (', nTrees, ')'),
+         cex = 0.75, pch = plotChars, col=treePalette)
 }
