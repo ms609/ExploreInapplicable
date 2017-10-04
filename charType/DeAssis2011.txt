@@ -48,4 +48,3 @@ T [47] Size of ventral median cirrus: (0) similar to other cirri; (1) slightly l
 T [48] Position of the anal pore within anal cup: (0) projected on a cone; (1) in level with the anal plate.
 X [49] Mechanism of closing anal pore: (0) exclusively muscular; (1) provided with a ventral valve.
 X [50] Position of anus: (0) terminal; (1) dorsal, to the side of the anal plate; (2) centre of anal plate
-        
