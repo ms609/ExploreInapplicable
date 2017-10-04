@@ -5,7 +5,7 @@ devtools::install_github('ms609/inapplicable')
 require(inapplicable)
 
 inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
-filename <- 'Wortley2006.nex'#inappFiles[2]
+filename <- 'Eklund2004.nex'#inappFiles[2]
 
 rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
 phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
@@ -23,9 +23,9 @@ verbose <- 0
 for (i in 1:15000) {
   started <- Sys.time()
   cat ("\n > Setting maxHits =", maxHits <- sample(maxHitMenu, 1))
-  best <- Ratchet(best, phyData, maxIt=1e+7, maxIter=1.6e+5, maxHits=maxHits, k = 1, verbosity=verbose) # Maxiter of 3e+7 was causing unhappy delays when there was a single best tree at a local optimum.
+  best <- Ratchet(best, phyData, maxIt=1e+7, maxIter=5e+4, maxHits=maxHits, k = 1, verbosity=verbose) # Maxiter of 3e+7 was causing unhappy delays when there was a single best tree at a local optimum.
   secsTaken <- as.numeric(difftime(Sys.time(), started, units='secs'))
-  #verbose <- if (secsTaken > 5) 3 else if (secsTaken > 3) 1 else if (secsTaken < 2) 0 else verbose
+  verbose <- if (secsTaken > 5) 3 else if (secsTaken > 3) 1 else if (secsTaken < 2) 0 else verbose
   plot (best, cex=0.95, main=attr(best, 'pscore'))
   treeScore <- attr(best, 'pscore')
   if (treeScore < bestScore) {
@@ -36,7 +36,7 @@ for (i in 1:15000) {
   resultsFile <- paste0('inapplicable/', filename, '-', treeScore, '.tre')
   write.tree(best, resultsFile, append=file.exists(resultsFile))
   write.table(data.frame(maxHits, secsTaken, filename, treeScore), file="inapplicable/searchTimes.csv", sep=',', col.names=FALSE, row.names=FALSE, append=TRUE)
-  if (bestHits >= 100) break;
   cat ("; found best score", treeScore, "in", secsTaken, 's; hit', bestHits)
+  if (bestHits >= 100) break;
 }
 
