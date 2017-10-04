@@ -1,0 +1,51 @@
+X [1]  Position of prostomium: (0) anterior to peristomium; (1) fused to peristomium.
+X [2]  Shape of prostomium: (0) conical; (1) keel-shaped.
+T [3]  Cephalic keel (prostomium): (0) slightly arched; (1) strongly arched; (2) flat.
+T [4]  Anterior end of the prostomium: (0) narrow; (1) large, mushroom-shaped; (2) large, spade-shaped.
+X [5]  Peristomium: (0) limited to lips; (1) forming the lips and post-prostomial rings.
+X [6]  Nuchal grooves (paired slits): (0) dorso-lateral; (1) dorsal.
+X [7]  Shape of nuchal grooves: (0) curved (elliptical); (1) slightly curved; (2) straight.
+X [8]  Length of nuchal grooves in relation to keel: (0) shorter than keel; (1) of the same length as keel.
+X [9]  Width of nuchal grooves in relation to keel: (0) narrow; (1) wide.
+X [10] Head: (0) cylindrical; (1) flattened, dorsally forming a cephalic plate.
+T [11] Lateral margin of cephalic plate: (0) thin ring; (1) expanded.
+T [12] Dorsal surface of cephalic plate: (0) smooth; (1) with transversal striae.
+T [13] Lateral lobules of cephalic plate: (0) entire; (1) auricular; (2) slightly notched.
+T [14] Latero-posterior surface of cephalic plate: (0) ornamented; (1) smooth.
+X [15] Neurochaetae of first chaetigers: (0) with rostrate uncinus on chaetigers 1–3; (1) with acicular spines on chaetigers 1–3.
+T [16] Number of hooks in chaetigers 1–3: (0) numerous; (1) up to 3 hooks per torus; (2) 3–7 hooks per torus.
+X [17] Notochaetae of anterior chaetigers: (0) capillaries; (1) with acicular spines.
+X [18] Formation of chaetae: (0) from the dorsal to the ventral side; (1) inverted.
+X [19] Number of row of uncini: (0) single; (1) double.
+X [20] Rostrate uncini: (0) with a hood; (1) no hood.
+X [21] Manubrioavicular uncini: (0) with long and curved shaft; (1) shaft very short.
+X [22] Capitium of neurochaetae: (0) with few or vestigial denticules; (1) numerous denticules.
+X [23] Subrostral process of rostrate uncini: (0) with barbules; (1) no barbules.
+X [24] Position of rows of notochaetae: (0) transversal along entire body; (1) longitudinal in posterior half of the body.
+X [25] Notopodial capillary chaetae: (0) smooth limbation; (1) with ornamented limbation.
+X [26] Other types of notopodial chaetae: (0) simple chaetae; (1) chaetae ruffled; (2) helicoidal chaetae.
+X [27] Number of chaetigerous segments: (0) 17–29; (1) from 30 to 70.
+X [28] Chaetiger 1: (0) smooth; (1) with a partial, globose collar; (2) complete, globose collar.
+X [29] Tori: (0) forming a narrow belt; (1) forming a globose belt behind the median segments.
+X [30] Length of median chaetigers: (0) isometric with anterior segments; (1) larger than the anterior segments.
+X [31] Posterior chaetigers: (0) not campanulate; (1) campanulate.
+X [32] Pre-anal segments: (0) numerous achaetigers; (1) small number of achaetigers.
+X [33] Lateral margins of the achaetigerous segments: (0) smooth; (1) with lobules.
+X [34] Length of the pre-anal achaetigers: (0) equal to lengths last chaetigerous segments; (1) decreasing in lengths.
+X [35] Shape of last pre-anal achaetigers: (0) similar to previous segments; (1) two thick rings.
+X [36] Pygidium: (0) conical; (1) flattened, forming a plate.
+T [37] Length of conical pygidium relative to adjacent segments: (0) isometric to last chaetigers; (1) larger than anterior segments.
+T [38] Surface of conical pygidium: (0) smooth; (1) with transversal striae.
+T [39] Color of conical pygidium: (0) unpigmented; (1) numerous dark rings.
+T [40] Disposition of rings: (0) closely spaced; (1) distantly spaced.
+T [41] Shape of posterior portion of conical pygidium: (0) straight; (1) top-shaped.
+T [42] Anal plate: (0) border formed by single ring; (1) border may be present only dorsally (petaloid-shaped); (2) well-developed dorsal ventral borders forming a anal cup.
+T [43] Lateral surface of anal plate: (0) entire; (1) with slits; (2) slits reduced to the borders of the anal cup.
+T [44] Posterior surface of dorsal border: (0) smooth (1) ornamented.
+T [45] Ornamentation of anal cup (ventral and dorsal borders): (0) cirri; (1) crenulations.
+T [46] Disposition of cirri of anal plate: (0) symmetrical; (1) asymmetrical.
+T [47] Size of ventral median cirrus: (0) similar to other cirri; (1) slightly longer than remaining cirri; (2) greatly elongate cirrus.
+T [48] Position of the anal pore within anal cup: (0) projected on a cone; (1) in level with the anal plate.
+X [49] Mechanism of closing anal pore: (0) exclusively muscular; (1) provided with a ventral valve.
+X [50] Position of anus: (0) terminal; (1) dorsal, to the side of the anal plate; (2) centre of anal plate
+        
