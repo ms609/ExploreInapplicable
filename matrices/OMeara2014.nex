@@ -1,8 +1,4 @@
 #NEXUS
-[This is a dataset used in O'Meara and Thompson 2013, and modified from Rougier et al. 2012 [10.1073/pnas.1212997109]. It includes codings for three zalambdodont metatherian taxa, Notoryctes, Naraboryctes and Yalkaparidon. The original codings for Necrolestes and Cronopio are included in the matrix, along with codings which assume metacone zalambdodonty for these taxa (Necrolestes_metacone, Cronopio_maetacone) and uncertain]
-[zalmbdodonty (Necrolestes_uncertain, Cronopio_uncertain). To recreate the analyses from O'Meara and Thompson 2013, only one of these three sets of taxa should bin included in the analyses. A MrBayes block is included with the analysis, though the intial nexus commands will need modification to run in MrBayes]
-[[ MS: I have deleted the METACONE options, leaving the UNCERTAIN]]
-
 BEGIN DATA;
 	DIMENSIONS  NTAX=63 NCHAR=317;
 	FORMAT DATATYPE=STANDARD  SYMBOLS= "0 1 2 3 4 5 9" MISSING=? GAP=- ;
@@ -73,3 +69,9 @@ BEGIN DATA;
     Yalkaparidon					13102-113001110120010000301110?110?{01}???10???1?0000010112?-1??10---1100100000?20100--00--------020----1-10040020212----?10-1---00-0-011101?10?000?220000??1??2????????????????????????????????????????????????????????????0110211011212????111??212-221???0021100?1111?21?????21???11101-?11011?12110???1??1????????????00-0?0
   ;
 END;
+
+begin comment;
+  [This is a dataset used in O'Meara and Thompson 2013, and modified from Rougier et al. 2012 [10.1073/pnas.1212997109]. It includes codings for three zalambdodont metatherian taxa, Notoryctes, Naraboryctes and Yalkaparidon. The original codings for Necrolestes and Cronopio are included in the matrix, along with codings which assume metacone zalambdodonty for these taxa (Necrolestes_metacone, Cronopio_maetacone) and uncertain]
+  [zalmbdodonty (Necrolestes_uncertain, Cronopio_uncertain). To recreate the analyses from O'Meara and Thompson 2013, only one of these three sets of taxa should bin included in the analyses. A MrBayes block is included with the analysis, though the intial nexus commands will need modification to run in MrBayes]
+  [[ MS: I have deleted the METACONE options, leaving the UNCERTAIN]]
+end;

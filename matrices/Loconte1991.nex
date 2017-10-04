@@ -1,5 +1,5 @@
 #NEXUS
-BEGIN data; [Loconte H., & Stevenson D. 1991. Cladistics of the magnoliidae. Cladistics, 7: 267-296.]
+BEGIN data;
   DIMENSIONS NTAX=56 NCHAR=104;
 	FORMAT DATATYPE=Standard SYMBOLS= "0123459" MISSING=? GAP= -;
 	MATRIX
@@ -61,3 +61,7 @@ BEGIN data; [Loconte H., & Stevenson D. 1991. Cladistics of the magnoliidae. Cla
     Winteraceae           {01}000-010{01}0000120103100100{01}10{01}{01}00{01}010{02}0000001{01}01020402030120110000{01}1{01}01101010120000010?101001000000011000
   ;
 END;
+
+begin citation;
+[Loconte H., & Stevenson D. 1991. Cladistics of the magnoliidae. Cladistics, 7: 267-296.]
+end;
