@@ -36,13 +36,16 @@ sub char_template() {
         if ($line =~ /;/) {
           $reading_matrix = 0;
         } else {
-          if ($line =~ /^\s*[A-z_]+\s+([\d\?\-\{\},\[\]\(\)]+)$/) {
+          if ($line =~ /^\s*[A-z_]+\s+([\s\d\?\-\{\},\[\]\(\)]+)$/) {
             $chars = $1;
             $chars =~ s/\{[^\}]+?\}/?/g;
             $chars =~ s/\([^\)]+?\)/?/g;
             $chars =~ s/\[[^\]]+?\]/?/g;
             $i = 0;
             for my $char (split //, $chars) {
+              if ($char =~ /\s/) {
+                next; # without incrementing $i
+              }
               if ($char eq '-') {
                 $char_is_inapp[$i] = 1;
               } elsif ($char_is_inapp[$i] != 1) {

@@ -52,7 +52,8 @@ sub char_template() {
           print $_ $1;
         }
         $taxon_name = $1;
-        my @tokens = $2 =~ /\{[^\}]+\}|[^\{]/g;
+        my @tokens = $2 =~ /\s*\{[^\}]+\}|[^\{]/g;
+        @tokens = map {$_ =~ s/\s+//; $_} @tokens; # Remove whitespace
         for (my $i = 0; $i < scalar(@tokens); $i++) {
           if ($tokens[$i] eq '-' && (substr $chartype[$i], 0, 1) =~ /([INT])/) {
             if ($1 eq 'N') { # Neomorphic character
