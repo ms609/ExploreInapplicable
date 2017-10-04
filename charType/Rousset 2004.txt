@@ -1,0 +1,107 @@
+X [1]   Prostomium: distinct 0; fused to peristomium 1; frontal edge fused to peristomium 2.
+X [2]   Shape of prostomium: lobed-ridge-shaped 0; hood-like flattened 1; shovel-shaped 2; limited to palps 3; lobes 4.
+X [3]   Peristomium: lips only 0; ring or rings 1; extended upper and lower lips 2.
+NT [4]   Peristomial rings: one ring 0; two rings 1.
+NT [5]   Margin of anterior peristomial ring: low external 0; ventral as triangular lobe 1.
+NT [6]   Peristomial ring: smooth 0; with collar 1.
+X [7]   Palps: absent 0; present 1.
+NT [8]   Appearance of palps: sensory ventral 0; grooved 1.
+NT [9]   Origin of palps: prostomial 0; peristomial 1.
+NT [10]  Adult location of palps: outside mouth 0; inside mouth 1.
+NT [11]  Contractibility of palps: minimal 0; extensive 1.
+NT [12]  Prostomial palps: paired 0; multiple 1; crown 2.
+NT [13]  Radiolar lobes: separated 0; dorsally fused 1.
+NT [14]  Radiole fusion: separate 0; with palmate membrane 1.
+NT [15]  Radiolar flanges: absent 0; present 1.
+NT [16]  Radiolar skeleton: absent 0; present 1.
+NT [17]  Parallel lamellae: absent 0; present 1.
+NT [18]  Peristomial palps: paired 0; single 1; multiple 2.
+NT [19]  Peristomial palp pinnules: absent 0; present 1.
+NT [20]  Peristomial palp pinnules: multicelled 0; single-celled 1.
+NT [21]  Fused multiple peristomial palps: absent 0; present 1.
+NT [22]  Obturaculum: absent 0; present 1.
+NT [23]  Obturaculum size: short 0; long 1.
+NT [24]  Muscular arrangement in obturaculum: parasagittal 0; frontal 1.
+NT [25]  Dorsal groove in the obturaculum: grooved 0; ridged 1.
+X [26]  Retractable head: absent 0; present 1.
+X [27]  Structure of first segment: dorsally limited 0; fused to head 1; elongate 2; similar to following 3.
+X [28]  Segment 2 forming elongate trunk: absent 0; present 1.
+X [29]  Metameric papillae on segment 2: absent 0; present 1.
+X [30]  Girdle on segment 2: absent 0; present 1.
+NT [31]  Uncinal girdle on segment 2: median 0; posterior 1.
+X [32]  Papillae on posterior part of segment 2: absent 0; present 1.
+NT [33]  Arrangement of papillae on posterior part of segment 2: line or rows 0; scattered 1.
+X [34]  Vestimentum: absent 0; present 1.
+X [35]  Frenulum: absent 0; present as continuous ridge 1; scattered plaques only
+NT [36]  Diaphragm with distinct external groove: absent 0; present 1.
+X [37]  Lateral lobes on anterior segments: absent 0; present 1.
+X [38]  Thoracic membrane on anterior segments: absent 0; present 1.
+X [39]  Ventral glandular area on anterior segments: absent 0; present 1.
+NT [40]  Shape of ventral glandular area on anterior segments: ventral central pads 0; ventral annullae 1.
+X [41]  Epidermal papillae: ventral central pads 0; ventral anullae 1.
+X [42]  Building organ: absent 0; present 1.
+X [43]  Notochaetae on segment 1: absent 0; present 1.
+X [44]  Notochaetae on segment 2: absent 0; present 1.
+X [45]  Notochaetae on segment 3: absent 0; present 1.
+X [46]  Notochaetae on segment 4: absent 0; present 1.
+X [47]  Neurochaetae on segment 1: absent 0; present 1.
+X [48]  Neurochaetae on segment 2: absent 0; present 1.
+X [49]  Neurochaetae on segment 3: absent 0; present 1.
+X [50]  Neurochaetae on segment 4: absent 0; present 1.
+X [51]  Neurochaetae on segment 5: absent 0; present 1.
+X [52]  Neurochaetae on segment 6: absent 0; present 1.
+X [53]  Neurochaetae on segment 7: absent 0; present 1.
+X [54]  Neurochaetae on segment 8: absent 0; present 1.
+X [55]  Branchiae: absent 0; present 1.
+NT [56]  Shape of branchiae: simple filaments 0; branching numerous lamellae 1.
+NT [57]  Arrangement of branchiae: segmentally 0; grouped on single segment 1.
+NT [58]  Branchiae on segment 1: absent 0; present 1.
+NT [59]  Branchiae on segment 2: absent 0; present 1.
+NT [60]  Branchiae on segment 3: absent 0; present 1.
+NT [61]  Branchiae on segment 4: absent 0; present 1.
+NT [62]  Branchiae on segment 5: absent 0; present 1.
+X [63]  Chaetal inversion: absent 0; present 1.
+X [64]  Parapodia: projecting neuropodia 0; similar rami 1; noto- and neuropodia differing; none 2.
+NT [65]  Anterior neuropodia segment 2–8: short, truncate cylinders 0; low ridges or pads 1; tori 2; with lobes or lamellae 3; chaetae from body wall 4.
+X [66]  Posterior neuropodia: short, truncate cylinders 0; low ridges or pads 1; tori 2; with lobes or lamellae 3; straight from body wall 4.
+X [67]  Dorsal half of posterior body segments: with parapodia and chaetae 0; smooth 1.
+X [68]  Hooks/ uncini: absent 0; present 1.
+NT [69]  Arrangement of hooks/ uncini: single row 0; two rows 1; dense fields 2.
+NT [70]  Hook projection: projecting beyond tip of parapodia 0; low 1.
+NT [71]  Capitium: absent 0; present 1.
+NT [72]  Organization of capitium: single column 0; in two or more columns 1; arched rows over rostrum 2; bidentate 3.
+NT [73]  Rostrum: absent 0; present 1.
+NT [74]  Size of rostrum: small tooth 0; large fang 1.
+NT [75]  Subrostrum (breast of hooks/ uncini): absent 0; present 1.
+NT [76]  Size of breast of subrostrum: extending less than capitium or rostrum 0; extending further than capitium or rostrum 1.
+NT [77]  Subrostral process of hooks/ uncini: absent 0; present 1.
+NT [78]  Subrostral process of hooks/ uncini. appendix for muscle attachment 0; teeth in same direction as capitium teeth 1; teeth oppose capitium teeth 2.
+NT [79]  Manubrium of hooks/ uncini: absent 0; present 1.
+NT [80]  Length manubrium of hooks/ uncini: shorter than remainder of hook / uncinus 0; longer than remainder of hook / uncinus 1.
+NT [81]  Uncinal hook forms: hooks only 0; found on some segments 1.
+NT [82]  Hoods of hooks/ uncini protection: absent 0; present 1.
+X [83]  Chaetae in posterior segments: mixed capillaries or spines 0; hooks/ uncini only in notopodial position 1; hooks/ uncini in noto- and neuropodial positions 2; hooks/ uncini only in neuropodial position 3.
+NT [84]  Companion chaetae: absent 0; present 1.
+X [85]  Notopodial spines: absent 0; present 1.
+NT [86]  Notopodial spines: along major part of body 0; projecting forward as paleae 1; in few anterior segments only 2.
+X [87]  Caudal region: absent 0; present 1.
+X [88]  Opisthosoma: absent 0; present 1.
+NT [89]  Length opisthosoma: short 0; long 1.
+NT [90]  Opisthosomal chaetae: parapodial 0; single long rows 1.
+X [91]  Inverted faecal groove: absent 0; present 1.
+X [92]  Gular membrane: absent 0; present 1.
+X [93]  Subdermal intraepidermal nerve cord: absent 0; present 1.
+X [94]  Lateral organs: absent 0; present 1.
+X [95]  Mouth: axial proboscis 0; simple tube 1; ventral buccal organ 2.
+X [96]  Gut: straight 0; looped 1.
+X [97]  Occluded gut: absent 0; present 1.
+X [98]  Anterior segmental organs: not differentiated from rest 0; very enlarged pair 1; absent 2; excretory series 3.
+NT [99]  Single anterior pair of nephridia: two openings 0; single opening 1.
+X [100] Genital papillae: none apparent 0; on chaetiger 5–6 1.
+X [101] Heart bodies: absent 0; present 1.
+X [102] Tube: absent 0; present 1.
+NT [103] Tube construction: sand and or mucus 0; chitin protein complex 1; calcareous 2.
+NT [104] Tube attachment to substrate: absent 0; present 1.
+X [105] Sperm packaging: absent 0; present 1.
+NT [106] Sperm packaging: spermatophores 0; spermatozeugmata 1.
+X [107] Larvae: planktotrophic trochophore 0; lecithotrophic trochophore 1; mitraria 2.

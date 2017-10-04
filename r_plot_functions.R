@@ -34,12 +34,12 @@ RFDistances <- function(treeList) {
   distances
 }
 
-PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft') {
+PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   x <- pcs$vectors[, 1]
   y <- pcs$vectors[, 2]
   plot(x, y, type = "p", xlab = "", ylab = "",
-       axes = FALSE, main = paste(nexusName, "MDS tree space"), col=treeCol, pch=treePCh)
-  
+       axes = FALSE, col=treeCol, pch=treePCh)
+  title(main = mainTitle, cex.main=0.81)
   # Plot convex hulls
   for (i in seq_along(nTrees)) {
     firstTree = if (i == 1) 1 else cumsum(nTrees)[i-1] + 1
