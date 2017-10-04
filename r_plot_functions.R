@@ -1,7 +1,9 @@
+if (!require('ape')) install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
 #devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
 library(phangorn)
 devtools::install_github('ms609/inapplicable')
 require(inapplicable)
+if (!require(rtqdist)) install # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73",
                          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
@@ -32,6 +34,12 @@ RFDistances <- function(treeList) {
   distances[upper.tri(distances)] <- distTri
   distances[lower.tri(distances)] <- t(distances)[lower.tri(distances)] # Hat tip https://stackoverflow.com/questions/18165320/creating-a-symmetric-matrix-in-r
   distances
+}
+
+QuartetDistances <- function (treeList) {
+  if (class(treeList) == 'list') class(treeList) <- 'multiPhylo'
+  write.tree(treeList, file='~temp.trees')
+  rtqdist::allPairsQuartetDistance('~temp.trees')
 }
 
 PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
