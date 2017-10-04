@@ -5,11 +5,6 @@ devtools::install_github('ms609/inapplicable')
 require(inapplicable)
 if (!require(rtqdist)) install # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
-cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73",
-                         "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
-treePalette <- cbPalette[c(6, 3, 2, 8)]
-plotChars <- c(2, 1, 3, 4)
-
 readTntTrees <- function (directory, nexusName) {
   unique(read.nexus(paste0(directory, '/', nexusName, '.nextrees', collapse='')))
 }

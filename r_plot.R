@@ -1,20 +1,6 @@
-source('r_plot_functions.R')
-treeLegendPos = list(
-  'Asher2005.nex' = 'topright',
-  'Aria2015' = 'topright',
-  'DeAssis2011.nex' = 'bottomright',
-  'Eklund2004.nex' = 'bottomright',
-  'Griswold1999.nex' = 'bottomright',
-  'OLeary1999.nex' = 'bottomright',
-  'Rousset2004' = 'bottomleft',
-  'Sano2011.nex' = 'bottomleft',
-  'Sansom2010.nex' = 'bottomright',
-  'Wortley2006.nex' = 'bottomleft',
-  'Geisler2001.nex' = 'bottomleft'
-)
+source('rPlot/functions.R')
+source('rPlot/definitions.R')
 
-tntDirectories <- c('ambiguous', 'ambigAbsent', 'extraState')
-rDirectories <- c('inapplicable')
 
 dev.off()
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
@@ -48,13 +34,15 @@ qtDistances <- QuartetDistances(flatTrees);
 
 rfSpace <- pcoa(rfDistances)
 PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-#dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.rf.svg', collapse='')); dev.off()
+dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.rf.svg', collapse='')); dev.off()
+dev.copy(png, file=paste0('treeSpaces/', nexusName, '.rf.png', collapse='')); dev.off()
 qtSpace <- pcoa(qtDistances)
-PlotTreeSpace(qtSpace, nTrees, legendPos='bottomright', qtTitleText)
-#dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.qt.svg', collapse='')); dev.off()
+PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
+dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.qt.svg', collapse='')); dev.off()
+dev.copy(png, file=paste0('treeSpaces/', nexusName, '.qt.png', collapse='')); dev.off()
 
 
-#PlotTreeSpace(pcSpace, nTrees, legendPos=treeLegendPos[[nexusName]], mainTitle=titleText)
+#PlotTreeSpace(pcSpace, nTrees, legendPos=qtLegendPos[[nexusName]], mainTitle=titleText)
 
 # Really we want to something more sophisticated: e.g.
 # HILLIS, D. M., HEATH, T. A., JOHN, K. St. and ANDERSON, F. 2005. Analysis and Visualization of Tree Space. Systematic Biology, 54, 471–482.
