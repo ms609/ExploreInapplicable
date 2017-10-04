@@ -1,0 +1,42 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=23;
+	taxlabels
+		Nemertean
+		Aphroditacea
+		Eunicida
+		Canalipalpata
+		Chrysopetalidae
+		Scolecida
+		Helicoradomenia
+		Chaetoderma
+		Lepidochitona
+		Neopilina
+		Terebratulina
+		Lingula
+		Plumulites
+		Turrilepas
+		Lepidocoleus
+		Canadia
+		Echinochiton
+		Polysacos
+		Acaenoplax
+		Halkieria
+		Wiwaxia
+		Orthrozanclus
+		Odontogriphus
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Nemertean, (((Canadia, (Canalipalpata, (Scolecida, (Eunicida, (Aphroditacea, Chrysopetalidae))))),((Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus))))),(Wiwaxia, Odontogriphus))),((Terebratulina, Lingula),(Plumulites, (Turrilepas, Lepidocoleus)))));
+	tree tree2 = [&U] (Nemertean, (((Canadia, (Canalipalpata, (Scolecida, (Eunicida, (Chrysopetalidae, (Aphroditacea, (Plumulites, (Turrilepas, Lepidocoleus)))))))),(Odontogriphus, (Wiwaxia, (Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus)))))))),(Terebratulina, Lingula)));
+	tree tree3 = [&U] (Nemertean, (((Canadia, (Canalipalpata, ((Eunicida, (Aphroditacea, Chrysopetalidae)),(Scolecida, (Plumulites, (Turrilepas, Lepidocoleus)))))),(Odontogriphus, (Wiwaxia, (Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus)))))))),(Terebratulina, Lingula)));
+	tree tree4 = [&U] (Nemertean, (((Canadia, (Canalipalpata, (Scolecida, (Eunicida, ((Aphroditacea, Chrysopetalidae),(Plumulites, (Turrilepas, Lepidocoleus))))))),(Wiwaxia, (Odontogriphus, (Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus)))))))),(Terebratulina, Lingula)));
+	tree tree5 = [&U] (Nemertean, ((((Canadia, (Canalipalpata, (Scolecida, (Eunicida, (Aphroditacea, Chrysopetalidae))))),(Plumulites, (Turrilepas, Lepidocoleus))),(Odontogriphus, (Wiwaxia, (Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus)))))))),(Terebratulina, Lingula)));
+	tree tree6 = [&U] (Nemertean, (((Canadia, (Canalipalpata, (Scolecida, ((Aphroditacea, Chrysopetalidae),(Eunicida, (Plumulites, (Turrilepas, Lepidocoleus))))))),((Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus))))),(Wiwaxia, Odontogriphus))),(Terebratulina, Lingula)));
+	tree tree7 = [&U] (Nemertean, (((Canadia, (Canalipalpata, (Scolecida, ((Eunicida, (Aphroditacea, Chrysopetalidae)),(Plumulites, (Turrilepas, Lepidocoleus)))))),((Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus))))),(Wiwaxia, Odontogriphus))),(Terebratulina, Lingula)));
+	tree tree8 = [&U] (Nemertean, (((Canadia, ((Canalipalpata, (Scolecida, (Eunicida, (Aphroditacea, Chrysopetalidae)))),(Plumulites, (Turrilepas, Lepidocoleus)))),(Wiwaxia, (Odontogriphus, (Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus)))))))),(Terebratulina, Lingula)));
+	tree tree9 = [&U] (Nemertean, (((Canadia, (Canalipalpata, ((Scolecida, (Eunicida, (Aphroditacea, Chrysopetalidae))),(Plumulites, (Turrilepas, Lepidocoleus))))),((Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus))))),(Wiwaxia, Odontogriphus))),(Terebratulina, Lingula)));
+	tree tree10 = [&U] (Nemertean, (((Canadia, ((Scolecida, (Eunicida, (Aphroditacea, Chrysopetalidae))),(Canalipalpata, (Plumulites, (Turrilepas, Lepidocoleus))))),((Neopilina, ((Helicoradomenia, Chaetoderma),(Acaenoplax, ((Lepidochitona, (Echinochiton, Polysacos)),(Halkieria, Orthrozanclus))))),(Wiwaxia, Odontogriphus))),(Terebratulina, Lingula)));
+
+end;

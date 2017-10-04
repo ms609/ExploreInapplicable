@@ -1,0 +1,74 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=43;
+	taxlabels
+		Acanthoctenus
+		Amaurobius
+		Araneoidea
+		Badumna_candida
+		Badumna_longinquua
+		Baiami
+		Callobius
+		Deinopis
+		Dictyna
+		Eresus
+		Filistata
+		Goeldia
+		Hickmania
+		Hypochilus
+		Kukulcania
+		Lathys
+		Maniho
+		Matachia
+		Megadictyna
+		Menneus
+		Metaltella
+		Neolana
+		Neoramia
+		Nigma
+		Octonoba
+		Oecobius
+		Phyxelida
+		Pimus
+		Psechrus
+		Raecius
+		Retiro
+		Stegodyphus
+		Stiphidion
+		Tengella
+		Thaida
+		Titanoeca
+		Tricholathvs
+		Uduba
+		Uloborus
+		Uroctea
+		Vytfutia
+		Xevioso
+		Zoropsis
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree2 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Raecius, Uduba)))));
+	tree tree3 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree4 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree5 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),(Lathys, (Tricholathvs, (Dictyna, Nigma))))))),(Raecius, Uduba)))));
+	tree tree6 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree7 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree8 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),(Lathys, (Tricholathvs, (Dictyna, Nigma))))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree9 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Raecius, Uduba)))));
+	tree tree10 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),(Lathys, (Tricholathvs, (Dictyna, Nigma))))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree11 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Raecius, Uduba)))));
+	tree tree12 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree13 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree14 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree15 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),((Dictyna, Nigma),(Lathys, Tricholathvs)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree16 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),(Lathys, (Tricholathvs, (Dictyna, Nigma))))))),(Raecius, Uduba)))));
+	tree tree17 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree18 = [&U] (Acanthoctenus, (Zoropsis, (Psechrus, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Raecius, Uduba)))));
+	tree tree19 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree20 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),((((Megadictyna, ((Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion)))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree21 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida)))),((Eresus, Stegodyphus),(Oecobius, Uroctea))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(((Neoramia, (Matachia, ((Badumna_candida, Badumna_longinquua),(Maniho, Metaltella)))),(Neolana, (Baiami, Stiphidion))),(Lathys, (Tricholathvs, (Dictyna, Nigma))))))),(Psechrus, (Raecius, Uduba)))));
+	tree tree22 = [&U] (Acanthoctenus, (Zoropsis, ((Tengella, ((Retiro, (Pimus, (Amaurobius, Callobius))),(((((Megadictyna, (Araneoidea, ((Deinopis, Menneus),(Octonoba, Uloborus)))),(((Eresus, Stegodyphus),(Oecobius, Uroctea)),((Filistata, Kukulcania),(Hypochilus, (Hickmania, Thaida))))),((Goeldia, Titanoeca),(Vytfutia, (Phyxelida, Xevioso)))),(Lathys, (Tricholathvs, (Dictyna, Nigma)))),((Neoramia, ((Matachia, (Badumna_candida, Badumna_longinquua)),(Maniho, Metaltella))),(Neolana, (Baiami, Stiphidion)))))),(Psechrus, (Raecius, Uduba)))));
+
+end;

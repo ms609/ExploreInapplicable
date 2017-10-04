@@ -1,0 +1,81 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=60;
+	taxlabels
+		Mormoops
+		Pteronotus
+		Noctilio
+		Brachyphylla
+		Carollia
+		Rhinophylla
+		Desmodus
+		Diaemus
+		Diphylla
+		Anoura
+		Choeroniscus
+		Choeronycteris
+		Glossophaga
+		Hylonycteris
+		Leptonycteris
+		Lichonycteris
+		Lionycteris
+		Lonchophylla
+		Monophyllus
+		Musonycteris
+		Platalina
+		Scleronycteris
+		Erophylla
+		Phyllonycteris
+		Chrotopterus
+		Glyphonycteris
+		Lampronycteris
+		Lonchorhina
+		Macrophyllum
+		Macrotus
+		Micronycteris_hirsuta
+		Micronycteris_megalotis
+		Micronycteris_minuta
+		Mimon_bennettii
+		Mimon_crenulatum
+		Phylloderma
+		Phyllostomus
+		Tonatia
+		Trachops
+		Trinycteris
+		Vampyrum
+		Ametrida
+		Ardops
+		Ariteus
+		Centurio
+		Chiroderma
+		Ectophylla_alba
+		Ectophylla_macconellii
+		Enchisthenes
+		Phyllops
+		Platyrrhinus
+		Pygoderma
+		Sphaeronycteris
+		Stenoderma
+		Sturnira
+		Uroderma
+		Vampyressa_bidens
+		Vampyressa_nymphaea
+		Vampyressa_pusilla
+		Vampyrodes
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, ((Scleronycteris, (Choeronycteris, (Choeroniscus, Musonycteris))),(Hylonycteris, Lichonycteris)))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree2 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Tonatia, (Trachops, (Chrotopterus, Vampyrum))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, (Scleronycteris, ((Choeronycteris, (Choeroniscus, Musonycteris)),(Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree3 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Tonatia, (Trachops, (Chrotopterus, Vampyrum))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, ((Scleronycteris, (Musonycteris, (Choeroniscus, Choeronycteris))),(Hylonycteris, Lichonycteris)))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree4 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, (Scleronycteris, ((Choeronycteris, (Choeroniscus, Musonycteris)),(Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree5 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Tonatia, (Trachops, (Chrotopterus, Vampyrum))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, (Scleronycteris, ((Musonycteris, (Choeroniscus, Choeronycteris)),(Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree6 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, (Scleronycteris, ((Choeronycteris, (Choeroniscus, Musonycteris)),(Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree7 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, ((Musonycteris, (Choeroniscus, Choeronycteris)),(Scleronycteris, (Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree8 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, ((Choeronycteris, (Choeroniscus, Musonycteris)),(Scleronycteris, (Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree9 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, ((Scleronycteris, (Musonycteris, (Choeroniscus, Choeronycteris))),(Hylonycteris, Lichonycteris)))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree10 = [&U] (Mormoops, (Pteronotus, (Noctilio, ((Brachyphylla, ((((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),(Phylloderma, Phyllostomus))),((((Leptonycteris, (Anoura, ((Musonycteris, (Choeroniscus, Choeronycteris)),(Scleronycteris, (Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris)))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree11 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Tonatia, (Trachops, (Chrotopterus, Vampyrum))),(Mimon_bennettii, (Mimon_crenulatum, (Lonchorhina, Macrophyllum)))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, ((Choeroniscus, (Choeronycteris, Musonycteris)),(Scleronycteris, (Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+	tree tree12 = [&U] (Mormoops, (Pteronotus, (Noctilio, (((Brachyphylla, (((Carollia, Rhinophylla),(Vampyressa_nymphaea, (((Ametrida, (Ectophylla_macconellii, Uroderma)),(Sturnira, (Sphaeronycteris, (Vampyressa_bidens, (Ardops, Ariteus))))),(Pygoderma, ((Ectophylla_alba, (Centurio, Chiroderma)),((Enchisthenes, (Vampyrodes, (, (, (Phyllops, Platyrrhinus))))),(Vampyressa_pusilla, (Stenoderma, )))))))),((((Trachops, (Tonatia, (Chrotopterus, Vampyrum))),((Glyphonycteris, Trinycteris),(Lampronycteris, (Macrotus, (Micronycteris_minuta, (Micronycteris_hirsuta, Micronycteris_megalotis)))))),((Lonchorhina, Macrophyllum),(Mimon_bennettii, Mimon_crenulatum))),(Phylloderma, Phyllostomus)))),((((Leptonycteris, (Anoura, ((Choeronycteris, (Choeroniscus, Musonycteris)),(Scleronycteris, (Hylonycteris, Lichonycteris))))),(Glossophaga, Monophyllus)),(Platalina, (Lionycteris, Lonchophylla))),(Erophylla, Phyllonycteris))),(Diphylla, (Desmodus, Diaemus))))));
+
+end;

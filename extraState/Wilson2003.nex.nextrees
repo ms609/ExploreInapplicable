@@ -1,0 +1,65 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=48;
+	taxlabels
+		Amphisopus_annectans
+		Amphisopus_lintoni
+		Colubotelson_fontinalis
+		Colubotelson_joyneri
+		Colubotelson_searli
+		Crenisopus_acinifer
+		Crenoicus_buntiae
+		Crenoicus_harrisoni
+		Eremisopus_beei
+		Gariwerdeus_beehivensis
+		Gariwerdeus_ingletonensis
+		Gariwerdeus_turretensis
+		Hyperoedesipus_plumosus
+		Hypsimetopus_intrusor
+		Kalliapseudes_obtusifrons
+		Mesacanthotelson_setosus
+		Mesacanthotelson_tasmaniae
+		Mesamphisopus_abbreviatus
+		Mesamphisopus_capensis
+		Metaphreatoicus_affinis
+		Metaphreatoicus_australis
+		Metaphreatoicus_lacustris
+		Metaphreatoicus_magistri
+		Naiopegia_xiphagrostis
+		Neophreatoicus_assimilis
+		Nichollsia_kashiense
+		Notamphisopus_dunedinensis
+		Notamphisopus_flavius
+		Onchotelson_brevicaudatus
+		Onchotelson_spatulatus
+		Paramphisopus_palustris
+		Paraphreatoicus_relictus
+		Peludo_paraliotus
+		Phreatoicoides_gracilis
+		Phreatoicopsis_raffae
+		Phreatoicopsis_terricola
+		Phreatoicus_orarii
+		Phreatoicus_typicus
+		Phreatomerus_latipes
+		Pilbarophreatoicus_platyarthricus
+		Platypyga_subpetrae
+		Protamphisopus_wianamattensis
+		Spelaeogriphus_lepidops
+		Stenasellus_virei
+		Synamphisopus_ambiguus
+		Synamphisopus_doegi
+		Tainisopus_fontinalis
+		Uramphisopus_pearsoni
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, (((((((((Metaphreatoicus_lacustris, ((Colubotelson_fontinalis, (Nichollsia_kashiense, ((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae)))),((Crenisopus_acinifer, (Colubotelson_joyneri, Colubotelson_searli)),((Phreatomerus_latipes, (Crenoicus_buntiae, (Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),(Metaphreatoicus_australis, )),(Phreatoicopsis_terricola, Phreatoicus_orarii)),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Platypyga_subpetrae, (Stenasellus_virei, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree2 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, ((((((((Nichollsia_kashiense, (Colubotelson_fontinalis, ((Crenisopus_acinifer, (Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis))))),((Metaphreatoicus_lacustris, (Metaphreatoicus_australis, (, (Phreatoicopsis_terricola, Phreatoicus_orarii)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae))),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Platypyga_subpetrae, (Stenasellus_virei, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree3 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, (((((((((Metaphreatoicus_lacustris, ((Colubotelson_fontinalis, (Nichollsia_kashiense, ((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae)))),((Crenisopus_acinifer, (Colubotelson_joyneri, Colubotelson_searli)),((Phreatomerus_latipes, (Crenoicus_buntiae, (Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),(Metaphreatoicus_australis, )),(Phreatoicopsis_terricola, Phreatoicus_orarii)),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Stenasellus_virei, (Platypyga_subpetrae, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree4 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, ((((((((Nichollsia_kashiense, (Colubotelson_fontinalis, ((Crenisopus_acinifer, (Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis))))),((Metaphreatoicus_australis, (Metaphreatoicus_lacustris, (, (Phreatoicopsis_terricola, Phreatoicus_orarii)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae))),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Stenasellus_virei, (Platypyga_subpetrae, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree5 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, ((((((((Nichollsia_kashiense, (Colubotelson_fontinalis, ((Crenisopus_acinifer, (Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis))))),((Metaphreatoicus_lacustris, (Metaphreatoicus_australis, (, (Phreatoicopsis_terricola, Phreatoicus_orarii)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae))),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Stenasellus_virei, (Platypyga_subpetrae, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree6 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, ((((((((Nichollsia_kashiense, (Colubotelson_fontinalis, ((Crenisopus_acinifer, (Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis))))),((Metaphreatoicus_australis, (Metaphreatoicus_lacustris, (, (Phreatoicopsis_terricola, Phreatoicus_orarii)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae))),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Platypyga_subpetrae, (Stenasellus_virei, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree7 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, (((((((((Metaphreatoicus_lacustris, ((Colubotelson_fontinalis, (Nichollsia_kashiense, ((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae)))),(Crenisopus_acinifer, ((Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),(Metaphreatoicus_australis, )),(Phreatoicopsis_terricola, Phreatoicus_orarii)),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Platypyga_subpetrae, (Stenasellus_virei, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+	tree tree8 = [&U] (Amphisopus_annectans, (Amphisopus_lintoni, (((((((((Metaphreatoicus_lacustris, ((Colubotelson_fontinalis, (Nichollsia_kashiense, ((Paramphisopus_palustris, (Kalliapseudes_obtusifrons, (Mesacanthotelson_setosus, Mesacanthotelson_tasmaniae))),(Phreatoicoides_gracilis, Phreatoicopsis_raffae)))),(Crenisopus_acinifer, ((Phreatomerus_latipes, ((Crenoicus_buntiae, (Colubotelson_joyneri, Colubotelson_searli)),(Gariwerdeus_ingletonensis, (Eremisopus_beei, Gariwerdeus_beehivensis)))),(Onchotelson_brevicaudatus, (Onchotelson_spatulatus, (Notamphisopus_dunedinensis, Notamphisopus_flavius))))))),(Metaphreatoicus_australis, )),(Phreatoicopsis_terricola, Phreatoicus_orarii)),(Paraphreatoicus_relictus, (Tainisopus_fontinalis, Uramphisopus_pearsoni))),(Pilbarophreatoicus_platyarthricus, (, ((Mesamphisopus_capensis, (Spelaeogriphus_lepidops, (Protamphisopus_wianamattensis, (Stenasellus_virei, (Platypyga_subpetrae, (Mesamphisopus_abbreviatus, (Peludo_paraliotus, (, )))))))),(, (, (Metaphreatoicus_affinis, ))))))),(Crenoicus_harrisoni, (((Synamphisopus_ambiguus, Synamphisopus_doegi),(, )),(, )))),(, (Neophreatoicus_assimilis, (Metaphreatoicus_magistri, Naiopegia_xiphagrostis)))),(Hypsimetopus_intrusor, (Gariwerdeus_turretensis, Hyperoedesipus_plumosus))),(Phreatoicus_typicus, ))));
+
+end;

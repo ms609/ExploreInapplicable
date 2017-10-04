@@ -1,0 +1,71 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=56;
+	taxlabels
+		Alismataceae
+		Amborellaceae
+		Annonaceae
+		Aristolochioideae
+		Asarumoideae
+		Ascarina
+		Austrobaileyaceae
+		Berberidaceae
+		Butomaceae
+		Cabombaceae
+		Calycanthaceae
+		Canellaceae
+		Cercidiphyllaceae
+		Chloranthus
+		Coniferales
+		Cycadales
+		Degeneriaceae
+		Ephedraceae
+		Eupomatiaceae
+		Eupteleaceae
+		Ginkgoales
+		Gnetum
+		Gomortegaceae
+		Gyrocarpus
+		Hamamelidaceae
+		Hedyosmum
+		Hernandia
+		Himantandraceae
+		Idiospermaceae
+		Illiciaceae
+		Illigera
+		Lactoridaceae
+		Lardizabalaceae
+		Lauraceae
+		Limnocharitaceae
+		Magnoliaceae
+		Menispermaceae
+		Monimiaceae
+		Myristicaceae
+		Nelumbonaceae
+		Nymphaeaceae
+		Papaveraceae
+		Piperaceae
+		Platanaceae
+		Pteridophyta
+		Ranunculaceae
+		Sarcandra
+		Saruma
+		Saururaceae
+		Shisandraceae
+		Sparattanthelium
+		Tetracentraceae
+		Trimeniaceae
+		Trochodendraceae
+		Welwitschia
+		Winteraceae
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, ((Amborellaceae, (Winteraceae, (Illiciaceae, Shisandraceae))),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),((Lardizabalaceae, (Menispermaceae, (Berberidaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Saruma, (Aristolochioideae, Asarumoideae))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+	tree tree2 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, (((Amborellaceae, Winteraceae),(Illiciaceae, Shisandraceae)),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),((Lardizabalaceae, (Menispermaceae, (Berberidaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Saruma, (Aristolochioideae, Asarumoideae))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+	tree tree3 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, (((Amborellaceae, Winteraceae),(Illiciaceae, Shisandraceae)),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),(Saruma, (Aristolochioideae, Asarumoideae))),((Lardizabalaceae, (Berberidaceae, (Menispermaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+	tree tree4 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, (((Amborellaceae, Winteraceae),(Illiciaceae, Shisandraceae)),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),((Lardizabalaceae, (Berberidaceae, (Menispermaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Saruma, (Aristolochioideae, Asarumoideae))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+	tree tree5 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, (((Amborellaceae, Winteraceae),(Illiciaceae, Shisandraceae)),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),(Saruma, (Aristolochioideae, Asarumoideae))),((Lardizabalaceae, (Menispermaceae, (Berberidaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+	tree tree6 = [&U] (Alismataceae, (Limnocharitaceae, (Butomaceae, (((((Lactoridaceae, ((Amborellaceae, (Winteraceae, (Illiciaceae, Shisandraceae))),(((Austrobaileyaceae, ((Eupomatiaceae, (Annonaceae, (Canellaceae, Myristicaceae))),(Himantandraceae, (Degeneriaceae, Magnoliaceae)))),((Calycanthaceae, Idiospermaceae),((Coniferales, (Ginkgoales, (Cycadales, Pteridophyta))),(Ephedraceae, (Gnetum, Welwitschia))))),((Ascarina, (Hedyosmum, (Chloranthus, Sarcandra))),(Trimeniaceae, (Monimiaceae, (Gomortegaceae, (Lauraceae, ((Gyrocarpus, Sparattanthelium),(Hernandia, Illigera)))))))))),((Lardizabalaceae, (Berberidaceae, (Menispermaceae, (Papaveraceae, Ranunculaceae)))),(Eupteleaceae, ((Cercidiphyllaceae, (Tetracentraceae, Trochodendraceae)),(Hamamelidaceae, Platanaceae))))),(Saruma, (Aristolochioideae, Asarumoideae))),(Piperaceae, Saururaceae)),(Cabombaceae, (Nelumbonaceae, Nymphaeaceae))))));
+
+end;

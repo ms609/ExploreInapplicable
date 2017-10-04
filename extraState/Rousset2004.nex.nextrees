@@ -1,0 +1,53 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=34;
+	taxlabels
+		Hesiospina_sp
+		Nephtys_hombergii
+		Amphicorina_mobilis
+		Anobothus_gracilis
+		Artacama_proboscidea
+		Cirriformia_tentaculata
+		Diplocirrus_glaucus
+		Dodecaceria_sp
+		Eupolymnia_nesidensis
+		Fauveliopsis_sp
+		Hydroides_norvegica
+		Lamellibrachia_barhami
+		Lanice_conchilega
+		Magelona_sp
+		Melinna_sp
+		Myriochele_sp
+		Myxicola_sp
+		Owenia_sp
+		Paralvinella_palmiformis
+		Pectinaria_auricoma
+		Phragmatopoma_sp
+		Pista_cristata
+		Polybrachia_sp
+		Polydora_sp
+		Protula_sp
+		Pseudopotamilla_reniformis
+		Ridgeia_piscesae
+		Riftia_pachyptila
+		Sabella_pavonina
+		Sabellaria_alveolata
+		Sclerolinum_brattstromi
+		Siboglinum_ordicum
+		Terebellides_stroemi
+		Thelepus_sp
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Eupolymnia_nesidensis, (Lanice_conchilega, Pista_cristata))))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),((Sclerolinum_brattstromi, ((Riftia_pachyptila, (Lamellibrachia_barhami, Ridgeia_piscesae)),(Polybrachia_sp, Siboglinum_ordicum))),(Myriochele_sp, Owenia_sp))),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree2 = [&U] (Hesiospina_sp, (Nephtys_hombergii, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, (Thelepus_sp, (Pista_cristata, (Lanice_conchilega, (Artacama_proboscidea, Eupolymnia_nesidensis))))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Sclerolinum_brattstromi, ((Ridgeia_piscesae, (Lamellibrachia_barhami, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Myriochele_sp, Owenia_sp)),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree3 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (Fauveliopsis_sp, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, ((Artacama_proboscidea, Thelepus_sp),(Lanice_conchilega, (Eupolymnia_nesidensis, Pista_cristata)))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Sclerolinum_brattstromi, ((Ridgeia_piscesae, (Lamellibrachia_barhami, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Myriochele_sp, Owenia_sp)),(Magelona_sp, Polydora_sp)),(Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree4 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (Fauveliopsis_sp, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Lanice_conchilega, (Eupolymnia_nesidensis, Pista_cristata))))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Myriochele_sp, Owenia_sp)),(Magelona_sp, Polydora_sp)),(Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree5 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, ((Artacama_proboscidea, Thelepus_sp),(Eupolymnia_nesidensis, (Lanice_conchilega, Pista_cristata)))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),((Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum))),(Myriochele_sp, Owenia_sp))),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree6 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),((Pectinaria_auricoma, (Anobothus_gracilis, (Melinna_sp, (Paralvinella_palmiformis, (Terebellides_stroemi, (Thelepus_sp, (Pista_cristata, (Artacama_proboscidea, (Eupolymnia_nesidensis, Lanice_conchilega))))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),((Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum))),(Myriochele_sp, Owenia_sp))),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree7 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (Fauveliopsis_sp, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),(((Anobothus_gracilis, Melinna_sp),(Pectinaria_auricoma, (Paralvinella_palmiformis, (Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Eupolymnia_nesidensis, (Lanice_conchilega, Pista_cristata)))))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Sclerolinum_brattstromi, ((Ridgeia_piscesae, (Lamellibrachia_barhami, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Myriochele_sp, Owenia_sp)),(Magelona_sp, Polydora_sp)),(Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree8 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (Fauveliopsis_sp, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),(((Melinna_sp, (Anobothus_gracilis, (Paralvinella_palmiformis, Pectinaria_auricoma))),(Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Pista_cristata, (Eupolymnia_nesidensis, Lanice_conchilega)))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Myriochele_sp, Owenia_sp)),(Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Magelona_sp, Polydora_sp)),(Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree9 = [&U] (Hesiospina_sp, (Nephtys_hombergii, ((((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),(((Melinna_sp, (Anobothus_gracilis, (Paralvinella_palmiformis, Pectinaria_auricoma))),(Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Lanice_conchilega, (Eupolymnia_nesidensis, Pista_cristata)))))),(Phragmatopoma_sp, Sabellaria_alveolata))),(Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum)))),(Myriochele_sp, Owenia_sp)),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+	tree tree10 = [&U] (Hesiospina_sp, (Nephtys_hombergii, (((((((Amphicorina_mobilis, Myxicola_sp),(Pseudopotamilla_reniformis, Sabella_pavonina)),(Hydroides_norvegica, Protula_sp)),(((Melinna_sp, (Anobothus_gracilis, (Paralvinella_palmiformis, Pectinaria_auricoma))),(Terebellides_stroemi, (Thelepus_sp, (Artacama_proboscidea, (Eupolymnia_nesidensis, (Lanice_conchilega, Pista_cristata)))))),(Phragmatopoma_sp, Sabellaria_alveolata))),((Sclerolinum_brattstromi, ((Lamellibrachia_barhami, (Ridgeia_piscesae, Riftia_pachyptila)),(Polybrachia_sp, Siboglinum_ordicum))),(Myriochele_sp, Owenia_sp))),(Magelona_sp, Polydora_sp)),(Fauveliopsis_sp, (Diplocirrus_glaucus, (Cirriformia_tentaculata, Dodecaceria_sp))))));
+
+end;

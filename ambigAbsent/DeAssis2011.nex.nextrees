@@ -1,0 +1,54 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=33;
+	taxlabels
+		Capitella_capitata
+		Psammodrilius_balanoglossoides
+		Arenicola_marina
+		Boguea_enigmatica
+		Boguella_ornata
+		Rhodine_loveni
+		Notoproctus_oculatus
+		Lumbriclymene_cylindricauda
+		Lumbriclymenella_robusta
+		Praxillura_longissima
+		Clymenopsis_cingulata
+		Nicomache_lumbricalis
+		Petaloproctus_terriculus
+		Micromaldane_ornithochaeta
+		Asychis_atlanticus
+		Chirimia_amoena
+		Maldane_glebifex
+		Metasychis_disparidentatus
+		Sabaco_maculatus
+		Bathyasychis_cristatus
+		Clymenura_cirrata
+		Euclymene_oerstedi
+		Axiothella_catenata
+		Praxillella_praetermissa
+		Clymenella_torquatus
+		Johnstonia_clymenoides
+		Maldanella_antarctica
+		Petaloclymene_pacifica
+		Gravierella_multiannulata
+		Microclymene_acirrata
+		Macroclymene_monilis
+		Isocirrus_corallicolus
+		Aclymene_gesae
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),((((Axiothella_catenata, (Clymenura_cirrata, (Clymenella_torquatus, (Euclymene_oerstedi, Johnstonia_clymenoides)))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),((Asychis_atlanticus, Metasychis_disparidentatus),(Bathyasychis_cristatus, (Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree2 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Praxillella_praetermissa, Microclymene_acirrata)),(Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus))),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, ((Chirimia_amoena, (Asychis_atlanticus, Metasychis_disparidentatus)),(Maldane_glebifex, Sabaco_maculatus))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree3 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),((((Clymenura_cirrata, Axiothella_catenata),((Euclymene_oerstedi, (Clymenella_torquatus, Johnstonia_clymenoides)),(Praxillella_praetermissa, Microclymene_acirrata))),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),((Bathyasychis_cristatus, (Asychis_atlanticus, Metasychis_disparidentatus)),(Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree4 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Clymenella_torquatus, (Euclymene_oerstedi, Johnstonia_clymenoides))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, ((Asychis_atlanticus, Metasychis_disparidentatus),(Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree5 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),((((Clymenura_cirrata, (Axiothella_catenata, (Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus)))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, ((Chirimia_amoena, (Asychis_atlanticus, Metasychis_disparidentatus)),(Maldane_glebifex, Sabaco_maculatus))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree6 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),((Asychis_atlanticus, Metasychis_disparidentatus),(Bathyasychis_cristatus, (Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree7 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Clymenella_torquatus, (Euclymene_oerstedi, Johnstonia_clymenoides))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, (Chirimia_amoena, ((Asychis_atlanticus, Metasychis_disparidentatus),(Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree8 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, (Metasychis_disparidentatus, (Asychis_atlanticus, (Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus))))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree9 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Praxillella_praetermissa, Microclymene_acirrata)),(Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus))),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, ((Asychis_atlanticus, Metasychis_disparidentatus),(Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree10 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),(((((Clymenura_cirrata, Axiothella_catenata),(Praxillella_praetermissa, Microclymene_acirrata)),(Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus))),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, (Asychis_atlanticus, (Metasychis_disparidentatus, (Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus))))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree11 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),((((Axiothella_catenata, (Clymenura_cirrata, (Euclymene_oerstedi, (Clymenella_torquatus, Johnstonia_clymenoides)))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, (Metasychis_disparidentatus, (Asychis_atlanticus, (Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus))))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+	tree tree12 = [&U] (Capitella_capitata, (Psammodrilius_balanoglossoides, (Arenicola_marina, ((Rhodine_loveni, (Boguea_enigmatica, Boguella_ornata)),((Notoproctus_oculatus, (((Micromaldane_ornithochaeta, (Nicomache_lumbricalis, Petaloproctus_terriculus)),((((Clymenura_cirrata, (Axiothella_catenata, (Johnstonia_clymenoides, (Euclymene_oerstedi, Clymenella_torquatus)))),(Praxillella_praetermissa, Microclymene_acirrata)),(Isocirrus_corallicolus, (Aclymene_gesae, (Maldanella_antarctica, Petaloclymene_pacifica)))),(Gravierella_multiannulata, Macroclymene_monilis))),(Bathyasychis_cristatus, ((Asychis_atlanticus, Metasychis_disparidentatus),(Chirimia_amoena, (Maldane_glebifex, Sabaco_maculatus)))))),((Lumbriclymene_cylindricauda, Lumbriclymenella_robusta),(Praxillura_longissima, Clymenopsis_cingulata)))))));
+
+end;

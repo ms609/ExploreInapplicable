@@ -1,0 +1,86 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=59;
+	taxlabels
+		Weinbergina
+		Limuloides
+		Euproops
+		Limulus
+		Tachypleus
+		Baltoeurypterus
+		Stylonurus
+		Chasmataspis
+		Diploaspis
+		Octoberaspis
+		Prokoenenia
+		Eukoenenia
+		Plesiosiro
+		Palaeocharinus
+		Gilboarachne
+		Liphistius
+		Aphonopelma
+		Hypochilus
+		Charinus
+		Phrynus
+		Stenochrus
+		Protoschizomus
+		Mastigoproctus
+		Proschizomus
+		Terpsicroton
+		Poliochera
+		Cryptocellus
+		Ricinoides
+		Neocarus
+		Siamacarus
+		Australothyrus
+		Allothyrus
+		Glyptholaspis
+		Amblyomma
+		Argas
+		Alycus
+		Allothrombium
+		Microcaeculus
+		Palaeacarus
+		Archegozetes
+		Cyphophthalmus
+		Chileogovea
+		Caddo
+		Leiobunum
+		Sclerobunus
+		Gonyleptes
+		Centruroides
+		Hadrurus
+		Heterometrus
+		Prearcturus
+		Palaeoscorpius
+		Stoermeroscorpio
+		Proscorpius
+		Chthonius
+		Neobisium
+		Feaella
+		Chelifer
+		Eremocosta
+		Galeodes
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),(Palaeoscorpius, (Proscorpius, (Stoermeroscorpio, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree2 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),(((Terpsicroton, (Poliochera, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),(((Chthonius, Feaella),(Neobisium, Chelifer)),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),((Prearcturus, (Palaeoscorpius, (Centruroides, (Hadrurus, Heterometrus)))),(Stoermeroscorpio, Proscorpius)))))))));
+	tree tree3 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Octoberaspis, (Chasmataspis, Diploaspis)))),((((Prokoenenia, Eukoenenia),(((Poliochera, (Terpsicroton, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),((Proscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))),(Palaeoscorpius, Stoermeroscorpio)))))))));
+	tree tree4 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),(Proschizomus, (Mastigoproctus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),(((Chthonius, Feaella),(Neobisium, Chelifer)),(Eremocosta, Galeodes))),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),((Caddo, Leiobunum),(Sclerobunus, Gonyleptes))),((Proscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))),(Palaeoscorpius, Stoermeroscorpio)))))))));
+	tree tree5 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),(((Poliochera, (Terpsicroton, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Feaella, (Chthonius, (Neobisium, Chelifer))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),(Stoermeroscorpio, (Proscorpius, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree6 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Chthonius, (Feaella, (Neobisium, Chelifer))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),((Caddo, Leiobunum),(Sclerobunus, Gonyleptes))),(Palaeoscorpius, (Stoermeroscorpio, (Proscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree7 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Octoberaspis, (Chasmataspis, Diploaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),((Caddo, Leiobunum),(Sclerobunus, Gonyleptes))),(Stoermeroscorpio, (Proscorpius, (Prearcturus, (Palaeoscorpius, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree8 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Octoberaspis, (Chasmataspis, Diploaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Chthonius, (Feaella, (Neobisium, Chelifer))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),((Caddo, Leiobunum),(Sclerobunus, Gonyleptes))),(Stoermeroscorpio, (Proscorpius, (Prearcturus, (Palaeoscorpius, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree9 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),(Proschizomus, (Mastigoproctus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes))),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),(Leiobunum, (Caddo, (Sclerobunus, Gonyleptes)))),(Stoermeroscorpio, (Proscorpius, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree10 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),(((Poliochera, (Terpsicroton, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Proschizomus, (Mastigoproctus, (Stenochrus, Protoschizomus))))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Feaella, (Chthonius, (Neobisium, Chelifer))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Leiobunum, (Caddo, (Sclerobunus, Gonyleptes)))),(Stoermeroscorpio, (Palaeoscorpius, (Proscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree11 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Proschizomus, (Mastigoproctus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Leiobunum, (Caddo, (Sclerobunus, Gonyleptes)))),(Proscorpius, (Stoermeroscorpio, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree12 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),(((Terpsicroton, (Poliochera, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),((Prearcturus, (Palaeoscorpius, (Centruroides, (Hadrurus, Heterometrus)))),(Stoermeroscorpio, Proscorpius)))))))));
+	tree tree13 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Octoberaspis, (Chasmataspis, Diploaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),(((Chthonius, Feaella),(Neobisium, Chelifer)),(Eremocosta, Galeodes))),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),(((Centruroides, (Hadrurus, Heterometrus)),(Prearcturus, Palaeoscorpius)),(Stoermeroscorpio, Proscorpius)))))))));
+	tree tree14 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes))),(((Poliochera, (Terpsicroton, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),((Caddo, Leiobunum),(Sclerobunus, Gonyleptes))),((Prearcturus, (Centruroides, (Hadrurus, Heterometrus))),(Stoermeroscorpio, (Palaeoscorpius, Proscorpius))))))))));
+	tree tree15 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),(((Poliochera, (Terpsicroton, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Feaella, (Chthonius, (Neobisium, Chelifer))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),(Stoermeroscorpio, (Proscorpius, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree16 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),(Mastigoproctus, (Proschizomus, (Stenochrus, Protoschizomus))))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Feaella, (Chthonius, (Neobisium, Chelifer))),(Eremocosta, Galeodes))),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),(Proscorpius, (Stoermeroscorpio, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+	tree tree17 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Diploaspis, (Chasmataspis, Octoberaspis)))),(((Prokoenenia, Eukoenenia),(((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Liphistius, (Aphonopelma, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes))),(((Terpsicroton, (Poliochera, (Cryptocellus, Ricinoides))),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus))))),(((Cyphophthalmus, Chileogovea),(Caddo, (Leiobunum, (Sclerobunus, Gonyleptes)))),((Prearcturus, (Palaeoscorpius, (Centruroides, (Hadrurus, Heterometrus)))),(Stoermeroscorpio, Proscorpius)))))))));
+	tree tree18 = [&U] (Weinbergina, (Limuloides, (Euproops, ((Limulus, Tachypleus),((Stylonurus, (Baltoeurypterus, (Chasmataspis, (Diploaspis, Octoberaspis)))),((((Prokoenenia, Eukoenenia),((((Terpsicroton, Poliochera),(Cryptocellus, Ricinoides)),((Neocarus, Siamacarus),((Glyptholaspis, (Australothyrus, Allothyrus)),(Amblyomma, Argas)))),((Alycus, (Palaeacarus, Archegozetes)),(Allothrombium, Microcaeculus)))),((((Plesiosiro, ((Charinus, Phrynus),((Stenochrus, Protoschizomus),(Mastigoproctus, Proschizomus)))),(Aphonopelma, (Liphistius, Hypochilus))),(Palaeocharinus, Gilboarachne)),((Neobisium, (Chelifer, (Chthonius, Feaella))),(Eremocosta, Galeodes)))),(((Cyphophthalmus, Chileogovea),(Leiobunum, (Caddo, (Sclerobunus, Gonyleptes)))),(Stoermeroscorpio, (Proscorpius, (Palaeoscorpius, (Prearcturus, (Centruroides, (Hadrurus, Heterometrus)))))))))))));
+
+end;

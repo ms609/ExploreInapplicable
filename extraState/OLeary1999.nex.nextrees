@@ -1,0 +1,66 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=40;
+	taxlabels
+		Didelphis
+		Asioryctes
+		Leptictis
+		Arctocyon
+		Hyopsodus
+		Phenacodus
+		Meniscotherium
+		Heptodon
+		Hyracotherium
+		Equus
+		Diacodexis
+		Archaeotherium
+		Elomeryx
+		Hippopotamus
+		Hexaprotodon
+		Sus
+		Agriochoerus
+		Poebrotherium
+		Camelus
+		Ovis
+		Tragulus
+		Andrewsarchus
+		Eoconodon
+		Hapalodectes
+		Dissacus
+		Ankalagon
+		Sinonyx
+		Pachyaena
+		Mesonyx
+		Synoplotherium
+		Harpagolestes
+		Pakicetus
+		Ambulocetus
+		Remingtonocetus
+		Cross_Whale
+		Protocetus
+		Basilosaurus
+		Dorudon
+		Balaenoptera
+		Tursiops
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree2 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops))))))))),((Poebrotherium, Camelus),(Ovis, Tragulus))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree3 = [&U] (Didelphis, (Asioryctes, (Arctocyon, (Leptictis, ((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),((Poebrotherium, Camelus),(Ovis, Tragulus))))),(Eoconodon, (Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))))));
+	tree tree4 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Andrewsarchus, (Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),((Poebrotherium, Camelus),(Ovis, Tragulus))))),(Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))));
+	tree tree5 = [&U] (Didelphis, (Asioryctes, (Arctocyon, (Leptictis, ((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Agriochoerus, (Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Eoconodon, (Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))))));
+	tree tree6 = [&U] (Didelphis, (Asioryctes, (Arctocyon, (Leptictis, ((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Eoconodon, (Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))))));
+	tree tree7 = [&U] (Didelphis, (Asioryctes, (Arctocyon, (Leptictis, ((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Eoconodon, (Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))))));
+	tree tree8 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree9 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops))))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree10 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Agriochoerus, (Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Andrewsarchus, (Hapalodectes, ((Dissacus, Ankalagon),(Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))));
+	tree tree11 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Agriochoerus, (Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree12 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, ((Archaeotherium, ((Elomeryx, Sus),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),((Poebrotherium, Camelus),(Ovis, Tragulus))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree13 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Andrewsarchus, (Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))));
+	tree tree14 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops))))))))),(Tragulus, (Ovis, (Poebrotherium, Camelus)))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+	tree tree15 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (((Archaeotherium, (Elomeryx, Sus)),((Hippopotamus, Hexaprotodon),(Andrewsarchus, (Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))));
+	tree tree16 = [&U] (Didelphis, (Asioryctes, (Arctocyon, (Leptictis, ((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (Archaeotherium, ((Elomeryx, Sus),(((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))))),(Eoconodon, (Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))))))))))));
+	tree tree17 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Agriochoerus, (Diacodexis, (Archaeotherium, ((Elomeryx, Sus),(((Hippopotamus, Hexaprotodon),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, ((Basilosaurus, Dorudon),(Balaenoptera, Tursiops)))))))),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))))),(Andrewsarchus, (Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))))))))));
+
+end;

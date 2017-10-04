@@ -1,0 +1,82 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=64;
+	taxlabels
+		Acontias_sp
+		Adriosaurus_suessi
+		Agama_agama
+		Aigialosaurus_dalmaticus
+		Amphisbaena_fuliginosa
+		Anelytropsis_papillosus
+		Anilius_scytale
+		Anniella_pulchra
+		Anolis_carolinensis
+		Aspidoscelis_tigris
+		Bipes_canaliculatus
+		Boa_constrictor
+		Celestus_enneagrammus
+		Chamaleo_sp
+		Clidastes
+		Cordylus_mossambicus
+		Delma_borea
+		Dibamus_novaeguinae
+		Dinilysia_patagonica
+		Elgaria_multicarinata
+		Enyalioides_laticeps
+		Eosaniwa_koehni
+		Eublepharis_macularius
+		Eupodophis_descouensis
+		Feylinia_polylepis
+		Gekko_gecko
+		Gonatodes_albogularis
+		Haasiophis_terrasanctus
+		Heloderma_horridum
+		Heloderma_suspectum
+		Helodermoides_tuberculatus
+		Huehuecuetzpalli_mixteca
+		Lacerta_viridis
+		Lanthanotus_borneensis
+		Lepidophyma_flavimaculatum
+		Leptotyphlops_sp
+		Lialis_burtonis
+		Liotyphlops_albirostris
+		Macrocephalosaurus
+		Ophisaurus_apodus
+		Oplurus_cyclurus
+		Pachyrhachis_problematicus
+		Pholidobolus_sp
+		Platecarpus
+		Plotosaurus
+		Polyglyphanodon_sternbergi
+		Pontosaurus
+		Rhineura_floridana
+		Saniwa
+		Scincus_scincus
+		Shinisaurus_crocodilurus
+		Sineoamphisbaena
+		Sphenodon_punctatus
+		Strophurus_ciliaris
+		Trogonophis_wiegmanni
+		Tylosaurus
+		Typhlops_jamaicensis
+		Uromastyx_sp
+		Varanus_acanthurus
+		Varanus_exanthematicus
+		Varanus_salvator
+		Wonambi_naracoortensis
+		Xenopeltis_unicolor
+		Xenosaurus_grandis
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Eupodophis_descouensis, (Haasiophis_terrasanctus, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree2 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, (((Aigialosaurus_dalmaticus, ((Adriosaurus_suessi, Pontosaurus),(Plotosaurus, (Clidastes, (Platecarpus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Pachyrhachis_problematicus, (Eupodophis_descouensis, Haasiophis_terrasanctus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree3 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, (((Aigialosaurus_dalmaticus, ((Adriosaurus_suessi, Pontosaurus),(Plotosaurus, (Clidastes, (Platecarpus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Haasiophis_terrasanctus, (Eupodophis_descouensis, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree4 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((Eosaniwa_koehni, (((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator)))))),(Heloderma_horridum, Heloderma_suspectum))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Eupodophis_descouensis, (Haasiophis_terrasanctus, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree5 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Pachyrhachis_problematicus, (Eupodophis_descouensis, Haasiophis_terrasanctus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree6 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((Eosaniwa_koehni, (((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator)))))),(Heloderma_horridum, Heloderma_suspectum))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Pachyrhachis_problematicus, (Eupodophis_descouensis, Haasiophis_terrasanctus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree7 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, (((Aigialosaurus_dalmaticus, ((Adriosaurus_suessi, Pontosaurus),(Plotosaurus, (Clidastes, (Platecarpus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Eupodophis_descouensis, (Haasiophis_terrasanctus, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree8 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator))))),(Eosaniwa_koehni, (Heloderma_horridum, Heloderma_suspectum)))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Haasiophis_terrasanctus, (Eupodophis_descouensis, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+	tree tree9 = [&U] (Acontias_sp, ((Feylinia_polylepis, (Scincus_scincus, (Cordylus_mossambicus, ((Xenosaurus_grandis, ((Shinisaurus_crocodilurus, ((Eosaniwa_koehni, (((Adriosaurus_suessi, Pontosaurus),(Aigialosaurus_dalmaticus, (Clidastes, (Platecarpus, (Plotosaurus, Tylosaurus))))),(Lanthanotus_borneensis, (Saniwa, (Varanus_exanthematicus, (Varanus_acanthurus, Varanus_salvator)))))),(Heloderma_horridum, Heloderma_suspectum))),((Anniella_pulchra, Ophisaurus_apodus),(Helodermoides_tuberculatus, (Celestus_enneagrammus, Elgaria_multicarinata))))),(((Chamaleo_sp, ((Agama_agama, Uromastyx_sp),(Oplurus_cyclurus, (Anolis_carolinensis, Enyalioides_laticeps)))),(Huehuecuetzpalli_mixteca, Sphenodon_punctatus)),((Pholidobolus_sp, (Aspidoscelis_tigris, (Polyglyphanodon_sternbergi, (Macrocephalosaurus, Sineoamphisbaena)))),(Lacerta_viridis, Lepidophyma_flavimaculatum))))))),((((Trogonophis_wiegmanni, (Rhineura_floridana, (Amphisbaena_fuliginosa, Bipes_canaliculatus))),(Leptotyphlops_sp, ((Dinilysia_patagonica, (Wonambi_naracoortensis, (Anilius_scytale, (Xenopeltis_unicolor, (Boa_constrictor, (Haasiophis_terrasanctus, (Eupodophis_descouensis, Pachyrhachis_problematicus))))))),(Liotyphlops_albirostris, Typhlops_jamaicensis)))),(Anelytropsis_papillosus, Dibamus_novaeguinae)),((Delma_borea, Lialis_burtonis),(Strophurus_ciliaris, (Eublepharis_macularius, (Gekko_gecko, Gonatodes_albogularis)))))));
+
+end;

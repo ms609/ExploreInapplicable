@@ -1,0 +1,39 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=23;
+	taxlabels
+		Blarina_brevicauda
+		Canis_familiaris
+		Chrysochloris
+		Crocidura_russula
+		Didelphis
+		Echinops_telfairi
+		Elephantulus_rufescens
+		Erinaceus_europaeus
+		Erythrozootes
+		Geogale
+		Hemicentetes
+		Limnogale
+		Microgale_talazaci
+		Micropotamogale
+		Orycteropus_afer
+		Oryzorictes_talpoides
+		Parageogale
+		Potamogale
+		Procavia_capensis
+		Protenrec
+		Setifer
+		Sorex_palustris
+		Tenrec_ecaudatus
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Elephantulus_rufescens, (Erinaceus_europaeus, (Canis_familiaris, Procavia_capensis))),(Didelphis, Orycteropus_afer)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),(((Erythrozootes, Protenrec),(Geogale, Parageogale)),(Oryzorictes_talpoides, (Microgale_talazaci, (Limnogale, (Micropotamogale, Potamogale)))))))))));
+	tree tree2 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Orycteropus_afer, (Didelphis, (Canis_familiaris, Procavia_capensis))),(Elephantulus_rufescens, Erinaceus_europaeus)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),((((Erythrozootes, Protenrec),(Geogale, Parageogale)),(Limnogale, (Micropotamogale, Potamogale))),(Microgale_talazaci, Oryzorictes_talpoides))))))));
+	tree tree3 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Orycteropus_afer, (Didelphis, (Canis_familiaris, Procavia_capensis))),(Elephantulus_rufescens, Erinaceus_europaeus)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),(((Erythrozootes, Protenrec),(Geogale, Parageogale)),(Oryzorictes_talpoides, (Microgale_talazaci, (Limnogale, (Micropotamogale, Potamogale)))))))))));
+	tree tree4 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Orycteropus_afer, (Didelphis, (Canis_familiaris, Procavia_capensis))),(Elephantulus_rufescens, Erinaceus_europaeus)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),(((Erythrozootes, (Protenrec, (Geogale, Parageogale))),(Limnogale, (Micropotamogale, Potamogale))),(Microgale_talazaci, Oryzorictes_talpoides))))))));
+	tree tree5 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Orycteropus_afer, (Didelphis, (Canis_familiaris, Procavia_capensis))),(Elephantulus_rufescens, Erinaceus_europaeus)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),((((Erythrozootes, Protenrec),(Geogale, Parageogale)),(Microgale_talazaci, Oryzorictes_talpoides)),(Limnogale, (Micropotamogale, Potamogale)))))))));
+	tree tree6 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, ((Chrysochloris, (Erinaceus_europaeus, (Elephantulus_rufescens, ((Canis_familiaris, Procavia_capensis),(Didelphis, Orycteropus_afer))))),(((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),(((Erythrozootes, Protenrec),(Geogale, Parageogale)),(Oryzorictes_talpoides, (Microgale_talazaci, (Limnogale, (Micropotamogale, Potamogale))))))))));
+	tree tree7 = [&U] (Blarina_brevicauda, (Sorex_palustris, (Crocidura_russula, (((Orycteropus_afer, (Didelphis, (Canis_familiaris, Procavia_capensis))),(Elephantulus_rufescens, Erinaceus_europaeus)),(Chrysochloris, (((Echinops_telfairi, Setifer),(Hemicentetes, Tenrec_ecaudatus)),((Erythrozootes, (Protenrec, (Geogale, Parageogale))),((Limnogale, (Micropotamogale, Potamogale)),(Microgale_talazaci, Oryzorictes_talpoides)))))))));
+
+end;

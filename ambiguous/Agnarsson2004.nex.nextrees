@@ -1,0 +1,72 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=62;
+	taxlabels
+		Argiope
+		Tetragnatha
+		Pimoa
+		Linyphia
+		Synotaxus_waiwa
+		Synotaxus_monoceros
+		Eidmanella
+		Nesticus
+		Dipoena
+		Emertonella
+		Euryopis
+		Thwaitesia
+		Episinus
+		Spintharus
+		Latrodectus_geometricus
+		Latrodectus_mactans
+		Crustulina
+		Steatoda
+		Carniella
+		Robertus
+		Pholcomma
+		Enoplognatha_latimana
+		Enoplognatha_ovata
+		Selkirkiella_magallanes
+		Selkirkiella_alboguttata
+		Phoroncidia
+		Cerocida
+		Stemmops
+		Argyrodes_argyrodes
+		Argyrodes_elevatus
+		Neospintharus
+		Rhomphaea
+		Ariamnes
+		Faiditus
+		Kochiura_aulica
+		Kochiura_rosea
+		Anelosimus_lorenzo
+		Anelosimus_rupununi
+		Anelosimus_pulchellus
+		Anelosimus_vittatus
+		Anelosimus_sp_A
+		Anelosimus_sp_B
+		Anelosimus_analyticus
+		Anelosimus_eximius
+		Anelosimus_cf_jucundus
+		Anelosimus_studiosus
+		Chrysso
+		Nesticodes
+		Theridion_frondeum
+		Theridion_longipedatum
+		Theridion_varians
+		Theridion_pictum
+		Coleosoma
+		Tidarren
+		Helvibis
+		Theridula
+		Ameridion_sp
+		Ameridion_cf_petrum
+		Thymoites
+		Achaearanea_tepidariorum
+		Achaearanea_vervoorti
+		Achaearanea_wau
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Argiope, (Tetragnatha, ((Pimoa, Linyphia),((Synotaxus_waiwa, Synotaxus_monoceros),((Eidmanella, Nesticus),((Dipoena, (Emertonella, Euryopis)),(((Spintharus, (Thwaitesia, Episinus)),(((((Carniella, (Robertus, Pholcomma)),(Cerocida, (Phoroncidia, Stemmops))),(Selkirkiella_magallanes, Selkirkiella_alboguttata)),(Enoplognatha_latimana, Enoplognatha_ovata)),((Faiditus, ((Argyrodes_argyrodes, Argyrodes_elevatus),(Neospintharus, (Rhomphaea, Ariamnes)))),((Kochiura_aulica, Kochiura_rosea),((((Anelosimus_lorenzo, Anelosimus_rupununi),((Anelosimus_sp_A, Anelosimus_sp_B),(Anelosimus_analyticus, (Anelosimus_eximius, (Anelosimus_cf_jucundus, Anelosimus_studiosus))))),(Anelosimus_pulchellus, Anelosimus_vittatus)),(Chrysso, ((Tidarren, (Nesticodes, (Achaearanea_wau, (Achaearanea_tepidariorum, Achaearanea_vervoorti)))),((Theridula, (Helvibis, ((Coleosoma, (Theridion_frondeum, Theridion_longipedatum)),(Theridion_varians, Theridion_pictum)))),(Thymoites, (Ameridion_sp, Ameridion_cf_petrum)))))))))),((Latrodectus_geometricus, Latrodectus_mactans),(Crustulina, Steatoda)))))))));
+
+end;

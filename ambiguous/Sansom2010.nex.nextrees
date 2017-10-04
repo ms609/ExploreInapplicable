@@ -1,0 +1,34 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=23;
+	taxlabels
+		Tunicata
+		Cephalochordata
+		Myxinoidea
+		Myxinikela
+		Petromyzontida
+		Mesomyzon
+		Priscomyzon
+		Mayomyzon
+		Haikouichthys
+		Heterostraci
+		Astraspis
+		Arandaspida
+		Anaspida
+		Jamoytius
+		Euphanerops
+		Osteostraci
+		Galeaspida
+		Loganellia
+		Turinia
+		Jawed_vertebrates
+		Euconodonta
+		Cornovichthys
+		Achanarella
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))))))));
+	tree tree2 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))))))));
+
+end;

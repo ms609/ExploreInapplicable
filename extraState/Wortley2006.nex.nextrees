@@ -1,0 +1,56 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=37;
+	taxlabels
+		Angelonia
+		Barleria
+		Bartsia
+		Borago
+		Calceolaria
+		Callicarpa
+		Catalpa
+		Ceratotheca
+		Elytraria
+		Gentiana
+		Halleria
+		Hemimeris
+		Jacaranda
+		Jovellana
+		Kigelia
+		Lamium
+		Ligustrum
+		Lindenbergia
+		Martynia
+		Mimulus
+		Nematanthus
+		Nicotiana
+		Paulownia
+		Petrea
+		Proboscidea
+		Retzia
+		Schlegelia
+		Scrophularia
+		Sesamum
+		Stachytarpheta
+		Streptocarpus
+		Synapsis
+		Thomandersia_hensii
+		Thomandersia_laurifolia
+		Thunbergia
+		Verbena
+		Veronica
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Angelonia, (Mimulus, (((((Thunbergia, (Barleria, Elytraria)),(((Bartsia, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))),((Callicarpa, (Veronica, (Gentiana, Ligustrum))),(Nicotiana, Retzia))),((Ceratotheca, Sesamum),(Scrophularia, (Lamium, (Martynia, Proboscidea)))))),(Petrea, ((Catalpa, Synapsis),(Jacaranda, Kigelia)))),(Stachytarpheta, (((Verbena, (Borago, Hemimeris)),(Nematanthus, Streptocarpus)),(Calceolaria, Jovellana)))),(Lindenbergia, Paulownia))));
+	tree tree2 = [&U] (Angelonia, (Mimulus, ((Lindenbergia, (Callicarpa, ((Elytraria, ((Barleria, Thunbergia),(Stachytarpheta, Verbena))),(Jovellana, ((Calceolaria, (Borago, Hemimeris)),(((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia)),(Nematanthus, Streptocarpus))))))),(Paulownia, (Bartsia, ((Lamium, ((Petrea, (Jacaranda, (Catalpa, Kigelia))),((Ceratotheca, Sesamum),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(Martynia, Proboscidea)))))));
+	tree tree3 = [&U] (Angelonia, (Mimulus, (Paulownia, ((Lindenbergia, (((Elytraria, ((Barleria, Thunbergia),(Stachytarpheta, Verbena))),((Petrea, (Jacaranda, (Catalpa, Kigelia))),(((Ceratotheca, Sesamum),(Lamium, (Martynia, Proboscidea))),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(((Borago, (Nematanthus, Streptocarpus)),(Jovellana, (Calceolaria, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))))),(Bartsia, Callicarpa)))));
+	tree tree4 = [&U] (Angelonia, (Mimulus, ((Lindenbergia, (Callicarpa, ((Elytraria, ((Barleria, Thunbergia),(Stachytarpheta, Verbena))),(((Streptocarpus, (Nematanthus, (Borago, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))),(Calceolaria, Jovellana))))),(Paulownia, (Bartsia, ((Lamium, ((Petrea, (Jacaranda, (Catalpa, Kigelia))),((Ceratotheca, Sesamum),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(Martynia, Proboscidea)))))));
+	tree tree5 = [&U] (Angelonia, (Mimulus, (Paulownia, ((Lindenbergia, (((Elytraria, (Stachytarpheta, (Verbena, (Barleria, Thunbergia)))),(((Borago, (Nematanthus, Streptocarpus)),(Jovellana, (Calceolaria, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia)))),((Petrea, (Jacaranda, (Catalpa, Kigelia))),(((Ceratotheca, Sesamum),(Lamium, (Martynia, Proboscidea))),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia))))))))),(Bartsia, Callicarpa)))));
+	tree tree6 = [&U] (Angelonia, (Mimulus, (Paulownia, ((Lindenbergia, (((Elytraria, ((Barleria, Thunbergia),(Stachytarpheta, Verbena))),((Petrea, (Jacaranda, (Catalpa, Kigelia))),(((Ceratotheca, Sesamum),(Lamium, (Martynia, Proboscidea))),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(((Streptocarpus, (Nematanthus, (Borago, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))),(Calceolaria, Jovellana)))),(Bartsia, Callicarpa)))));
+	tree tree7 = [&U] (Angelonia, (Mimulus, ((Lindenbergia, (Callicarpa, (((Elytraria, (Barleria, Thunbergia)),(Stachytarpheta, Verbena)),(((Streptocarpus, (Nematanthus, (Borago, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))),(Calceolaria, Jovellana))))),(Paulownia, (Bartsia, ((Lamium, ((Petrea, (Jacaranda, (Catalpa, Kigelia))),((Ceratotheca, Sesamum),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(Martynia, Proboscidea)))))));
+	tree tree8 = [&U] (Angelonia, (Mimulus, (((((Thunbergia, (Barleria, Elytraria)),(((Bartsia, (Halleria, (Schlegelia, (Synapsis, (Thomandersia_hensii, Thomandersia_laurifolia))))),((Callicarpa, (Veronica, (Gentiana, Ligustrum))),(Nicotiana, Retzia))),((Ceratotheca, Sesamum),(Scrophularia, (Lamium, (Martynia, Proboscidea)))))),(Petrea, (Catalpa, (Jacaranda, Kigelia)))),(Stachytarpheta, (((Verbena, (Borago, Hemimeris)),(Nematanthus, Streptocarpus)),(Calceolaria, Jovellana)))),(Lindenbergia, Paulownia))));
+	tree tree9 = [&U] (Angelonia, (Mimulus, (Paulownia, ((Lindenbergia, (((Elytraria, (Stachytarpheta, (Verbena, (Barleria, Thunbergia)))),(((Streptocarpus, (Nematanthus, (Borago, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))),(Calceolaria, Jovellana))),((Petrea, (Jacaranda, (Catalpa, Kigelia))),(((Ceratotheca, Sesamum),(Lamium, (Martynia, Proboscidea))),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia))))))))),(Bartsia, Callicarpa)))));
+	tree tree10 = [&U] (Angelonia, (Mimulus, (Paulownia, ((Lindenbergia, (((Stachytarpheta, ((Barleria, Elytraria),(Thunbergia, Verbena))),((Petrea, (Jacaranda, (Catalpa, Kigelia))),(((Ceratotheca, Sesamum),(Lamium, (Martynia, Proboscidea))),(Scrophularia, (Synapsis, (Halleria, (Schlegelia, (Thomandersia_hensii, Thomandersia_laurifolia)))))))),(((Streptocarpus, (Nematanthus, (Borago, Hemimeris))),((Veronica, (Gentiana, Ligustrum)),(Nicotiana, Retzia))),(Calceolaria, Jovellana)))),(Bartsia, Callicarpa)))));
+
+end;

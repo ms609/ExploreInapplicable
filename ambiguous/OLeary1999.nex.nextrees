@@ -1,0 +1,51 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=40;
+	taxlabels
+		Didelphis
+		Asioryctes
+		Leptictis
+		Arctocyon
+		Hyopsodus
+		Phenacodus
+		Meniscotherium
+		Heptodon
+		Hyracotherium
+		Equus
+		Diacodexis
+		Archaeotherium
+		Elomeryx
+		Hippopotamus
+		Hexaprotodon
+		Sus
+		Agriochoerus
+		Poebrotherium
+		Camelus
+		Ovis
+		Tragulus
+		Andrewsarchus
+		Eoconodon
+		Hapalodectes
+		Dissacus
+		Ankalagon
+		Sinonyx
+		Pachyaena
+		Mesonyx
+		Synoplotherium
+		Harpagolestes
+		Pakicetus
+		Ambulocetus
+		Remingtonocetus
+		Cross_Whale
+		Protocetus
+		Basilosaurus
+		Dorudon
+		Balaenoptera
+		Tursiops
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Diacodexis, (Agriochoerus, (((Archaeotherium, (Elomeryx, Sus)),(Hippopotamus, Hexaprotodon)),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Andrewsarchus, ((Hapalodectes, (Dissacus, (Ankalagon, (Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes))))))),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, (Dorudon, (Basilosaurus, (Balaenoptera, Tursiops))))))))))))))));
+	tree tree2 = [&U] (Didelphis, (Asioryctes, (Arctocyon, ((Leptictis, Eoconodon),((Hyopsodus, (Phenacodus, (Meniscotherium, (Heptodon, (Hyracotherium, Equus))))),((Diacodexis, (Agriochoerus, (((Archaeotherium, (Elomeryx, Sus)),(Hippopotamus, Hexaprotodon)),(Poebrotherium, (Camelus, (Ovis, Tragulus)))))),(Andrewsarchus, ((Hapalodectes, ((Dissacus, Ankalagon),(Sinonyx, (Pachyaena, (Synoplotherium, (Mesonyx, Harpagolestes)))))),(Pakicetus, (Ambulocetus, (Remingtonocetus, (Cross_Whale, (Protocetus, (Dorudon, (Basilosaurus, (Balaenoptera, Tursiops))))))))))))))));
+
+end;

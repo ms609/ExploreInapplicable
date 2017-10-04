@@ -1,0 +1,56 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=23;
+	taxlabels
+		Tunicata
+		Cephalochordata
+		Myxinoidea
+		Myxinikela
+		Petromyzontida
+		Mesomyzon
+		Priscomyzon
+		Mayomyzon
+		Haikouichthys
+		Heterostraci
+		Astraspis
+		Arandaspida
+		Anaspida
+		Jamoytius
+		Euphanerops
+		Osteostraci
+		Galeaspida
+		Loganellia
+		Turinia
+		Jawed_vertebrates
+		Euconodonta
+		Cornovichthys
+		Achanarella
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+	tree tree2 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))),(Myxinikela, Haikouichthys))));
+	tree tree3 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(Cornovichthys, ((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Achanarella, ((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops)))))))));
+	tree tree4 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))))))));
+	tree tree5 = [&U] (Tunicata, (Cephalochordata, (Haikouichthys, ((Myxinoidea, Myxinikela),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+	tree tree6 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+	tree tree7 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, (Cornovichthys, ((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Achanarella, ((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops)))))),(Myxinikela, Haikouichthys))));
+	tree tree8 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))))))));
+	tree tree9 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (Cornovichthys, ((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Achanarella, ((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops)))))))));
+	tree tree10 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree11 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+	tree tree12 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree13 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))),(Myxinikela, Haikouichthys))));
+	tree tree14 = [&U] (Tunicata, (Cephalochordata, (Haikouichthys, ((Myxinoidea, Myxinikela),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree15 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))))))));
+	tree tree16 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree17 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+	tree tree18 = [&U] (Tunicata, (Cephalochordata, (Haikouichthys, ((Myxinoidea, Myxinikela),(Cornovichthys, ((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Achanarella, ((Euconodonta, (Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia)))))),(Jamoytius, Euphanerops)))))))));
+	tree tree19 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree20 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, Myxinikela),(Haikouichthys, (((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree21 = [&U] (Tunicata, (Cephalochordata, ((Myxinoidea, (((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))),(Myxinikela, Haikouichthys))));
+	tree tree22 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops))),(Cornovichthys, Achanarella))))));
+	tree tree23 = [&U] (Tunicata, (Cephalochordata, (Myxinoidea, ((Myxinikela, Haikouichthys),(Cornovichthys, ((Euconodonta, (Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon)))),(Achanarella, ((Anaspida, (((Heterostraci, (Astraspis, Arandaspida)),(Galeaspida, (Osteostraci, Jawed_vertebrates))),(Loganellia, Turinia))),(Jamoytius, Euphanerops)))))))));
+	tree tree24 = [&U] (Tunicata, (Cephalochordata, (Haikouichthys, ((Myxinoidea, Myxinikela),(((Mayomyzon, (Priscomyzon, (Petromyzontida, Mesomyzon))),(Euconodonta, ((Anaspida, (Galeaspida, ((Heterostraci, (Astraspis, Arandaspida)),((Osteostraci, Jawed_vertebrates),(Loganellia, Turinia))))),(Jamoytius, Euphanerops)))),(Cornovichthys, Achanarella))))));
+
+end;
