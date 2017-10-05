@@ -77,11 +77,16 @@ for (nexusName in nexusFiles) {
   rfDistances <- RFDistances(flatTrees);
   cat(" - Calculating quartet disances...\n")
   qtDistances <- QuartetDistances(flatTrees);
-
+    
   rfSpace <- pcoa(rfDistances)
   PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.rf.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusName, '.rf.png', collapse='')); dev.off()
+  dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.rf4.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('treeSpaces/', nexusName, '.rf4.png', collapse='')); dev.off()
+  rf3 <- pcoa(rfDistances[-(1:nTrees[1]), -(1:nTrees[1])])
+  PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
+  dev.copy(svg, file=paste0('treeSpaces/', nexusName, '.rf3.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('treeSpaces/', nexusName, '.rf3.png', collapse='')); dev.off()
+
   cat(" - Printed RF SVG & PNG.\n")
   qtSpace <- pcoa(qtDistances)
   PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)

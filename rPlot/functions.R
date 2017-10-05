@@ -74,7 +74,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
        axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
   title(main = mainTitle, cex.main=0.81)
   # Plot convex hulls
-  iTrees <- TreeNumbers(nTrees)[-1]
+  iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)[-1]) {
     convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
     convexHull <- c(convexHull, convexHull[1])
