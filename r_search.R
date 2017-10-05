@@ -26,7 +26,8 @@ for (filename in inappFiles) {
   attr(best, 'pscore') <- 1e+7
   bestScore <- 1e+7
   bestHits <- 0
-  maxHitMenu <- c(2:16, 25, 40, 60, 100, 200)
+  maxHitMenu <- 2^(1:10) # Small maxHits finds result faster, but chance of improving score per 
+                         # second spent increases with maxHits at least up to 150. (Data for higher not available.)
 
   verbose <- 0
   for (i in 1:15000) {
