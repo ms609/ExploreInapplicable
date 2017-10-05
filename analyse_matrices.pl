@@ -8,7 +8,6 @@ find (\&char_template, $ROOT . $MATRIX_DIR);
 print "\nDone.";
 
 sub char_template() {
-	if (-f and /^Wilso.*\.nex$/) {
     $nexus_filename    = $_;
     $raw_matrix_path   = $ROOT . $MATRIX_DIR    . $nexus_filename;
     $chartype_path     = $ROOT . $CHAR_TYPE_DIR . $nexus_filename;
