@@ -19,6 +19,7 @@ for (nexusName in nexusFiles) {
     cat(" - Results already exist.\n")
     next
   }
+  
   rTrees <- lapply(rDirectories, readRTrees, nexusName=nexusName)
   if (is.null(rTrees[[1]])) {
     cat(" ! R trees not found.\n")
@@ -70,7 +71,7 @@ for (nexusName in nexusFiles) {
     }
   }
   dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse='')); dev.off()
+  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
   
   
   # Plot tree scores: 3x3
@@ -120,16 +121,21 @@ for (nexusName in nexusFiles) {
   rm(flatTrees)
   ambiguousTrees <- 1:nTrees[1]
   
-  rfSpace <- pcoa(rfDistances)
+  rfSpace <- modifiedPcoa(rfDistances, correction='lingoes')
   PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees])
+  rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='lingoes')
   PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
+  # If you want to understand what's going on, try
+  # PlotTreeSpace3D(rf3, nTrees, legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
 
-  qtSpace <- modifiedPcoa(qtDistances)
+  qtSpace <- modifiedPcoa(qtDistances, correction='lingoes')
   PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
-  qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees])
+  qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='lingoes')
   PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
+  # If you want to understand what's going on, try
+  # PlotTreeSpace3D(qt3, nTrees, legendPos='bottomright', rfTitleText)
+  
   dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   cat(" - Printed Quartet treespace and saved to files.\nEvaluation complete.\n\n")
