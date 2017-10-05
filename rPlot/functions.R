@@ -65,3 +65,22 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   legend(legendPos, bty='n', legend=paste0(c(tntDirectories, rDirectories), ' (', nTrees, ')'),
          cex = 0.75, pch = plotChars, col=treePalette)
 }
+
+PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
+  x <- pcs$vectors[, 1]
+  y <- pcs$vectors[, 2]
+  ambigTrees <- seq_len(nTrees[[1]])
+  plot(x, y, type = "p", xlab = "", ylab = "",
+       axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
+  title(main = mainTitle, cex.main=0.81)
+  # Plot convex hulls
+  iTrees <- TreeNumbers(nTrees)[-1]
+  for (i in seq_along(nTrees)[-1]) {
+    convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
+    convexHull <- c(convexHull, convexHull[1])
+    lines(x[iTrees[[i]] - nTrees[1]][convexHull], y[iTrees[[i]] - nTrees[1]][convexHull], col=treePalette[i])
+  }
+  
+  legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees[-1], ')'),
+         cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
+}
