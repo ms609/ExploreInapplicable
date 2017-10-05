@@ -38,6 +38,16 @@ QuartetDistances <- function (treeList) {
   rtqdist::allPairsQuartetDistance('~temp.trees')
 }
 
+TreeNumbers <- function (nTrees) {
+  res <- lapply(seq_along(allDirectories), function (i) {
+    firstTree <- if (i == 1) 1 else cumsum(nTrees)[i-1] + 1
+    lastTree  <- cumsum(nTrees)[i]
+    iTrees <- firstTree:lastTree
+  })
+  names(res) <- allDirectories
+  res
+}
+
 PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   x <- pcs$vectors[, 1]
   y <- pcs$vectors[, 2]
@@ -45,13 +55,11 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
        axes = FALSE, col=treeCol, pch=treePCh)
   title(main = mainTitle, cex.main=0.81)
   # Plot convex hulls
+  iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)) {
-    firstTree = if (i == 1) 1 else cumsum(nTrees)[i-1] + 1
-    lastTree = cumsum(nTrees)[i]
-    iTrees <- firstTree:lastTree
-    convexHull <- chull(x[iTrees], y[iTrees])
+    convexHull <- chull(x[iTrees[[i]]], y[iTrees[[i]]])
     convexHull <- c(convexHull, convexHull[1])
-    lines(x[iTrees][convexHull], y[iTrees][convexHull], col=treePalette[i])
+    lines(x[iTrees[[i]]][convexHull], y[iTrees[[i]]][convexHull], col=treePalette[i])
   }
   
   legend(legendPos, bty='n', legend=paste0(c(tntDirectories, rDirectories), ' (', nTrees, ')'),
