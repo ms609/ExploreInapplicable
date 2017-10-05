@@ -8,8 +8,8 @@ treePalette <- cbPalette[c(6, 3, 2, 8)]
 names(treePalette) <- allDirectories
 plotChars <- c(2, 1, 3, 4)
 names(plotChars) <- allDirectories
-englishNames <- c('Ambiguous (?)', 'Ambiguous', 'Extra state', 'Inapplicable')
-names(englishNames) <- allDirectories
+englishName <- c('Ambiguous (raw)', 'Ambiguous', 'Extra state', 'Inapplicable')
+names(englishName) <- allDirectories
 
 
 rfLegendPos = list(

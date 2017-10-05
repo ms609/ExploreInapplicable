@@ -2,18 +2,18 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-dev.off()
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 #nexusName <- 'Loconte1991.nex'
 
 for (nexusName in nexusFiles) {
+  par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName); cat("\nEvaluating", nexusRoot, "...\n")
   
   if (nexusRoot %in% c('Aguado2009')) {
     cat (" ! Manual override")
     next
   }
-  if (file.exists(paste0('treeSpaces/', nexusRoot, '.qt3.png', collapse='')) && !OVERWRITE) {
+  if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
     cat(" - Results already exist.\n")
     next
   }
@@ -33,6 +33,7 @@ for (nexusName in nexusFiles) {
   treePCh <- rep(plotChars, nTrees)
   
   # Calculate tree scores
+  cat(" - Calculating tree scores...\n")
   scores <- vapply(allDirectories, function (dirPath) {
     TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
     rawData <- read.nexus.data(paste0(dirPath, '/', nexusName, collapse=''))
@@ -44,8 +45,8 @@ for (nexusName in nexusFiles) {
   minScores <- apply(scores, 2, min)
   extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
   
-  # Plot tree scores
-  oldPar <- par(mfrow=c(2, 2), bg='white')
+  # Plot tree scores: 4x4
+  cat(" - Plotting island scores...\n")
   for (dirPath in allDirectories) {
     dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
     dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
@@ -54,7 +55,7 @@ for (nexusName in nexusFiles) {
     
     yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
     hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
-         main=paste0("Trees on ", dirPath, ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than best tree") # Set up blank histogram
+         main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
     axis(1, col=dirCol)
     axis(2, col=dirCol)
     
@@ -65,12 +66,44 @@ for (nexusName in nexusFiles) {
   }
   dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse='')); dev.off()
-  par(oldPar)
+  
+  
+  # Plot tree scores: 3x3
+  for (dirPath in allDirectories[-1]) {
+    dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
+    dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
+    dirCol <- treePalette[dirPath]
+    otherDirectories <- which(allDirectories != dirPath)[-1]
+    
+    yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
+    hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
+         main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
+    axis(1, col=dirCol)
+    axis(2, col=dirCol)
+    
+    for (i in otherDirectories) {
+      hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
+           border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+    }
+  }
+  plot(-9, -9, axes=FALSE, , ylim=c(0, 100), xlim=c(0, 100), xlab='', ylab='')
+  ySpace <- 12; yHeight = 7
+  rect(10, ySpace * 1, 10 + yHeight - 1, yHeight + (ySpace * 1), col=paste0(treePalette[4], '99'), border=treePalette[4])
+  rect(10, ySpace * 2, 10 + yHeight - 1, yHeight + (ySpace * 2), col=paste0(treePalette[3], '99'), border=treePalette[3])
+  rect(10, ySpace * 3, 10 + yHeight - 1, yHeight + (ySpace * 3), col=paste0(treePalette[2], '99'), border=treePalette[2])
+  text(20, ySpace * 1 + (yHeight / 2), englishName[4], pos=4)
+  text(20, ySpace * 2 + (yHeight / 2), englishName[3], pos=4)
+  text(20, ySpace * 3 + (yHeight / 2), englishName[2], pos=4)
+  text(20, ySpace * 4 + (yHeight / 2), 'Method', pos=4, font=2)
+  dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '-3.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '-3.png', collapse=''), width=800, height=800); dev.off()
   
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
-  rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', attr(phyData, 'nr'), 'chars -', charSummary)
-  qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', attr(phyData, 'nr'), 'chars -', charSummary)
+  
+  rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
+  rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
+  qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
   # Crude analysis inspired by http://www.kmeverson.org/blog/visualizing-tree-space-in-r
   cat(" - Calculating RF disances...\n")
@@ -78,25 +111,19 @@ for (nexusName in nexusFiles) {
   cat(" - Calculating quartet disances...\n")
   qtDistances <- QuartetDistances(flatTrees);
   ambiguousTrees <- 1:nTrees[1]
-    
+  
   rfSpace <- pcoa(rfDistances)
   PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.rf4.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.rf4.png', collapse='')); dev.off()
   rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees])
   PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.rf3.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.rf3.png', collapse='')); dev.off()
   cat(" - Printed RF SVG & PNG.\n")
 
   qtSpace <- modifiedPcoa(qtDistances)
   PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.qt4.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.qt4.png', collapse='')); dev.off()
   qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees])
   PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.qt3.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.qt3.png', collapse='')); dev.off()
+  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   cat("- Printed Quartet SVG & PNG.\n\n")
 }
 

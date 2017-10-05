@@ -1,10 +1,8 @@
 install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
 devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
 library(phangorn)
-devtools::install_github('ms609/inapplicable')
+if (!require(inapplicable)) devtools::install_github('ms609/inapplicable')
 require(inapplicable)
-
-filename <- 'Dikov2009.nex'#inappFiles[2]
 
 
 inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
