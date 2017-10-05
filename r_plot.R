@@ -43,7 +43,7 @@ for (nexusName in nexusFiles) {
   extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
   
   # Plot tree scores
-  par(mfrow=c(2,2))
+  oldPar <- par(mfrow=c(2,2), bg='white')
   for (dirPath in allDirectories) {
     dirScores <- extraSteps[dirTrees[[dirPath]], ]
     dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
@@ -51,8 +51,8 @@ for (nexusName in nexusFiles) {
     otherDirectories <- which(allDirectories != dirPath)
     
     yMax <- max(apply(dirScores[, otherDirectories], 2, function (x) max(table(x))))
-    hist(0, breaks=dirBreaks, xlab='Extra steps', main=dirPath, col.main=dirCol, axes=FALSE,
-        border='#ffffffff', ylim=c(0, yMax)) # Set up blank histogram
+    hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
+         main=paste0("MPTs under ", dirPath), col.main=dirCol, xlab='Extra length') # Set up blank histogram
     axis(1, col=dirCol)
     axis(2, col=dirCol)
     
@@ -61,7 +61,9 @@ for (nexusName in nexusFiles) {
            border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
     }
   }
-  
+  dev.copy(svg, file=paste0('islandCounts/', nexusName, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('islandCounts/', nexusName, '.png', collapse='')); dev.off()
+  par(oldPar)
   
   # Check that nothing beats the inapplicable trees on the inapplicable measure
   rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
