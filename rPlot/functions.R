@@ -6,17 +6,19 @@ require(inapplicable)
 if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
 readTntTrees <- function (directory, nexusName) {
+  cat ("   - Reading directory", directory, '... ')
+  treeLines <- readLines(paste0(directory, '/', nexusName, '.nextrees', collapse=''), warn=FALSE)
+  treeLinesLight <- gsub('tree\\d*|\\s+', '', treeLines)
+  if (!all(treeLinesLight %in% unique(treeLinesLight))) stop ("Non-unique trees found")
+  cat("   > All trees unique. ")
   treeList <- read.nexus(paste0(directory, '/', nexusName, '.nextrees', collapse=''))
   if (class(treeList) == 'phylo') {
     treeList <- list(treeList)
     class(treeList) <- 'multiPhylo'
-    return (treeList)
+    return(treeList)
   }
-  #else return 
-  #treeList <- unique(treeList)
-  #if (class(treeList) == 'phylo') return (list(treeList))
-  #treeList
-  unique(treeList)
+  cat ("Read", length(treeList), "trees.\n")
+  treeList
 }
 
 readRTrees <- function (directory, nexusName) {
