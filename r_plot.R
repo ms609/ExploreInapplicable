@@ -6,7 +6,12 @@ dev.off()
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 for (nexusName in nexusFiles) {
 #nexusName <- 'Loconte1991.nex'
-  nexusRoot <- gsub('.nex', '', nexusName); cat("Evaluating", nexusRoot, "\n")
+  nexusRoot <- gsub('.nex', '', nexusName); cat("Evaluating", nexusRoot, "...\n")
+  
+  if (nexusRoot == 'Aguado2009') {
+    cat (" ! Problem calculating quartet distaances: Error in 1:(zero.eig[1] - 1): NA/NaN argument")
+    next
+  }
   if (file.exists(paste0('treeSpaces/', nexusName, '.qt.png', collapse='')) && !OVERWRITE) {
     cat(" - Results already exist.\n")
     next
@@ -18,14 +23,46 @@ for (nexusName in nexusFiles) {
   }
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
 
-  nTrees <- vapply(trees, length, integer(1))
+  nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
+  dirTrees <- TreeNumbers(nTrees)
   flatTrees <- unlist(trees, recursive=FALSE)
   treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
-  treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)))
+  treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
-
-
+  
+  # Calculate tree scores
+  scores <- vapply(allDirectories, function (dirPath) {
+    TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
+    rawData <- read.nexus.data(paste0(dirPath, '/', nexusName, collapse=''))
+    phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
+    as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
+  }, integer(sum(nTrees)))
+  rownames(scores) <- treeSource
+  minScores <- apply(scores, 2, min)
+  extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
+  
+  # Plot tree scores
+  par(mfrow=c(2,2))
+  for (dirPath in allDirectories) {
+    dirScores <- extraSteps[dirTrees[[dirPath]], ]
+    dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
+    dirCol <- treePalette[dirPath]
+    otherDirectories <- which(allDirectories != dirPath)
+    
+    yMax <- max(apply(dirScores[, otherDirectories], 2, function (x) max(table(x))))
+    hist(0, breaks=dirBreaks, xlab='Extra steps', main=dirPath, col.main=dirCol, axes=FALSE,
+        border='#ffffffff', ylim=c(0, yMax)) # Set up blank histogram
+    axis(1, col=dirCol)
+    axis(2, col=dirCol)
+    
+    for (i in otherDirectories) {
+      hist(dirScores[, i], add=TRUE, breaks=dirBreaks,
+           border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+    }
+  }
+  
+  
   # Check that nothing beats the inapplicable trees on the inapplicable measure
   rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
   phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
