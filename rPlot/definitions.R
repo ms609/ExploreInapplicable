@@ -1,10 +1,13 @@
 tntDirectories <- c('ambiguous', 'ambigAbsent', 'extraState')
 rDirectories <- c('inapplicable')
+allDirectories <- c(tntDirectories, rDirectories)
 
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73",
                          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 treePalette <- cbPalette[c(6, 3, 2, 8)]
+names(treePalette) <- allDirectories
 plotChars <- c(2, 1, 3, 4)
+names(plotChars) <- allDirectories
 
 rfLegendPos = list(
   'Asher2005.nex' = 'topright',

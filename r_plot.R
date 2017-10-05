@@ -4,9 +4,10 @@ OVERWRITE <- FALSE
 
 dev.off()
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
-for (nexusName in nexusFiles) {
 #nexusName <- 'Loconte1991.nex'
-  nexusRoot <- gsub('.nex', '', nexusName); cat("Evaluating", nexusRoot, "...\n")
+
+for (nexusName in nexusFiles) {
+  nexusRoot <- gsub('.nex', '', nexusName); cat("\nEvaluating", nexusRoot, "...\n")
   
   if (nexusRoot == 'Aguado2009') {
     cat (" ! Problem calculating quartet distaances: Error in 1:(zero.eig[1] - 1): NA/NaN argument")
@@ -52,7 +53,7 @@ for (nexusName in nexusFiles) {
     
     yMax <- max(apply(dirScores[, otherDirectories], 2, function (x) max(table(x))))
     hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
-         main=paste0("MPTs under ", dirPath), col.main=dirCol, xlab='Extra length') # Set up blank histogram
+         main=paste0(nexusRoot, " MPTs under ", dirPath), col.main=dirCol, xlab='Extra length') # Set up blank histogram
     axis(1, col=dirCol)
     axis(2, col=dirCol)
     
