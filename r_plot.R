@@ -7,10 +7,11 @@ nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
-  nexusRoot <- gsub('.nex', '', nexusName); cat("\nEvaluating", nexusRoot, "...\n")
+  nexusRoot <- gsub('.nex', '', nexusName); 
+  cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('Aguado2009')) {
-    cat (" ! Manual override")
+  if (nexusRoot %in% c('Aguado2009', 'Capa2011', gettingStuck, 'Giles2015')) { # Ag, Capa are slow; Dikow in progress
+    cat (" ! Manual override\n")
     next
   }
   if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
@@ -24,9 +25,11 @@ for (nexusName in nexusFiles) {
   }
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
 
+  cat("   - Trees read OK.\n")
   nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
   dirTrees <- TreeNumbers(nTrees)
   flatTrees <- unlist(trees, recursive=FALSE)
+  rm(trees)
   treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
   treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
   treeCol <- paste(rep(treePalette, nTrees))
@@ -44,6 +47,7 @@ for (nexusName in nexusFiles) {
   write.csv(scores, file=paste0('islandCounts/', nexusRoot, '.csv'))
   minScores <- apply(scores, 2, min)
   extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
+  rm(scores)
   
   # Plot tree scores: 4x4
   cat(" - Plotting island scores...\n")
@@ -86,6 +90,8 @@ for (nexusName in nexusFiles) {
            border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
     }
   }
+  rm (extraSteps)
+  
   plot(-9, -9, axes=FALSE, , ylim=c(0, 100), xlim=c(0, 100), xlab='', ylab='')
   ySpace <- 12; yHeight = 7
   rect(10, ySpace * 1, 10 + yHeight - 1, yHeight + (ySpace * 1), col=paste0(treePalette[4], '99'), border=treePalette[4])
@@ -106,10 +112,11 @@ for (nexusName in nexusFiles) {
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
   # Crude analysis inspired by http://www.kmeverson.org/blog/visualizing-tree-space-in-r
-  cat(" - Calculating RF disances...\n")
+  cat(" - Calculating RF distances...\n")
   rfDistances <- RFDistances(flatTrees);
-  cat(" - Calculating quartet disances...\n")
+  cat(" - Calculating quartet distances...\n")
   qtDistances <- QuartetDistances(flatTrees);
+  rm(flatTrees)
   ambiguousTrees <- 1:nTrees[1]
   
   rfSpace <- pcoa(rfDistances)
