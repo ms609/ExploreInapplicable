@@ -14,8 +14,8 @@ for (filename in inappFiles) {
   cat(" - loading from", filename, "\n")
   
   results <- list.files('inapplicable', pattern=paste0(filename, '.*\\.tre$'))
-  if (any(results)) {
-    cat ("Results exist for", filename, "; next file please.\n\n")
+  if (length(results) > 0) {
+    cat (" > Results already exist.\n")
     next
   }
   rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
