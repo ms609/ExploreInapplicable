@@ -10,11 +10,12 @@ readTntTrees <- function (directory, nexusName) {
   treeLines <- readLines(paste0(directory, '/', nexusName, '.nextrees', collapse=''), warn=FALSE)
   treeLinesLight <- gsub('tree\\d*|\\s+', '', treeLines)
   if (!all(treeLinesLight %in% unique(treeLinesLight))) stop ("Non-unique trees found")
-  cat("   > All trees unique. ")
+  cat(" all trees unique. ")
   treeList <- read.nexus(paste0(directory, '/', nexusName, '.nextrees', collapse=''))
   if (class(treeList) == 'phylo') {
     treeList <- list(treeList)
     class(treeList) <- 'multiPhylo'
+    cat("Single tree returned.\n")
     return(treeList)
   }
   cat ("Read", length(treeList), "trees.\n")
