@@ -73,7 +73,8 @@ plotted in a histogram, saved in the `islandCounts` directory.
 Distances between each pair of trees were calculated using the Robinson-Foulds distance and the
 Quartet distances.  Principle components were generated from these distance matrices using the 
 `ape` function `pcoa`, and this crude tree-space was plotted in two dimensions, with convex
-hulls drawn around the trees derived from each method.
+hulls drawn around the trees derived from each method.  These treespaces are saved in the
+`treeSpaces` directory.
 
 
 
