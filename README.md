@@ -44,4 +44,38 @@ Each matrix was then copied to each of four subfolders, and modified for analysi
     
 The Perl script `analyse_matrices.pl` performs these modifications.
 
-## Analysis
+## Identifying optimal trees
+
+The Perl script `analyse_matrices.pl` also initiates parsimony analysis on most of the matrices.
+
+Parsimony analysis is conducted in [TNT](http://www.lillo.org.ar/phylogeny/tnt/) using the 
+script specified in `tnt_search.run` - in summary, using sectorial search,
+the parsimony ratchet and tree drifting, to find the optimal tree length 100 times.  All
+most parsimonious trees are saved to a file in the respective folder, and these files are 
+converted from TNT's proprietary format to NEXUS format in a separate file ending `.nextrees`.
+
+Parsimony analysis using the new algorithm is conducted in R using the script `r_search.R`.
+
+## Analysis of optimal trees
+
+Once optimal trees have been collected under each method, the 'islands' of optimal trees were
+compared using two methods, implemented in the script `r_plot.R`.
+
+### Method 1. Length of trees on each island.
+
+The MPTs on each island were analysed by the other methods.  The scores that were optimal under
+one method are often suboptimal under another.  The number of extra steps associated with each
+tree - in a sense, how far the trees that are optimal under one method are under another - is
+plotted in a histogram, saved in the `islandCounts` directory.
+
+### Method 2. Overlap of islands in tree space.
+
+Distances between each pair of trees were calculated using the Robinson-Foulds distance and the
+Quartet distances.  Principle components were generated from these distance matrices using the 
+`ape` function `pcoa`, and this crude tree-space was plotted in two dimensions, with convex
+hulls drawn around the trees derived from each method.
+
+
+
+
+
