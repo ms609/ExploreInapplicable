@@ -46,7 +46,7 @@ sub char_template() {
         $in_matrix = 1;
       } elsif ($line =~ /;/) {
         $in_matrix = 0;
-      } elsif ($in_matrix && $line =~ /^(\s*[A-z_\.][A-z0-9_\.]+\s+)(.+)$/) {
+      } elsif ($in_matrix && $line =~ /^(\s*[A-z_\.][A-z0-9\(\)_\.]+\s+)(.+)$/) {
         $line_modified = 1;
         for (@matrix_files) {
           print $_ $1;
