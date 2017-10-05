@@ -78,16 +78,45 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
          cex = 0.75, pch = plotChars, col=treePalette)
 }
 
+PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
+  pts <- pcs$vectors
+  
+  plot3d(pts, col=treeCol[-(1:nTrees[1])], size=5, axes=FALSE, xlab='', ylab='', zlab='')
+  
+  #rgl.open()
+  #rgl.bg(color='white')
+  #rgl.points(pts, color=treeCol[-(1:nTrees[1])], size=5)
+  #rgl.spheres(pts, color=treeCol[-(1:nTrees[1])], radius=0.2)
+  limits <- function (x) c(-max(abs(x)), max(abs(x))) * 1.1
+  rgl.lines(limits(pcs$vectors[, 1]), c(0, 0), c(0, 0), color = "blue")
+  rgl.lines(c(0, 0), limits(pcs$vectors[, 2]), c(0, 0), color = "red")
+  rgl.lines(c(0, 0), c(0, 0), limits(pcs$vectors[, 3]), color = "green")
+  
+  for (i in 2:4) {
+    xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
+    hull <- geometry::convhulln(xyz, option='FA')
+    triangles3d(xyz[t(hull$hull), ], col=treePalette[i], alpha=0.3)
+  }
+  
+  aspect3d('iso')
+  
+}
+
 PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
-  x <- pcs$vectors[, 1]
-  y <- pcs$vectors[, 2]
+  pts <- pcs$vectors
+  x <- pts[, 1]
+  y <- pts[, 2]
+ 
   ambigTrees <- seq_len(nTrees[[1]])
   plot(x, y, type = "p", xlab = "", ylab = "",
        axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
   title(main = mainTitle, cex.main=0.81)
-  # Plot convex hulls
+  
   iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)[-1]) {
+    #xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
+    #hull <- geometry::convhulln(xyz, option='FA')
+    #polygon(xyz[t(hull$hull), 1:2], border=paste0(treePalette[i], '33'), lty=1)
     convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
     convexHull <- c(convexHull, convexHull[1])
     lines(x[iTrees[[i]] - nTrees[1]][convexHull], y[iTrees[[i]] - nTrees[1]][convexHull], col=treePalette[i])
