@@ -40,6 +40,7 @@ for (nexusName in nexusFiles) {
     as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
   }, integer(sum(nTrees)))
   rownames(scores) <- treeSource
+  write.csv(scores, file=paste0('islandCounts/', nexusRoot, '.csv'))
   minScores <- apply(scores, 2, min)
   extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
   
@@ -53,7 +54,7 @@ for (nexusName in nexusFiles) {
     
     yMax <- max(apply(dirScores[, otherDirectories], 2, function (x) max(table(x))))
     hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
-         main=paste0(nexusRoot, " MPTs under ", dirPath), col.main=dirCol, xlab='Extra length') # Set up blank histogram
+         main=paste0("Trees on ", dirPath, ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than best tree") # Set up blank histogram
     axis(1, col=dirCol)
     axis(2, col=dirCol)
     
@@ -62,16 +63,10 @@ for (nexusName in nexusFiles) {
            border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
     }
   }
-  dev.copy(svg, file=paste0('islandCounts/', nexusName, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('islandCounts/', nexusName, '.png', collapse='')); dev.off()
+  dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse='')); dev.off()
   par(oldPar)
   
-  # Check that nothing beats the inapplicable trees on the inapplicable measure
-  rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
-  phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
-  scores <- vapply(flatTrees, InapplicableFitch, dataset=phyData, integer(1))
-  names(scores) <- treeSource
-  table(names(scores)[scores == min(scores)]); min(scores)
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
   rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', attr(phyData, 'nr'), 'chars -', charSummary)
