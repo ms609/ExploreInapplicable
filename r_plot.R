@@ -4,13 +4,14 @@ OVERWRITE <- FALSE
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 #nexusName <- 'Loconte1991.nex'
+gettingStuck <- c('Aguado2009', 'Capa2011', 'Conrad2008', 'Eklund2004', 'Geisler2001', 'Dikow2009')
 
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName); 
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('Aguado2009', 'Capa2011', gettingStuck, 'Giles2015')) { # Ag, Capa are slow; Dikow in progress
+  if (nexusRoot %in% c( gettingStuck, 'Giles2015')) { # tree search in progress
     cat (" ! Manual override\n")
     next
   }
@@ -123,7 +124,7 @@ for (nexusName in nexusFiles) {
   PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
   rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees])
   PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
-  cat(" - Printed RF SVG & PNG.\n")
+  cat(" - Printed RF treespace.\n")
 
   qtSpace <- modifiedPcoa(qtDistances)
   PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
@@ -131,7 +132,7 @@ for (nexusName in nexusFiles) {
   PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
   dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
-  cat("- Printed Quartet SVG & PNG.\n\n")
+  cat(" - Printed Quartet treespace and saved to files.\nEvaluation complete.\n\n")
 }
 
 #PlotTreeSpace(pcSpace, nTrees, legendPos=qtLegendPos[[nexusName]], mainTitle=titleText)
