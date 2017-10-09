@@ -42,14 +42,66 @@
      showgrid="false"
      units="mm"
      inkscape:snap-global="true"
-     inkscape:zoom="1.9866333"
-     inkscape:cx="346.32869"
-     inkscape:cy="691.96705"
+     inkscape:zoom="2.8095238"
+     inkscape:cx="413.86191"
+     inkscape:cy="610.48005"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
-     inkscape:current-layer="svg1695"
-     showguides="true" />
+     inkscape:current-layer="layer3"
+     showguides="false"
+     inkscape:guide-bbox="true">
+    <sodipodi:guide
+       position="39.262401,728.95675"
+       orientation="0,1"
+       id="guide2027"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.262401,574.09147"
+       orientation="0,1"
+       id="guide2029"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.262401,806.38938"
+       orientation="1,0"
+       id="guide2031"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="39.262401,419.22621"
+       orientation="0,1"
+       id="guide2033"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="191.37052,806.38938"
+       orientation="1,0"
+       id="guide2035"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="411.91127,651.52415"
+       orientation="0,1"
+       id="guide2037"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="267.42459,496.65884"
+       orientation="0,1"
+       id="guide2039"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="343.47863,728.95677"
+       orientation="1,0"
+       id="guide2041"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="115.31646,496.65886"
+       orientation="1,0"
+       id="guide2140"
+       inkscape:locked="false" />
+    <sodipodi:guide
+       position="267.42458,496.65885"
+       orientation="1,0"
+       id="guide2142"
+       inkscape:locked="false" />
+  </sodipodi:namedview>
   <defs
      id="defs202">
     <g
@@ -687,12 +739,12 @@
     </clipPath>
   </defs>
   <rect
-     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+     style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#cccccc;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999905;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
      id="rect2009"
-     width="542.75708"
-     height="318.73056"
-     x="30.262402"
-     y="26.500378" />
+     width="390.64893"
+     height="473.59583"
+     x="30.262398"
+     y="26.500359" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Wilson2003-3.png"
      xlink:href="Wilson2003-3.png"
@@ -701,18 +753,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1709"
-     x="343.47867"
-     y="267.79828" />
-  <image
-     sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Wilson2003.png"
-     xlink:href="Wilson2003.png"
-     style="stroke-width:8.76774597"
-     width="68.43264"
-     height="68.43264"
-     preserveAspectRatio="none"
-     id="image1720"
-     x="419.53275"
-     y="267.79828" />
+     x="115.31646"
+     y="422.66354" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Wetterer2000-3.png"
      xlink:href="Wetterer2000-3.png"
@@ -721,8 +763,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1731"
-     x="191.37053"
-     y="267.79828" />
+     x="343.47864"
+     y="345.2309" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\OMeara2014-3.png"
      xlink:href="OMeara2014-3.png"
@@ -731,8 +773,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1742"
-     x="115.31647"
-     y="190.36565" />
+     x="115.31646"
+     y="267.79828" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Capa2011-3.png"
      xlink:href="Capa2011-3.png"
@@ -741,8 +783,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1786"
-     x="419.53275"
-     y="35.500378" />
+     x="39.262402"
+     y="112.93299" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Aguado2009-3.png"
      xlink:href="Aguado2009-3.png"
@@ -761,8 +803,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1808"
-     x="39.262402"
-     y="267.79828" />
+     x="191.37051"
+     y="345.2309" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Vinther2008-3.png"
      xlink:href="Vinther2008-3.png"
@@ -771,8 +813,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1819"
-     x="115.31646"
-     y="267.79828" />
+     x="267.42456"
+     y="345.2309" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Schulze2007-3.png"
      xlink:href="Schulze2007-3.png"
@@ -781,8 +823,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1830"
-     x="495.58682"
-     y="190.36565" />
+     x="115.31646"
+     y="345.2309" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Sansom2010-3.png"
      xlink:href="Sansom2010-3.png"
@@ -791,8 +833,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1841"
-     x="419.53268"
-     y="190.36565" />
+     x="39.262402"
+     y="345.2309" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Sano2011-3.png"
      xlink:href="Sano2011-3.png"
@@ -801,8 +843,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1852"
-     x="343.47864"
-     y="190.36565" />
+     x="343.47861"
+     y="267.79828" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Rousset2004-3.png"
      xlink:href="Rousset2004-3.png"
@@ -812,7 +854,7 @@
      preserveAspectRatio="none"
      id="image1863"
      x="267.42459"
-     y="190.36565" />
+     y="267.79828" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Wills2012-3.png"
      xlink:href="Wills2012-3.png"
@@ -821,8 +863,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1874"
-     x="267.42459"
-     y="267.79828" />
+     x="39.262402"
+     y="422.66354" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Wortley2006-3.png"
      xlink:href="Wortley2006-3.png"
@@ -831,8 +873,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1885"
-     x="495.58682"
-     y="267.79828" />
+     x="191.37051"
+     y="422.66354" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Rougier2012-3.png"
      xlink:href="Rougier2012-3.png"
@@ -841,8 +883,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1896"
-     x="191.37053"
-     y="190.36565" />
+     x="191.3705"
+     y="267.79828" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\OLeary1999-3.png"
      xlink:href="OLeary1999-3.png"
@@ -852,7 +894,7 @@
      preserveAspectRatio="none"
      id="image1907"
      x="39.262402"
-     y="190.36565" />
+     y="267.79828" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Liljeblad2008-3.png"
      xlink:href="Liljeblad2008-3.png"
@@ -861,8 +903,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1753"
-     x="419.53271"
-     y="112.93301" />
+     x="191.37053"
+     y="190.36559" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Giles2015-3.png"
      xlink:href="Giles2015-3.png"
@@ -871,8 +913,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1764"
-     x="267.42459"
-     y="112.93301" />
+     x="39.262402"
+     y="190.36559" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Dikow2009-3.png"
      xlink:href="Dikow2009-3.png"
@@ -881,8 +923,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1775"
-     x="39.262402"
-     y="112.93301" />
+     x="191.37051"
+     y="112.93299" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Loconte1991-3.png"
      xlink:href="Loconte1991-3.png"
@@ -891,8 +933,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1918"
-     x="495.58682"
-     y="112.93301" />
+     x="267.42462"
+     y="190.36559" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Griswold1999-3.png"
      xlink:href="Griswold1999-3.png"
@@ -901,8 +943,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1929"
-     x="343.47867"
-     y="112.93301" />
+     x="115.31647"
+     y="190.36559" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Geisler2001-3.png"
      xlink:href="Geisler2001-3.png"
@@ -911,8 +953,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1940"
-     x="191.37053"
-     y="112.93301" />
+     x="343.47864"
+     y="112.93299" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Eklund2004-3.png"
      xlink:href="Eklund2004-3.png"
@@ -921,8 +963,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1951"
-     x="115.31647"
-     y="112.93301" />
+     x="267.42459"
+     y="112.93299" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\DeAssis2011-3.png"
      xlink:href="DeAssis2011-3.png"
@@ -931,8 +973,8 @@
      height="68.43264"
      preserveAspectRatio="none"
      id="image1962"
-     x="495.58682"
-     y="35.500378" />
+     x="115.31647"
+     y="112.93299" />
   <image
      sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Conrad2008-3.png"
      xlink:href="Conrad2008-3.png"
@@ -973,4 +1015,212 @@
      id="image2006"
      x="39.262402"
      y="35.500378" />
+  <g
+     inkscape:groupmode="layer"
+     id="layer1"
+     inkscape:label="Graphs">
+    <image
+       sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Zhu2013-3.png"
+       xlink:href="Zhu2013-3.png"
+       style="display:inline;stroke-width:8.7677002"
+       width="68.432999"
+       height="68.432999"
+       preserveAspectRatio="none"
+       id="image2191"
+       x="343.47864"
+       y="422.66354" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer2"
+     inkscape:label="Better than both"
+     style="display:inline">
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045"
+       width="28.638489"
+       height="26.93408"
+       x="39.262402"
+       y="71.755783" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-7"
+       width="28.638487"
+       height="26.934078"
+       x="119.32394"
+       y="72.904594" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-5"
+       width="28.638487"
+       height="26.934078"
+       x="193.31848"
+       y="73.848404" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-9"
+       width="28.638487"
+       height="26.934078"
+       x="347.91418"
+       y="73.565262" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-2"
+       width="28.638487"
+       height="26.934078"
+       x="194.45103"
+       y="228.91602" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-76"
+       width="28.638487"
+       height="26.934078"
+       x="118.56889"
+       y="229.67107" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-3"
+       width="28.638487"
+       height="26.934078"
+       x="42.309223"
+       y="229.29355" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-6"
+       width="28.638487"
+       height="26.934078"
+       x="120.81718"
+       y="307.06329" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-8"
+       width="28.638487"
+       height="26.934078"
+       x="275.97916"
+       y="306.49704" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-58"
+       width="28.638487"
+       height="26.934078"
+       x="42.754131"
+       y="459.4343" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-59"
+       width="28.638487"
+       height="26.934078"
+       x="347.89734"
+       y="383.7005" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-96"
+       width="28.638487"
+       height="26.934078"
+       x="271.07138"
+       y="382.75668" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-90"
+       width="28.638487"
+       height="26.934078"
+       x="119.30709"
+       y="383.7005" />
+    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-21"
+       width="28.638485"
+       height="26.934076"
+       x="198.31119"
+       y="461.49261" />
+    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2159"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:25px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
+       transform="matrix(0.75,0,0,0.75,-51.174152,10.774207)"><flowRegion
+         id="flowRegion2161"><rect
+           id="rect2163"
+           width="108.67256"
+           height="64.779663"
+           x="457.9715"
+           y="582.92645" /></flowRegion><flowPara
+         id="flowPara2165">ZANOL</flowPara></flowRoot>    <flowRoot
+       xml:space="preserve"
+       id="flowRoot2175"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:25px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
+       transform="matrix(0.75,0,0,0.75,19.39085,25.305171)"><flowRegion
+         id="flowRegion2177"><rect
+           id="rect2179"
+           width="115.79121"
+           height="74.258186"
+           x="457.9715"
+           y="253.82079" /></flowRegion><flowPara
+         id="flowPara2181">LONGRICH</flowPara></flowRoot>    <rect
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:#009e73;fill-opacity:1;fill-rule:evenodd;stroke:none;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="rect2045-59-2"
+       width="28.638485"
+       height="26.934076"
+       x="348.48047"
+       y="457.69504"
+       inkscape:transform-center-x="-11.325693"
+       inkscape:transform-center-y="-78.524784" />
+  </g>
+  <g
+     inkscape:groupmode="layer"
+     id="layer3"
+     inkscape:label="Better than ExtraStateOnly">
+    <ellipse
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:8;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path2214"
+       cx="316.80109"
+       cy="86.908295"
+       rx="11.136931"
+       ry="10.570647" />
+    <ellipse
+       ry="10.570647"
+       rx="11.13693"
+       cy="165.36835"
+       cx="89.472977"
+       id="ellipse2233"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <ellipse
+       ry="10.570647"
+       rx="11.13693"
+       cy="164.23578"
+       cx="317.49695"
+       id="ellipse2235"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <ellipse
+       ry="10.570647"
+       rx="11.13693"
+       cy="164.23578"
+       cx="390.35889"
+       id="ellipse2237"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
+    <ellipse
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path2214-5"
+       cx="166.11017"
+       cy="475.31482"
+       rx="11.13693"
+       ry="10.570647" />
+    <path
+       sodipodi:type="star"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#56b4e9;stroke-width:4.97983551;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path2241"
+       sodipodi:sides="3"
+       sodipodi:cx="392.24652"
+       sodipodi:cy="322.79547"
+       sodipodi:r1="15.927718"
+       sodipodi:r2="9.8672056"
+       sodipodi:arg1="0.54854941"
+       sodipodi:arg2="1.5957469"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 405.83735,331.10098 -27.57903,-0.68826 14.38557,-23.54001 z"
+       inkscape:transform-center-x="0.80235742"
+       inkscape:transform-center-y="-0.85251239"
+       transform="matrix(0.76076995,-0.02329543,0.02280288,0.74468425,86.090993,91.287822)" />
+  </g>
 </svg>
