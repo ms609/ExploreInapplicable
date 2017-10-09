@@ -54,6 +54,20 @@ for (nexusName in nexusFiles) {
 
 write.csv(props, 'matrixProperties.csv')
 
+props[, c('MDSarea_ambig', 'MDSarea_exst', 'MDSarea_inapp')]  <- NA
+for (fileRoot in names(validReads)) {
+  if (all(file.exists(paste0('treeSpaces/', fileRoot, '.qt.csv'), paste0('islandCounts/', fileRoot, '.csv')))) {
+    treeDetails <- read.csv(paste0('islandCounts/', fileRoot, '.csv'))
+    nTrees <- table(treeDetails[, 1])
+    qtDists <- data.matrix(read.csv(paste0('treeSpaces/', fileRoot, '.qt.csv'), row.names=1))
+    qtDists[qtDists == 0] <- 1e-9
+    diag(qtDists) <- 0
+    props[fileRoot, c('MDSarea_ambig', 'MDSarea_exst', 'MDSarea_inapp')] <- PlotKruskalTreeSpace3(qtDists, nTrees)
+  }
+}
+
+write.csv(props, 'matrixProperties.csv')
+
 plot(I(consNodes_exst_inapp / consNodes_inapp) ~ prop_na, data=props)
 plot(I(consNodes_inapp / nTax) ~ prop_na, data=props)
 plot(I(consNodes_exst_inapp / consNodes_inapp) ~ prop_chars_na, data=props)
@@ -61,6 +75,12 @@ plot(I(consNodes_exst_inapp / consNodes_inapp) ~ nTokens, data=props)
 
 plot(I(inappMPTs) ~ prop_na, data=props)
 plot(I(ambigMPTs / ) ~ prop_na, data=props)
+
+
+safeData <- props[is.finite(props$MDSarea_ambig) & props$MDSarea_ambig > 1e-9, ]
+safeData$MDSarea_ambig
+plot(log(MDSarea_ambig) ~ prop_na, data=safeData)
+summary(lm(log(MDSarea_ambig) ~ prop_chars_na, data=safeData, na.action=na.omit)) # No trend
 
 
 ### Analyse accuracy:
