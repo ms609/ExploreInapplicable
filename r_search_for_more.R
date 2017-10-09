@@ -31,10 +31,9 @@ for (filename in inappFiles) {
   rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
   phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
    
-  best <- ape::root(ape::nj(phangorn::dist.hamming(phyData)), names(rawData)[1], resolve.root=TRUE)
-  attr(best, 'pscore') <- 1e+7
-  bestScore <- 1e+7
-  bestHits <- 0
+  best <- ape::read.tree(text=readLines(bestTreeFile)[[1]])
+  bestScore <- attr(best, 'pscore') <- inapplicable::InapplicableFitch(best, phyData)
+
   maxHitMenu <- 2:20 # Small maxHits finds result faster, but chance of improving score per 
                      # second spent increases with maxHits at least up to 150. (Data for higher not available.)
 
