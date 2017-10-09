@@ -4,15 +4,15 @@ OVERWRITE <- FALSE
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 #nexusName <- 'Eklund2004.nex'
-gettingStuck <- c('Aguado2009', 'Capa2011', 'Conrad2008', 'Eklund2004', 'Geisler2001', 
-  'Dikow2009', 'Wills2012', 'Schulze2007')
+slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 'Eklund2004', 
+               'Geisler2001', 'Giles2015', 'OMeara2014', 'Wills2012', 'Schulze2007')
 
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName); 
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('Schulze2007', 'Zanol2014')) { # tree search in progress
+  if (nexusRoot %in% c('avoidThisFile.nex')) { # add slowFiles to this list if quick results wanted first
     cat (" ! Manual override\n")
     next
   }
