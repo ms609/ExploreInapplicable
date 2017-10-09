@@ -153,6 +153,10 @@ for (nexusName in nexusFiles) {
   PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
   qtAreas <- PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos='bottomright', qtTitleText)
   
+  areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
+  write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
+  
+  
   #rfSpace <- modifiedPcoa(rfDistances, correction='none')
   #PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
   #rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
