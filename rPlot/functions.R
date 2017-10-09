@@ -106,6 +106,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
 }
 
 PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
+  
   scaled <- MASS::isoMDS(distances, k = 2)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
@@ -133,17 +134,24 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
   title(main = mainTitle, cex.main=0.81)
   
   iTrees <- TreeNumbers(nTrees)
+  hullArea <- double(length(nTrees))
+  names(hullArea) <- allDirectories
   for (i in seq_along(nTrees)[-1]) {
     #xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
     #hull <- geometry::convhulln(xyz, option='FA')
     #polygon(xyz[t(hull$hull), 1:2], border=paste0(treePalette[i], '33'), lty=1)
     convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
     convexHull <- c(convexHull, convexHull[1])
-    lines(x[iTrees[[i]] - nTrees[1]][convexHull], y[iTrees[[i]] - nTrees[1]][convexHull], col=treePalette[i])
+    convX <- x[iTrees[[i]] - nTrees[1]][convexHull]
+    convY <- y[iTrees[[i]] - nTrees[1]][convexHull]
+    lines(convX, convY, col=treePalette[i])
+    hullArea[[i]] <- geometry::polyarea(convX, convY)
   }
   
   legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees[-1], ')'),
          cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
+  
+  c(hullArea[-1] / hullArea['inapplicable'])
 }
 
 
