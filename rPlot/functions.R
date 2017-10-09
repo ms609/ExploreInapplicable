@@ -107,7 +107,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
 
 PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
   
-  scaled <- MASS::isoMDS(distances, k = 2)$points # Kruskal's non-multimetric MDS
+  scaled <- MASS::isoMDS(distances, k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
   plot(scaled, type = "p", xlab = "", ylab = "", axes = FALSE, col=treeCol, pch=treePCh)
@@ -126,7 +126,7 @@ PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', m
 
 PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
   ambigTrees <- seq_len(nTrees[[1]])
-  scaled <- MASS::isoMDS(distances[-ambigTrees, -ambigTrees], k = 2)$points # Kruskal's non-multimetric MDS
+  scaled <- MASS::isoMDS(distances[-ambigTrees, -ambigTrees], k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
   plot(x, y, type = "p", xlab = "", ylab = "",
