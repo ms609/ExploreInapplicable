@@ -55,7 +55,7 @@ for (nexusName in nexusFiles) {
   cat(" - Plotting island scores...\n")
   for (dirPath in allDirectories) {
     dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
-    dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
+    dirBreaks <- -0.5:(max(dirScores) + 0.5)
     dirCol <- treePalette[dirPath]
     otherDirectories <- which(allDirectories != dirPath)
     
@@ -77,7 +77,7 @@ for (nexusName in nexusFiles) {
   # Plot tree scores: 3x3
   for (dirPath in allDirectories[-1]) {
     dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
-    dirBreaks <- (min(dirScores) - 1):max(dirScores) + 0.5
+    dirBreaks <- (-0.5):(max(dirScores) + 0.5)
     dirCol <- treePalette[dirPath]
     otherDirectories <- which(allDirectories != dirPath)[-1]
     
