@@ -48,10 +48,11 @@ sub char_template() {
         $in_matrix = 0;
       } elsif ($in_matrix && $line =~ /^(\s*[A-z_\.][A-z0-9\(\)_\.]+\s+)(.+)$/) {
         $line_modified = 1;
+        $taxon_name = $1;
+        $taxon_name =~ s/[\(\)]//g;
         for (@matrix_files) {
           print $_ $1;
         }
-        $taxon_name = $1;
         my @tokens = $2 =~ /\s*\{[^\}]+\}|[^\{]/g;
         @tokens = map {$_ =~ s/\s+//; $_} @tokens; # Remove whitespace
         for (my $i = 0; $i < scalar(@tokens); $i++) {
