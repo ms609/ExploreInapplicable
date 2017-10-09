@@ -30,13 +30,14 @@ for (nexusName in nexusFiles) {
   flatTrees <- unlist(trees, recursive=FALSE)
   rm(trees)
   
+  treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
+  treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
+  treeCol <- paste(rep(treePalette, nTrees))
+  treePCh <- rep(plotChars, nTrees)
+  
   if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
     cat(" - MPT histograms already exist.\n")    
   } else {
-    treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
-    treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
-    treeCol <- paste(rep(treePalette, nTrees))
-    treePCh <- rep(plotChars, nTrees)
     
     # Calculate tree scores
     treeScoreFile <- paste0('islandCounts/', nexusRoot, '.csv')
