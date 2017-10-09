@@ -23,7 +23,7 @@
         <dc:format>image/svg+xml</dc:format>
         <dc:type
            rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-        <dc:title></dc:title>
+        <dc:title />
       </cc:Work>
     </rdf:RDF>
   </metadata>
@@ -42,14 +42,14 @@
      showgrid="false"
      units="mm"
      inkscape:snap-global="true"
-     inkscape:zoom="0.99331667"
-     inkscape:cx="457.28118"
-     inkscape:cy="741.08157"
+     inkscape:zoom="5.6190476"
+     inkscape:cx="480.19024"
+     inkscape:cy="504.82468"
      inkscape:window-x="-8"
      inkscape:window-y="-8"
      inkscape:window-maximized="1"
      inkscape:current-layer="layer1"
-     showguides="false"
+     showguides="true"
      inkscape:guide-bbox="true">
     <sodipodi:guide
        position="39.262401,728.95675"
@@ -1032,19 +1032,8 @@
        y="422.66354" />
     <flowRoot
        xml:space="preserve"
-       id="flowRoot2159"
-       style="display:inline;color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:25px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
-       transform="matrix(0.75,0,0,0.75,-51.174152,10.774207)"><flowRegion
-         id="flowRegion2161"><rect
-           id="rect2163"
-           width="108.67256"
-           height="64.779663"
-           x="457.9715"
-           y="582.92645" /></flowRegion><flowPara
-         id="flowPara2165">ZANOL</flowPara></flowRoot>    <flowRoot
-       xml:space="preserve"
        id="flowRoot2175"
-       style="display:inline;color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:25px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
+       style="color:#000000;font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:7.5px;line-height:25px;font-family:Arial;-inkscape-font-specification:'Arial, Normal';text-align:start;letter-spacing:0px;word-spacing:0px;writing-mode:lr-tb;text-anchor:start;display:inline;overflow:visible;visibility:visible;fill:#000000;fill-opacity:1;fill-rule:nonzero;stroke:none;stroke-width:1px;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1;marker:none;marker-start:none;marker-mid:none;marker-end:none;enable-background:accumulate"
        transform="matrix(0.75,0,0,0.75,19.39085,25.305171)"><flowRegion
          id="flowRegion2177"><rect
            id="rect2179"
@@ -1052,7 +1041,27 @@
            height="74.258186"
            x="457.9715"
            y="253.82079" /></flowRegion><flowPara
-         id="flowPara2181">LONGRICH</flowPara></flowRoot>  </g>
+         id="flowPara2181">LONGRICH</flowPara></flowRoot>    <image
+       sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Loconte1991-3.png"
+       xlink:href="Loconte1991-3.png"
+       y="190.36559"
+       x="267.42462"
+       id="image224"
+       preserveAspectRatio="none"
+       height="68.43264"
+       width="68.43264"
+       style="display:inline;stroke-width:8.76774597" />
+    <image
+       sodipodi:absref="C:\Research\ExploreInapplicable\islandCounts\Zanol2014-3.png"
+       xlink:href="Zanol2014-3.png"
+       y="422.66354"
+       x="267.42459"
+       id="image225"
+       preserveAspectRatio="none"
+       height="68.432999"
+       width="68.432999"
+       style="display:inline;stroke-width:8.7677002" />
+  </g>
   <g
      inkscape:groupmode="layer"
      id="layer3"
@@ -1198,6 +1207,13 @@
        cy="475.31482"
        rx="11.13693"
        ry="10.570647" />
+    <ellipse
+       ry="10.570647"
+       rx="11.13693"
+       cy="472.2951"
+       cx="319.35043"
+       id="ellipse3897"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#e69f00;stroke-width:7.99999952;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate" />
   </g>
   <g
      inkscape:groupmode="layer"
@@ -1474,5 +1490,23 @@
        inkscape:transform-center-x="0.80235742"
        inkscape:transform-center-y="-0.85251239"
        transform="matrix(0.76076992,-0.02329543,0.02280288,0.74468425,-217.16324,241.31325)" />
+    <path
+       sodipodi:type="star"
+       style="color:#000000;clip-rule:nonzero;display:inline;overflow:visible;visibility:visible;opacity:1;isolation:auto;mix-blend-mode:normal;color-interpolation:sRGB;color-interpolation-filters:linearRGB;solid-color:#000000;solid-opacity:1;vector-effect:none;fill:none;fill-opacity:1;fill-rule:evenodd;stroke:#56b4e9;stroke-width:4.97983551;stroke-miterlimit:4;stroke-dasharray:none;marker:none;marker-start:none;marker-mid:none;marker-end:none;color-rendering:auto;image-rendering:auto;shape-rendering:auto;text-rendering:auto;enable-background:accumulate"
+       id="path3899"
+       sodipodi:sides="3"
+       sodipodi:cx="392.24652"
+       sodipodi:cy="322.79547"
+       sodipodi:r1="15.927718"
+       sodipodi:r2="9.8672056"
+       sodipodi:arg1="0.54854941"
+       sodipodi:arg2="1.5957469"
+       inkscape:flatsided="true"
+       inkscape:rounded="0"
+       inkscape:randomized="0"
+       d="m 405.83735,331.10098 -27.57903,-0.68826 14.38557,-23.54001 z"
+       inkscape:transform-center-x="0.80235778"
+       inkscape:transform-center-y="-0.85250826"
+       transform="matrix(0.76076992,-0.02329543,0.02280288,0.74468425,15.082519,241.31325)" />
   </g>
 </svg>
