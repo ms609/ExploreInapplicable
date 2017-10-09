@@ -42,7 +42,7 @@ for (nexusName in nexusFiles) {
     # Calculate tree scores
     treeScoreFile <- paste0('islandCounts/', nexusRoot, '.csv')
     if (file.exists(treeScoreFile)) {
-      scores <- read.csv(treeScoreFile)
+      scores <- data.matrix(read.csv(treeScoreFile))
     } else {      
       cat(" - Calculating tree scores...\n")
       scores <- vapply(allDirectories, function (dirPath) {
@@ -129,14 +129,14 @@ for (nexusName in nexusFiles) {
   rfFileName <- paste0('treeSpaces/', nexusRoot, '.rf.csv')
   qtFileName <- paste0('treeSpaces/', nexusRoot, '.qt.csv')
   if (file.exists(rfFileName)) {
-    rfDistances <- read.csv(rfFileName, row.names=1)
+    rfDistances <- data.matrix(read.csv(rfFileName, row.names=1))
   } else {
     cat(" - Calculating RF distances...\n")
     rfDistances <- RFDistances(flatTrees)
     write.csv(rfDistances, file=rfFileName)
   }
   if (file.exists(qtFileName)) {
-    qtDistances <- read.csv(qtFileName, row.names=1)
+    qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
   } else {
     cat(" - Calculating quartet distances...\n")
     qtDistances <- QuartetDistances(flatTrees)
@@ -146,12 +146,12 @@ for (nexusName in nexusFiles) {
   ambiguousTrees <- 1:nTrees[1]
   
   PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
-  PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+  rfAreas <- PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
   qtDistances[qtDistances == 0] <- 1e-9
   diag(qtDistances) <- 0
   PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
-  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos='bottomright', qtTitleText)
+  qtAreas <- PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos='bottomright', qtTitleText)
   
   #rfSpace <- modifiedPcoa(rfDistances, correction='none')
   #PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
