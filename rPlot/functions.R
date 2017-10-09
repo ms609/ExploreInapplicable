@@ -179,6 +179,22 @@ PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   
 }
 
+MatrixProperties <- function (fileRoot) {
+  fileName <- paste0('inapplicable', '/', fileRoot, '.nex', collapse='')
+  if (!file.exists(fileName)) return (integer(6))
+  rawData <- read.nexus.data(fileName)
+  inapplicableTokens <- vapply(rawData, function (x) x == '-', logical(length(rawData[[1]])))
+  inapplicableChars <- rowSums(inapplicableTokens) > 0
+  ambiguousTokens <- vapply(rawData, function (x) x == '?', logical(length(rawData[[1]])))
+  ret <-    c(nTax = length(rawData),
+              nChar = length(rawData[[1]]),
+              nInapp = sum(inapplicableChars),
+              #whichInapp = inapplicableChars,
+              nTokens = length(rawData) * length(rawData[[1]]),
+              inappTokens = sum(inapplicableTokens),
+              ambigTokens = sum(ambiguousTokens)
+              )  
+}
 
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
     centre <- function(D, n) {

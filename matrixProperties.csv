@@ -1,35 +1,35 @@
-matrix,group,taxon,rank,ntax,chars,chars_na,tokens_na
- Agnarsson2004.nex                 ,Spiders,Theridiidae,family,62,242,,
- Capa2011.nex                      ,Annelids,Sabellidae,family,67,135,,
- DeAssis2011.nex                   ,Annelids,Maldanidae,family,33,50,,
- OLeary1999.nex                    ,Chordata,Cetacea,order,40,150,,
- Rousset2004.nex                  ,Annelids,Siboglinidae,family,34,107,,
- Sano2011.nex                      ,Euarthropoda,Aphididae,tribe,36,52,,
- Sansom2010.nex                    ,Chordata,Chordata,phylum,23,109,,
- Schulze2007.nex                   ,Sipunculans,Sipuncula,class,52,58,,
- Shultz2007.nex                    ,Euarthropods,Arachnida,class,59,202,,
- Wetterer2000.nex                  ,Bats,Phyllostomidae,family,63,150,,
- Wills2012.nex                     ,Priapulida,Priapulida,phylum,55,88,,
-Aguado2009,Annelids,Syllidae,family,76,107,40.2,5
-Aria2015,Euarthropods,Euarthropoda,phylum,35,50,,
-Asher2005,Mammals,mammals,class,23,126,31.7,3.9
-Baker2009,Angiosperms,Arecaceae,family,205,105,35.2,8.3
-Bouchenak2010,Angiosperms,Poaceae,family,818,417,81.5,21.1
-Conrad2008 [nee Wiens2010],Chordata,Squamata,order,64,363,41.9,7.7
-Dikow2009,Insects,Asilidae,familiy,88,220,8.2,1.6
-Eklund2004,Angiosperms,Chloranthaceae,family,54,131,31.3,10
-Geisler2001,Mammals,Cetacea+,order,68,186,46.8,2
-Giles2015,Chordata,fish,class,78,236,74.2,17.3
-Griswold1999,Spiders,Entelegynae,infraorder,43,137,43.8,9.6
-Liljeblad2008,Euarthropods,Cynipidae,family,68,308,31.5,6.4
-Loconte1991,Angiosperms,Magnoliidae,family,56,104,63.5,4.1
-Longrich2010,Chordata,dinosaurs,class,19,119,26.1,5.7
-OMeara2014,Chordata,mammals,class,63,317,44.5,5.4
-Rougier2012,Chordata,mammals,class,58,317,2.8,0.4
-Sharkey2011,Insects,Hymenoptera,order,105,392,100,20.1
-Sundue2010,Pteridophytes,Polypodiaceae,family,177,237,81.9,26.5
-Vinther2008,Lophotrochozoans,,phylum,23,57,43.9,20.9
-Wilson2003,Crustaceans,Phreatoicidea,suborder,61,165,43,11.1
-Wortley2006,Angiosperms,Lamiales,order,37,105,20,3.7
-Zanol2014,Annelids,Eunicidae,family,74,213,,
-Zhu2013,Chordata,fish,class,75,253,70.8,19.3
+matrix,group,taxon,rank,nTax,nChars,nTokens,chars_na,tokens_na,tokens_amb
+Agnarsson2004,Spiders,Theridiidae,family,62,242,,,,
+Capa2011,Annelids,Sabellidae,family,67,135,,,,
+DeAssis2011,Annelids,Maldanidae,family,33,50,,,,
+OLeary1999,Chordata,Cetacea,order,40,150,,,,
+Rousset2004,Annelids,Siboglinidae,family,34,107,,,,
+Sano2011,Euarthropoda,Aphididae,tribe,36,52,,,,
+Sansom2010,Chordata,Chordata,phylum,23,109,,,,
+Schulze2007,Sipunculans,Sipuncula,class,52,58,,,,
+Shultz2007,Euarthropods,Arachnida,class,59,202,,,,
+Wetterer2000,Bats,Phyllostomidae,family,63,150,,,,
+Wills2012,Priapulida,Priapulida,phylum,55,88,,,,
+Aguado2009,Annelids,Syllidae,family,76,107,,,,
+Aria2015,Euarthropods,Euarthropoda,phylum,35,50,,,,
+Asher2005,Mammals,mammals,class,23,126,,,,
+Baker2009,Angiosperms,Arecaceae,family,205,105,,,,
+Bouchenak2010,Angiosperms,Poaceae,family,818,417,,,,
+Conrad2008,Chordata,Squamata,order,64,363,,,,
+Dikow2009,Insects,Asilidae,familiy,88,220,,,,
+Eklund2004,Angiosperms,Chloranthaceae,family,54,131,,,,
+Geisler2001,Mammals,Cetacea+,order,68,186,,,,
+Giles2015,Chordata,fish,class,78,236,,,,
+Griswold1999,Spiders,Entelegynae,infraorder,43,137,,,,
+Liljeblad2008,Euarthropods,Cynipidae,family,68,308,,,,
+Loconte1991,Angiosperms,Magnoliidae,family,56,104,,,,
+Longrich2010,Chordata,dinosaurs,class,19,119,,,,
+OMeara2014,Chordata,mammals,class,63,317,,,,
+Rougier2012,Chordata,mammals,class,58,317,,,,
+Sharkey2011,Insects,Hymenoptera,order,105,392,,,,
+Sundue2010,Pteridophytes,Polypodiaceae,family,177,237,,,,
+Vinther2008,Lophotrochozoans,,phylum,23,57,,,,
+Wilson2003,Crustaceans,Phreatoicidea,suborder,61,165,,,,
+Wortley2006,Angiosperms,Lamiales,order,37,105,,,,
+Zanol2014,Annelids,Eunicidae,family,74,213,,,,
+Zhu2013,Chordata,fish,class,75,253,,,,
