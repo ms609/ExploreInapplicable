@@ -24,13 +24,15 @@ for (nexusName in nexusFiles) {
     next
   }
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
+  cat(" - Trees read OK.\n")
+  nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
+  dirTrees <- TreeNumbers(nTrees)
+  flatTrees <- unlist(trees, recursive=FALSE)
+  rm(trees)
   
-  if (!file.exists(paste0('islandScores/', nexusRoot, '.png', collapse=''))  || OVERWRITE) {
-    cat("   - Trees read OK.\n")
-    nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
-    dirTrees <- TreeNumbers(nTrees)
-    flatTrees <- unlist(trees, recursive=FALSE)
-    rm(trees)
+  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
+    cat(" - MPT histograms already exist.\n")    
+  } else {
     treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
     treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
     treeCol <- paste(rep(treePalette, nTrees))
@@ -112,7 +114,7 @@ for (nexusName in nexusFiles) {
   }
   
   if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
-    cat(" - Results already exist.\n")
+    cat(" - Treespace plots already exist.\n")
     next
   }
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
@@ -129,20 +131,20 @@ for (nexusName in nexusFiles) {
     rfDistances <- read.csv(rfFileName, row.names=1)
   } else {
     cat(" - Calculating RF distances...\n")
-    rfDistances <- RFDistances(flatTrees);
+    rfDistances <- RFDistances(flatTrees)
     write.csv(rfDistances, file=rfFileName)
   }
   if (file.exists(qtFileName)) {
-    qtDistances <- read.csv(rfFileName, row.names=1)
+    qtDistances <- read.csv(qtFileName, row.names=1)
   } else {
     cat(" - Calculating quartet distances...\n")
-    qtDistances <- QuartetDistances(flatTrees);
+    qtDistances <- QuartetDistances(flatTrees)
     write.csv(qtDistances, file=qtFileName)
   }
   rm(flatTrees)
   ambiguousTrees <- 1:nTrees[1]
   
-  PlotKruskalTreeSpace(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+  PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
   qtDistances[qtDistances == 0] <- 1e-9
