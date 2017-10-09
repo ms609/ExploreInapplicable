@@ -1,3 +1,11 @@
+# Temporarily ignore enormous matrices
+**/Bouch*
+**/Baker*
+**/Longr*
+**/Shark*
+**/Sundue*
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
@@ -13,6 +21,9 @@ $RECYCLE.BIN/
 *.msi
 *.msm
 *.msp
+
+# Windows executables, e.g. tnt.exe
+*.exe
 
 # Windows shortcuts
 *.lnk

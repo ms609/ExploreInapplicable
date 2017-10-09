@@ -16,10 +16,7 @@ for (nexusName in nexusFiles) {
     cat (" ! Manual override\n")
     next
   }
-  if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
-    cat(" - Results already exist.\n")
-    next
-  }
+
   
   rTrees <- lapply(rDirectories, readRTrees, nexusName=nexusName)
   if (is.null(rTrees[[1]])) {
@@ -27,86 +24,97 @@ for (nexusName in nexusFiles) {
     next
   }
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
-
-  cat("   - Trees read OK.\n")
-  nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
-  dirTrees <- TreeNumbers(nTrees)
-  flatTrees <- unlist(trees, recursive=FALSE)
-  rm(trees)
-  treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
-  treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
-  treeCol <- paste(rep(treePalette, nTrees))
-  treePCh <- rep(plotChars, nTrees)
   
-  # Calculate tree scores
-  cat(" - Calculating tree scores...\n")
-  scores <- vapply(allDirectories, function (dirPath) {
-    TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
-    rawData <- read.nexus.data(paste0(dirPath, '/', nexusName, collapse=''))
-    phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
-    as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
-  }, integer(sum(nTrees)))
-  rownames(scores) <- treeSource
-  write.csv(scores, file=paste0('islandCounts/', nexusRoot, '.csv'))
-  minScores <- apply(scores, 2, min)
-  extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
-  rm(scores)
-  
-  # Plot tree scores: 4x4
-  cat(" - Plotting island scores...\n")
-  for (dirPath in allDirectories) {
-    dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
-    dirBreaks <- -0.5:(max(dirScores) + 0.5)
-    dirCol <- treePalette[dirPath]
-    otherDirectories <- which(allDirectories != dirPath)
+  if (!file.exists(paste0('islandScores/', nexusRoot, '.png', collapse=''))  || OVERWRITE) {
+    cat("   - Trees read OK.\n")
+    nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
+    dirTrees <- TreeNumbers(nTrees)
+    flatTrees <- unlist(trees, recursive=FALSE)
+    rm(trees)
+    treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
+    treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
+    treeCol <- paste(rep(treePalette, nTrees))
+    treePCh <- rep(plotChars, nTrees)
     
-    yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
-    hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
-         main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
-    axis(1, col=dirCol)
-    axis(2, col=dirCol)
-    
-    for (i in otherDirectories) {
-      hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
-           border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+    # Calculate tree scores
+    treeScoreFile <- paste0('islandCounts/', nexusRoot, '.csv')
+    if (file.exists(treeScoreFile)) {
+      scores <- read.csv(treeScoreFile)
+    } else {      
+      cat(" - Calculating tree scores...\n")
+      scores <- vapply(allDirectories, function (dirPath) {
+        TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
+        rawData <- read.nexus.data(paste0(dirPath, '/', nexusName, collapse=''))
+        phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
+        as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
+      }, integer(sum(nTrees)))
+      rownames(scores) <- treeSource
+      write.csv(scores, file=treeScoreFile)
     }
-  }
-  dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
-  
-  
-  # Plot tree scores: 3x3
-  for (dirPath in allDirectories[-1]) {
-    dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
-    dirBreaks <- (-0.5):(max(dirScores) + 0.5)
-    dirCol <- treePalette[dirPath]
-    otherDirectories <- which(allDirectories != dirPath)[-1]
+    minScores <- apply(scores, 2, min)
+    extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
+    rm(scores)
     
-    yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
-    hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
-         main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
-    axis(1, col=dirCol)
-    axis(2, col=dirCol)
-    
-    for (i in otherDirectories) {
-      hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
-           border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+    # Plot tree scores: 4x4
+    cat(" - Plotting island scores...\n")
+    for (dirPath in allDirectories) {
+      dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
+      dirBreaks <- -0.5:(max(dirScores) + 0.5)
+      dirCol <- treePalette[dirPath]
+      otherDirectories <- which(allDirectories != dirPath)
+      
+      yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
+      hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
+           main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
+      axis(1, col=dirCol)
+      axis(2, col=dirCol)
+      
+      for (i in otherDirectories) {
+        hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
+             border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+      }
     }
+    dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
+    
+    
+    # Plot tree scores: 3x3
+    for (dirPath in allDirectories[-1]) {
+      dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
+      dirBreaks <- (-0.5):(max(dirScores) + 0.5)
+      dirCol <- treePalette[dirPath]
+      otherDirectories <- which(allDirectories != dirPath)[-1]
+      
+      yMax <- max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
+      hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, cex.main=1,
+           main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, xlab="Steps longer than method's best tree") # Set up blank histogram
+      axis(1, col=dirCol)
+      axis(2, col=dirCol)
+      
+      for (i in otherDirectories) {
+        hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
+             border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
+      }
+    }
+    rm (extraSteps)
+    
+    plot(-9, -9, axes=FALSE, , ylim=c(0, 100), xlim=c(0, 100), xlab='', ylab='')
+    ySpace <- 12; yHeight = 7
+    rect(10, ySpace * 1, 10 + yHeight - 1, yHeight + (ySpace * 1), col=paste0(treePalette[4], '99'), border=treePalette[4])
+    rect(10, ySpace * 2, 10 + yHeight - 1, yHeight + (ySpace * 2), col=paste0(treePalette[3], '99'), border=treePalette[3])
+    rect(10, ySpace * 3, 10 + yHeight - 1, yHeight + (ySpace * 3), col=paste0(treePalette[2], '99'), border=treePalette[2])
+    text(20, ySpace * 1 + (yHeight / 2), englishName[4], pos=4)
+    text(20, ySpace * 2 + (yHeight / 2), englishName[3], pos=4)
+    text(20, ySpace * 3 + (yHeight / 2), englishName[2], pos=4)
+    text(20, ySpace * 4 + (yHeight / 2), 'Method', pos=4, font=2)
+    dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '-3.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('islandCounts/', nexusRoot, '-3.png', collapse=''), width=800, height=800); dev.off()
   }
-  rm (extraSteps)
   
-  plot(-9, -9, axes=FALSE, , ylim=c(0, 100), xlim=c(0, 100), xlab='', ylab='')
-  ySpace <- 12; yHeight = 7
-  rect(10, ySpace * 1, 10 + yHeight - 1, yHeight + (ySpace * 1), col=paste0(treePalette[4], '99'), border=treePalette[4])
-  rect(10, ySpace * 2, 10 + yHeight - 1, yHeight + (ySpace * 2), col=paste0(treePalette[3], '99'), border=treePalette[3])
-  rect(10, ySpace * 3, 10 + yHeight - 1, yHeight + (ySpace * 3), col=paste0(treePalette[2], '99'), border=treePalette[2])
-  text(20, ySpace * 1 + (yHeight / 2), englishName[4], pos=4)
-  text(20, ySpace * 2 + (yHeight / 2), englishName[3], pos=4)
-  text(20, ySpace * 3 + (yHeight / 2), englishName[2], pos=4)
-  text(20, ySpace * 4 + (yHeight / 2), 'Method', pos=4, font=2)
-  dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '-3.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('islandCounts/', nexusRoot, '-3.png', collapse=''), width=800, height=800); dev.off()
-  
+  if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
+    cat(" - Results already exist.\n")
+    next
+  }
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
   
