@@ -11,7 +11,7 @@ for (nexusName in nexusFiles) {
   nexusRoot <- gsub('.nex', '', nexusName); 
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c( gettingStuck, 'Giles2015')) { # tree search in progress
+  if (nexusRoot %in% c('aok')) { # tree search in progress
     cat (" ! Manual override\n")
     next
   }
@@ -121,17 +121,17 @@ for (nexusName in nexusFiles) {
   rm(flatTrees)
   ambiguousTrees <- 1:nTrees[1]
   
-  rfSpace <- modifiedPcoa(rfDistances, correction='lingoes')
+  rfSpace <- modifiedPcoa(rfDistances, correction='none')
   PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='lingoes')
+  rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
   PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
   # If you want to understand what's going on, try
   # PlotTreeSpace3D(rf3, nTrees, legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
 
-  qtSpace <- modifiedPcoa(qtDistances, correction='lingoes')
+  qtSpace <- modifiedPcoa(qtDistances, correction='none')
   PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
-  qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='lingoes')
+  qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
   PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
   # If you want to understand what's going on, try
   # PlotTreeSpace3D(qt3, nTrees, legendPos='bottomright', rfTitleText)
