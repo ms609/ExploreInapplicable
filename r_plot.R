@@ -3,15 +3,16 @@ source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
-#nexusName <- 'Loconte1991.nex'
-gettingStuck <- c('Aguado2009', 'Capa2011', 'Conrad2008', 'Eklund2004', 'Geisler2001', 'Dikow2009')
+#nexusName <- 'Eklund2004.nex'
+gettingStuck <- c('Aguado2009', 'Capa2011', 'Conrad2008', 'Eklund2004', 'Geisler2001', 
+  'Dikow2009', 'Wills2012', 'Schulze2007')
 
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName); 
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('aok')) { # tree search in progress
+  if (nexusRoot %in% c('Schulze2007', 'Zanol2014')) { # tree search in progress
     cat (" ! Manual override\n")
     next
   }
@@ -114,25 +115,44 @@ for (nexusName in nexusFiles) {
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
   # Crude analysis inspired by http://www.kmeverson.org/blog/visualizing-tree-space-in-r
-  cat(" - Calculating RF distances...\n")
-  rfDistances <- RFDistances(flatTrees);
-  cat(" - Calculating quartet distances...\n")
-  qtDistances <- QuartetDistances(flatTrees);
+  rfFileName <- paste0('treeSpaces/', nexusRoot, '.rf.csv')
+  qtFileName <- paste0('treeSpaces/', nexusRoot, '.qt.csv')
+  if (file.exists(rfFileName)) {
+    rfDistances <- read.csv(rfFileName, row.names=1)
+  } else {
+    cat(" - Calculating RF distances...\n")
+    rfDistances <- RFDistances(flatTrees);
+    write.csv(rfDistances, file=rfFileName)
+  }
+  if (file.exists(qtFileName)) {
+    qtDistances <- read.csv(rfFileName, row.names=1)
+  } else {
+    cat(" - Calculating quartet distances...\n")
+    qtDistances <- QuartetDistances(flatTrees);
+    write.csv(qtDistances, file=qtFileName)
+  }
   rm(flatTrees)
   ambiguousTrees <- 1:nTrees[1]
   
-  rfSpace <- modifiedPcoa(rfDistances, correction='none')
-  PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
-  PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
+  PlotKruskalTreeSpace(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+  PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+  cat(" - Printed RF treespace.\n")
+  qtDistances[qtDistances == 0] <- 1e-9
+  diag(qtDistances) <- 0
+  PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
+  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos='bottomright', qtTitleText)
+  
+  #rfSpace <- modifiedPcoa(rfDistances, correction='none')
+  #PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
+  #rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
+  #PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
   # If you want to understand what's going on, try
   # PlotTreeSpace3D(rf3, nTrees, legendPos='bottomright', rfTitleText)
-  cat(" - Printed RF treespace.\n")
 
-  qtSpace <- modifiedPcoa(qtDistances, correction='none')
-  PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
-  qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
-  PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
+  # qtSpace <- modifiedPcoa(qtDistances, correction='none')
+  # PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
+  # qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
+  # PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
   # If you want to understand what's going on, try
   # PlotTreeSpace3D(qt3, nTrees, legendPos='bottomright', rfTitleText)
   

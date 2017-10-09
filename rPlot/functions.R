@@ -1,8 +1,10 @@
 if (!require('ape')) install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
 #devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
-library(phangorn)
+require(phangorn)
 devtools::install_github('ms609/inapplicable')
 require(inapplicable)
+require(MASS)
+
 if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
 readTntTrees <- function (directory, nexusName) {
@@ -30,7 +32,8 @@ readRTrees <- function (directory, nexusName) {
     return(as.integer(substr(string, hits[1] + 1, hits[1] + attr(hits, 'match.length') - 1)))
   }, integer(1))
   bestTreeFile <- paste0(directory, '/', allResults[which.min(resultScores)], collapse='')
-  unique(read.tree(bestTreeFile))
+  bestTrees <- read.tree(bestTreeFile)
+  unique()
 }
 
 RFDistances <- function(treeList) {
@@ -79,30 +82,6 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
          cex = 0.75, pch = plotChars, col=treePalette)
 }
 
-PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
-  pts <- pcs$vectors
-  
-  plot3d(pts, col=treeCol[-(1:nTrees[1])], size=5, axes=FALSE, xlab='', ylab='', zlab='')
-  
-  #rgl.open()
-  #rgl.bg(color='white')
-  #rgl.points(pts, color=treeCol[-(1:nTrees[1])], size=5)
-  #rgl.spheres(pts, color=treeCol[-(1:nTrees[1])], radius=0.2)
-  limits <- function (x) c(-max(abs(x)), max(abs(x))) * 1.1
-  rgl.lines(limits(pcs$vectors[, 1]), c(0, 0), c(0, 0), color = "blue")
-  rgl.lines(c(0, 0), limits(pcs$vectors[, 2]), c(0, 0), color = "red")
-  rgl.lines(c(0, 0), c(0, 0), limits(pcs$vectors[, 3]), color = "green")
-  
-  for (i in 2:4) {
-    xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
-    hull <- geometry::convhulln(xyz, option='FA')
-    triangles3d(xyz[t(hull$hull), ], col=treePalette[i], alpha=0.3)
-  }
-  
-  aspect3d('iso')
-  
-}
-
 PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   pts <- pcs$vectors
   x <- pts[, 1]
@@ -127,6 +106,71 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
          cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
 }
 
+PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
+  scaled <- MASS::isoMDS(distances, k = 2)$points # Kruskal's non-multimetric MDS
+  x <- scaled[, 1]
+  y <- scaled[, 2]
+  plot(scaled, type = "p", xlab = "", ylab = "", axes = FALSE, col=treeCol, pch=treePCh)
+  title(main = mainTitle, cex.main=0.81)
+  # Plot convex hulls
+  iTrees <- TreeNumbers(nTrees)
+  for (i in seq_along(nTrees)) {
+    convexHull <- chull(x[iTrees[[i]]], y[iTrees[[i]]])
+    convexHull <- c(convexHull, convexHull[1])
+    lines(x[iTrees[[i]]][convexHull], y[iTrees[[i]]][convexHull], col=treePalette[i])
+  }
+  
+  legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'),
+         cex = 0.75, pch = plotChars, col=treePalette)
+}
+
+PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
+  ambigTrees <- seq_len(nTrees[[1]])
+  scaled <- MASS::isoMDS(distances[-ambigTrees, -ambigTrees], k = 2)$points # Kruskal's non-multimetric MDS
+  x <- scaled[, 1]
+  y <- scaled[, 2]
+  plot(x, y, type = "p", xlab = "", ylab = "",
+       axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
+  title(main = mainTitle, cex.main=0.81)
+  
+  iTrees <- TreeNumbers(nTrees)
+  for (i in seq_along(nTrees)[-1]) {
+    #xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
+    #hull <- geometry::convhulln(xyz, option='FA')
+    #polygon(xyz[t(hull$hull), 1:2], border=paste0(treePalette[i], '33'), lty=1)
+    convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
+    convexHull <- c(convexHull, convexHull[1])
+    lines(x[iTrees[[i]] - nTrees[1]][convexHull], y[iTrees[[i]] - nTrees[1]][convexHull], col=treePalette[i])
+  }
+  
+  legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees[-1], ')'),
+         cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
+}
+
+
+PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
+  pts <- pcs$vectors
+  
+  plot3d(pts, col=treeCol[-(1:nTrees[1])], size=5, axes=FALSE, xlab='', ylab='', zlab='')
+  
+  #rgl.open()
+  #rgl.bg(color='white')
+  #rgl.points(pts, color=treeCol[-(1:nTrees[1])], size=5)
+  #rgl.spheres(pts, color=treeCol[-(1:nTrees[1])], radius=0.2)
+  limits <- function (x) c(-max(abs(x)), max(abs(x))) * 1.1
+  rgl.lines(limits(pcs$vectors[, 1]), c(0, 0), c(0, 0), color = "blue")
+  rgl.lines(c(0, 0), limits(pcs$vectors[, 2]), c(0, 0), color = "red")
+  rgl.lines(c(0, 0), c(0, 0), limits(pcs$vectors[, 3]), color = "green")
+  
+  for (i in 2:4) {
+    xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
+    hull <- geometry::convhulln(xyz, option='FA')
+    triangles3d(xyz[t(hull$hull), ], col=treePalette[i], alpha=0.3)
+  }
+  
+  aspect3d('iso')
+  
+}
 
 
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
