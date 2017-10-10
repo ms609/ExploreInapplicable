@@ -77,7 +77,6 @@ for (fileRoot in names(validReads)[validReads]) {
 }
 
 
-
 write.csv(props, 'matrixProperties.csv')
 
 vennProps <- props[!is.na(props$consNodes_ambig), c('consNodes_ambig', 'consNodes_exst', 'consNodes_inapp', 
@@ -100,10 +99,15 @@ vennTrees <- colSums(props[validReads, vennTreeNames])
 names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
 vennPlot <- venneuler::venneuler(vennTrees)
 plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
-    col.txt=NA, edges=1024, main='Shortest trees: all datasets')
+    col.txt=NA, edges=1024, main='Shortest trees: all datasets') # a-c clockwise from bottom
+text(vennPlot$centers[, 1] + c(0, -0.05, 0.05), vennPlot$centers[, 2] + c(-0.08, 0.05, 0.05), paste0(englishName[2:4], ': ', vennTrees[1:3]))
+text(mean(vennPlot$centers[, 1]) - 0.001, mean(vennPlot$centers[, 2]) + 0.03, vennTrees[7])
+offX <- c(-0.005, 0.02, -0.02)
+offY <- c(0.056, 0.00, 0.00)
+for (i in 1:3) text(mean(vennPlot$centers[-i, 1]) + offX[i], mean(vennPlot$centers[-i, 2]) + offY[i], vennTrees[7-i])
 
 dev.copy(svg, file='vennTrees/_All_datasets.svg'); dev.off()
-dev.copy(png, file='vennTrees/_All_datasets.png', width=800, height=800); dev.off()
+dev.copy(png, file='vennTrees/_All_datasets.png', width=400, height=400); dev.off()
 
 
 
