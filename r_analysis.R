@@ -1,6 +1,5 @@
 source('rPlot/functions.R')
 source('rPlot/definitions.R')
-library('VennDiagram')
 
 props <- read.csv('matrixProperties.csv', header=TRUE, row.names=1)
 countDims <- vapply(rownames(props), MatrixProperties, integer(6))
@@ -74,9 +73,7 @@ for (fileRoot in names(validReads)[validReads]) {
   #if (!is.na(props[fileRoot, vennTreeNames[6]])) next
   cat("\n - ", fileRoot, "\n")
   nexusName <- paste0(fileRoot, '.nex')
-  
-  vennTrees <- GetVennTrees(trees, treeDetails, fileRoot)
-  
+  vennTrees <- GetVennTrees(fileRoot, trees)
   props[fileRoot, vennTreeNames] <- vennTrees
   
     names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
