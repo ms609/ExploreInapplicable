@@ -201,6 +201,9 @@ MatrixProperties <- function (fileRoot) {
               )  
 }
 
+GetAllTrees <- function (fileRoot) c(lapply(tntDirectories, readTntTrees, nexusName=paste0(fileRoot, '.nex')),
+                                     lapply(rDirectories, readRTrees, nexusName=paste0(fileRoot, '.nex')))
+
 GetTreeScores <- function(fileRoot, trees = NULL) {
   fileRoot <- gsub('\\.csv$', '', fileRoot)
   scores <- NULL
@@ -210,8 +213,9 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
     scores <- as.matrix(rawScores[, -1])
     rownames(scores) <- rawScores[, 1]
   }
-  if (!is.null(trees) && is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
+  if (is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
     cat("   - Calculating tree scores...\n")
+    if (is.null(trees)) trees <- GetAllTrees(fileRoot)
     nTrees <- vapply(trees, length, integer(1))
     flatTrees <- unlist(trees, recursive=FALSE)
     scores <- vapply(allDirectories, function (dirPath) {
@@ -226,10 +230,8 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
   scores
 }
 
-GetVennTrees <- function (trees, treeDetails, fileRoot) {
-  nexusName <- paste0(fileRoot, '.nex')
-  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
-             lapply(rDirectories, readRTrees, nexusName=nexusName))
+GetVennTrees <- function (fileRoot, trees=NULL) {
+  if (is.null(trees)) trees <- GetAllTrees(fileRoot)
   nTrees <- vapply(trees, length, integer(1))
   treeDetails <- GetTreeScores(fileRoot, trees)
   
@@ -252,12 +254,14 @@ GetVennTrees <- function (trees, treeDetails, fileRoot) {
     c(TRUE , TRUE, FALSE),
     c(TRUE , FALSE, TRUE),
     c(FALSE , TRUE, TRUE),
-    c(TRUE , TRUE , TRUE )), function (pattern) {
+    c(TRUE , TRUE , TRUE ),
+    c(FALSE, FALSE, FALSE)), function (pattern) {
       sum(apply(treeIsOptimal, 1, identical, pattern))
     }, integer(1))
-    
+  
   if (sum(vennTrees) != nrow(extraSteps)) stop(fileRoot, ": Something's not right.")
-  vennTrees
+  if (sum(vennTrees[-8]) != nrow(extraSteps)) warning(fileRoot, ": Suboptimal trees included in list.")
+  vennTrees[-8]
 }
 
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
