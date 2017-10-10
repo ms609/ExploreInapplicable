@@ -41,7 +41,7 @@ for (nexusName in slowNexusFiles) {
     cat(" - Generating MPT histograms.\n")    
     
     # Calculate tree scores
-    scores <- GetTreeScores(nexusRoot, nTrees, treeSource)
+    scores <- GetTreeScores(nexusRoot, trees)
     minScores <- apply(scores, 2, min)
     extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
     rm(scores)
@@ -147,60 +147,38 @@ for (nexusName in slowNexusFiles) {
     cat(" - Treespace plots already exist.\n")
     next
   }
+  
+  
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
+  ## We can be more careful with the character summary - see r_analysis.R
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
   
   rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
   rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
-  # Crude analysis inspired by http://www.kmeverson.org/blog/visualizing-tree-space-in-r
-  rfFileName <- paste0('treeSpaces/', nexusRoot, '.rf.csv')
-  qtFileName <- paste0('treeSpaces/', nexusRoot, '.qt.csv')
-  if (file.exists(rfFileName)) {
-    rfDistances <- data.matrix(read.csv(rfFileName, row.names=1))
-  } else {
-    cat(" - Calculating RF distances...\n")
-    rfDistances <- RFDistances(flatTrees)
-    write.csv(rfDistances, file=rfFileName)
-  }
-  if (file.exists(qtFileName)) {
-    qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
-  } else {
-    cat(" - Calculating quartet distances...\n")
-    qtDistances <- QuartetDistances(flatTrees)
-    write.csv(qtDistances, file=qtFileName)
-  }
-  rm(flatTrees)
-  ambiguousTrees <- 1:nTrees[1]
+  rfDistances <- GetRFDistances(nexusRoot, trees)
+  qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
   
   PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   rfAreas <- PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
-  qtDistances[qtDistances == 0] <- 1e-9
-  diag(qtDistances) <- 0
   PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
-  qtAreas <- PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos='bottomright', qtTitleText)
+  qtAreas <- PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
   
   areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
   write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
   
   
-  #rfSpace <- modifiedPcoa(rfDistances, correction='none')
-  #PlotTreeSpace(rfSpace, nTrees, legendPos='bottomright', rfTitleText)
-  #rf3 <- modifiedPcoa(rfDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
-  #PlotTreeSpace3(rf3, nTrees, legendPos='bottomright', rfTitleText)
-  # If you want to understand what's going on, try
-  # PlotTreeSpace3D(rf3, nTrees, legendPos='bottomright', rfTitleText)
-
-  # qtSpace <- modifiedPcoa(qtDistances, correction='none')
-  # PlotTreeSpace(qtSpace, nTrees, legendPos='bottomleft', qtTitleText)
-  # qt3 <- modifiedPcoa(qtDistances[-ambiguousTrees, -ambiguousTrees], correction='none')
-  # PlotTreeSpace3(qt3, nTrees, legendPos='bottomleft', qtTitleText)
-  # If you want to understand what's going on, try
-  # PlotTreeSpace3D(qt3, nTrees, legendPos='bottomright', rfTitleText)
-  
   dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
+  
+  par(mfrow=c(1, 1), bg='white')
+  
+  source('rPlot/functions.R')
+  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
+  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
+  
   cat(" - Printed Quartet treespace and saved to files.\nEvaluation complete.\n\n")
 }

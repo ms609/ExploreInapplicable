@@ -25,7 +25,23 @@ props[, c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- NA
 props[colnames(mptCount), c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- t(mptCount)
 
 
+#### Plot QUARTET TREESPACES  ############
+nValid <- sum(validReads)
+par(mfrow=c(6, 5), mar=rep(0.2, 4))
+quartPlots <- sort(names(validReads)[validReads])
+for (nexusRoot in quartPlots) {
+  if (nexusRoot %in% 'Giles2005') {cat("\n x ", nexusRoot, "\n"); next}
+  cat("\n - ", nexusRoot, "\n")
+  trees <- GetTrees(nexusRoot)
+  nTrees <- vapply(trees, length, integer(1))
+  qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE, recalculate=TRUE)
+  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
+}
 
+
+
+
+############ VENN DIAGRAMS  ~~~##################
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 

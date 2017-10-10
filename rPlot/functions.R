@@ -125,15 +125,18 @@ PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', m
          cex = 0.75, pch = plotChars, col=treePalette)
 }
 
-PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle=NULL) {
+PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle=NULL, fill=FALSE, ...) {
   ambigTrees <- seq_len(nTrees[[1]])
   scaled <- MASS::isoMDS(distances[-ambigTrees, -ambigTrees], k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
   if (!is.null(mainTitle)) {
+    plotCol <- rep(treePalette[2:4], nTrees[2:4])
+    plotPCh <- rep(plotChars[2:4], nTrees[2:4])
     plot(x, y, type = "p", xlab = "", ylab = "",
-         axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
-    title(main = mainTitle, cex.main=0.81)
+         axes = FALSE, col=plotCol, pch=plotPCh, 
+         main = mainTitle, cex.main=0.81,
+         ...)
   }
   
   iTrees <- TreeNumbers(nTrees)
@@ -147,7 +150,11 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
     convexHull <- c(convexHull, convexHull[1])
     convX <- x[iTrees[[i]] - nTrees[1]][convexHull]
     convY <- y[iTrees[[i]] - nTrees[1]][convexHull]
-    if (!is.null(mainTitle)) lines(convX, convY, col=treePalette[i])
+    if (fill) {
+      polygon(convX, convY, col=paste0(treePalette[i], '4B'), border=treePalette[i]) #4B = 30% alpha
+    } else {
+      if (!is.null(mainTitle)) lines(convX, convY, col=treePalette[i])
+    }
     hullArea[[i]] <- geometry::polyarea(convX, convY)
   }
   
@@ -201,7 +208,7 @@ MatrixProperties <- function (fileRoot) {
               )  
 }
 
-GetAllTrees <- function (fileRoot) c(lapply(tntDirectories, readTntTrees, nexusName=paste0(fileRoot, '.nex')),
+GetTrees <- function (fileRoot) c(lapply(tntDirectories, readTntTrees, nexusName=paste0(fileRoot, '.nex')),
                                      lapply(rDirectories, readRTrees, nexusName=paste0(fileRoot, '.nex')))
 
 GetTreeScores <- function(fileRoot, trees = NULL) {
@@ -215,7 +222,7 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
   }
   if (is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
     cat("   - Calculating tree scores...\n")
-    if (is.null(trees)) trees <- GetAllTrees(fileRoot)
+    if (is.null(trees)) trees <- GetTrees(fileRoot)
     nTrees <- vapply(trees, length, integer(1))
     flatTrees <- unlist(trees, recursive=FALSE)
     scores <- vapply(allDirectories, function (dirPath) {
@@ -230,8 +237,7 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
   scores
 }
 
-GetVennTrees <- function (fileRoot, trees=NULL) {
-  if (is.null(trees)) trees <- GetAllTrees(fileRoot)
+GetVennTrees <- function (fileRoot, trees=GetTrees(fileRoot)) {
   nTrees <- vapply(trees, length, integer(1))
   treeDetails <- GetTreeScores(fileRoot, trees)
   
@@ -262,6 +268,38 @@ GetVennTrees <- function (fileRoot, trees=NULL) {
   if (sum(vennTrees) != nrow(extraSteps)) stop(fileRoot, ": Something's not right.")
   if (sum(vennTrees[-8]) != nrow(extraSteps)) warning(fileRoot, ": Suboptimal trees included in list.")
   vennTrees[-8]
+}
+
+Flatten <- function (trees) unlist(trees, recursive=FALSE)
+
+GetRFDistances <- function (fileRoot, trees=GetTrees(fileRoot)) {
+  flatTrees <- Flatten(trees)
+  rfFileName <- paste0('treeSpaces/', fileRoot, '.rf.csv')
+  if (file.exists(rfFileName)) {
+    rfDistances <- data.matrix(read.csv(rfFileName, row.names=1))
+  } else {
+    cat(" - Calculating RF distances...\n")
+    rfDistances <- RFDistances(flatTrees)
+    write.csv(rfDistances, file=rfFileName)
+  }
+  rfDistances
+}
+
+GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE, recalculate=FALSE) {
+  flatTrees <- Flatten(trees)
+  qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
+  if (file.exists(qtFileName) && !recalculate) {
+    qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
+  } else {
+    cat(" - Calculating quartet distances...\n")
+    qtDistances <- QuartetDistances(flatTrees)
+    write.csv(qtDistances, file=qtFileName)
+  }
+  if (forPlot) {    
+    qtDistances[qtDistances == 0] <- 1e-9
+    diag(qtDistances) <- 0
+  }
+  qtDistances
 }
 
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
