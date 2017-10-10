@@ -71,33 +71,12 @@ vennTreeNames <- c('utrees_ambig', 'utrees_exst', 'utrees_inapp', 'trees_ambig_e
           'trees_ambig_inapp', 'trees_exst_inapp', 'trees_all')
 props[, vennTreeNames] <- NA
 for (fileRoot in names(validReads)[validReads]) {
-  if (!is.na(props[fileRoot, vennTreeNames[6]])) next
+  #if (!is.na(props[fileRoot, vennTreeNames[6]])) next
   cat("\n - ", fileRoot, "\n")
   nexusName <- paste0(fileRoot, '.nex')
   
-  treeDetails <- read.csv(file=paste0('islandCounts/', fileRoot, '.csv'))
-  extraSteps <- apply(treeDetails[3:5], 2, function (x) x - min(x))
-  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
-             lapply(rDirectories, readRTrees, nexusName=nexusName))
-  nTrees <- vapply(trees, length, integer(1))
-  a_in_b_or_c <-  trees[[2]] %in% trees[[3]] | trees[[2]] %in% trees[[4]]
-  b_in_c      <-  trees[[3]] %in% trees[[4]]
-  extraSteps <- extraSteps[-which(c(a_in_b_or_c, b_in_c)), ]
+  vennTrees <- GetVennTrees(trees, treeDetails, fileRoot)
   
-  treeIsOptimal <- extraSteps == 0
-  colnames(treeIsOptimal) <- NULL
-  vennTrees <- vapply(list(
-    c(TRUE , FALSE, FALSE),
-    c(FALSE, TRUE, FALSE),
-    c(FALSE, FALSE, TRUE),
-    c(TRUE , TRUE, FALSE),
-    c(TRUE , FALSE, TRUE),
-    c(FALSE , TRUE, TRUE),
-    c(TRUE , TRUE , TRUE )), function (pattern) {
-      sum(apply(treeIsOptimal, 1, identical, pattern))
-    }, integer(1))
-  if (sum(vennTrees) != nrow(extraSteps)) warn("Something's not right.")
-  vennTrees <- integer(7)
   props[fileRoot, vennTreeNames] <- vennTrees
   
     names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
@@ -128,7 +107,6 @@ plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:
 dev.copy(svg, file='vennNodes/_All_datasets.svg'); dev.off()
 dev.copy(png, file='vennNodes/_All_datasets.png', width=800, height=800); dev.off()
    
-vennTrees <- integer(7)
 vennTrees <- colSums(props[validReads, vennTreeNames])
 names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
 vennPlot <- venneuler::venneuler(vennTrees)
