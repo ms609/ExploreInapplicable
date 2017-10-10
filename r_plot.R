@@ -129,11 +129,11 @@ for (nexusName in nexusFiles) {
     'A' =     nNodes[2] - (vennCons['A&B'] + vennCons['A&C'] + vennCons['A&B&C']),
     'B' =     nNodes[3] - (vennCons['A&B'] + vennCons['B&C'] + vennCons['A&B&C']),
     'C' =     nNodes[4] - (vennCons['A&C'] + vennCons['B&C'] + vennCons['A&B&C']))
-    vennPlot <- venneuler(vennCons)
-    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], col.txt=NA,
-         main=paste0('Nodes recovered by method: ', nexusRoot))
+    vennPlot <- venneuler::venneuler(vennCons)
+    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], 
+        col.txt=NA, edges=1024, main=paste0('Node presence by method: ', nexusRoot))
     dev.copy(svg, file=paste0('vennNodes/', nexusRoot, '.svg', collapse='')); dev.off()
-    dev.copy(png, file=paste0('vennNodes/', nexusRoot, '.png', collapse=''), width=512, height=512); dev.off()
+    dev.copy(png, file=paste0('vennNodes/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
     cat(" - Plotted Venn diagram of nodes.\n")
   }
   
@@ -145,11 +145,11 @@ for (nexusName in nexusFiles) {
       function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
     vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
     vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
-    vennPlot <- venneuler(vennTrees)
-    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], col.txt=NA,
-         main=paste0('Shortest trees: ', nexusRoot))
+    vennPlot <- venneuler::venneuler(vennTrees)
+    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
+        col.txt=NA, edges=1024, main=paste0('Shortest trees: ', nexusRoot))
     dev.copy(svg, file=paste0('vennTrees/', nexusRoot, '.svg', collapse='')); dev.off()
-    dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=512, height=512); dev.off()
+    dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
     cat(" - Plotted Venn diagram of trees.\n")
   }
   par(mfrow=c(2, 2), bg='white')
