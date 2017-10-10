@@ -1,3 +1,5 @@
+setwd("C:/Research/ExploreInapplicable")
+
 source('rPlot/functions.R')
 source('rPlot/definitions.R')
 
@@ -5,6 +7,32 @@ props <- read.csv('matrixProperties.csv', header=TRUE, row.names=1)
 countDims <- vapply(rownames(props), MatrixProperties, integer(6))
 
 validReads <- props$nTax == countDims['nTax',]
+
+#### Plot QUARTET TREESPACES ############
+nValid <- sum(validReads)
+#par(mfrow=c(6, 5), mar=rep(0.2, 4), bg='white')
+par(bg='white')
+quartPlots <- sort(names(validReads)[validReads])
+for (fileRoot in quartPlots) {
+  if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
+  cat("\n - ", fileRoot, "\n")
+  if (file.exists(paste0('quartetSpaces/', fileRoot, '.png'))) {
+    cat("   > [File exists].\n")
+    next
+  }
+  trees <- GetTrees(fileRoot)
+  nTrees <- vapply(trees, length, integer(1))
+  qtDistances3   <- GetQuartetDistances(fileRoot, trees[-1], forPlot=TRUE)
+  PlotKruskalTreeSpace3(qtDistances3, nTrees[-1], legendPos=QuartetLegendPos(fileRoot), fileRoot, fill=TRUE)
+  dev.copy(svg, file=paste0('quartetSpaces/', fileRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('quartetSpaces/', fileRoot, '.png', collapse=''), width=1024, height=1024); dev.off()  
+}
+
+
+
+
+
+
 props[validReads, c('nTokens', 'chars_na', 'tokens_na', 'tokens_amb')] <- 
   t(countDims[c('nTokens', 'nInapp', 'inappTokens', 'ambigTokens'), validReads])
 props$prop_na <- props$tokens_na / props$nTokens
@@ -24,19 +52,6 @@ mpts <- t(mptCount)
 props[, c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- NA
 props[colnames(mptCount), c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- t(mptCount)
 
-
-#### Plot QUARTET TREESPACES  ############
-nValid <- sum(validReads)
-par(mfrow=c(6, 5), mar=rep(0.2, 4))
-quartPlots <- sort(names(validReads)[validReads])
-for (nexusRoot in quartPlots) {
-  if (nexusRoot %in% 'Giles2005') {cat("\n x ", nexusRoot, "\n"); next}
-  cat("\n - ", nexusRoot, "\n")
-  trees <- GetTrees(nexusRoot)
-  nTrees <- vapply(trees, length, integer(1))
-  qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE, recalculate=TRUE)
-  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
-}
 
 
 
