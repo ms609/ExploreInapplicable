@@ -13,6 +13,7 @@ nValid <- sum(validReads)
 #par(mfrow=c(6, 5), mar=rep(0.2, 4), bg='white')
 par(bg='white')
 quartPlots <- sort(names(validReads)[validReads])
+speedPlots <- c(quartPlots[! (quartPlots%in%slowFiles)], slowFiles)
 #for (fileRoot in quartPlots) {
   #if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
 for (fileRoot in c(slowFiles, 'Zanol2014', 'Zhu2013')) {
@@ -31,7 +32,7 @@ for (fileRoot in c(slowFiles, 'Zanol2014', 'Zhu2013')) {
 
 
 #### Plot STRICT CONSENSUS TREES ####
-for (fileRoot in quartPlots) {
+for (fileRoot in speedPlots) {
   tr <- GetTrees(fileRoot)
   cat("\n - ", fileRoot, "\n")
   vcons <- lapply(tr, consensus)
