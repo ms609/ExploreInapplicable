@@ -74,13 +74,6 @@ for (fileRoot in names(validReads)[validReads]) {
   cat("\n - ", fileRoot, "\n")
   vennTrees <- GetVennTrees(fileRoot)
   props[fileRoot, vennTreeNames] <- vennTrees
-  
-    names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
-    vennPlot <- venneuler::venneuler(vennTrees)
-    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
-        col.txt=NA, edges=1024, main=paste0('Shortest trees: ', fileRoot))
-    dev.copy(svg, file=paste0('vennTrees/', fileRoot, '.svg', collapse='')); dev.off()
-    dev.copy(png, file=paste0('vennTrees/', fileRoot, '.png', collapse=''), width=800, height=800); dev.off()
 }
 
 
