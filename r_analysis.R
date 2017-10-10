@@ -1,7 +1,8 @@
 source('rPlot/functions.R')
 source('rPlot/definitions.R')
+library('VennDiagram')
 
-props <- read.csv('matrixProperties.csv', header=TRUE)
+props <- read.csv('matrixProperties.csv', header=TRUE, row.names=1)
 countDims <- vapply(rownames(props), MatrixProperties, integer(6))
 
 validReads <- props$nTax == countDims['nTax',]
@@ -66,21 +67,58 @@ for (fileRoot in names(validReads)) {
   }
 }
 
+vennTreeNames <- c('utrees_ambig', 'utrees_exst', 'utrees_inapp', 'trees_ambig_exst', 
+          'trees_ambig_inapp', 'trees_exst_inapp', 'trees_all')
+props[, vennTreeNames] <- NA
+for (fileRoot in names(validReads)) {
+  nexusName <- paste0(fileRoot, '.nex')
+  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
+             lapply(rDirectories, readRTrees, nexusName=nexusName))
+  nTrees <- vapply(trees, length, integer(1))
+  vennTrees <- integer(7)
+  vennTrees[1:3] <- nTrees[2:4]
+  vennTrees[4:7] <- vapply(list(trees[c(2, 3)], trees[c(2, 4)], trees[c(3, 4)], trees[2:4]),
+    function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
+  vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
+  vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
+  props[fileRoot, vennTreeNames] <- vennTrees
+  
+}
+
+
+
 write.csv(props, 'matrixProperties.csv')
 
-plot(I(consNodes_exst_inapp / consNodes_inapp) ~ prop_na, data=props)
-plot(I(consNodes_inapp / nTax) ~ prop_na, data=props)
-plot(I(consNodes_exst_inapp / consNodes_inapp) ~ prop_chars_na, data=props)
-plot(I(consNodes_exst_inapp / consNodes_inapp) ~ nTokens, data=props)
+vennProps <- props[!is.na(props$consNodes_ambig), c('consNodes_ambig', 'consNodes_exst', 'consNodes_inapp', 
+                 'consNodes_ambig_exst', 'consNodes_exst_inapp', 'consNodes_ambig_inapp', 'consNodes_all')]
+vennCons <- colSums(vennProps)
+names(vennCons) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+vennCons[4:6] <- vennCons[4:6] - vennCons['A&B&C']
+vennCons[1:3] <- c(
+'A' =     vennCons['A'] - (vennCons['A&B'] + vennCons['A&C'] + vennCons['A&B&C']),
+'B' =     vennCons['B'] - (vennCons['A&B'] + vennCons['B&C'] + vennCons['A&B&C']),
+'C' =     vennCons['C'] - (vennCons['A&C'] + vennCons['B&C'] + vennCons['A&B&C']))
+vennPlot <- venneuler(vennCons)
+vennPlot
+plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], edges=1024, col.txt=NA, 
+     main='Node presence by method: all datasets')
+dev.copy(svg, file='vennTrees/_All_datasets.svg'); dev.off()
+dev.copy(png, file='vennTrees/_All_datasets.png', width=800, height=800); dev.off()
+     
+if (!file.exists(paste0('vennTrees/', nexusRoot, '.png')) || OVERWRITE) {
+  vennTrees <- integer(7)
+  names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+  vennTrees[1:3] <- nTrees[2:4]
+  vennTrees[4:7] <- vapply(list(trees[c(2, 3)], trees[c(2, 4)], trees[c(3, 4)], trees[2:4]),
+    function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
+  vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
+  vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
+  vennPlot <- venneuler::venneuler(vennTrees)
+  plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
+      col.txt=NA, edges=1024, main=paste0('Shortest trees: ', nexusRoot))
+  dev.copy(svg, file=paste0('vennTrees/', nexusRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
+  cat(" - Plotted Venn diagram of trees.\n")
+}
 
-plot(I(inappMPTs) ~ prop_na, data=props)
-plot(I(ambigMPTs / ) ~ prop_na, data=props)
 
-
-safeData <- props[is.finite(props$MDSarea_ambig) & props$MDSarea_ambig > 1e-9, ]
-safeData$MDSarea_ambig
-plot(log(MDSarea_ambig) ~ prop_na, data=safeData)
-summary(lm(log(MDSarea_ambig) ~ prop_chars_na, data=safeData, na.action=na.omit)) # No trend
-
-
-### Analyse accuracy:
