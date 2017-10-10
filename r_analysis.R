@@ -72,8 +72,7 @@ props[, vennTreeNames] <- NA
 for (fileRoot in names(validReads)[validReads]) {
   #if (!is.na(props[fileRoot, vennTreeNames[6]])) next
   cat("\n - ", fileRoot, "\n")
-  nexusName <- paste0(fileRoot, '.nex')
-  vennTrees <- GetVennTrees(fileRoot, trees)
+  vennTrees <- GetVennTrees(fileRoot)
   props[fileRoot, vennTreeNames] <- vennTrees
   
     names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
