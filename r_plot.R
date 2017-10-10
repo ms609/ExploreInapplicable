@@ -6,13 +6,14 @@ nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 #nexusName <- 'Eklund2004.nex'
 slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 'Eklund2004', 
                'Geisler2001', 'Giles2015', 'OMeara2014', 'Wills2012', 'Schulze2007')
-
-for (nexusName in nexusFiles) {
+slowNexusFiles <- paste0(slowFiles, '.nex')
+               
+for (nexusName in slowNexusFiles) {
   par(mfrow=c(2, 2), bg='white')
-  nexusRoot <- gsub('.nex', '', nexusName);
+  nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('avoidThisFile.nex')) { # add slowFiles to this list if quick results wanted first
+  if (nexusRoot %in% c('avoidThisFile', 'Eklund2004')) { # add slowFiles to this list if quick results wanted first
     cat (" ! Manual override\n")
     next
   }
@@ -34,25 +35,13 @@ for (nexusName in nexusFiles) {
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
   
-  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
+  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE && FALSE) {
     cat(" - MPT histograms already exist.\n")    
   } else {
+    cat(" - Generating MPT histograms.\n")    
     
     # Calculate tree scores
-    treeScoreFile <- paste0('islandCounts/', nexusRoot, '.csv')
-    if (file.exists(treeScoreFile)) {
-      scores <- data.matrix(read.csv(treeScoreFile))
-    } else {      
-      cat(" - Calculating tree scores...\n")
-      scores <- vapply(allDirectories, function (dirPath) {
-        TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
-        rawData <- read.nexus.data(paste0(dirPath, '/', nexusName, collapse=''))
-        phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
-        as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
-      }, integer(sum(nTrees)))
-      rownames(scores) <- treeSource
-      write.csv(scores, file=treeScoreFile)
-    }
+    scores <- GetTreeScores(nexusRoot, nTrees, treeSource)
     minScores <- apply(scores, 2, min)
     extraSteps <- scores - matrix(minScores, nrow(scores), ncol(scores), byrow=TRUE)
     rm(scores)
@@ -76,8 +65,8 @@ for (nexusName in nexusFiles) {
              border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
       }
     }
-    dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
-    dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
+    dev.copy(svg, file=paste0('islandCounts4/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('islandCounts4/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
     
     
     # Plot tree scores: 3x3
@@ -109,12 +98,12 @@ for (nexusName in nexusFiles) {
     text(20, ySpace * 2 + (yHeight / 2), englishName[3], pos=4)
     text(20, ySpace * 3 + (yHeight / 2), englishName[2], pos=4)
     text(20, ySpace * 4 + (yHeight / 2), 'Method', pos=4, font=2)
-    dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '-3.svg', collapse='')); dev.off()
-    dev.copy(png, file=paste0('islandCounts/', nexusRoot, '-3.png', collapse=''), width=800, height=800); dev.off()
+    dev.copy(svg, file=paste0('islandCounts/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
   }
   
   par(mfrow=c(1, 1), bg='white')
-  if (!file.exists(paste0('vennNodes/', nexusRoot, '.png'))|| OVERWRITE) {
+  if (!file.exists(paste0('vennNodes/', nexusRoot, '.png')) || OVERWRITE) {
     cat(" - Calculating consensus trees: ")
     consensi <- lapply(trees, consensus)
     nNodes <- vapply(consensi, function (tr) tr$Nnode, double(1))
