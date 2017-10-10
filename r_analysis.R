@@ -56,7 +56,7 @@ for (nexusName in nexusFiles) {
 write.csv(props, 'matrixProperties.csv')
 
 props[, c('MDSarea_ambig', 'MDSarea_exst', 'MDSarea_inapp')]  <- NA
-for (fileRoot in names(validReads)) {
+for (fileRoot in names(validReads)[validReads]) {
   if (all(file.exists(paste0('treeSpaces/', fileRoot, '.qt.csv'), paste0('islandCounts/', fileRoot, '.csv')))) {
     treeDetails <- read.csv(paste0('islandCounts/', fileRoot, '.csv'))
     nTrees <- table(treeDetails[, 1])
@@ -70,19 +70,42 @@ for (fileRoot in names(validReads)) {
 vennTreeNames <- c('utrees_ambig', 'utrees_exst', 'utrees_inapp', 'trees_ambig_exst', 
           'trees_ambig_inapp', 'trees_exst_inapp', 'trees_all')
 props[, vennTreeNames] <- NA
-for (fileRoot in names(validReads)) {
+for (fileRoot in names(validReads)[validReads]) {
+  if (!is.na(props[fileRoot, vennTreeNames[6]])) next
+  cat("\n - ", fileRoot, "\n")
   nexusName <- paste0(fileRoot, '.nex')
+  
+  treeDetails <- read.csv(file=paste0('islandCounts/', fileRoot, '.csv'))
+  extraSteps <- apply(treeDetails[3:5], 2, function (x) x - min(x))
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
              lapply(rDirectories, readRTrees, nexusName=nexusName))
   nTrees <- vapply(trees, length, integer(1))
+  a_in_b_or_c <-  trees[[2]] %in% trees[[3]] | trees[[2]] %in% trees[[4]]
+  b_in_c      <-  trees[[3]] %in% trees[[4]]
+  extraSteps <- extraSteps[-which(c(a_in_b_or_c, b_in_c)), ]
+  
+  treeIsOptimal <- extraSteps == 0
+  colnames(treeIsOptimal) <- NULL
+  vennTrees <- vapply(list(
+    c(TRUE , FALSE, FALSE),
+    c(FALSE, TRUE, FALSE),
+    c(FALSE, FALSE, TRUE),
+    c(TRUE , TRUE, FALSE),
+    c(TRUE , FALSE, TRUE),
+    c(FALSE , TRUE, TRUE),
+    c(TRUE , TRUE , TRUE )), function (pattern) {
+      sum(apply(treeIsOptimal, 1, identical, pattern))
+    }, integer(1))
+  if (sum(vennTrees) != nrow(extraSteps)) warn("Something's not right.")
   vennTrees <- integer(7)
-  vennTrees[1:3] <- nTrees[2:4]
-  vennTrees[4:7] <- vapply(list(trees[c(2, 3)], trees[c(2, 4)], trees[c(3, 4)], trees[2:4]),
-    function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
-  vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
-  vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
   props[fileRoot, vennTreeNames] <- vennTrees
   
+    names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+    vennPlot <- venneuler::venneuler(vennTrees)
+    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
+        col.txt=NA, edges=1024, main=paste0('Shortest trees: ', fileRoot))
+    dev.copy(svg, file=paste0('vennTrees/', fileRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('vennTrees/', fileRoot, '.png', collapse=''), width=800, height=800); dev.off()
 }
 
 
@@ -102,23 +125,18 @@ vennPlot <- venneuler(vennCons)
 vennPlot
 plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], edges=1024, col.txt=NA, 
      main='Node presence by method: all datasets')
+dev.copy(svg, file='vennNodes/_All_datasets.svg'); dev.off()
+dev.copy(png, file='vennNodes/_All_datasets.png', width=800, height=800); dev.off()
+   
+vennTrees <- integer(7)
+vennTrees <- colSums(props[validReads, vennTreeNames])
+names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+vennPlot <- venneuler::venneuler(vennTrees)
+plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
+    col.txt=NA, edges=1024, main='Shortest trees: all datasets')
+
 dev.copy(svg, file='vennTrees/_All_datasets.svg'); dev.off()
 dev.copy(png, file='vennTrees/_All_datasets.png', width=800, height=800); dev.off()
-     
-if (!file.exists(paste0('vennTrees/', nexusRoot, '.png')) || OVERWRITE) {
-  vennTrees <- integer(7)
-  names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
-  vennTrees[1:3] <- nTrees[2:4]
-  vennTrees[4:7] <- vapply(list(trees[c(2, 3)], trees[c(2, 4)], trees[c(3, 4)], trees[2:4]),
-    function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
-  vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
-  vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
-  vennPlot <- venneuler::venneuler(vennTrees)
-  plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4],
-      col.txt=NA, edges=1024, main=paste0('Shortest trees: ', nexusRoot))
-  dev.copy(svg, file=paste0('vennTrees/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
-  cat(" - Plotted Venn diagram of trees.\n")
-}
+
 
 
