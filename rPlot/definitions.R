@@ -40,7 +40,7 @@ qtLegendPos = list(
   'DeAssis2011' = 'bottomright',
   'Eklund2004' = 'bottomright',
   'Griswold1999' = 'topleft',
-  'Geisler2001' = 'bottomleft'
+  'Geisler2001' = 'bottomleft',
   'Loconte1991' = 'topleft',
   'OLeary1999' = 'bottomright',
   'Rougier2012' = 'bottomleft',
@@ -50,7 +50,7 @@ qtLegendPos = list(
   'Shultz2007' = 'topleft',
   'Vinther2008' = 'bottomleft',
   'Wilson2003' = 'bottomleft',
-  'Wortley2006' = 'bottomleft',
+  'Wortley2006' = 'bottomleft'
 )
 
 
