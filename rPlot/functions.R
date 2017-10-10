@@ -302,10 +302,11 @@ GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FAL
       qtDistances <- qtDistances[-ambigTrees, -ambigTrees]
     }
   } else {
-    cat(" - Calculating quartet distances for ", fileRoot, "...\n")
+    cat(" - Calculating quartet distances for ", fileRoot, "...")
     if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
     if (length(trees) != 4) trees <- GetTrees(fileRoot)
     qtDistances <- QuartetDistances(flatTrees)
+    cat(" Done.\n")
     write.csv(qtDistances, file=qtFileName)
   }
   if (forPlot) {    
