@@ -3,7 +3,8 @@ if (!require('ape')) install.packages('ape', '.', repos = 'http://ape-package.ir
 require(phangorn)
 devtools::install_github('ms609/inapplicable')
 require(inapplicable)
-require(MASS)
+library(MASS)
+library(venneuler)
 
 if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
 
