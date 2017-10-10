@@ -50,17 +50,21 @@ RFDistances <- function(treeList) {
 
 QuartetDistances <- function (treeList) {
   if (class(treeList) == 'list') class(treeList) <- 'multiPhylo'
-  write.tree(treeList, file='~temp.trees')
-  rtqdist::allPairsQuartetDistance('~temp.trees')
+  fileName <- paste0('~temp', substring(runif(1), 3), '.trees')
+  write.tree(treeList, file=fileName)
+  on.exit(file.remove(fileName))
+  rtqdist::allPairsQuartetDistance(fileName)
 }
 
 TreeNumbers <- function (nTrees) {
+  if (length(nTrees) == 3) nTrees <- c(0, nTrees)
   res <- lapply(seq_along(allDirectories), function (i) {
-    firstTree <- if (i == 1) 1 else cumsum(nTrees)[i-1] + 1
+    firstTree <- if (i == 1) 1 else cumsum(nTrees)[i - 1] + 1
     lastTree  <- cumsum(nTrees)[i]
     iTrees <- firstTree:lastTree
   })
   names(res) <- allDirectories
+  if (res[[1]][2] == 0) res[[1]] <- NULL
   res
 }
 
@@ -126,13 +130,16 @@ PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', m
 }
 
 PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle=NULL, fill=FALSE, ...) {
-  ambigTrees <- seq_len(nTrees[[1]])
-  scaled <- MASS::isoMDS(distances[-ambigTrees, -ambigTrees], k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
+  if (length(nTrees) == 4) {
+    warning("You should only send three trees here.")
+  } else {
+    scaled <- MASS::isoMDS(distances, k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
+  }
   x <- scaled[, 1]
   y <- scaled[, 2]
   if (!is.null(mainTitle)) {
-    plotCol <- rep(treePalette[2:4], nTrees[2:4])
-    plotPCh <- rep(plotChars[2:4], nTrees[2:4])
+    plotCol <- rep(treePalette[2:4], nTrees)
+    plotPCh <- rep(plotChars[2:4], nTrees)
     plot(x, y, type = "p", xlab = "", ylab = "",
          axes = FALSE, col=plotCol, pch=plotPCh, 
          main = mainTitle, cex.main=0.81,
@@ -140,30 +147,28 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
   }
   
   iTrees <- TreeNumbers(nTrees)
-  hullArea <- double(length(nTrees))
-  names(hullArea) <- allDirectories
-  for (i in seq_along(nTrees)[-1]) {
-    #xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
-    #hull <- geometry::convhulln(xyz, option='FA')
-    #polygon(xyz[t(hull$hull), 1:2], border=paste0(treePalette[i], '33'), lty=1)
-    convexHull <- chull(x[iTrees[[i]] - nTrees[1]], y[iTrees[[i]] - nTrees[1]])
+
+  hullArea <- double(3)
+  names(hullArea) <- allDirectories[-1]
+  for (i in seq_along(nTrees)) {
+    convexHull <- chull(x[iTrees[[i]]], y[iTrees[[i]]])
     convexHull <- c(convexHull, convexHull[1])
-    convX <- x[iTrees[[i]] - nTrees[1]][convexHull]
-    convY <- y[iTrees[[i]] - nTrees[1]][convexHull]
+    convX <- x[iTrees[[i]]][convexHull]
+    convY <- y[iTrees[[i]]][convexHull]
     if (fill) {
-      polygon(convX, convY, col=paste0(treePalette[i], '4B'), border=treePalette[i]) #4B = 30% alpha
+      polygon(convX, convY, col=paste0(treePalette[i + 1], '4B'), border=treePalette[i + 1]) #4B = 30% alpha
     } else {
-      if (!is.null(mainTitle)) lines(convX, convY, col=treePalette[i])
+      if (!is.null(mainTitle)) lines(convX, convY, col=treePalette[i + 1])
     }
-    hullArea[[i]] <- geometry::polyarea(convX, convY)
+    hullArea[i] <- geometry::polyarea(convX, convY)
   }
   
   if (!is.null(mainTitle)) {
-    legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees[-1], ')'),
+    legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees, ')'),
            cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
-  }  
+  }
   
-  c(hullArea[-1] / hullArea['inapplicable'])
+  c(hullArea / hullArea['inapplicable'])
 }
 
 
@@ -210,6 +215,7 @@ MatrixProperties <- function (fileRoot) {
 
 GetTrees <- function (fileRoot) c(lapply(tntDirectories, readTntTrees, nexusName=paste0(fileRoot, '.nex')),
                                      lapply(rDirectories, readRTrees, nexusName=paste0(fileRoot, '.nex')))
+GetRTrees <- function (fileRoot) lapply(rDirectories, readRTrees, nexusName=paste0(fileRoot, '.nex'))
 
 GetTreeScores <- function(fileRoot, trees = NULL) {
   fileRoot <- gsub('\\.csv$', '', fileRoot)
@@ -285,13 +291,20 @@ GetRFDistances <- function (fileRoot, trees=GetTrees(fileRoot)) {
   rfDistances
 }
 
-GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE, recalculate=FALSE) {
+GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE) {
   flatTrees <- Flatten(trees)
   qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
-  if (file.exists(qtFileName) && !recalculate) {
+  if (file.exists(qtFileName) && (file.mtime(qtFileName) > "2017-10-10 15:34:10 BST")) { # Regenerate old files
     qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
+    if (length(trees) == 4) {
+      if (sum(sapply(trees, length)) < ncol(qtDistances)) stop('Distances calculated from outdated trees.')
+      ambigTrees <- seq_len(ncol(qtDistances) - sum(sapply(trees, length)))
+      qtDistances <- qtDistances[-ambigTrees, -ambigTrees]
+    }
   } else {
-    cat(" - Calculating quartet distances...\n")
+    cat(" - Calculating quartet distances for ", fileRoot, "...\n")
+    if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
+    if (length(trees) != 4) trees <- GetTrees(fileRoot)
     qtDistances <- QuartetDistances(flatTrees)
     write.csv(qtDistances, file=qtFileName)
   }
