@@ -201,7 +201,7 @@ MatrixProperties <- function (fileRoot) {
               )  
 }
 
-GetTreeScores <- function(fileRoot, nTrees = NULL, treeSource = NULL) {
+GetTreeScores <- function(fileRoot, nTrees = NULL) {
   fileRoot <- gsub('\\.csv$', '', fileRoot)
   scores <- NULL
   treeScoreFile <- paste0('islandCounts/', fileRoot, '.csv')
@@ -210,8 +210,7 @@ GetTreeScores <- function(fileRoot, nTrees = NULL, treeSource = NULL) {
     scores <- as.matrix(rawScores[, -1])
     rownames(scores) <- rawScores[, 1]
   }
-  if (!is.null(nTrees) && !is.null(treeSource) && 
-      is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
+  if (!is.null(nTrees) && is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
     cat("   - Calculating tree scores...\n")
     scores <- vapply(allDirectories, function (dirPath) {
       TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
@@ -219,7 +218,7 @@ GetTreeScores <- function(fileRoot, nTrees = NULL, treeSource = NULL) {
       phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
       as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
     }, integer(sum(nTrees)))
-    rownames(scores) <- treeSource
+    rownames(scores) <- rep(c(tntDirectories, rDirectories), nTrees)
     write.csv(scores, file=treeScoreFile)
   }
   scores
@@ -233,9 +232,9 @@ GetVennTrees <- function (trees, treeDetails, fileRoot) {
   treeDetails <- GetTreeScores(fileRoot, nTrees)
   
   trees <- trees[-1]
+  treeDetails <- treeDetails[!(rownames(treeDetails) == 'ambiguous'), -1]
+  extraSteps <- apply(treeDetails, 2, function (x) x - min(x))
  
-  treeDetails <- treeDetails[!(treeDetails[, 1] == 'ambiguous'), ]
-  extraSteps <- apply(treeDetails[3:5], 2, function (x) x - min(x))
   dimnames(extraSteps) <- NULL
   a_in_b_or_c <-  trees[[1]] %in% trees[[2]] | trees[[1]] %in% trees[[3]]
   b_in_c      <-  trees[[2]] %in% trees[[3]]
@@ -254,6 +253,7 @@ GetVennTrees <- function (trees, treeDetails, fileRoot) {
     c(TRUE , TRUE , TRUE )), function (pattern) {
       sum(apply(treeIsOptimal, 1, identical, pattern))
     }, integer(1))
+    
   if (sum(vennTrees) != nrow(extraSteps)) stop(fileRoot, ": Something's not right.")
   vennTrees
 }
