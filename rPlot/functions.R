@@ -201,7 +201,7 @@ MatrixProperties <- function (fileRoot) {
               )  
 }
 
-GetTreeScores <- function(fileRoot, nTrees = NULL) {
+GetTreeScores <- function(fileRoot, trees = NULL) {
   fileRoot <- gsub('\\.csv$', '', fileRoot)
   scores <- NULL
   treeScoreFile <- paste0('islandCounts/', fileRoot, '.csv')
@@ -210,8 +210,10 @@ GetTreeScores <- function(fileRoot, nTrees = NULL) {
     scores <- as.matrix(rawScores[, -1])
     rownames(scores) <- rawScores[, 1]
   }
-  if (!is.null(nTrees) && is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
+  if (!is.null(trees) && is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
     cat("   - Calculating tree scores...\n")
+    nTrees <- vapply(trees, length, integer(1))
+    flatTrees <- unlist(trees, recursive=FALSE)
     scores <- vapply(allDirectories, function (dirPath) {
       TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
       rawData <- read.nexus.data(paste0(dirPath, '/', fileRoot, '.nex'))
@@ -229,7 +231,7 @@ GetVennTrees <- function (trees, treeDetails, fileRoot) {
   trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
              lapply(rDirectories, readRTrees, nexusName=nexusName))
   nTrees <- vapply(trees, length, integer(1))
-  treeDetails <- GetTreeScores(fileRoot, nTrees)
+  treeDetails <- GetTreeScores(fileRoot, trees)
   
   trees <- trees[-1]
   treeDetails <- treeDetails[!(rownames(treeDetails) == 'ambiguous'), -1]
