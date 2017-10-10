@@ -4,8 +4,6 @@ OVERWRITE <- FALSE
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 #nexusName <- 'Eklund2004.nex'
-slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 'Eklund2004', 
-               'Geisler2001', 'Giles2015', 'OMeara2014', 'Wills2012', 'Schulze2007')
 slowNexusFiles <- paste0(slowFiles, '.nex')
                
 for (nexusName in slowNexusFiles) {

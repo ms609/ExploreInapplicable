@@ -2,6 +2,10 @@ tntDirectories <- c('ambiguous', 'ambigAbsent', 'extraState')
 rDirectories <- c('inapplicable')
 allDirectories <- c(tntDirectories, rDirectories)
 
+slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 'Eklund2004', 
+               'Geisler2001', 'Giles2015', 'OMeara2014', 'Wills2012', 'Schulze2007')
+
+
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73",
                          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")
 treePalette <- cbPalette[c(6, 3, 2, 8)]
@@ -36,7 +40,7 @@ qtLegendPos = list(
   'DeAssis2011' = 'bottomright',
   'Eklund2004' = 'bottomright',
   'Griswold1999' = 'topleft',
-  'Laconte1991' = 'topleft',
+  'Loconte1991' = 'topleft',
   'OLeary1999' = 'bottomright',
   'Rousset2004' = 'bottomleft',
   'Sano2011' = 'bottomleft',
