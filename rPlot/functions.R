@@ -201,6 +201,63 @@ MatrixProperties <- function (fileRoot) {
               )  
 }
 
+GetTreeScores <- function(fileRoot, nTrees = NULL, treeSource = NULL) {
+  fileRoot <- gsub('\\.csv$', '', fileRoot)
+  scores <- NULL
+  treeScoreFile <- paste0('islandCounts/', fileRoot, '.csv')
+  if (file.exists(treeScoreFile)) {
+    rawScores <- read.csv(treeScoreFile)
+    scores <- as.matrix(rawScores[, -1])
+    rownames(scores) <- rawScores[, 1]
+  }
+  if (!is.null(nTrees) && !is.null(treeSource) && 
+      is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
+    cat("   - Calculating tree scores...\n")
+    scores <- vapply(allDirectories, function (dirPath) {
+      TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
+      rawData <- read.nexus.data(paste0(dirPath, '/', fileRoot, '.nex'))
+      phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
+      as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
+    }, integer(sum(nTrees)))
+    rownames(scores) <- treeSource
+    write.csv(scores, file=treeScoreFile)
+  }
+  scores
+}
+
+GetVennTrees <- function (trees, treeDetails, fileRoot) {
+  nexusName <- paste0(fileRoot, '.nex')
+  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName),
+             lapply(rDirectories, readRTrees, nexusName=nexusName))
+  nTrees <- vapply(trees, length, integer(1))
+  treeDetails <- GetTreeScores(fileRoot, nTrees)
+  
+  trees <- trees[-1]
+ 
+  treeDetails <- treeDetails[!(treeDetails[, 1] == 'ambiguous'), ]
+  extraSteps <- apply(treeDetails[3:5], 2, function (x) x - min(x))
+  dimnames(extraSteps) <- NULL
+  a_in_b_or_c <-  trees[[1]] %in% trees[[2]] | trees[[1]] %in% trees[[3]]
+  b_in_c      <-  trees[[2]] %in% trees[[3]]
+  if (any(c(a_in_b_or_c, b_in_c))) extraSteps <- extraSteps[-which(c(a_in_b_or_c, b_in_c)), ]
+  
+  treeIsOptimal <- extraSteps == 0
+  colnames(treeIsOptimal) <- NULL
+  
+  vennTrees <- vapply(list(
+    c(TRUE , FALSE, FALSE),
+    c(FALSE, TRUE, FALSE),
+    c(FALSE, FALSE, TRUE),
+    c(TRUE , TRUE, FALSE),
+    c(TRUE , FALSE, TRUE),
+    c(FALSE , TRUE, TRUE),
+    c(TRUE , TRUE , TRUE )), function (pattern) {
+      sum(apply(treeIsOptimal, 1, identical, pattern))
+    }, integer(1))
+  if (sum(vennTrees) != nrow(extraSteps)) stop(fileRoot, ": Something's not right.")
+  vennTrees
+}
+
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
     centre <- function(D, n) {
         One <- matrix(1, n, n)
