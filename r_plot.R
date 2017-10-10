@@ -9,7 +9,7 @@ slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 
 
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
-  nexusRoot <- gsub('.nex', '', nexusName); 
+  nexusRoot <- gsub('.nex', '', nexusName);
   cat("\nEvaluating", nexusRoot, "...\n")
   
   if (nexusRoot %in% c('avoidThisFile.nex')) { # add slowFiles to this list if quick results wanted first
@@ -28,7 +28,6 @@ for (nexusName in nexusFiles) {
   nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
   dirTrees <- TreeNumbers(nTrees)
   flatTrees <- unlist(trees, recursive=FALSE)
-  rm(trees)
   
   treeSource <- rep(c(tntDirectories, rDirectories), nTrees)
   treeTitles <- paste(treeSource, unlist(sapply(nTrees, seq_len)), sep='_')
@@ -114,6 +113,47 @@ for (nexusName in nexusFiles) {
     dev.copy(png, file=paste0('islandCounts/', nexusRoot, '-3.png', collapse=''), width=800, height=800); dev.off()
   }
   
+  par(mfrow=c(1, 1), bg='white')
+  if (!file.exists(paste0('vennNodes/', nexusRoot, '.png'))|| OVERWRITE) {
+    cat(" - Calculating consensus trees: ")
+    consensi <- lapply(trees, consensus)
+    nNodes <- vapply(consensi, function (tr) tr$Nnode, double(1))
+    cat("done.\n")
+    vennCons <- integer(7)
+    names(vennCons) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+    vennCons[7] <- consensus(consensi[[4]], consensi[[3]], consensi[[2]])$Nnode
+    vennCons[4] <- consensus(consensi[[2]], consensi[[3]])$Nnode - vennCons['A&B&C']
+    vennCons[5] <- consensus(consensi[[2]], consensi[[4]])$Nnode - vennCons['A&B&C']
+    vennCons[6] <- consensus(consensi[[4]], consensi[[3]])$Nnode - vennCons['A&B&C']
+    vennCons[1:3] <- c(
+    'A' =     nNodes[2] - (vennCons['A&B'] + vennCons['A&C'] + vennCons['A&B&C']),
+    'B' =     nNodes[3] - (vennCons['A&B'] + vennCons['B&C'] + vennCons['A&B&C']),
+    'C' =     nNodes[4] - (vennCons['A&C'] + vennCons['B&C'] + vennCons['A&B&C']))
+    vennPlot <- venneuler(vennCons)
+    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], col.txt=NA,
+         main=paste0('Nodes recovered by method: ', nexusRoot))
+    dev.copy(svg, file=paste0('vennNodes/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('vennNodes/', nexusRoot, '.png', collapse=''), width=512, height=512); dev.off()
+    cat(" - Plotted Venn diagram of nodes.\n")
+  }
+  
+  if (!file.exists(paste0('vennTrees/', nexusRoot, '.png')) || OVERWRITE) {
+    vennTrees <- integer(7)
+    names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
+    vennTrees[1:3] <- nTrees[2:4]
+    vennTrees[4:7] <- vapply(list(trees[c(2, 3)], trees[c(2, 4)], trees[c(3, 4)], trees[2:4]),
+      function (x) length(unique(unlist(x, recursive=FALSE))), integer(1))
+    vennTrees[7] <- sum(vennTrees[1:3]) - vennTrees[7]
+    vennTrees[4:6] <- vapply(3:1, function (i) sum(vennTrees[1:3][-i]), integer(1)) - vennTrees[4:6]
+    vennPlot <- venneuler(vennTrees)
+    plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], col.txt=NA,
+         main=paste0('Shortest trees: ', nexusRoot))
+    dev.copy(svg, file=paste0('vennTrees/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=512, height=512); dev.off()
+    cat(" - Plotted Venn diagram of trees.\n")
+  }
+  par(mfrow=c(2, 2), bg='white')
+  
   if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
     cat(" - Treespace plots already exist.\n")
     next
@@ -175,9 +215,3 @@ for (nexusName in nexusFiles) {
   dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   cat(" - Printed Quartet treespace and saved to files.\nEvaluation complete.\n\n")
 }
-
-#PlotTreeSpace(pcSpace, nTrees, legendPos=qtLegendPos[[nexusName]], mainTitle=titleText)
-
-# Really we want to something more sophisticated: e.g.
-# HILLIS, D. M., HEATH, T. A., JOHN, K. St. and ANDERSON, F. 2005. Analysis and Visualization of Tree Space. Systematic Biology, 54, 471–482.
-# or WILGENBUSCH, J. C., HUANG, W. and GALLIVAN, K. A. 2017. Visualizing phylogenetic tree landscapes. BMC Bioinformatics, 18, 85.
