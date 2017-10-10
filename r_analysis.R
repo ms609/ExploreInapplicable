@@ -13,8 +13,9 @@ nValid <- sum(validReads)
 #par(mfrow=c(6, 5), mar=rep(0.2, 4), bg='white')
 par(bg='white')
 quartPlots <- sort(names(validReads)[validReads])
-for (fileRoot in quartPlots) {
-  if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
+#for (fileRoot in quartPlots) {
+  #if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
+for (fileRoot in c(slowFiles, 'Zanol2014', 'Zhu2013')) {
   cat("\n - ", fileRoot, "\n")
   if (file.exists(paste0('quartetSpaces/', fileRoot, '.png'))) {
     cat("   > [File exists].\n")
@@ -27,6 +28,23 @@ for (fileRoot in quartPlots) {
   dev.copy(svg, file=paste0('quartetSpaces/', fileRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('quartetSpaces/', fileRoot, '.png', collapse=''), width=1024, height=1024); dev.off()  
 }
+
+
+#### Plot STRICT CONSENSUS TREES ####
+for (fileRoot in quartPlots) {
+  tr <- GetTrees(fileRoot)
+  cat("\n - ", fileRoot, "\n")
+  vcons <- lapply(tr, consensus)
+  pdf(file=paste0('consTrees/', fileRoot, '.pdf'), title=paste0(fileRoot, ' consensus trees'),
+      paper='a4')
+  par(mfrow=c(2,2), mar=rep(0.23, 4))
+  plot(vcons[[1]], main=englishName[1], cex.main=0.7, cex=0.3)
+  plot(vcons[[2]], main=englishName[2], cex.main=0.7, cex=0.3)
+  plot(vcons[[3]], main=englishName[3], cex.main=0.7, cex=0.3)
+  plot(vcons[[4]], main=englishName[4], cex.main=0.7, cex=0.3)
+  dev.off()
+}
+
 
 
 
