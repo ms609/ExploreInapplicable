@@ -291,6 +291,14 @@ GetRFDistances <- function (fileRoot, trees=GetTrees(fileRoot)) {
   rfDistances
 }
 
+ReplaceZeroes <- function (distMat, replaceZeroes = TRUE) {
+  if (replaceZeroes) {
+    distMat[distMat == 0] <- 1e-9
+    diag(distMat) <- 0
+  }
+  return(distMat)
+}
+
 GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE) {
   flatTrees <- Flatten(trees)
   qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
@@ -300,20 +308,19 @@ GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FAL
       if (sum(sapply(trees, length)) < ncol(qtDistances)) stop('Distances calculated from outdated trees.')
       ambigTrees <- seq_len(ncol(qtDistances) - sum(sapply(trees, length)))
       qtDistances <- qtDistances[-ambigTrees, -ambigTrees]
+      return (ReplaceZeroes(qtDistances, forPlot))
     }
-  } else {
-    cat(" - Calculating quartet distances for ", fileRoot, "...")
-    if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
-    if (length(trees) != 4) trees <- GetTrees(fileRoot)
-    qtDistances <- QuartetDistances(flatTrees)
-    cat(" Done.\n")
-    write.csv(qtDistances, file=qtFileName)
-  }
-  if (forPlot) {    
-    qtDistances[qtDistances == 0] <- 1e-9
-    diag(qtDistances) <- 0
-  }
-  qtDistances
+    if (ncol(qtDistances) == length(flatTrees)) {
+      return (ReplaceZeroes(qtDistances, forPlot))
+    }
+  }  
+  cat(" - Calculating quartet distances for ", fileRoot, "...")
+  if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
+  if (length(trees) != 4) trees <- GetTrees(fileRoot)
+  qtDistances <- QuartetDistances(flatTrees)
+  cat(" Done.\n")
+  write.csv(qtDistances, file=qtFileName)
+  ReplaceZeroes(qtDistances, forPlot)
 }
 
 modifiedPcoa <- function (D, correction = "none", rn = NULL) {
