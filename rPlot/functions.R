@@ -294,7 +294,7 @@ GetRFDistances <- function (fileRoot, trees=GetTrees(fileRoot)) {
 GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE) {
   flatTrees <- Flatten(trees)
   qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
-  if (file.exists(qtFileName) && (file.mtime(qtFileName) > "2017-10-10 15:34:10 BST")) { # Regenerate old files
+  if (file.exists(qtFileName) && (file.mtime(qtFileName) > "2017-10-10 15:34:10 BST")) { # Don't read stale files, regenerate them
     qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
     if (length(trees) == 4) {
       if (sum(sapply(trees, length)) < ncol(qtDistances)) stop('Distances calculated from outdated trees.')
