@@ -156,12 +156,13 @@ for (nexusName in slowNexusFiles) {
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
   rfDistances <- GetRFDistances(nexusRoot, trees)
+  cat(" - Calculated RF distances.\n")
   qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
+  cat(" - Calculated Quartet distances.\n")
   
   ambigTrees <- seq_len(nTrees[1])
   PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
   rfAreas <- PlotKruskalTreeSpace3(rfDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomright', rfTitleText)
-  cat(" - Printed RF treespace.\n")
   PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
   qtAreas <- PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
   
@@ -175,8 +176,8 @@ for (nexusName in slowNexusFiles) {
   par(mfrow=c(1, 1), bg='white')
   
   PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
+  dev.copy(svg, file=paste0('quartetSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
+  dev.copy(png, file=paste0('quartetSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   
-  cat(" - Printed Quartet treespace and saved to files.\nEvaluation complete.\n\n")
+  cat(" - Printed treespaces and saved to files.\nEvaluation complete.\n\n")
 }
