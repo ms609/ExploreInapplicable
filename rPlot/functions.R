@@ -296,7 +296,7 @@ GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FAL
   qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
   if (file.exists(qtFileName) && (file.mtime(qtFileName) > "2017-10-10 15:34:10 BST")) { # Don't read stale files, regenerate them
     qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
-    if (length(trees) == 4) {
+    if (length(trees) == 3) {
       if (sum(sapply(trees, length)) < ncol(qtDistances)) stop('Distances calculated from outdated trees.')
       ambigTrees <- seq_len(ncol(qtDistances) - sum(sapply(trees, length)))
       qtDistances <- qtDistances[-ambigTrees, -ambigTrees]
