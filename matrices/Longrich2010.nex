@@ -2,7 +2,6 @@
 BEGIN DATA;
   DIMENSIONS NTAX=20 NCHAR=93;
 	FORMAT DATATYPE=Standard SYMBOLS= "0129" MISSING=? GAP= -;
-                                       [              .16     .21 OO  .25              OO                                     OO             ]
   MATRIX                               
     Psittacosaurus_spp                 0--0--00100-0100   0-0-0   0----   0--00000000000-0000000000000000000000--00000000000000-0000000000000
     Thescelosaurus_neglectus           0--0--00100-0000   0-0-0   0----   0--00000000000-01000000000000?00000000000000000110000-0000000000000

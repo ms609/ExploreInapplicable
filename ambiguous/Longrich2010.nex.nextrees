@@ -1,0 +1,35 @@
+#NEXUS
+begin taxa;
+	dimensions ntax=20;
+	taxlabels
+		Psittacosaurus_spp
+		Thescelosaurus_neglectus
+		Colepiocephale_lambei
+		Gravitholus_albertae
+		Stegoceras_validum
+		Texacephale_langstoni
+		Hanssuesia_sternbergi
+		Sphaerotholus_brevis
+		Sphaerotholus_goodwini
+		Sphaerotholus_edmontonense
+		Sphaerotholus_buchholtzae
+		Alaskacephale_gangloffi
+		Pachycephalosaurus_wyomingensis
+		Prenocephale_prenes
+		Tylocephale_gilmorei
+		Homalocephale_calathocercos
+		Goyocephale_lattimorei
+		Wannanosaurus_yansiensis
+		Stygimoloch_spinifer
+		Dracorex_hogwartsi
+	;
+end;
+begin trees;
+	tree tree1 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, ((Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae)),(Texacephale_langstoni, (Hanssuesia_sternbergi, ((Sphaerotholus_brevis, (((Alaskacephale_gangloffi, Pachycephalosaurus_wyomingensis),(Stygimoloch_spinifer, Dracorex_hogwartsi)),(Tylocephale_gilmorei, (Prenocephale_prenes, (Wannanosaurus_yansiensis, (Homalocephale_calathocercos, Goyocephale_lattimorei)))))),(Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae))))))));
+	tree tree2 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, (Hanssuesia_sternbergi, ((Texacephale_langstoni, (Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae))),((Sphaerotholus_brevis, (((Alaskacephale_gangloffi, Pachycephalosaurus_wyomingensis),(Stygimoloch_spinifer, Dracorex_hogwartsi)),((Prenocephale_prenes, Tylocephale_gilmorei),(Wannanosaurus_yansiensis, (Homalocephale_calathocercos, Goyocephale_lattimorei))))),(Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae)))))));
+	tree tree3 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, ((Texacephale_langstoni, (Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae))),(Hanssuesia_sternbergi, ((Sphaerotholus_brevis, (Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae))),((Pachycephalosaurus_wyomingensis, (Alaskacephale_gangloffi, (Stygimoloch_spinifer, Dracorex_hogwartsi))),(Tylocephale_gilmorei, (Prenocephale_prenes, (Goyocephale_lattimorei, (Homalocephale_calathocercos, Wannanosaurus_yansiensis))))))))));
+	tree tree4 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, (Texacephale_langstoni, ((Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae)),(Hanssuesia_sternbergi, ((Sphaerotholus_brevis, ((Pachycephalosaurus_wyomingensis, (Alaskacephale_gangloffi, (Stygimoloch_spinifer, Dracorex_hogwartsi))),(Prenocephale_prenes, (Tylocephale_gilmorei, (Wannanosaurus_yansiensis, (Homalocephale_calathocercos, Goyocephale_lattimorei)))))),(Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae))))))));
+	tree tree5 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, (Hanssuesia_sternbergi, ((Texacephale_langstoni, (Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae))),((Sphaerotholus_brevis, (Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae))),((Pachycephalosaurus_wyomingensis, (Alaskacephale_gangloffi, (Stygimoloch_spinifer, Dracorex_hogwartsi))),(Tylocephale_gilmorei, (Prenocephale_prenes, (Wannanosaurus_yansiensis, (Homalocephale_calathocercos, Goyocephale_lattimorei))))))))));
+	tree tree6 = [&U] (Psittacosaurus_spp, (Thescelosaurus_neglectus, (Hanssuesia_sternbergi, ((Texacephale_langstoni, (Stegoceras_validum, (Colepiocephale_lambei, Gravitholus_albertae))),((Sphaerotholus_brevis, (Sphaerotholus_goodwini, (Sphaerotholus_edmontonense, Sphaerotholus_buchholtzae))),((Pachycephalosaurus_wyomingensis, (Alaskacephale_gangloffi, (Stygimoloch_spinifer, Dracorex_hogwartsi))),(Tylocephale_gilmorei, (Prenocephale_prenes, (Homalocephale_calathocercos, (Goyocephale_lattimorei, Wannanosaurus_yansiensis))))))))));
+
+end;
