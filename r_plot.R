@@ -158,11 +158,12 @@ for (nexusName in slowNexusFiles) {
   rfDistances <- GetRFDistances(nexusRoot, trees)
   qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
   
+  ambigTrees <- seq_len(nTrees[1])
   PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
-  rfAreas <- PlotKruskalTreeSpace3(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+  rfAreas <- PlotKruskalTreeSpace3(rfDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomright', rfTitleText)
   cat(" - Printed RF treespace.\n")
   PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
-  qtAreas <- PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
+  qtAreas <- PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
   
   areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
   write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
@@ -173,8 +174,7 @@ for (nexusName in slowNexusFiles) {
   
   par(mfrow=c(1, 1), bg='white')
   
-  source('rPlot/functions.R')
-  PlotKruskalTreeSpace3(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
+  PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
   dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   
