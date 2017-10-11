@@ -281,7 +281,7 @@ Flatten <- function (trees) unlist(trees, recursive=FALSE)
 GetRFDistances <- function (fileRoot, trees=GetTrees(fileRoot)) {
   flatTrees <- Flatten(trees)
   rfFileName <- paste0('treeSpaces/', fileRoot, '.rf.csv')
-  if (file.exists(rfFileName)) {
+  if (file.exists(rfFileName) && (file.mtime(rfFileName) > "2017-10-10 15:34:10 BST")) { # Don't read stale files, regenerate them
     rfDistances <- data.matrix(read.csv(rfFileName, row.names=1))
   } else {
     cat(" - Calculating RF distances...\n")
