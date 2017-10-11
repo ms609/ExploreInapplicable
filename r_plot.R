@@ -33,7 +33,7 @@ for (nexusName in slowNexusFiles) {
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
   
-  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE && FALSE) {
+  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
     cat(" - MPT histograms already exist.\n")    
   } else {
     cat(" - Generating MPT histograms.\n")    
@@ -156,9 +156,9 @@ for (nexusName in slowNexusFiles) {
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
   rfDistances <- GetRFDistances(nexusRoot, trees)
-  cat(" - Calculated RF distances.\n")
+  cat(" - Got RF distances.\n")
   qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
-  cat(" - Calculated Quartet distances.\n")
+  cat(" - Got Quartet distances.\n")
   
   ambigTrees <- seq_len(nTrees[1])
   PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
