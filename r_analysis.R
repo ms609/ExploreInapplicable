@@ -16,7 +16,7 @@ quartPlots <- sort(names(validReads)[validReads])
 speedPlots <- c(quartPlots[! (quartPlots%in%slowFiles)], slowFiles)
 #for (fileRoot in quartPlots) {
   #if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
-for (fileRoot in c(slowFiles, 'Zanol2014', 'Zhu2013')) {
+for (fileRoot in c(slowFiles)) {
   cat("\n - ", fileRoot, "\n")
   if (file.exists(paste0('quartetSpaces/', fileRoot, '.png'))) {
     cat("   > [File exists].\n")
@@ -24,7 +24,9 @@ for (fileRoot in c(slowFiles, 'Zanol2014', 'Zhu2013')) {
   }
   trees <- GetTrees(fileRoot)
   nTrees <- vapply(trees, length, integer(1))
-  qtDistances3   <- GetQuartetDistances(fileRoot, trees[-1], forPlot=TRUE)
+  qtDistances <- GetQuartetDistances(fileRoot, trees, forPlot=TRUE)
+  ambigTrees <- seq_len(nTrees[1])
+  qtDistances3 <- qtDistances[-ambigTrees, -ambigTrees]
   PlotKruskalTreeSpace3(qtDistances3, nTrees[-1], legendPos=QuartetLegendPos(fileRoot), fileRoot, fill=TRUE)
   dev.copy(svg, file=paste0('quartetSpaces/', fileRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('quartetSpaces/', fileRoot, '.png', collapse=''), width=1024, height=1024); dev.off()  
