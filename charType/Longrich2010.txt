@@ -1,93 +1,93 @@
-XX [1]   1	 Frontals and parietals flat dorsally (0) or frontals and parietals thickened and vaulted to form a cranial dome (1) (Sereno, 2000: character 4).
-NT [2]   2	 Frontoparietal dome with discrete orbital and postorbital lobes (0) or orbital and postorbital lobes confluent (1).
-NT [3]   3	 Frontoparietal dome short and broad (0) or frontoparietal dome elongate,  dome roughly 150% as long as wide (1).
-XX [4]   4	Frontals free (0) or interfrontal suture and frontoparietal sutures closed (1).
-NT [5]   5	Frontal, orbital processes distinct from dome (0) or completely incorporated into dome (1).
-NT [6]   6	Frontals, dome narrow  over orbits, (0) or dome over orbits transversely expanded (1).
-XX [7]   7	Frontal, nasal processes with a flat dorsal surface (0) or nasal processes convex, forming a low nasal boss (1) or nasal processes elevated above prefrontals to create a tall nasal boss (2) (modified from Williamson and Carr, 2002: character 42).
-XX [8]   8	Frontal, nasal process smooth or bearing low nodes (0) or nasal process  bearing enlarged nodes (1).
-XX [9]   9	Frontal, nasal processes elongate, about 25% length of frontoparietals (0) or shortened, less than 25% length of frontoparietals (1) highly reduced, 15% or less length of frontoparietals (2).
-XX [10]  10	Frontal contributes to rim of orbit (0) or frontal excluded from orbit by supraorbital ossifications (1) (Sereno, 2000: character 8).
-XX [11]  11	Frontal lacks articulation with accessory orbital ossifications, medial wall of orbit open (0) or frontal articulates with accessory orbital ossifications (1).
-NT [12]  12	Frontal with large articular surface for supraorbital 1 (0) or reduced articulation between frontal and supraorbital 1 (1).
-NT [13]  13	Frontal, orbital roof with large vascular foramena and associated blood vessel grooves: absent (0) or present (1).
-XX [14]  14	Frontals  subequal to, or longer than, parietals in length (0) or parietals substantially longer than frontals (1).
-XX [15]  15	Parietals, articulation with postorbitals limited or absent (0) or extensive (1) (Sereno, 2000: character 14).
-NT [16]  16	Parietals, smooth or bearing small tubercles (0) or bearing large nodes on caudal margin (1).
-XX [17]  17	Parietals, covered dorsally by supratemporal fossae (0), or parietals overhang or entirely roof over adductor chamber (1) (modified from Williamson and Carr, 2002: Character 40).
-NT [18]  18	Parietals, dorsal roof of adductor chamber shallow (0) or deeply excavating dome posterodorsally (1).
-XX [19]  19	Parietals: broadly participate in caudal margin of occiput (0), largely excluded by squamosals (Williamson and Carr, 2002: character 44).
-NT [20]  20	Parietals, dome only incorporates anterior part of parietals (0), or dome fully incorporates parietal, eliminating parietosquamosal shelf (1) (Williamson and Carr, 2002: character 51) or dome caudally extended, overhanging parietosquamosal shelf (2).
-XX [21]  21	Parietal, postorbital and squamosal form margins of supratemporal fenestrae (0) or  supratemporal fenestrae closed by contact between parietals, squamosals, and postorbitals (1).
-XX [22]  22	Squamosal, enlarged squamosal nodes absent (0) or present (1) 
-NT [23]  ..  or hypertrophied (2) ORDERED (modified from Sereno, 2000: character 16; Williamson and Carr, 2002: character 39).
-NT [24]  23	Squamosal,  nodes conical or button-shaped (0) or developed as spikelike horns (1).
-NT [25]  24	Squamosal, squamosal nodes in a single row (0), or single row with distinct corner node below (sometimes with 1-2 small accessory nodes) (1),  2 or more rows (2) (Williamson and Carr, 2002: characters 36, 37) UNORDERED
-NT [26]  25	 Squamosal, enlarged nodes  in row on caudal margin number 5 or more (0), 3-4 (1) (Sullivan, 2003: character 42).
-XX [27]  26	Squamosals straight in caudal view (0) or tips of squamosals pendant in caudal view (1) (Williamson and Carr, 2002: 37).
-NT [28]  27	Squamosal, Parietosquamosal shelf deep laterally (0), or thins laterally in caudal view (1) (Modified from Williamson and Carr, 2002).
-NT [29]  28	Squamosal contribution to dome limited (0) or squamosal extends dorsally to the same extend as the postorbital (1).
-XX [30]  29	Squamosal, with restricted exposure on occiput (0) or with broad exposure on occiput (1) (Sereno, 2000: character 7).
-XX [31]  30	Squamosal, prominent crescentic scars on occipital surface absent (0) or present (1).
-XX [32]  31	Squamosal, posterolateral corner massive and projecting caudally to form a pedicel: absent (0) or present (1).
-XX [33]  32	Squamosals separated by parietal (0) or squamosals contact posteriorly (1).  
-XX [34]  33	Caudal margins of parietals and squamosals dorsal to occiput (0), project caudally beyond occiput forming a parietosquamosal shelf (1) (Sereno 2000, character 34).  
-XX [35]  34	Postorbital, postorbital nodes small or absent (0) or bearing a distinct row of enlarged nodes along lateral margin (1).  
-XX [36]  35	Postorbital with distinct postorbital node row descending postorbital bar: absent (0) or present (1) .
-XX [37]  36	Postorbital-jugal bar slender (0) or robust (1) (Sereno, 2000: character 15).
-XX [38]  37	Postorbital and squamosal form a slender bar (0) or a robust shelf, sometimes incorporated into dome  (1).
-XX [39]  38	Postorbital-squamosal, lateral margin straight in dorsal view (0) or strongly convex in dorsal view, with squamosal and postorbital forming a crown around the skull  (1).
-XX [40]  39	Nasals, nodes on nasals absent (0), present (1)
-NT [41]  .. , hypertrophied (2) ORDERED  (Williamson and Carr, 2002: character 52).
-XX [42]  40	Nasals flat dorsally, resulting in a dorsally flat rostrum (0), or nasals arched transversely resulting in a convex dorsal surface of the rostrim (1).
-XX [43]  41	Nasals short, no more than 150% as long as wide, rostrum short (0), snout elongate, paired nasals roughly twice as long as wide, rostrum elongate (1) (modified from Sereno, 2000, character 39).
-XX [44]  42	Supraoccipital: occipital depression above foramen magnum absent (0) or present (1) (Williamson and Carr, 2000, character 45).
-XX [45]  43	Supraoccipital: epaxial muscle scars: restricted to exoccipital (0) or extend medially onto supraoccipital (1) (Williamson and Carr, 2002: character 47).
-XX [46]  44	Basioccipital: basal tubera massive (0) or thin and plate-like (1) (Sereno, 2000: character 18).
-XX [47]  45	Basioccipital: occipital condyle weakly differentiated from body of basioccipital (0), or occipital condyle borne on an elongate, pillar-like neck (1)
-XX [48]  46	Lateral temporal fenestra ventral margin elongate (0) or anteroposteriorly short (1).
-XX [49]  47	Jugal articulates with quadrate: absent (0) or present (1) (Sereno, 2000: character 37).
-XX [50]  48	Quadrate articulates high on skull (0) or quadrate articulates low on descending process of squamosal (1).
-XX [51]  49	Quadrate shaft with a shallow fossa largely covering the lateral surface (0) or quadrate lateral fossa reduced (1).
-XX [52]  50	Premaxilla: external nares retracted from anteroventral margin of premaxilla (0) or nares extend down onto anteroventral surface of premaxilla (1).
-XX [53]  51	Premaxillae: ventral margin of premaxillae with  sharp-edged tomial surface (0) or broad and flattened lip-like rugosity (1).
-XX [54]  52	Premaxillae, maxillary ramus strongly arched to form a distinct premaxilla-maxilla notch: absent (0) or present (1) (modified from Sereno, 2000: character 5).
-NT [55]  53	Prootic-basisphenoid plate: absent (0) or present (1) (Sereno, 2000, character 27).
-XX [56]  54	Pterygoquadrate rami, posterior projection of ventral margin: weak  (0); pronounced (1) (Sereno,  2000; character 26).
-NT [57]  55	Exoccipital,  scars for attachment of epaxial muscles on  paroccipital processes: absent or indistinct (0); prominent (1) (Williamson and Carr, 2002; character 47).
-XX [58]  56	Exoccipital: exoccipital laterally projecting (0) strongly pendant (1).
-XX [59]  57	Dentary forms anterior margin of coronoid process (0) or coronoid forms anterior margin of coronoid process (1).
-XX [60]  58	Dentary anterior end deep in lateral view (0) or anterior end of dentary shallow and strongly tapered in lateral view (1).
-XX [61]  59	Coronoid process of mandible tall and subtriangular (0) or developed as a low, crescentic flange (1).
-XX [62]  60	Surangular and angular, lateral fossa present (0) or absent (1).
-XX [63]  61	Skull, external surfaces of elements of the skull roof, face, and mandible: smooth and unornamented (0) or rugose, ornamented with nodes, tubercles, and pits of varying size (1).
-NT [64]  62	Dentition, premaxillary and anterior dentary teeth lack denticles (0) or denticles present (1).
-NT [65]  63	Dentition, premaxillary and anterior dentary teeth subconical (0) laterally compressed and bladelike (1).
-XX [66]  64	Cervical vertebrae, ventral surface of centrum rounded (0) or keeled (1).
-XX [67]  65	Vertebrae, zygapophyseal articular surfaces planar (0) or with ridge-and-groove structure (1).
-XX [68]  66	Sacral ribs subrectangular (0) or elongate and strap shaped (1).
-XX [69]  67	Proximal caudal vertebrae, neural spines posteriorly inclined (0) or projecting dorsally (1).
-NT [70]  68	Tail, ossified tendons rodlike(0) or massive and fusiform (1) (Sereno, 2000: character 20).
-XX [71]  69	Scapular blade broad (0) or narrow and strap-shaped (1) (Sereno, 2000: character 2).
-XX [72]  70	Sternum plate-like (0) or shafted (1) (Sereno, 2000: character 21).
-XX [73]  71	Humerus elongate (0) or short, less than 50% length of femur (1) ( Sereno, 2000: character 10).
-XX [74]  72	Humerus, deltopectoral crest prominent (0) or reduced (1) (Sereno, 2000: character 12).
-XX [75]  73	humeral shaft straight (0) or bowed (1) (Sereno, 20: character 11).
-XX [76]  74	Ulna robust (0) or more slender than radius (1).
-XX [77]  75	Ilium, postacetabular wing with strong medial curvature, absent (0) or present (1) (Sereno, 2000).
-XX [78]  76	Ilium, prominent medial process absent (0) or present (1) (Sereno, 2000) or greatly expanded, extending 2/3 length of postacetabular process (2).
-XX [79]  77	Ilium, anterior process a vertical blade (0) or transversely expanded (1) 
-NT [80]  .. or strongly expanded, spatulate (2) (modified from Sereno, 2000: Character 3) ORDERED.
-XX [81]  78	Ilium, dorsal margin with distinct dorsal shelf: absent (0) or present (1).
-XX [82]  79	Ilium, anterior blade with little or no lateral deflection (0) or strong lateral deflection, preacetabular process bent laterally by 30º (1) (Sereno, 2000: character 22).
-XX [83]  80	Ilium, medial tab (???) absent or present (Sereno, 2000; character 23).
-XX [84]  81	Ilium: pubic peduncle mediolaterally narrow (0) or strongly transversely expanded and dorsoventrally compressed (1)  (2000: character 30).
-XX [85]  82	Ilium posterior wing  straight in lateral view  (0) or strongly curved downwards (1).
-XX [86]  83	Ilium, postacetabular blade short (0) or elongate, longer than preacetabular blade (1).
-XX [87]  84	Pubis, contribution to acetabulum extensive (0), or reduced (1) (modified from Sereno, 2000: character 31).
-XX [88]  85	Pubis, prepubic process distally expanded: absent (0) or present (1).
-XX [89]  86	ischium straight or weakly curved (0) or ischium strongly bent, angle of at least 30º between proximal and distal ends of shaft (1).
-XX [90]  87	Femur, femoral fourth trochanter elongate and pendant (0) or developed as a low flange (1).
-XX [91]  88	Femur, femoral head weakly separated from greater trochanter (0) or femoral head and greater trochanter separated by a deep notch in anterior or posterior view (1).
-XX [92]  89	Femur, lesser trochanter proximodistally short, arises from proximal 25% of femoral shaft (0), or lesser trochanter extended distally, arises from proximal 33% of femoral shaft.
-XX [93]  90	Fibular mid-shaft diameter greater than 20% tibia diameter (0) or no more than 20% diameter of tibia (1) (Sereno, 2000: character 13).
+X [1]   1	 Frontals and parietals flat dorsally (0) or frontals and parietals thickened and vaulted to form a cranial dome (1) (Sereno, 2000: character 4).
+T [2]   2	 Frontoparietal dome with discrete orbital and postorbital lobes (0) or orbital and postorbital lobes confluent (1).
+T [3]   3	 Frontoparietal dome short and broad (0) or frontoparietal dome elongate,  dome roughly 150% as long as wide (1).
+X [4]   4	Frontals free (0) or interfrontal suture and frontoparietal sutures closed (1).
+T [5]   5	Frontal, orbital processes distinct from dome (0) or completely incorporated into dome (1).
+T [6]   6	Frontals, dome narrow  over orbits, (0) or dome over orbits transversely expanded (1).
+X [7]   7	Frontal, nasal processes with a flat dorsal surface (0) or nasal processes convex, forming a low nasal boss (1) or nasal processes elevated above prefrontals to create a tall nasal boss (2) (modified from Williamson and Carr, 2002: character 42).
+X [8]   8	Frontal, nasal process smooth or bearing low nodes (0) or nasal process  bearing enlarged nodes (1).
+X [9]   9	Frontal, nasal processes elongate, about 25% length of frontoparietals (0) or shortened, less than 25% length of frontoparietals (1) highly reduced, 15% or less length of frontoparietals (2).
+X [10]  10	Frontal contributes to rim of orbit (0) or frontal excluded from orbit by supraorbital ossifications (1) (Sereno, 2000: character 8).
+X [11]  11	Frontal lacks articulation with accessory orbital ossifications, medial wall of orbit open (0) or frontal articulates with accessory orbital ossifications (1).
+T [12]  12	Frontal with large articular surface for supraorbital 1 (0) or reduced articulation between frontal and supraorbital 1 (1).
+N [13]  13	Frontal, orbital roof with large vascular foramena and associated blood vessel grooves: absent (0) or present (1).
+X [14]  14	Frontals  subequal to, or longer than, parietals in length (0) or parietals substantially longer than frontals (1).
+X [15]  15	Parietals, articulation with postorbitals limited or absent (0) or extensive (1) (Sereno, 2000: character 14).
+T [16]  16	Parietals, smooth or bearing small tubercles (0) or bearing large nodes on caudal margin (1).
+X [17]  17	Parietals, covered dorsally by supratemporal fossae (0), or parietals overhang or entirely roof over adductor chamber (1) (modified from Williamson and Carr, 2002: Character 40).
+T [18]  18	Parietals, dorsal roof of adductor chamber shallow (0) or deeply excavating dome posterodorsally (1).
+X [19]  19	Parietals: broadly participate in caudal margin of occiput (0), largely excluded by squamosals (Williamson and Carr, 2002: character 44).
+T [20]  20	Parietals, dome only incorporates anterior part of parietals (0), or dome fully incorporates parietal, eliminating parietosquamosal shelf (1) (Williamson and Carr, 2002: character 51) or dome caudally extended, overhanging parietosquamosal shelf (2).
+X [21]  21	Parietal, postorbital and squamosal form margins of supratemporal fenestrae (0) or  supratemporal fenestrae closed by contact between parietals, squamosals, and postorbitals (1).
+X [22]  22	Squamosal, enlarged squamosal nodes absent (0) or present (1) 
+N [23]  ..  or hypertrophied (2) ORDERED (modified from Sereno, 2000: character 16; Williamson and Carr, 2002: character 39).
+T [24]  23	Squamosal,  nodes conical or button-shaped (0) or developed as spikelike horns (1).
+N [25]  24	Squamosal, squamosal nodes in a single row (0), or single row with distinct corner node below (sometimes with 1-2 small accessory nodes) (1),  2 or more rows (2) (Williamson and Carr, 2002: characters 36, 37) UNORDERED
+T [26]  25	 Squamosal, enlarged nodes  in row on caudal margin number 5 or more (0), 3-4 (1) (Sullivan, 2003: character 42).
+X [27]  26	Squamosals straight in caudal view (0) or tips of squamosals pendant in caudal view (1) (Williamson and Carr, 2002: 37).
+T [28]  27	Squamosal, Parietosquamosal shelf deep laterally (0), or thins laterally in caudal view (1) (Modified from Williamson and Carr, 2002).
+T [29]  28	Squamosal contribution to dome limited (0) or squamosal extends dorsally to the same extend as the postorbital (1).
+X [30]  29	Squamosal, with restricted exposure on occiput (0) or with broad exposure on occiput (1) (Sereno, 2000: character 7).
+X [31]  30	Squamosal, prominent crescentic scars on occipital surface absent (0) or present (1).
+X [32]  31	Squamosal, posterolateral corner massive and projecting caudally to form a pedicel: absent (0) or present (1).
+X [33]  32	Squamosals separated by parietal (0) or squamosals contact posteriorly (1).  
+X [34]  33	Caudal margins of parietals and squamosals dorsal to occiput (0), project caudally beyond occiput forming a parietosquamosal shelf (1) (Sereno 2000, character 34).  
+X [35]  34	Postorbital, postorbital nodes small or absent (0) or bearing a distinct row of enlarged nodes along lateral margin (1).  
+X [36]  35	Postorbital with distinct postorbital node row descending postorbital bar: absent (0) or present (1) .
+X [37]  36	Postorbital-jugal bar slender (0) or robust (1) (Sereno, 2000: character 15).
+X [38]  37	Postorbital and squamosal form a slender bar (0) or a robust shelf, sometimes incorporated into dome  (1).
+X [39]  38	Postorbital-squamosal, lateral margin straight in dorsal view (0) or strongly convex in dorsal view, with squamosal and postorbital forming a crown around the skull  (1).
+X [40]  39	Nasals, nodes on nasals absent (0), present (1)
+N [41]  .. , hypertrophied (2) ORDERED  (Williamson and Carr, 2002: character 52).
+X [42]  40	Nasals flat dorsally, resulting in a dorsally flat rostrum (0), or nasals arched transversely resulting in a convex dorsal surface of the rostrim (1).
+X [43]  41	Nasals short, no more than 150% as long as wide, rostrum short (0), snout elongate, paired nasals roughly twice as long as wide, rostrum elongate (1) (modified from Sereno, 2000, character 39).
+X [44]  42	Supraoccipital: occipital depression above foramen magnum absent (0) or present (1) (Williamson and Carr, 2000, character 45).
+X [45]  43	Supraoccipital: epaxial muscle scars: restricted to exoccipital (0) or extend medially onto supraoccipital (1) (Williamson and Carr, 2002: character 47).
+X [46]  44	Basioccipital: basal tubera massive (0) or thin and plate-like (1) (Sereno, 2000: character 18).
+X [47]  45	Basioccipital: occipital condyle weakly differentiated from body of basioccipital (0), or occipital condyle borne on an elongate, pillar-like neck (1)
+X [48]  46	Lateral temporal fenestra ventral margin elongate (0) or anteroposteriorly short (1).
+X [49]  47	Jugal articulates with quadrate: absent (0) or present (1) (Sereno, 2000: character 37).
+X [50]  48	Quadrate articulates high on skull (0) or quadrate articulates low on descending process of squamosal (1).
+X [51]  49	Quadrate shaft with a shallow fossa largely covering the lateral surface (0) or quadrate lateral fossa reduced (1).
+X [52]  50	Premaxilla: external nares retracted from anteroventral margin of premaxilla (0) or nares extend down onto anteroventral surface of premaxilla (1).
+X [53]  51	Premaxillae: ventral margin of premaxillae with  sharp-edged tomial surface (0) or broad and flattened lip-like rugosity (1).
+X [54]  52	Premaxillae, maxillary ramus strongly arched to form a distinct premaxilla-maxilla notch: absent (0) or present (1) (modified from Sereno, 2000: character 5).
+N [55]  53	Prootic-basisphenoid plate: absent (0) or present (1) (Sereno, 2000, character 27).
+X [56]  54	Pterygoquadrate rami, posterior projection of ventral margin: weak  (0); pronounced (1) (Sereno,  2000; character 26).
+N [57]  55	Exoccipital,  scars for attachment of epaxial muscles on  paroccipital processes: absent or indistinct (0); prominent (1) (Williamson and Carr, 2002; character 47).
+X [58]  56	Exoccipital: exoccipital laterally projecting (0) strongly pendant (1).
+X [59]  57	Dentary forms anterior margin of coronoid process (0) or coronoid forms anterior margin of coronoid process (1).
+X [60]  58	Dentary anterior end deep in lateral view (0) or anterior end of dentary shallow and strongly tapered in lateral view (1).
+X [61]  59	Coronoid process of mandible tall and subtriangular (0) or developed as a low, crescentic flange (1).
+X [62]  60	Surangular and angular, lateral fossa present (0) or absent (1).
+X [63]  61	Skull, external surfaces of elements of the skull roof, face, and mandible: smooth and unornamented (0) or rugose, ornamented with nodes, tubercles, and pits of varying size (1).
+N [64]  62	Dentition, premaxillary and anterior dentary teeth lack denticles (0) or denticles present (1).
+T [65]  63	Dentition, premaxillary and anterior dentary teeth subconical (0) laterally compressed and bladelike (1).
+X [66]  64	Cervical vertebrae, ventral surface of centrum rounded (0) or keeled (1).
+X [67]  65	Vertebrae, zygapophyseal articular surfaces planar (0) or with ridge-and-groove structure (1).
+X [68]  66	Sacral ribs subrectangular (0) or elongate and strap shaped (1).
+X [69]  67	Proximal caudal vertebrae, neural spines posteriorly inclined (0) or projecting dorsally (1).
+T [70]  68	Tail, ossified tendons rodlike(0) or massive and fusiform (1) (Sereno, 2000: character 20).
+X [71]  69	Scapular blade broad (0) or narrow and strap-shaped (1) (Sereno, 2000: character 2).
+X [72]  70	Sternum plate-like (0) or shafted (1) (Sereno, 2000: character 21).
+X [73]  71	Humerus elongate (0) or short, less than 50% length of femur (1) ( Sereno, 2000: character 10).
+X [74]  72	Humerus, deltopectoral crest prominent (0) or reduced (1) (Sereno, 2000: character 12).
+X [75]  73	humeral shaft straight (0) or bowed (1) (Sereno, 20: character 11).
+X [76]  74	Ulna robust (0) or more slender than radius (1).
+X [77]  75	Ilium, postacetabular wing with strong medial curvature, absent (0) or present (1) (Sereno, 2000).
+X [78]  76	Ilium, prominent medial process absent (0) or present (1) (Sereno, 2000) or greatly expanded, extending 2/3 length of postacetabular process (2).
+X [79]  77	Ilium, anterior process a vertical blade (0) or transversely expanded (1) 
+T [80]  .. or strongly expanded, spatulate (2) (modified from Sereno, 2000: Character 3) ORDERED.
+X [81]  78	Ilium, dorsal margin with distinct dorsal shelf: absent (0) or present (1).
+X [82]  79	Ilium, anterior blade with little or no lateral deflection (0) or strong lateral deflection, preacetabular process bent laterally by 30º (1) (Sereno, 2000: character 22).
+X [83]  80	Ilium, medial tab (???) absent or present (Sereno, 2000; character 23).
+X [84]  81	Ilium: pubic peduncle mediolaterally narrow (0) or strongly transversely expanded and dorsoventrally compressed (1)  (2000: character 30).
+X [85]  82	Ilium posterior wing  straight in lateral view  (0) or strongly curved downwards (1).
+X [86]  83	Ilium, postacetabular blade short (0) or elongate, longer than preacetabular blade (1).
+X [87]  84	Pubis, contribution to acetabulum extensive (0), or reduced (1) (modified from Sereno, 2000: character 31).
+X [88]  85	Pubis, prepubic process distally expanded: absent (0) or present (1).
+X [89]  86	ischium straight or weakly curved (0) or ischium strongly bent, angle of at least 30º between proximal and distal ends of shaft (1).
+X [90]  87	Femur, femoral fourth trochanter elongate and pendant (0) or developed as a low flange (1).
+X [91]  88	Femur, femoral head weakly separated from greater trochanter (0) or femoral head and greater trochanter separated by a deep notch in anterior or posterior view (1).
+X [92]  89	Femur, lesser trochanter proximodistally short, arises from proximal 25% of femoral shaft (0), or lesser trochanter extended distally, arises from proximal 33% of femoral shaft.
+X [93]  90	Fibular mid-shaft diameter greater than 20% tibia diameter (0) or no more than 20% diameter of tibia (1) (Sereno, 2000: character 13).
