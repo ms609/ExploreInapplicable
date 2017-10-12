@@ -2,9 +2,12 @@ tntDirectories <- c('ambiguous', 'ambigAbsent', 'extraState')
 rDirectories <- c('inapplicable')
 allDirectories <- c(tntDirectories, rDirectories)
 
+nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 slowFiles <- c('Aria2015', 'Aguado2009', 'Capa2011', 'Conrad2008', 'Dikow2009', 'Eklund2004', 
                'Geisler2001', 'Giles2015', 'OMeara2014', 'Wills2012', 'Schulze2007')
-
+slowNexus <- paste0(slowFiles, '.nex')
+nexusFiles <- c(nexusFiles[!(nexusFiles %in% slowNexus)], slowNexus)
+               
 
 cbPalette <- c("#000000", "#E69F00", "#56B4E9", "#009E73",
                          "#F0E442", "#0072B2", "#D55E00", "#CC79A7")

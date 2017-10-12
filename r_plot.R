@@ -2,21 +2,19 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
-#nexusName <- 'Eklund2004.nex'
+nexusName <- 'Asher2005.nex'
 slowNexusFiles <- paste0(slowFiles, '.nex')
                
-for (nexusName in slowNexusFiles) {
+for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
   
-  if (nexusRoot %in% c('avoidThisFile', 'Eklund2004')) { # add slowFiles to this list if quick results wanted first
+  if (nexusRoot %in% c('avoidThisFile')) { # add slowFiles to this list if quick results wanted first
     cat (" ! Manual override\n")
     next
   }
 
-  
   rTrees <- lapply(rDirectories, readRTrees, nexusName=nexusName)
   if (is.null(rTrees[[1]])) {
     cat(" ! R trees not found.\n")
@@ -33,7 +31,7 @@ for (nexusName in slowNexusFiles) {
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
   
-  if (file.exists(paste0('islandCounts/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
+  if (file.exists(paste0('histograms/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
     cat(" - MPT histograms already exist.\n")    
   } else {
     cat(" - Generating MPT histograms.\n")    

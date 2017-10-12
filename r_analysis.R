@@ -16,7 +16,7 @@ quartPlots <- sort(names(validReads)[validReads])
 speedPlots <- c(quartPlots[! (quartPlots%in%slowFiles)], slowFiles)
 #for (fileRoot in quartPlots) {
   #if (fileRoot %in% slowFiles) {cat("\n x ", fileRoot, "\n"); next}
-for (fileRoot in c(slowFiles)) {
+for (fileRoot in speedPlots) {
   cat("\n - ", fileRoot, "\n")
   if (file.exists(paste0('quartetSpaces/', fileRoot, '.png'))) {
     cat("   > [File exists].\n")
