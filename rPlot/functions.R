@@ -64,7 +64,7 @@ TreeNumbers <- function (nTrees) {
     iTrees <- firstTree:lastTree
   })
   names(res) <- allDirectories
-  if (res[[1]][2] == 0) res[[1]] <- NULL
+  if (!is.na(res[[1]][2]) && res[[1]][2] == 0) res[[1]] <- NULL
   res
 }
 
