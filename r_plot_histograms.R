@@ -37,13 +37,13 @@ for (nexusName in nexusFiles) {
       dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
       
       if (max(maxScores - minScores) > 28) {
-        dirBreaks <- (-1:30) * 5 + 0.5
+        dirBreaks <- ((-1:43) * 3) + 0.5 # Highest extra score is 129
       } else if (max(maxScores - minScores) > 8) {
         dirBreaks <- (-1:28) + 0.5
       } else {
         dirBreaks <- (-1:8) + 0.5
       }
-      cat("   > ", dirPath, ": Max score", round(max(dirScores), 4), "; max break", round(max(dirBreaks), 3), "\n")
+      cat("   > ", dirPath, ": Max score", max(dirScores), "; max break", round(max(dirBreaks), 3), "\n")
       dirCol <- treePalette[dirPath]
       otherDirectories <- which(allDirectories != dirPath)[-1]
       
