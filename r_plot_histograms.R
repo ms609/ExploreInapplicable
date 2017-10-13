@@ -48,10 +48,10 @@ for (nexusName in nexusFiles) {
       otherDirectories <- which(allDirectories != dirPath)[-1]
       
       yMax <- nrow(dirScores)# max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
-      hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE, font.main=1, 
-           cex.main=1.5,
-           main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"),
-           col.main=dirCol, xlab="steps longer than method's best tree") # Set up blank histogram
+      hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE,            
+           #main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, cex.main=1.5, font.main=1, 
+           main='',
+           xlab="steps longer than method's best tree") # Set up blank histogram
       axis(1, col=dirCol)
       axis(2, col=dirCol)
       text(max(dirBreaks), yMax * 0.8, paste('Best score =', minScores[dirPath]), cex=1.5, 
@@ -65,7 +65,8 @@ for (nexusName in nexusFiles) {
     
     dev.copy(svg, file=paste0('histograms/portrait/', nexusRoot, '.svg', collapse='')); dev.off()
     #dev.copy(png, file=paste0('histograms/', nexusRoot, '-200.png', collapse=''), width=600, height=200); dev.off()
-    dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
+    #dev.copy(png, file=paste0('histograms/landscape/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
+    dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=300, height=900); dev.off()
   #}
 }
 
