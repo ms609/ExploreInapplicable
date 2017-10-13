@@ -63,9 +63,9 @@ for (nexusName in nexusFiles) {
       }
     }
     
-    dev.copy(svg, file=paste0('histograms/', nexusRoot, '-portrait.svg', collapse='')); dev.off()
+    dev.copy(svg, file=paste0('histograms/portrait/', nexusRoot, '.svg', collapse='')); dev.off()
     #dev.copy(png, file=paste0('histograms/', nexusRoot, '-200.png', collapse=''), width=600, height=200); dev.off()
-    dev.copy(png, file=paste0('histograms/', nexusRoot, '-portrait300.png', collapse=''), width=900, height=300); dev.off()
+    dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
   #}
 }
 
