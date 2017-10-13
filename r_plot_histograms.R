@@ -6,7 +6,7 @@ nexusName <- 'Asher2005.nex'
 slowNexusFiles <- paste0(slowFiles, '.nex')
                
 for (nexusName in nexusFiles) {
-  par(mfrow=c(1, 3), bg='white')
+  par(mfrow=c(3, 1), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
   trees <- GetTrees(nexusRoot)
@@ -63,9 +63,9 @@ for (nexusName in nexusFiles) {
       }
     }
     
-    #dev.copy(svg, file=paste0('histograms/', nexusRoot, '.svg', collapse='')); dev.off()
+    dev.copy(svg, file=paste0('histograms/', nexusRoot, '-portrait.svg', collapse='')); dev.off()
     #dev.copy(png, file=paste0('histograms/', nexusRoot, '-200.png', collapse=''), width=600, height=200); dev.off()
-    dev.copy(png, file=paste0('histograms/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
+    dev.copy(png, file=paste0('histograms/', nexusRoot, '-portrait300.png', collapse=''), width=900, height=300); dev.off()
   #}
 }
 
