@@ -61,8 +61,8 @@ qtLegendPos <- list(
 studyName <- list(
   'Agnarsson2004' = 'Agnarsson 2004',           # AGNARSSON, I. 2004. Morphological phylogeny of cobweb spiders and their relatives (Araneae, Araneoidea, Theridiidae). Zoological Journal of the Linnean Society, 141, 447–626.
   'Capa2011'      = 'Capa et al. 2011',         # CAPA, M., HUTCHINGS, P., AGUADO, M. T. and BOTT, N. J. 2011. Phylogeny of Sabellidae (Annelida) and relationships with other taxa inferred from morphology and multiple genes. Cladistics, 27, 449–469.
-  'DeAssis2011'   = 'De Assis & Christoffersen
-2011',                                          # DE ASSIS, J. E. and CHRISTOFFERSEN, M. L. 2011. Phylogenetic relationships within Maldanidae (Capitellida, Annelida), based on morphological characters. Systematics and Biodiversity, 9, 233–245.
+  'DeAssis2011'   = "De Assis & Christoffersen\n2011",
+                                                # DE ASSIS, J. E. and CHRISTOFFERSEN, M. L. 2011. Phylogenetic relationships within Maldanidae (Capitellida, Annelida), based on morphological characters. Systematics and Biodiversity, 9, 233–245.
   'OLeary1999'    = "O'Leary & Geisler 1999",   # O’LEARY, M. A. and GEISLER, J. H. 1999. The position of Cetacea within Mammalia: phylogenetic analysis of morphological data from extinct and extant taxa. Systematic Biology, 48, 455–490.
   'Rousset2004'   = 'Rousset et al. 2004',      # ROUSSET, V., ROUSE, G. W., SIDDALL, M. E., TILLIER, A. and PLEIJEL, F. 2004. The phylogenetic position of Siboglinidae (Annelida) inferred from 18S rRNA, 28S rRNA and morphological data. Cladistics, 20, 518–533.
   'Sano2011'      = 'Sano & Akimoto 2011',      # SANO, M. and AKIMOTO, S.-I. 2011. Morphological phylogeny of gall-forming aphids of the tribe Eriosomatini (Aphididae: Eriosomatinae). Systematic Entomology, 36, 607–627.
@@ -75,8 +75,8 @@ studyName <- list(
   'Aria2015'      = 'Aria et al. 2015',         # ARIA, C., CARON, J. B. and GAINES, R. 2015. A large new leanchoiliid from the Burgess Shale and the influence of inapplicable states on stem arthropod phylogeny. Palaeontology, 58, 629–660.
   'Asher2005'     = 'Asher 2005',               # ASHER, R. J. 2005. Stem Lagomorpha and the Antiquity of Glires. Science, 307, 1091–1094.
   'Baker2009'     = 'Baker et al. 2009',        # BAKER, W. J., SAVOLAINEN, V., ASMUSSEN-LANGE, C. B., CHASE, M. W., DRANSFIELD, J., FOREST, F., HARLEY, M. M., UHL, N. W. and WILKINSON, M. 2009. Complete generic-level phylogenetic analyses of palms (Arecaceae) with comparisons of supertree and supermatrix approaches. Systematic Biology, 58, 240–256.
-  'Bouchenak2010' = 'Bouchenak-Khelladi 
-et al. 2010',                                   # BOUCHENAK-KHELLADI, Y., VERBOOM, G. A., SAVOLAINEN, V. and HODKINSON, T. R. 2010. Biogeography of the grasses (Poaceae): a phylogenetic approach to reveal evolutionary history in geographical space and geological time. Botanical Journal of the Linnean Society, 162, 543–557.
+  'Bouchenak2010' = "Bouchenak-Khelladi\net al. 2010",
+                                                # BOUCHENAK-KHELLADI, Y., VERBOOM, G. A., SAVOLAINEN, V. and HODKINSON, T. R. 2010. Biogeography of the grasses (Poaceae): a phylogenetic approach to reveal evolutionary history in geographical space and geological time. Botanical Journal of the Linnean Society, 162, 543–557.
   'Conrad2008'    = 'Conrad 2008',              # CONRAD, J. L. 2008. Phylogeny And Systematics Of Squamata (Reptilia) Based On Morphology. Bulletin of the American Museum of Natural History, 310, 1–182.
   'Dikow2009'     = 'Dikow 2009',               # DIKOW, T. 2009. A phylogenetic hypothesis for Asilidae based on a total evidence analysis of morphological and DNA sequence data (Insecta: Diptera: Brachycera: Asiloidea). Organisms Diversity and Evolution, 9, 165–188.
   'Eklund2004'    = 'Eklund et al. 2004',       # EKLUND, H., DOYLE, J. A. and HERENDEEN, P. S. 2004. Morphological phylogenetic analysis of living and fossil Chloranthaceae. International Journal of Plant Sciences, 165, 107–151.
