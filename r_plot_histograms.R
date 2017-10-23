@@ -2,11 +2,12 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-nexusName <- 'Asher2005.nex'
+nexusName <- 'Vinther2008.nex'
+figuredDatasets <- c('DeAssis2011.nex', 'Asher2005.nex', 'Wetterer2000.nex', 'Vinther2008.nex')
 slowNexusFiles <- paste0(slowFiles, '.nex')
-               
-for (nexusName in nexusFiles) {
-  par(mfrow=c(3, 1), bg='white')
+
+for (nexusName in figuredDatasets) {
+  # par(mfrow=c(1, 1), bg='white')   #par(mfrow=c(3, 1), bg='white') for portrait, for example
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
   trees <- GetTrees(nexusRoot)
@@ -50,10 +51,10 @@ for (nexusName in nexusFiles) {
       yMax <- nrow(dirScores)# max(apply(dirScores[, otherDirectories, drop=FALSE], 2, function (x) max(table(x))))
       hist(0, breaks=dirBreaks, border='#ffffffff', ylim=c(0, yMax), axes=FALSE,            
            #main=paste0("Trees on ", englishName[dirPath], ' island (', nexusRoot, ")"), col.main=dirCol, cex.main=1.5, font.main=1, 
-           main='',
+           main='', ann=FALSE,
            xlab="steps longer than method's best tree") # Set up blank histogram
-      axis(1, col=dirCol)
-      axis(2, col=dirCol)
+      axis(1, col=dirCol, line=-0.1); mtext(side=1, text="Steps longer than method's best tree", line=2.35-0.1)
+      axis(2, col=dirCol, line=-0.5); mtext(side=2, text='Frequency', line=2.35-0.5)
       text(max(dirBreaks), yMax * 0.8, paste('Best score =', minScores[dirPath]), cex=1.5, 
            pos=2, col=dirCol)
       
@@ -61,12 +62,14 @@ for (nexusName in nexusFiles) {
         hist(dirScores[, i, drop=FALSE], add=TRUE, breaks=dirBreaks,
              border=treePalette[i], col=paste0(treePalette[i], '99', collapse=''))
       }
+      dev.copy(pdf, file=paste0('histograms/', nexusRoot, '-', dirPath, '-5in.pdf', collapse=''), width=5, height=5); dev.off()
     }
     
-    dev.copy(svg, file=paste0('histograms/portrait/', nexusRoot, '.svg', collapse='')); dev.off()
+    #dev.copy(svg, file=paste0('histograms/portrait/', nexusRoot, '.svg', collapse='')); dev.off()
     #dev.copy(png, file=paste0('histograms/', nexusRoot, '-200.png', collapse=''), width=600, height=200); dev.off()
     #dev.copy(png, file=paste0('histograms/landscape/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
-    dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=300, height=900); dev.off()
+    #dev.copy(pdf, file=paste0('histograms/portrait/', nexusRoot, '-300.pdf', collapse=''), width=3, height=9); dev.off()
+    #dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=300, height=900); dev.off()
   #}
 }
 
