@@ -2,11 +2,10 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-nexusName <- 'Vinther2008.nex'
+# nexusName <- 'Vinther2008.nex'
 figuredDatasets <- c('DeAssis2011.nex', 'Asher2005.nex', 'Wetterer2000.nex', 'Vinther2008.nex')
-slowNexusFiles <- paste0(slowFiles, '.nex')
 
-for (nexusName in figuredDatasets) {
+for (nexusName in nexusFiles) {
   # par(mfrow=c(1, 1), bg='white')   #par(mfrow=c(3, 1), bg='white') for portrait, for example
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
@@ -21,9 +20,9 @@ for (nexusName in figuredDatasets) {
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
   
-  #if (file.exists(paste0('histograms/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
-  #  cat(" - MPT histograms already exist.\n")    
-  #} else {
+  if (file.exists(paste0('histograms/', nexusRoot, '-inapplicable-5in.pdf', collapse=''))  && !OVERWRITE) {
+    cat(" - MPT histograms already exist.\n")    
+  } else {
     cat(" - Generating MPT histograms.\n")    
     
     # Calculate tree scores
@@ -70,6 +69,6 @@ for (nexusName in figuredDatasets) {
     #dev.copy(png, file=paste0('histograms/landscape/', nexusRoot, '-300.png', collapse=''), width=900, height=300); dev.off()
     #dev.copy(pdf, file=paste0('histograms/portrait/', nexusRoot, '-300.pdf', collapse=''), width=3, height=9); dev.off()
     #dev.copy(png, file=paste0('histograms/portrait/', nexusRoot, '-300.png', collapse=''), width=300, height=900); dev.off()
-  #}
+  }
 }
 

@@ -2,9 +2,8 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-nexusName <- 'Asher2005.nex'
-slowNexusFiles <- paste0(slowFiles, '.nex')
-               
+# nexusName <- 'Asher2005.nex'
+
 for (nexusName in nexusFiles) {
   par(mfrow=c(2, 2), bg='white')
   nexusRoot <- gsub('.nex', '', nexusName)
@@ -31,7 +30,7 @@ for (nexusName in nexusFiles) {
   treeCol <- paste(rep(treePalette, nTrees))
   treePCh <- rep(plotChars, nTrees)
   
-  if (file.exists(paste0('histograms/', nexusRoot, '.png', collapse=''))  && !OVERWRITE) {
+  if (file.exists(paste0('histograms/landscape/', nexusRoot, '-300.png', collapse=''))  && !OVERWRITE) {
     cat(" - MPT histograms already exist.\n")    
   } else {
     cat(" - Generating MPT histograms.\n")    
@@ -139,43 +138,48 @@ for (nexusName in nexusFiles) {
   }
   par(mfrow=c(2, 2), bg='white')
   
-  if (file.exists(paste0('treeSpaces/', nexusRoot, '.png', collapse='')) && !OVERWRITE) {
+  if (file.exists(paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse='')) && !OVERWRITE) {
     cat(" - Treespace plots already exist.\n")
     next
   }
   
-  
   charTypes <- vapply(readLines(paste0('charType/', nexusRoot, '.txt', collapse='')), substr, character(1), 1, 1, USE.NAMES=FALSE)
-  ## We can be more careful with the character summary - see r_analysis.R
+  # This will misestimate in the matrix where chars without inapps were coded N or T instead of being left as X.
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
+  
   
   rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
   rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
-  rfDistances <- GetRFDistances(nexusRoot, trees)
-  cat(" - Got RF distances.\n")
+#  rfDistances <- GetRFDistances(nexusRoot, trees)
+#  cat(" - Got RF distances.\n")
   qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
   cat(" - Got Quartet distances.\n")
   
   ambigTrees <- seq_len(nTrees[1])
-  PlotKruskalTreeSpace (rfDistances, nTrees, legendPos='bottomright', rfTitleText)
-  rfAreas <- PlotKruskalTreeSpace3(rfDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomright', rfTitleText)
-  PlotKruskalTreeSpace (qtDistances, nTrees, legendPos='bottomright', qtTitleText)
-  qtAreas <- PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
+#  PlotKruskalTreeSpace(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
+#  rfAreas <- PlotKruskalTreeSpace3(rfDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomright', rfTitleText)
+#  PlotKruskalTreeSpace(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
+#  qtAreas <- PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
+#  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
+#  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
   
-  areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
-  write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
+  par(mfrow=c(1, 1), mar=rep(0, 4))
+  #qtAreas <- TreeSpacePanel(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), studyName[[nexusRoot]])
+  TreeSpacePanel(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomleft', studyName[[nexusRoot]], 1.0)
+  dev.copy(svg, file=paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse=''), width=2, height=2); dev.off()
+   
   
-  
-  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
-  
+#  areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
+#  write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
+   
+ 
   par(mfrow=c(1, 1), bg='white')
   
-  PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
-  dev.copy(svg, file=paste0('quartetSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
-  dev.copy(png, file=paste0('quartetSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
-  
+#  PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
+#  dev.copy(svg, file=paste0('quartetSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
+#  dev.copy(png, file=paste0('quartetSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
+#  
   cat(" - Printed treespaces and saved to files.\nEvaluation complete.\n\n")
 }
