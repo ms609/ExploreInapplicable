@@ -111,12 +111,11 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
 }
 
 PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle) {
-  
   scaled <- MASS::isoMDS(distances, k = 2, trace=FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
   plot(scaled, type = "p", xlab = "", ylab = "", axes = FALSE, col=treeCol, pch=treePCh)
-  title(main = mainTitle, cex.main=0.81)
+  title(main = mainTitle, cex.main=0.81, line=-2)
   # Plot convex hulls
   iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)) {
@@ -125,8 +124,8 @@ PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', m
     lines(x[iTrees[[i]]][convexHull], y[iTrees[[i]]][convexHull], col=treePalette[i])
   }
   
-  legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'),
-         cex = 0.75, pch = plotChars, col=treePalette)
+  legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'), y.intersp=2,
+         cex = 0.8, pch = plotChars, col=treePalette)
 }
 
 PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', mainTitle=NULL, fill=FALSE, ...) {
@@ -141,9 +140,9 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
     plotCol <- rep(treePalette[2:4], nTrees)
     plotPCh <- rep(plotChars[2:4], nTrees)
     plot(x, y, type = "p", xlab = "", ylab = "",
-         axes = FALSE, col=plotCol, pch=plotPCh, 
-         main = mainTitle, cex.main=0.81,
+         axes = FALSE, col=plotCol, pch=plotPCh,
          ...)
+    title(main = mainTitle, cex.main=0.81, line=-2)
   }
   
   iTrees <- TreeNumbers(nTrees)
@@ -165,12 +164,35 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
   
   if (!is.null(mainTitle)) {
     legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees, ')'),
-           cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
+           y.intersp=2.1, cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
   }
   
   c(hullArea / hullArea['inapplicable'])
 }
 
+library(memoise)
+#MDSPoints <- memoise(function (x) MASS::isoMDS(x, k=2, trace=FALSE)$points)
+
+TreeSpacePanel <- function (distances, nTrees, legendPos = 'bottomleft', legendText, legendSize=1) {
+  scaled <- MDSPoints(distances) # Kruskal's non-multimetric MDS
+  x <- scaled[, 1]
+  y <- scaled[, 2]
+  plotCol <- rep(treePalette[2:4], nTrees)
+  plotPCh <- rep(plotChars[2:4], nTrees)
+  plot(x, y, type = "p", xlab = "", ylab = "", axes = FALSE, col=plotCol, pch=plotPCh)
+  iTrees <- TreeNumbers(nTrees)
+
+  hullArea <- double(3)
+  names(hullArea) <- allDirectories[-1]
+  for (i in seq_along(nTrees)) {
+    convexHull <- chull(x[iTrees[[i]]], y[iTrees[[i]]])
+    convexHull <- c(convexHull, convexHull[1])
+    convX <- x[iTrees[[i]]][convexHull]
+    convY <- y[iTrees[[i]]][convexHull]
+    polygon(convX, convY, col=paste0(treePalette[i + 1], '4B'), border=treePalette[i + 1]) #4B = 30% alpha
+  }
+  legend(legendPos, legendText, bty='n', cex=legendSize)
+}
 
 PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   pts <- pcs$vectors
