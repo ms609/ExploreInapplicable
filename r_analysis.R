@@ -77,7 +77,7 @@ props[colnames(mptCount), c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- t(mptCount
 
 
 
-############ VENN DIAGRAMS  ~~~##################
+############ GENERATE DATA for VENN DIAGRAMS  ##################
 
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 
@@ -85,14 +85,7 @@ for (nexusName in nexusFiles) {
   nexusRoot <- gsub('.nex', '', nexusName)
   if (!any(is.na(props[nexusRoot, c('consNodes_ambig', 'consNodes_all')]))) next
   cat("\nEvaluating", nexusRoot, "...\n")
- 
-  rTrees <- lapply(rDirectories, readRTrees, nexusName=nexusName)
-  if (is.null(rTrees[[1]])) {
-    cat(" ! R trees not found.\n")
-    next
-  }
-  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
-  cat(" - Trees loaded. Calculating consensus trees: ")
+  trees <- GetTrees(nexusRoot); cat(" - Trees loaded. Calculating consensus trees: ")
   consensi <- lapply(trees, consensus)
   nNodes <- vapply(consensi, function (tr) tr$Nnode, double(1))
   cat("done.\n")
@@ -131,9 +124,12 @@ for (fileRoot in names(validReads)[validReads]) {
 
 write.csv(props, 'matrixProperties.csv')
 
+
+######## ACTUALLY PLOT THE VENN DIAGRAMS  ###########
 vennProps <- props[!is.na(props$consNodes_ambig), c('consNodes_ambig', 'consNodes_exst', 'consNodes_inapp', 
                  'consNodes_ambig_exst', 'consNodes_exst_inapp', 'consNodes_ambig_inapp', 'consNodes_all')]
-vennCons <- colSums(vennProps)
+consNodes <- colSums(vennProps)
+vennCons <- consNodes
 names(vennCons) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
 vennCons[4:6] <- vennCons[4:6] - vennCons['A&B&C']
 vennCons[1:3] <- c(
@@ -142,10 +138,23 @@ vennCons[1:3] <- c(
 'C' =     vennCons['C'] - (vennCons['A&C'] + vennCons['B&C'] + vennCons['A&B&C']))
 vennPlot <- venneuler(vennCons)
 vennPlot
-plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], edges=1024, col.txt=NA, 
-     main='Node presence by method: all datasets')
+plot(vennPlot, col=treePalette[2:4], col.fn=function(x) x, border=treePalette[2:4], edges=1024, 
+     col.txt=NA, #main='Node presence by method: all datasets')
+     main='')
+offX <- c(0.21, 0.56, 0.67, 0.32 , 0.44, 0.755, 0.5)
+offY <- c(0.54, 0.21, 0.73, 0.315, 0.75, 0.47, 0.5)
+#text(offX, offY, names(vennCons))
+text(offX, offY, vennCons)
+
 dev.copy(svg, file='vennNodes/_All_datasets.svg'); dev.off()
-dev.copy(png, file='vennNodes/_All_datasets.png', width=800, height=800); dev.off()
+dev.copy(png, file='vennNodes/_All_datasets.png', width=400, height=400); dev.off()
+
+consNodes['consNodes_inapp'] # Inapplicable strict consensus trees have this many nodes in total
+sum(vennCons[c(5, 7)]) * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
+sum(vennCons[c(6, 7)]) * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
+vennCons[7] * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
+   
+   
    
 vennTrees <- colSums(props[validReads, vennTreeNames])
 names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
