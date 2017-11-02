@@ -1,5 +1,4 @@
-install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
-devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
+devtools::install_github('KlausVigo/phangorn', ref='7192bfb4403c35c16a7b735160525d272736b061') # 30 Oct 2017
 library(phangorn)
 if (!require(inapplicable)) devtools::install_github('ms609/inapplicable')
 require(inapplicable)
