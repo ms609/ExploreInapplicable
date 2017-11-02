@@ -73,7 +73,7 @@ studyName <- list(
   'Wills2012'     = 'Wills et al. 2012',        # WILLS, M. A., GERBER, S., RUTA, M. and HUGHES, M. 2012. The disparity of priapulid, archaeopriapulid and palaeoscolecid worms in the light of new data. Journal of Evolutionary Biology, 25, 2056–2076.
   'Aguado2009'    = 'Aguado & San Martin 2009', # AGUADO, M. T. and SAN MARTÍN, G. 2009. Phylogeny of Syllidae (Polychaeta) based on morphological data. Zoologica Scripta, 38, 379–402.
   'Aria2015'      = 'Aria et al. 2015',         # ARIA, C., CARON, J. B. and GAINES, R. 2015. A large new leanchoiliid from the Burgess Shale and the influence of inapplicable states on stem arthropod phylogeny. Palaeontology, 58, 629–660.
-  'Asher2005'     = 'Asher 2005',               # ASHER, R. J. 2005. Stem Lagomorpha and the Antiquity of Glires. Science, 307, 1091–1094.
+  'Asher2005'     = 'Asher & Hofreiter 2006',   # ASHER, R. J. and HOFREITER, M. 2006. Tenrec phylogeny and the noninvasive extraction of nuclear DNA. Systematic biology, 55, 181–194.
   'Baker2009'     = 'Baker et al. 2009',        # BAKER, W. J., SAVOLAINEN, V., ASMUSSEN-LANGE, C. B., CHASE, M. W., DRANSFIELD, J., FOREST, F., HARLEY, M. M., UHL, N. W. and WILKINSON, M. 2009. Complete generic-level phylogenetic analyses of palms (Arecaceae) with comparisons of supertree and supermatrix approaches. Systematic Biology, 58, 240–256.
   'Bouchenak2010' = "Bouchenak-Khelladi\net al. 2010",
                                                 # BOUCHENAK-KHELLADI, Y., VERBOOM, G. A., SAVOLAINEN, V. and HODKINSON, T. R. 2010. Biogeography of the grasses (Poaceae): a phylogenetic approach to reveal evolutionary history in geographical space and geological time. Botanical Journal of the Linnean Society, 162, 543–557.
