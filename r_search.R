@@ -1,7 +1,7 @@
 devtools::install_github('KlausVigo/phangorn', ref='7192bfb4403c35c16a7b735160525d272736b061') # 30 Oct 2017
 library(phangorn)
-if (!require(inapplicable)) devtools::install_github('ms609/inapplicable')
-require(inapplicable)
+if (!require("TreeSearch")) devtools::install_github('ms609/TreeSearch')
+library("TreeSearch")
 
 
 inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
@@ -9,7 +9,7 @@ inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
 
 for (filename in inappFiles) {
   cat(" - loading from", filename, "\n")
-  
+
   results <- list.files('inapplicable', pattern=paste0(filename, '.*\\.tre$'))
   if (length(results) > 0) {
     cat (" > Results already exist.\n")
@@ -17,13 +17,13 @@ for (filename in inappFiles) {
   }
   rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
   phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
-    
+
 
   best <- ape::root(ape::nj(phangorn::dist.hamming(phyData)), names(rawData)[1], resolve.root=TRUE)
   attr(best, 'pscore') <- 1e+7
   bestScore <- 1e+7
   bestHits <- 0
-  maxHitMenu <- 2^(1:10) # Small maxHits finds result faster, but chance of improving score per 
+  maxHitMenu <- 2^(1:10) # Small maxHits finds result faster, but chance of improving score per
                          # second spent increases with maxHits at least up to 150. (Data for higher not available.)
 
   verbose <- 0

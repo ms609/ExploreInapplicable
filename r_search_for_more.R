@@ -1,8 +1,8 @@
 install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
 devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
 library(phangorn)
-if (!require(inapplicable)) devtools::install_github('ms609/inapplicable')
-require(inapplicable)
+if (!require(TreeSearch)) devtools::install_github('ms609/TreeSearch')
+require(TreeSearch)
 
 TARGET <- 250
 
@@ -10,13 +10,13 @@ inappFiles <- list.files('inapplicable', pattern='.*\\.nex$')
 
 for (filename in inappFiles) {
   cat(" - loading from", filename, "\n")
-  
+
   results <- list.files('inapplicable', pattern=paste0(filename, '.*\\-[[:digit:]]+.tre$'))
   if (length(results) == 0) {
     cat (" > No results yet exist.\n")
     next
-  } 
-  
+  }
+
   resultScores <- vapply(results, function (string) {
     hits <- regexpr(pattern='\\-[[:digit:]]+', string)
     return(as.integer(substr(string, hits[1] + 1, hits[1] + attr(hits, 'match.length') - 1)))
@@ -27,14 +27,14 @@ for (filename in inappFiles) {
     cat (" > Already have TARGET hits.\n")
     next
   }
-  
+
   rawData <- read.nexus.data(paste0('inapplicable/', filename, collapse=''))
   phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
-   
+
   best <- ape::read.tree(text=readLines(bestTreeFile)[[1]])
   bestScore <- attr(best, 'pscore') <- inapplicable::InapplicableFitch(best, phyData)
 
-  maxHitMenu <- 2:20 # Small maxHits finds result faster, but chance of improving score per 
+  maxHitMenu <- 2:20 # Small maxHits finds result faster, but chance of improving score per
                      # second spent increases with maxHits at least up to 150. (Data for higher not available.)
 
   verbose <- 0
