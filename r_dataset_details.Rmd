@@ -1,0 +1,55 @@
+---
+title: "Details of datasets for analysis"
+author: "Martin R. Smith"
+---
+
+```{R setup, echo=FALSE}
+library(TreeSearch)
+datasets <- TreeSearch::inapplicable.datasets
+citations <- TreeSearch::inapplicable.citations
+phyData <- TreeSearch::inapplicable.phyData
+```
+
+```{r datasets, echo=FALSE, results="asis"}
+CharacterType <- function (datasetName) {
+  vapply(readLines(paste0("charType/", datasetName, ".txt")),
+         substr, character(1), 1, 1, USE.NAMES=FALSE)
+}
+CharacterNotes <- function(datasetName) {
+  #notes <- vapply(readLines(paste0("charType/", datasetName, ".txt")), function (line) {
+  #  substr(line, 3, nchar(line))
+  #}, character(1), USE.NAMES=FALSE)
+  notes <- readLines(paste0("charType/", datasetName, ".txt"))
+  if (datasetName == 'Aria2015') {
+    notes[23]
+  } else if (datasetName == 'Liljeblad2008') {
+    notes[42]
+  } else {
+    notes[grepl('\\]\\s*\\S+', notes, perl=TRUE)]
+    
+  }
+}
+AboutDataset <- function (i) {
+  dataset <- phyData[[i]]
+  datasetName <- names(phyData)[i]
+  characterType <- CharacterType(datasetName)
+  cat(sprintf("\n\n### %s\n\n%s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
+          datasetName,
+          citations[i],
+          length(dataset), # Ntaxa
+          length(dataset[[1]]), # NChar
+          sum(characterType %in% c('N', 'I', 'T')),
+          paste(which(characterType == 'T'), collapse=', '),
+          paste(paste(which(characterType == 'N'), collapse=', '),
+                if(any(characterType == 'I')) '; with state 1 denoting absence:'
+                else '',
+                paste(which(characterType == 'I'), collapse=', '), collapse=''),
+          if (length(CharacterNotes(datasetName)) > 0) {
+            paste(c('   - Details:', CharacterNotes(datasetName)), collapse="\n\n     - ")
+          } else ''
+          ))
+  0
+}
+oi <- vapply(seq_along(citations), AboutDataset, 0)
+invisible()
+```
