@@ -37,7 +37,7 @@ AboutDataset <- function (i) {
   characterType <- CharacterType(datasetName)
   nTaxa <- length(dataset)
   nChar <- sum(attr(dataset, 'weight'))
-  inapps <- apply(datasets[[i]], 1, function (x) any(x == '-'))
+  inapps <- apply(datasets[[i]], 2, function (x) any(x == '-'))
   cat(sprintf("\n\n### %s\n\n%s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
           datasetName, citations[i], nTaxa, nChar,
           sum(characterType %in% c('N', 'I', 'T') & inapps),
