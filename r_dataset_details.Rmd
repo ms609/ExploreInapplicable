@@ -7,10 +7,17 @@ author: "Martin R. Smith"
 library(TreeSearch)
 citations <- TreeSearch::inapplicable.citations
 phyData <- TreeSearch::inapplicable.phyData
+gitRoot <- "https://raw.githubusercontent.com/ms609/ExploreInapplicable/master/"
+studies <- c(matrices = "Raw matrices",
+             inapplicable = "Inapplicable",
+             extraState = "Extra State",
+             ambigAbsent = "Ambiguous")
 datasets <- lapply(names(citations), function (name) {
   ReadCharacters(file=paste0('matrices/', name, '.nex'))
 })
 ```
+
+Nexus files were constructed for each analysis using a [Perl script](https://github.com/ms609/ExploreInapplicable/blob/master/analyse_matrices.pl) and can be browsed on GitHub: `r paste0('[', studies, '](https://github.com/ms609/ExploreInapplicable/tree/master/', names(studies), ')', collapse=' | ')`
 
 ```{r datasets, echo=FALSE, results="asis"}
 CharacterType <- function (datasetName) {
@@ -31,6 +38,7 @@ CharacterNotes <- function(datasetName) {
     
   }
 }
+
 AboutDataset <- function (i) {
   dataset <- phyData[[i]]
   datasetName <- names(phyData)[i]
@@ -38,8 +46,11 @@ AboutDataset <- function (i) {
   nTaxa <- length(dataset)
   nChar <- sum(attr(dataset, 'weight'))
   inapps <- apply(datasets[[i]], 2, function (x) any(x == '-'))
-  cat(sprintf("\n\n### %s\n\n%s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
-          datasetName, citations[i], nTaxa, nChar,
+  cat(sprintf("\n\n### %s\n\n<!--Citation:-->%s\n\nNexus matrices: %s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
+          datasetName, citations[i], 
+          paste0('[', studies, '](', gitRoot, names(studies), '/', 
+                 datasetName, '.nex)', collapse=' | '),
+          nTaxa, nChar,
           sum(characterType %in% c('N', 'I', 'T') & inapps),
           paste(which(characterType == 'T' & inapps), collapse=', '),
           paste(paste(which(characterType == 'N' & inapps), collapse=', '),
