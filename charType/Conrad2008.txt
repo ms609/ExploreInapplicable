@@ -5,9 +5,9 @@ T [4]
 X [5]
 X [6]
 T [7]
-T [8]  Sculpture is taken as a transformation, rather than its addition in a region represeTNing a novelty
-T [9]  --"--
-T [10] --"--
+T [8]  Sculpture is taken as a transformation, rather than its addition in a region representing a novelty
+T [9]  Sculpture is taken as a transformation, rather than its addition in a region representing a novelty
+T [10] Sculpture is taken as a transformation, rather than its addition in a region representing a novelty
 X [11]
 X [12]
 T [13]
@@ -24,7 +24,7 @@ T [23]
 X [24]
 X [25]
 X [26]
-T [27] 'coTNact' is not a novel feature
+T [27] 'contact' is not a novel feature
 X [28]
 T [29]
 T [30]
@@ -153,7 +153,7 @@ X [152]
 X [153]
 X [154]
 T [155]
-N [156] # Loss indicates that presence (0) was original state
+N [156] Loss indicates that presence (0) was original state
 X [157]
 X [158]
 X [159]
