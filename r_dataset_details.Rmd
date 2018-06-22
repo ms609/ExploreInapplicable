@@ -43,7 +43,7 @@ AboutDataset <- function (i) {
           sum(characterType %in% c('N', 'I', 'T') & inapps),
           paste(which(characterType == 'T' & inapps), collapse=', '),
           paste(paste(which(characterType == 'N' & inapps), collapse=', '),
-                if(any(characterType == 'I' & inapps)) '; with state 1 denoting absence:'
+                if (any(characterType == 'I' & inapps)) '; with state 1 denoting absence:'
                 else '',
                 paste(which(characterType == 'I' & inapps), collapse=', '), collapse=''),
           if (length(CharacterNotes(datasetName)) > 0) {
