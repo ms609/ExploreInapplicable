@@ -62,5 +62,8 @@ Temporary Items
 .Rhistory
 *.Rproj
 
+# Bookdown temporary files
+*.md
+
 # MS temporary files
 ~*
