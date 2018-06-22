@@ -57,7 +57,7 @@ AboutDataset <- function (i) {
                 else '',
                 paste(which(characterType == 'I' & inapps), collapse=', '), collapse=''),
           if (length(CharacterNotes(datasetName)) > 0) {
-            paste(c('   - Details:', CharacterNotes(datasetName)), collapse="\n\n     - ")
+            paste(c(' - Details:', CharacterNotes(datasetName)), collapse="\n\n   - ")
           } else ''
           ))
   0
