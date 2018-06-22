@@ -5,9 +5,11 @@ author: "Martin R. Smith"
 
 ```{R setup, echo=FALSE}
 library(TreeSearch)
-datasets <- TreeSearch::inapplicable.datasets
 citations <- TreeSearch::inapplicable.citations
 phyData <- TreeSearch::inapplicable.phyData
+datasets <- lapply(names(citations), function (name) {
+  ReadCharacters(file=paste0('matrices/', name, '.nex'))
+})
 ```
 
 ```{r datasets, echo=FALSE, results="asis"}
@@ -33,17 +35,17 @@ AboutDataset <- function (i) {
   dataset <- phyData[[i]]
   datasetName <- names(phyData)[i]
   characterType <- CharacterType(datasetName)
+  nTaxa <- length(dataset)
+  nChar <- sum(attr(dataset, 'weight'))
+  inapps <- apply(datasets[[i]], 1, function (x) any(x == '-'))
   cat(sprintf("\n\n### %s\n\n%s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
-          datasetName,
-          citations[i],
-          length(dataset), # Ntaxa
-          length(dataset[[1]]), # NChar
-          sum(characterType %in% c('N', 'I', 'T')),
-          paste(which(characterType == 'T'), collapse=', '),
-          paste(paste(which(characterType == 'N'), collapse=', '),
-                if(any(characterType == 'I')) '; with state 1 denoting absence:'
+          datasetName, citations[i], nTaxa, nChar,
+          sum(characterType %in% c('N', 'I', 'T') & inapps),
+          paste(which(characterType == 'T' & inapps), collapse=', '),
+          paste(paste(which(characterType == 'N' & inapps), collapse=', '),
+                if(any(characterType == 'I' & inapps)) '; with state 1 denoting absence:'
                 else '',
-                paste(which(characterType == 'I'), collapse=', '), collapse=''),
+                paste(which(characterType == 'I' & inapps), collapse=', '), collapse=''),
           if (length(CharacterNotes(datasetName)) > 0) {
             paste(c('   - Details:', CharacterNotes(datasetName)), collapse="\n\n     - ")
           } else ''
