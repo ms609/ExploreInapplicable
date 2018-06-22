@@ -1,14 +1,22 @@
-setwd("C:/Research/ExploreInapplicable")
+---
+title: "Analysis"
+author: "Martin R. Smith"
+---
 
+```{R, messages=FALSE, warnings=FALSE}
+setwd("C:/Research/ExploreInapplicable")
 source('rPlot/functions.R')
 source('rPlot/definitions.R')
+```
 
+```{R read-data}
 props <- read.csv('matrixProperties.csv', header=TRUE, row.names=1)
 countDims <- vapply(rownames(props), MatrixProperties, integer(6))
 
-validReads <- props$nTax == countDims['nTax',]
+validReads <- props$nTax == countDims['nTax', ]
+```
 
-#### Plot QUARTET TREESPACES ############
+```{R plot-quartet-treespaces}
 nValid <- sum(validReads)
 #par(mfrow=c(6, 5), mar=rep(0.2, 4), bg='white')
 par(bg='white')
@@ -31,9 +39,9 @@ for (fileRoot in speedPlots) {
   dev.copy(svg, file=paste0('quartetSpaces/', fileRoot, '.svg', collapse='')); dev.off()
   dev.copy(png, file=paste0('quartetSpaces/', fileRoot, '.png', collapse=''), width=1024, height=1024); dev.off()  
 }
+```
 
-
-#### Plot STRICT CONSENSUS TREES ####
+```{R plot-strict-consensus-trees}
 for (fileRoot in speedPlots) {
   tr <- GetTrees(fileRoot)
   cat("\n - ", fileRoot, "\n")
@@ -49,18 +57,14 @@ for (fileRoot in speedPlots) {
 }
 
 
-
-
-
-
-
 props[validReads, c('nTokens', 'chars_na', 'tokens_na', 'tokens_amb')] <- 
   t(countDims[c('nTokens', 'nInapp', 'inappTokens', 'ambigTokens'), validReads])
 props$prop_na <- props$tokens_na / props$nTokens
 props$prop_chars_na <- props$chars_na / props$nChars
 rownames(props) <- props$matrix
+```
 
-### Analyse precision:
+```{R analyse-precision}
 ### Numbers of MPTs
 csvs <- list.files('islandCounts', pattern='.*\\.csv$');
 
@@ -72,13 +76,11 @@ colnames(mptCount) <- gsub('\\.csv', '', colnames(mptCount))
 mpts <- t(mptCount)
 props[, c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- NA
 props[colnames(mptCount), c('ambigMPTs', 'exstMPTs', 'inappMPTs')] <- t(mptCount)
+```
 
 
 
-
-
-############ GENERATE DATA for VENN DIAGRAMS  ##################
-
+```{R generate-data-for-venn-diagrams}
 nexusFiles <- list.files('matrices', pattern='.*\\.nex$');# nexusFiles
 
 for (nexusName in nexusFiles) {
@@ -123,9 +125,10 @@ for (fileRoot in names(validReads)[validReads]) {
 
 
 write.csv(props, 'matrixProperties.csv')
+```
 
 
-######## ACTUALLY PLOT THE VENN DIAGRAMS  ###########
+```{r plot-venn-diagrams}
 vennProps <- props[!is.na(props$consNodes_ambig), c('consNodes_ambig', 'consNodes_exst', 'consNodes_inapp', 
                  'consNodes_ambig_exst', 'consNodes_exst_inapp', 'consNodes_ambig_inapp', 'consNodes_all')]
 consNodes <- colSums(vennProps)
@@ -153,9 +156,7 @@ consNodes['consNodes_inapp'] # Inapplicable strict consensus trees have this man
 sum(vennCons[c(5, 7)]) * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
 sum(vennCons[c(6, 7)]) * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
 vennCons[7] * 100 / consNodes['consNodes_inapp'] # Percentage of nodes present in inapp consensus also in ambig consensus
-   
-   
-   
+
 vennTrees <- colSums(props[validReads, vennTreeNames])
 names(vennTrees) <- c('A', 'B', 'C', 'A&B', 'A&C', 'B&C', 'A&B&C')
 vennPlot <- venneuler::venneuler(vennTrees)
@@ -169,6 +170,5 @@ for (i in 1:3) text(mean(vennPlot$centers[-i, 1]) + offX[i], mean(vennPlot$cente
 
 dev.copy(svg, file='vennTrees/_All_datasets.svg'); dev.off()
 dev.copy(png, file='vennTrees/_All_datasets.png', width=400, height=400); dev.off()
-
-
+```
 
