@@ -6,6 +6,6 @@ set -e
 [ "${TRAVIS_BRANCH}" != "master" ] && exit 0
 git config --global user.email "martins@gmail.com"
 git config --global user.name "Martin Smith"
-git add --all *
-git commit -m"Update compiled files" || true
+git add --all *.html
+git commit -m"[TRAVIS:] Update compiled html files" || true
 git push -q
