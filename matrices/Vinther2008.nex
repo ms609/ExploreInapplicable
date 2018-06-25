@@ -28,14 +28,3 @@ begin data;
     Odontogriphus     ??????????????0?000?0000000---01021000-----0----------0--
   ;
 end;
-BEGIN PAUP;
-set errorstop=no;
-set maxtrees=500 increase=auto autoInc=500;
-set outroot=monophyl;
-outgroup Nemertean;
-hsearch addseq=random nreps=100 rearrlimit=5000000 limitperrep=yes;
-roottrees;
-savetrees /file=Vinther2008.tre replace;
-q;
-
-END;

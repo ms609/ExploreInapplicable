@@ -5,7 +5,6 @@ author: "Martin R. Smith"
 
 ```{R setup, echo=FALSE, message=FALSE}
 library(TreeSearch)
-x <- Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 citations <- TreeSearch::inapplicable.citations
 phyData <- TreeSearch::inapplicable.phyData
 gitRoot <- "https://raw.githubusercontent.com/ms609/ExploreInapplicable/master/"
@@ -48,7 +47,7 @@ AboutDataset <- function (i) {
   nChar <- sum(attr(dataset, 'weight'))
   inapps <- apply(datasets[[i]], 2, function (x) any(x == '-'))
   cat(sprintf("\n\n### %s\n\n<!--Citation:-->%s\n\n - %s taxa, %s characters, of which %s contain inapplicable codings.\n\n - Download: %s\n\n - Inapplicable characters:\n\n   - Transformational: %s\n\n   - Neomorphic: %s\n\n%s\n\n",
-          datasetName, citations[i], 
+          datasetName, 'REDACTED',#citations[i], 
           nTaxa, nChar, sum(characterType %in% c('N', 'I', 'T') & inapps),
           paste0('[', studies, '](', gitRoot, names(studies), '/', 
                  datasetName, '.nex)', collapse=' | '),
