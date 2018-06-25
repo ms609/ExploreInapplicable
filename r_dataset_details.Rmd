@@ -5,6 +5,7 @@ author: "Martin R. Smith"
 
 ```{R setup, echo=FALSE}
 library(TreeSearch)
+Sys.setlocale('LC_ALL','English_United Kingdom.1252');
 citations <- TreeSearch::inapplicable.citations
 phyData <- TreeSearch::inapplicable.phyData
 gitRoot <- "https://raw.githubusercontent.com/ms609/ExploreInapplicable/master/"
