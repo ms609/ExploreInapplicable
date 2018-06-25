@@ -25,7 +25,7 @@ X [24] Armament of cervical region: none (0), cuticular plates (as in larvae/juv
 X [25] Aspect ratio of body length to width in adult: <10 (0), 10-20 (1), >20 (2).
 X [26] Paired, lateral, locomotory appendages: absent (0), present (1).
 X [27] Annulation: absent (0), homonomous (1), heteronomous (2). Budd (2003) has drawn comparison between the patterns of cuticular ornament in association with the trunk annulae in lobopods and palacoscolecids. However, although palaeoscolecids exhibit an alternating pattern of cuticular ornament (Conway Morris 1997) and although this varies from one body region to another, adjacent annulae are identical; they exhibit homomous annulation. This contrasts with the condition in lobopods where adjacent annulae vary both in terms of their axial length and their cuticular ornamentation.
-X [28] Number of trunk annuli: <7 (0), 7-11 (1)*, 30-60 (2), 61-120 (3), 140 or more (4).
+X [28] Number of trunk annuli: <7 (0), 7-11 (1), 30-60 (2), 61-120 (3), 140 or more (4).
 X [29] Trunk spines, fine spines, or setae in adult: absent (0), present (1).
 X [30] Trunk papillae in adult: absent (0), present and simple (1), extremely long and arranged into two discrete, longitudinal rows (2)*.
 X [31] Trunk sclerites in adult: absent (0), present and small to medium in size (1), present and greatly enlarged (2). 
@@ -46,7 +46,7 @@ X [45] Caudal appendage(s): absent (0), present but less than the length of the 
 N [46] Division of caudal appendage(s) or tail: undivided (0), pseudosegmented (1).
 T [47] Caudal appendage(s): single and positioned terminally (0), single and positioned dorso-medially (1), bicaudal as in some species of Priapulopsis and Paratubiluchus (2). 
 N [48] Surface of caudal appendage: smooth (0), vesiculae (1), large warts (2).
-X [49] Terminally posterior spines, hooks or cones of basal diameter >20% trunk diameter: absent (0), present and arranged in pairs about the sagittal plane (1). This definition of “spines, hooks or cones” excludes the posterior body bifurcations of Aysheaia, Kerygmachela, tardigrades, some nematomorphs, some kinorhynchs and gastrotrichs. The paired, peri-anal structures in Halicryptus and Maccabeus are much smaller relative to body width. 
+X [49] Terminally posterior spines, hooks or cones of basal diameter >20% trunk diameter: absent (0), present and arranged in pairs about the sagittal plane (1). This definition of 'spines, hooks or cones' excludes the posterior body bifurcations of Aysheaia, Kerygmachela, tardigrades, some nematomorphs, some kinorhynchs and gastrotrichs. The paired, peri-anal structures in Halicryptus and Maccabeus are much smaller relative to body width. 
 X [50] Posterior warts: absent (0), small (as in Halicryptus) (1), large (as in Priapulus) (2). 
 X [51] Polythyridium: absent (0), present (1).
 X [52] Ventral nerve cord unpaired throughout its length: absent (0), present (1). Living priapulids possess unpaired ventral nerve cords, whereas gastrotrichs, onychophorans and loriciferans possess ventral nerve cords that are paired throughout their length, and the ventral nerve cords of nematomorphs and nematodes divide at points along their length (Schmidt-Rhaesa, 1998); the situation in kinorhynchs is unresolved (paired according to Kristensen and Higgins, 1991; unpaired according to Neuhaus 1994). The condition in Ottoia is common to extant priapulids (Conway Morris, 1977).
