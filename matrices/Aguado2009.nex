@@ -82,14 +82,3 @@ begin data;
     Xenosyllis_scabra                 00100001100100000101110311000001111000001000001100111010110000--010001011{01}100110111000?000--00???????????00
     ;
 END;
-BEGIN PAUP;
-set errorstop=no;
-set maxtrees=500 increase=auto autoInc=500;
-set outroot=monophyl;
-outgroup Chrysopetalum_maculata;
-hsearch addseq=random nreps=100 rearrlimit=5000000 limitperrep=yes;
-roottrees;
-savetrees /file=Aguado2009.tre replace;
-q;
-
-END;
