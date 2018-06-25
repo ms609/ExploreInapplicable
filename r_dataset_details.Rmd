@@ -34,7 +34,7 @@ CharacterNotes <- function(datasetName) {
   } else if (datasetName == 'Liljeblad2008') {
     notes[42]
   } else {
-    if (substr(datasetName, 1, 1) < 'S') 
+    if (substr(datasetName, 1, 1) < 'U') 
     notes[grepl('\\]\\s*\\S+', notes, perl=TRUE)]
     
   }
