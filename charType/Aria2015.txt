@@ -20,7 +20,7 @@ N [19]  III.1
 N [20]  III.2
 N [21]  III.3
 N [22]  III.4
-N [23]  Character description missing; assumed N , following others of group III
+N [23]  Character description missing; assumed N, following others of group III
 X [24]  IV.1
 N [25]  IV.2
 N [26]  IV.3

@@ -54,7 +54,7 @@ X [53] Ventral nerve cords merge caudally: absent (0), present (1).
 X [54] Dorsal nerve cord unpaired: absent (0), present (1).
 X [55] Circumpharyngeal brain: absent (0), present (1).
 X [56] Brain with anterior posterior sequence of perikarya-neuropil-perikarya: absent (0), present (1). Lemburg (1999) recognized this as a synapomorphy of Introverta (Nematoda + Nematomorpha + Kinorhyncha + Loricifera + Priapulida).
-X [57] Apical part of the brain composed of perikarya: absent (0), present (1). Lemburg (1999). 
+X [57] Apical part of the brain composed of perikarya: absent (0), present (1).
 X [58] Pharyngeal nervous system composed of numerous tooth ganglia connected by a diagonal nerve net: absent (0), present (1). Lemburg (1999) recognizes the presence of this character as a synapomorphy of (extant) Priapulida.
 N [59] Two rings of introvert retractors attached through the collar-shaped brain: absent (0), present (1). Proposed by Nielsen (2001) as a synapomorphy of kinorhynchs, loriciferans and extant priapulids.
 X [60] Developmental mode: direct (0), biphasic (1).

@@ -79,7 +79,7 @@ X [78]  76	Ilium, prominent medial process absent (0) or present (1) (Sereno, 20
 X [79]  77	Ilium, anterior process a vertical blade (0) or transversely expanded (1) 
 T [80]  .. or strongly expanded, spatulate (2) (modified from Sereno, 2000: Character 3) ORDERED.
 X [81]  78	Ilium, dorsal margin with distinct dorsal shelf: absent (0) or present (1).
-X [82]  79	Ilium, anterior blade with little or no lateral deflection (0) or strong lateral deflection, preacetabular process bent laterally by 30º (1) (Sereno, 2000: character 22).
+X [82]  79	Ilium, anterior blade with little or no lateral deflection (0) or strong lateral deflection, preacetabular process bent laterally by 30 degrees (1) (Sereno, 2000: character 22).
 X [83]  80	Ilium, medial tab (???) absent or present (Sereno, 2000; character 23).
 X [84]  81	Ilium: pubic peduncle mediolaterally narrow (0) or strongly transversely expanded and dorsoventrally compressed (1)  (2000: character 30).
 X [85]  82	Ilium posterior wing  straight in lateral view  (0) or strongly curved downwards (1).
