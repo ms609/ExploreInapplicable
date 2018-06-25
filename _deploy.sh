@@ -11,4 +11,4 @@ cd git-files
 cp -r ../*.html ./
 git add --all *
 git commit -m"[TRAVIS:] Update compiled html files" || true
-git push -q origin
+git push
