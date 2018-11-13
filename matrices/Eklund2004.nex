@@ -60,16 +60,3 @@ begin data;
 
  ;                                                                     
 end;                                                                       
-                                                                            
-                                                                            
-BEGIN PAUP;
-set errorstop=no;
-set maxtrees=500 increase=auto autoInc=500;
-set outroot=monophyl;
-outgroup Amborella;
-hsearch addseq=random nreps=100 rearrlimit=5000000 limitperrep=yes;
-roottrees;
-savetrees /file=Eklund2004.tre replace;
-q;
-
-END;
