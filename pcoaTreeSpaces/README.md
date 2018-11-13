@@ -1,6 +1,6 @@
 # Quick explanation
 These plots show the MDS tree spaces, created using the Robinson Foulds distances between each 
-pair of trees. (I plan to update them using the more approproate Quartet distance soon.)
+pair of trees.
 
 The different colours correspond to different optimizations:
 
