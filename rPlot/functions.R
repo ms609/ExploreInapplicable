@@ -1,8 +1,7 @@
-if (!require('ape')) install.packages('ape', '.', repos = 'http://ape-package.ird.fr/')
-#devtools::install_github('KlausVigo/phangorn', ref='1167f0be62f13cfad0fca8ae8224318c407195bf')
+require(ape)
 require(phangorn)
 devtools::install_github('ms609/inapplicable')
-require(inapplicable)
+require(TreeSearch)
 library(MASS)
 library(venneuler)
 
@@ -95,7 +94,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   plot(x, y, type = "p", xlab = "", ylab = "",
        axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
   title(main = mainTitle, cex.main=0.81)
-  
+
   iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)[-1]) {
     #xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
