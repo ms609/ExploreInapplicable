@@ -81,7 +81,7 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
     convexHull <- c(convexHull, convexHull[1])
     lines(x[iTrees[[i]]][convexHull], y[iTrees[[i]]][convexHull], col=treePalette[i])
   }
-  
+
   legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'),
          cex = 0.75, pch = plotChars, col=treePalette)
 }
@@ -90,7 +90,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   pts <- pcs$vectors
   x <- pts[, 1]
   y <- pts[, 2]
- 
+
   ambigTrees <- seq_len(nTrees[[1]])
   plot(x, y, type = "p", xlab = "", ylab = "",
        axes = FALSE, col=treeCol[-ambigTrees], pch=treePCh[-ambigTrees])
@@ -105,7 +105,7 @@ PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
     convexHull <- c(convexHull, convexHull[1])
     lines(x[iTrees[[i]] - nTrees[1]][convexHull], y[iTrees[[i]] - nTrees[1]][convexHull], col=treePalette[i])
   }
-  
+
   legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees[-1], ')'),
          cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
 }
@@ -123,7 +123,7 @@ PlotKruskalTreeSpace <- function (distances, nTrees, legendPos = 'bottomleft', m
     convexHull <- c(convexHull, convexHull[1])
     lines(x[iTrees[[i]]][convexHull], y[iTrees[[i]]][convexHull], col=treePalette[i])
   }
-  
+
   legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'), y.intersp=2,
          cex = 0.8, pch = plotChars, col=treePalette)
 }
@@ -144,7 +144,7 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
          ...)
     title(main = mainTitle, cex.main=0.81, line=-2)
   }
-  
+
   iTrees <- TreeNumbers(nTrees)
 
   hullArea <- double(3)
@@ -161,12 +161,12 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
     }
     hullArea[i] <- geometry::polyarea(convX, convY)
   }
-  
+
   if (!is.null(mainTitle)) {
     legend(legendPos, bty='n', legend=paste0(c('Ambiguous', 'Extra state', 'Inapplicable'), ' (', nTrees, ')'),
            y.intersp=2.1, cex = 0.75, pch = plotChars[-1], col=treePalette[-1])
   }
-  
+
   c(hullArea / hullArea['inapplicable'])
 }
 
@@ -193,9 +193,9 @@ TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
 
 PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   pts <- pcs$vectors
-  
+
   plot3d(pts, col=treeCol[-(1:nTrees[1])], size=5, axes=FALSE, xlab='', ylab='', zlab='')
-  
+
   #rgl.open()
   #rgl.bg(color='white')
   #rgl.points(pts, color=treeCol[-(1:nTrees[1])], size=5)
@@ -204,15 +204,15 @@ PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   rgl.lines(limits(pcs$vectors[, 1]), c(0, 0), c(0, 0), color = "blue")
   rgl.lines(c(0, 0), limits(pcs$vectors[, 2]), c(0, 0), color = "red")
   rgl.lines(c(0, 0), c(0, 0), limits(pcs$vectors[, 3]), color = "green")
-  
+
   for (i in 2:4) {
     xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
     hull <- geometry::convhulln(xyz, option='FA')
     triangles3d(xyz[t(hull$hull), ], col=treePalette[i], alpha=0.3)
   }
-  
+
   aspect3d('iso')
-  
+
 }
 
 MatrixProperties <- function (fileRoot) {
@@ -229,7 +229,7 @@ MatrixProperties <- function (fileRoot) {
               nTokens = length(rawData) * length(rawData[[1]]),
               inappTokens = sum(inapplicableTokens),
               ambigTokens = sum(ambiguousTokens)
-              )  
+              )
 }
 
 GetTrees <- function (fileRoot) c(lapply(tntDirectories, readTntTrees, nexusName=paste0(fileRoot, '.nex')),
@@ -265,19 +265,19 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
 GetVennTrees <- function (fileRoot, trees=GetTrees(fileRoot)) {
   nTrees <- vapply(trees, length, integer(1))
   treeDetails <- GetTreeScores(fileRoot, trees)
-  
+
   trees <- trees[-1]
   treeDetails <- treeDetails[!(rownames(treeDetails) == 'ambiguous'), -1]
   extraSteps <- apply(treeDetails, 2, function (x) x - min(x))
- 
+
   dimnames(extraSteps) <- NULL
   a_in_b_or_c <-  trees[[1]] %in% trees[[2]] | trees[[1]] %in% trees[[3]]
   b_in_c      <-  trees[[2]] %in% trees[[3]]
   if (any(c(a_in_b_or_c, b_in_c))) extraSteps <- extraSteps[-which(c(a_in_b_or_c, b_in_c)), ]
-  
+
   treeIsOptimal <- extraSteps == 0
   colnames(treeIsOptimal) <- NULL
-  
+
   vennTrees <- vapply(list(
     c(TRUE , FALSE, FALSE),
     c(FALSE, TRUE, FALSE),
@@ -289,7 +289,7 @@ GetVennTrees <- function (fileRoot, trees=GetTrees(fileRoot)) {
     c(FALSE, FALSE, FALSE)), function (pattern) {
       sum(apply(treeIsOptimal, 1, identical, pattern))
     }, integer(1))
-  
+
   if (sum(vennTrees) != nrow(extraSteps)) stop(fileRoot, ": Something's not right.")
   if (sum(vennTrees[-8]) != nrow(extraSteps)) warning(fileRoot, ": Suboptimal trees included in list.")
   vennTrees[-8]
@@ -332,7 +332,7 @@ GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FAL
     if (ncol(qtDistances) == length(flatTrees)) {
       return (ReplaceZeroes(qtDistances, forPlot))
     }
-  }  
+  }
   cat(" - Calculating quartet distances for ", fileRoot, "...")
   if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
   if (length(trees) != 4) trees <- GetTrees(fileRoot)
@@ -357,12 +357,12 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
     n <- nrow(D)
     epsilon <- sqrt(.Machine$double.eps)
     names <- rownames(D)
-    
+
     CORRECTIONS <- c("none", "lingoes", "cailliez")
     correct <- pmatch(correction, CORRECTIONS)
-    if (is.na(correct)) 
+    if (is.na(correct))
         stop("Invalid correction method")
-    
+
     delta1 <- centre((-0.5 * D^2), n)
     trace <- sum(diag(delta1))
     D.eig <- eigen(delta1, TRUE) # We know we're symmetric
@@ -375,19 +375,19 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
         k <- length(which(eig > epsilon))
         rel.eig <- eig[1:k]/trace
         cum.eig <- cumsum(rel.eig)
-        vectors <- sweep(D.eig$vectors[, 1:k], 2, sqrt(eig[1:k]), 
+        vectors <- sweep(D.eig$vectors[, 1:k], 2, sqrt(eig[1:k]),
             FUN = "*")
         bs <- bstick.def(k)
         cum.bs <- cumsum(bs)
         res <- data.frame(eig[1:k], rel.eig, bs, cum.eig, cum.bs)
-        colnames(res) <- c("Eigenvalues", "Relative_eig", "Broken_stick", 
+        colnames(res) <- c("Eigenvalues", "Relative_eig", "Broken_stick",
             "Cumul_eig", "Cumul_br_stick")
         rownames(res) <- 1:nrow(res)
         rownames(vectors) <- names
-        colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+        colnames(vectors) <- colnames(vectors, do.NULL = FALSE,
             prefix = "Axis.")
         note <- paste("There were no negative eigenvalues. No correction was applied")
-        out <- (list(correction = c(correction, correct), note = note, 
+        out <- (list(correction = c(correction, correct), note = note,
             values = res, vectors = vectors, trace = trace))
     } else {
         k <- n
@@ -402,7 +402,7 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
         if ((correct == 2) | (correct == 3)) {
             if (correct == 2) {
                 c1 <- -min.eig
-                note <- paste("Lingoes correction applied to negative eigenvalues: D' = -0.5*D^2 -", 
+                note <- paste("Lingoes correction applied to negative eigenvalues: D' = -0.5*D^2 -",
                   c1, ", except diagonal elements")
                 D <- -0.5 * (D^2 + 2 * c1)
             }
@@ -411,9 +411,9 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
                 upper <- cbind(matrix(0, n, n), 2 * delta1)
                 lower <- cbind(-diag(n), -4 * delta2)
                 sp.matrix <- rbind(upper, lower)
-                c2 <- max(Re(eigen(sp.matrix, symmetric = FALSE, 
+                c2 <- max(Re(eigen(sp.matrix, symmetric = FALSE,
                   only.values = TRUE)$values))
-                note <- paste("Cailliez correction applied to negative eigenvalues: D' = -0.5*(D +", 
+                note <- paste("Cailliez correction applied to negative eigenvalues: D' = -0.5*(D +",
                   c2, ")^2, except diagonal elements")
                 D <- -0.5 * (D + c2)^2
             }
@@ -422,7 +422,7 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
             toto.cor <- eigen(mat.cor)
             trace.cor <- sum(diag(mat.cor))
             min.eig.cor <- min(toto.cor$values)
-            zero.eig.cor <- which((toto.cor$values < epsilon) & 
+            zero.eig.cor <- which((toto.cor$values < epsilon) &
                 (toto.cor$values > -epsilon))
             toto.cor$values[zero.eig.cor] <- 0
             if (min.eig.cor > -epsilon) {
@@ -430,39 +430,39 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
                 rel.eig.cor <- eig.cor[1:k]/trace.cor
                 cum.eig.cor <- cumsum(rel.eig.cor)
                 k2 <- length(which(eig.cor > epsilon))
-                vectors.cor <- sweep(toto.cor$vectors[, 1:k2], 
+                vectors.cor <- sweep(toto.cor$vectors[, 1:k2],
                   2, sqrt(eig.cor[1:k2]), FUN = "*")
                 rownames(vectors.cor) <- names
-                colnames(vectors.cor) <- colnames(vectors.cor, 
+                colnames(vectors.cor) <- colnames(vectors.cor,
                   do.NULL = FALSE, prefix = "Axis.")
                 bs <- bstick.def(k2)
                 bs <- c(bs, rep(0, (k - k2)))
                 cum.bs <- cumsum(bs)
             }
             else {
-                if (correct == 2) 
-                  cat("Problem! Negative eigenvalues are still present after Lingoes", 
+                if (correct == 2)
+                  cat("Problem! Negative eigenvalues are still present after Lingoes",
                     "\\n")
-                if (correct == 3) 
-                  cat("Problem! Negative eigenvalues are still present after Cailliez", 
+                if (correct == 3)
+                  cat("Problem! Negative eigenvalues are still present after Cailliez",
                     "\\n")
-                rel.eig.cor <- cum.eig.cor <- bs <- cum.bs <- rep(NA, 
+                rel.eig.cor <- cum.eig.cor <- bs <- cum.bs <- rep(NA,
                   n)
                 vectors.cor <- matrix(NA, n, 2)
                 rownames(vectors.cor) <- names
-                colnames(vectors.cor) <- colnames(vectors.cor, 
+                colnames(vectors.cor) <- colnames(vectors.cor,
                   do.NULL = FALSE, prefix = "Axis.")
             }
-            res <- data.frame(eig[1:k], eig.cor[1:k], rel.eig.cor, 
+            res <- data.frame(eig[1:k], eig.cor[1:k], rel.eig.cor,
                 bs, cum.eig.cor, cum.bs)
-            colnames(res) <- c("Eigenvalues", "Corr_eig", "Rel_corr_eig", 
+            colnames(res) <- c("Eigenvalues", "Corr_eig", "Rel_corr_eig",
                 "Broken_stick", "Cum_corr_eig", "Cum_br_stick")
             rownames(res) <- 1:nrow(res)
             rownames(vectors) <- names
-            colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+            colnames(vectors) <- colnames(vectors, do.NULL = FALSE,
                 prefix = "Axis.")
-            out <- (list(correction = c(correction, correct), 
-                note = note, values = res, vectors = vectors, 
+            out <- (list(correction = c(correction, correct),
+                note = note, values = res, vectors = vectors,
                 trace = trace, vectors.cor = vectors.cor, trace.cor = trace.cor))
         }
         else {
@@ -470,17 +470,17 @@ modifiedPcoa <- function (D, correction = "none", rn = NULL) {
             bs <- bstick.def(k3)
             bs <- c(bs, rep(0, (k - k3)))
             cum.bs <- cumsum(bs)
-            res <- data.frame(eig[1:k], rel.eig, rel.eig.cor, 
+            res <- data.frame(eig[1:k], rel.eig, rel.eig.cor,
                 bs, cum.eig.cor, cum.bs)
-            colnames(res) <- c("Eigenvalues", "Relative_eig", 
-                "Rel_corr_eig", "Broken_stick", "Cum_corr_eig", 
+            colnames(res) <- c("Eigenvalues", "Relative_eig",
+                "Rel_corr_eig", "Broken_stick", "Cum_corr_eig",
                 "Cumul_br_stick")
             rownames(res) <- 1:nrow(res)
             rownames(vectors) <- names
-            colnames(vectors) <- colnames(vectors, do.NULL = FALSE, 
+            colnames(vectors) <- colnames(vectors, do.NULL = FALSE,
                 prefix = "Axis.")
-            out <- (list(correction = c(correction, correct), 
-                note = note, values = res, vectors = vectors, 
+            out <- (list(correction = c(correction, correct),
+                note = note, values = res, vectors = vectors,
                 trace = trace))
         }
     }
