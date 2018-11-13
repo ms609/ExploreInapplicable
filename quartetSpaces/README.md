@@ -1,7 +1,7 @@
 # Quick explanation
-These plots show the MDS tree spaces, created using the Robinson Foulds distances between each 
-pair of trees.  Tree spaces based on the quartet distance are depicted in the folder 
-`quartetSpaces`.
+These plots show the MDS tree spaces, created using the Quartet distances between each 
+pair of trees.  Tree spaces based on the Robinson Foulds distance are depicted in the folder 
+`pcoaTreeSpaces`.
 
 The different colours correspond to different optimizations:
 
