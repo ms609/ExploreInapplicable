@@ -12,8 +12,8 @@ T [11] Lateral margin of cephalic plate: (0) thin ring; (1) expanded.
 T [12] Dorsal surface of cephalic plate: (0) smooth; (1) with transversal striae.
 T [13] Lateral lobules of cephalic plate: (0) entire; (1) auricular; (2) slightly notched.
 T [14] Latero-posterior surface of cephalic plate: (0) ornamented; (1) smooth.
-X [15] Neurochaetae of first chaetigers: (0) with rostrate uncinus on chaetigers 1–3; (1) with acicular spines on chaetigers 1–3.
-T [16] Number of hooks in chaetigers 1–3: (0) numerous; (1) up to 3 hooks per torus; (2) 3–7 hooks per torus.
+X [15] Neurochaetae of first chaetigers: (0) with rostrate uncinus on chaetigers 1--3; (1) with acicular spines on chaetigers 1--3.
+T [16] Number of hooks in chaetigers 1--3: (0) numerous; (1) up to 3 hooks per torus; (2) 3--7 hooks per torus.
 X [17] Notochaetae of anterior chaetigers: (0) capillaries; (1) with acicular spines.
 X [18] Formation of chaetae: (0) from the dorsal to the ventral side; (1) inverted.
 X [19] Number of row of uncini: (0) single; (1) double.
@@ -24,7 +24,7 @@ X [23] Subrostral process of rostrate uncini: (0) with barbules; (1) no barbules
 X [24] Position of rows of notochaetae: (0) transversal along entire body; (1) longitudinal in posterior half of the body.
 X [25] Notopodial capillary chaetae: (0) smooth limbation; (1) with ornamented limbation.
 X [26] Other types of notopodial chaetae: (0) simple chaetae; (1) chaetae ruffled; (2) helicoidal chaetae.
-X [27] Number of chaetigerous segments: (0) 17–29; (1) from 30 to 70.
+X [27] Number of chaetigerous segments: (0) 17--29; (1) from 30 to 70.
 X [28] Chaetiger 1: (0) smooth; (1) with a partial, globose collar; (2) complete, globose collar.
 X [29] Tori: (0) forming a narrow belt; (1) forming a globose belt behind the median segments.
 X [30] Length of median chaetigers: (0) isometric with anterior segments; (1) larger than the anterior segments.

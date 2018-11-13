@@ -62,7 +62,7 @@ N [61]  Branchiae on segment 4: absent 0; present 1.
 N [62]  Branchiae on segment 5: absent 0; present 1.
 X [63]  Chaetal inversion: absent 0; present 1.
 X [64]  Parapodia: projecting neuropodia 0; similar rami 1; noto- and neuropodia differing; none 2.
-T [65]  Anterior neuropodia segment 2–8: short, truncate cylinders 0; low ridges or pads 1; tori 2; with lobes or lamellae 3; chaetae from body wall 4.
+T [65]  Anterior neuropodia segment 2--8: short, truncate cylinders 0; low ridges or pads 1; tori 2; with lobes or lamellae 3; chaetae from body wall 4.
 X [66]  Posterior neuropodia: short, truncate cylinders 0; low ridges or pads 1; tori 2; with lobes or lamellae 3; straight from body wall 4.
 X [67]  Dorsal half of posterior body segments: with parapodia and chaetae 0; smooth 1.
 X [68]  Hooks/ uncini: absent 0; present 1.
@@ -97,7 +97,7 @@ X [96]  Gut: straight 0; looped 1.
 X [97]  Occluded gut: absent 0; present 1.
 X [98]  Anterior segmental organs: not differentiated from rest 0; very enlarged pair 1; absent 2; excretory series 3.
 T [99]  Single anterior pair of nephridia: two openings 0; single opening 1.
-X [100] Genital papillae: none apparent 0; on chaetiger 5–6 1.
+X [100] Genital papillae: none apparent 0; on chaetiger 5--6 1.
 X [101] Heart bodies: absent 0; present 1.
 X [102] Tube: absent 0; present 1.
 T [103] Tube construction: sand and or mucus 0; chitin protein complex 1; calcareous 2.

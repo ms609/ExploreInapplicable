@@ -80,7 +80,7 @@ T [79]  Arrangement of thoracic hooks/ uncini: (0) discrete single rows; (1) dis
 N [80]  Rostrum / main fang: (0) absent; (1) present.
 N [81]  Capitium: (0) absent; (1) present.
 N [82]  Thoracic uncini teeth: (0) equal size; (1) unequal size. [Differentiated considered derived.]
-T [83]  Rows of teeth on thoracic uncini: (0) 1–5; (1) more than 5 (numerous).
+T [83]  Rows of teeth on thoracic uncini: (0) 1--5; (1) more than 5 (numerous).
 T [84]  Thoracic uncini with rows on only one tooth above main fang: (0) absent (various teeth per row); (1) present (one tooth per row).
 N [85]  Thoracic uncini breast: (0) absent; (1) present.
 T [86]  Development of thoracic uncini breast: (0) slightly developed; (1) well developed.
@@ -99,7 +99,7 @@ X [98]  Uncini in abdominal neuropodia: (0) absent; (1) present.
 T [99]  Arrangement of abdominal hooks/ uncini: (0) single rows; (1) double rows; (2) dense fields.
 N [100] Abdominal uncini main fang: (0) absent; (1) present.
 N [101] Capitium: (0) absent; (1) present.
-T [102] Abdominal uncini number of rows: (0) few (1–5); (1) numerous (> 5).
+T [102] Abdominal uncini number of rows: (0) few (1--5); (1) numerous (> 5).
 N [103] Uncini breast: (0) absent; (1) present.
 T [104] Abdominal uncini breast: (0) small, poorly developed; (1) well developed, expanded; (2) narrow, swelling; (3) proximal manubrium.
 N [105] Abdominal uncini handle: (0) absent; (1) present.

@@ -4,20 +4,20 @@ X [3]  Emigrant, sexupara or alate exule. Relative length of antennae to body le
 X [4]  Fundatrix. Number of antennal segments: (0) three; (1) four; (2) five; (3) six.
 X [5]  Apterous exule. Number of antennal segments: (0) three; (1) four; (2) five; (3) six.
 X [6]  Emigrant, sexupara or alate exule. Number of antennal segments: (0) five; (1) six.
-X [7]  Emigrant, sexupara or alate exule. Relative length of antennal segment III to segments IV, V and VI combined (for six-segmented antennae): (0) < 0.8 (Fig. 3A, B); (1) 0.8–1.2 (Fig. 3C, D); (2) > 1.2 (Fig. 3E).
-T [8]  Emigrant, sexupara or alate exule. Relative length of antennal segment IV to segment V (for six-segmented antennae): (0) < 0.7 (Fig. 3A); (1) > 0.7.
+X [7]  Emigrant, sexupara or alate exule. Relative length of antennal segment III to segments IV, V and VI combined (for six-segmented antennae): (0) < 0.8; (1) 0.8--1.2; (2) > 1.2.
+T [8]  Emigrant, sexupara or alate exule. Relative length of antennal segment IV to segment V (for six-segmented antennae): (0) < 0.7; (1) > 0.7.
 X [9]  Emigrant, sexupara or alate exule. Development of processus terminalis: (0) undeveloped (the length is shorter than or almost as long as the width) (Fig. 3A, B); (1) developed (the length is much larger than the width).
 X [10] Emigrant, sexupara or alate exule. Shape of secondary rhinarium: (0) annular (secondary rhinaria usually cover much more than half the circumference from the ventral side); (1) transverse oval (secondary rhinaria cover less than or nearly half the circumference); (2) round (secondary rhinaria cover much less than half the circumference).
 X [11] Emigrant, sexupara or alate exule. Colour of secondary rhinarium: (0) bright, or paler than background; (1) pigmented.
 X [12] Emigrant, sexupara or alate exule. Margins of secondary rhinarium: (0) not rimmed; (1) rimmed.
 T [13] Emigrant, sexupara or alate exule. Projection of secondary rhinarium: (0) hardly projected, interhinarial parts not constricted (Fig. 3C, D); (1) projected, interhinarial parts constricted.
-X [14] Emigrant, sexupara or alate exule. Secondary rhinarium on antennal segment V : (0) absent (Fig. 3E); (1) present.
+X [14] Emigrant, sexupara or alate exule. Secondary rhinarium on antennal segment V : (0) absent; (1) present.
 X [15] Emigrant, sexupara or alate exule. Secondary rhinarium on antennal segment VI: (0) absent (Fig. 3A, E); (1) present.
-T [16] Emigrant, sexupara or alate exule. Number and development of secondary rhinaria on antennal segment VI (if present): (0) one to three, rudimentary (secondary rhinaria are much fewer and smaller than those on other segments) (Fig. 3C); (1) one to three, developed (secondary rhinaria are much fewer than those on other segments, but are almost the same in size) (Fig. 3D); (2) more than three, developed (secondary rhinaria are almost the same as those on other segments in number and size) (Fig. 3B).
-X [17] Emigrant, sexupara or alate exule. Relative length of ultimate rostral segment to second segment of hind tarsus: (0) < 0.8; (1) 0.8–1.2; (2) >1.2.
+T [16] Emigrant, sexupara or alate exule. Number and development of secondary rhinaria on antennal segment VI (if present): (0) one to three, rudimentary (secondary rhinaria are much fewer and smaller than those on other segments); (1) one to three, developed (secondary rhinaria are much fewer than those on other segments, but are almost the same in size); (2) more than three, developed (secondary rhinaria are almost the same as those on other segments in number and size).
+X [17] Emigrant, sexupara or alate exule. Relative length of ultimate rostral segment to second segment of hind tarsus: (0) < 0.8; (1) 0.8--1.2; (2) >1.2.
 X [18] Fundatrix or apterous exule. Membranous slit between first and second tarsal segments: (0) absent (first and second tarsal segments completely fused); (1) present partially or entirely (Fig. 4D, E).
-T [19] Fundatrix or apterous exule. Development of membranous slit on tarsi (if present): (0) incomplete (Fig. 4D); (1) complete (Fig. 4E).
-X [20] Apterous exule. Stout seta with a large prominent socket on the ventral side of fore tarsus: (0) absent (Fig. 4A, D, E); (1) present, weakly developed (the socket situated at a ventro-middle point, not reaching the base of claws) (Fig. 4B); (2) present, well developed (the socket situated at a ventro-anterior point, reaching or exceeding the base of claws) (Fig. 4C).
+T [19] Fundatrix or apterous exule. Development of membranous slit on tarsi (if present): (0) incomplete; (1) complete.
+X [20] Apterous exule. Stout seta with a large prominent socket on the ventral side of fore tarsus: (0) absent (Fig. 4A, D, E); (1) present, weakly developed (the socket situated at a ventro-middle point, not reaching the base of claws); (2) present, well developed (the socket situated at a ventro-anterior point, reaching or exceeding the base of claws).
 X [21] Emigrant, sexupara or alate exule. Number of ventroanterior setae on the first segment of fore tarsi: (0) two; (1) three; (2) four; (3) more than four.
 X [22] Emigrant, sexupara or alate exule. Number of ventroanterior setae on the first segment of middle tarsi: (0) two; (1) three; (2) four; (3) more than four.
 X [23] Emigrant, sexupara or alate exule. Number of ventroanterior setae on the first segment of hind tarsi: (0) two; (1) three; (2) four; (3) more than four.
@@ -30,16 +30,16 @@ T [29] Emigrant, sexupara or alate exule. The bases of two oblique veins (if two
 X [30] Emigrant. Abdominal sclerites on anterior tergites: (0) absent; (1) present.
 X [31] Sexupara or alate exule. Abdominal sclerites on anterior tergites: (0) absent; (1) present.
 X [32] Emigrant. Siphunculi: (0) absent; (1) present.
-T [33] Emigrant. Shape of siphunculi (if present): (0) small pores, not surrounded by setae nor sclerites (Fig. 5A); (1) small pores, surrounded by a few setae and indistinct sclerites (Fig. 5B); (2) large pores, surrounded by several setae and distinct sclerites (Fig. 5C).
+T [33] Emigrant. Shape of siphunculi (if present): (0) small pores, not surrounded by setae nor sclerites; (1) small pores, surrounded by a few setae and indistinct sclerites; (2) large pores, surrounded by several setae and distinct sclerites.
 X [34] Apterous or alate exule, or sexupara. Siphunculi: (0) absent; (1) present.
 T [35] Apterous or alate exule, or sexupara. Shape of siphunculi (if present): (0) small pores, not surrounded by setae nor sclerites; (1) small pores, surrounded by a few setae and indistinct sclerites; (2) large pores, surrounded by several setae and distinct sclerites.
 X [36] Fundatrix. WGPs: (0) absent; (1) present, either indistinct or distinct.
 T [37] Fundatrix. Development of WGPs (if present): (0) indistinct, without clear borders; (1) distinct, with clear borders.
 X [38] Emigrant. WGPs on abdomen: (0) absent; (1) present.
 X [39] Sexupara or alate exule. WGPs on abdomen: (0) absent; (1) present.
-T [40] All morphs with WGPs. Size of cells in a WGP: (0) uniform (WGPs consist of cells of almost the same size) (Fig. 6A); (1) not uniform (WGPs consist of cells of different size).
-T [41] All morphs with WGPs. Central fields of a WGP: (0) absent, or indistinct (Fig. 6A, B); (1) present and distinct.
-T [42] All morphs with WGPs. Number and shape of central fields of a WGP (if present): (0) several, circular (Fig. 6C); (1) single, circular (Fig. 6D); (2) single, elongate, sometimes fragmented into several small ones (Fig. 6E).
+T [40] All morphs with WGPs. Size of cells in a WGP: (0) uniform (WGPs consist of cells of almost the same size); (1) not uniform (WGPs consist of cells of different size).
+T [41] All morphs with WGPs. Central fields of a WGP: (0) absent, or indistinct; (1) present and distinct.
+T [42] All morphs with WGPs. Number and shape of central fields of a WGP (if present): (0) several, circular; (1) single, circular; (2) single, elongate, sometimes fragmented into several small ones.
 N [43] All morphs with WGPs. Setae on a WGP: (0) absent; (1) present.
 X [44] Apterous exule. Arrangement of WGPs on prothorax: (0) absent; (1) present on the lateral position; (2) present on the spinal and lateral positions.
 X [45] Apterous exule. Arrangement of WGPs on meso- and metathorax: (0) absent; (1) present on the lateral position; (2) present on the spinal and lateral positions; (3) present on the pleural and lateral positions; (4) present on the spinal, pleural and lateral positions.

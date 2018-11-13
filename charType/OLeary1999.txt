@@ -121,10 +121,10 @@ N [120]  101. Third trochanter of femur (ordered).----Present (0); highly reduce
 N [121]  .... absent(2) (derived from O'Leary and Rose, 1995b). 
 T [122]  102. Patellar articular surface on femur.----Wide (0); narrow (1).
 I [123]  103. Astragalar canal.----Present (0); absent (1) (derived from Shoshani, 1986). 
-T [124]  104. Navicular facet of astragalus (ordered) (see Fig. 1).---- Convex (0); saddle-shaped(1);
+T [124]  104. Navicular facet of astragalus (ordered).---- Convex (0); saddle-shaped(1);
 T [125]  .... trochleated (2)(modi?ed from Thewissen and Domning, 1992; O'Leary and Rose, 1995b). 
 T [126]  105. Sustentacular width.----Narrow, #50% width of the astragalus (0); wide, $70% width of the astragalus (1) (Geisler and Luo, 1998). 
-N [127]  106. Contact of distal astragalus with cuboid (ordered) (see Fig. 1).----Absent (0); present but small, contact # 30% of the width of the distal articular surface (1); 
+N [127]  106. Contact of distal astragalus with cuboid (ordered).----Absent (0); present but small, contact # 30% of the width of the distal articular surface (1); 
 T [128]  .... present and large, contact $40% of the articular surface (2) (O'Leary and Rose, 1995b; Geisler and Luo, 1998).
 I [129]  107. Lateral process of astragalus.----Present (0); absent (1) (Schaeffer, 1956). 
 T [130]  108. Pes(ordered).----Mesaxonic, axis of symmetry of foot passes along center of digitthree (0); paraxonic, axis lies between digits three and four (1);
