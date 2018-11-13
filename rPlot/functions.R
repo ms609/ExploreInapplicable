@@ -1,11 +1,14 @@
 require(ape)
 require(phangorn)
-devtools::install_github('ms609/inapplicable')
 require(TreeSearch)
 library(MASS)
 library(venneuler)
 
 if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
+# As of November 2018, I have encountered difficulties installing rtqDist.
+# The package Quartet provides the same functionality, albeit with different function names
+# Quartet will soon appear on CRAN, and can be installed with install.packages('Quartet')
+# The development version can be installed with devtools::install_github('ms609/Quartet')
 
 readTntTrees <- function (directory, nexusName) {
   cat ("   - Reading directory", directory, '... ')
