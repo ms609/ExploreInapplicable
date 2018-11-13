@@ -71,8 +71,8 @@ compared using two methods, implemented in the script `r_plot.R`.
 The MPTs on each island were analysed by the other methods.  The scores that were optimal under
 one method are often suboptimal under another.  The number of extra steps associated with each
 tree -- in a sense, how far the trees that are optimal under one method are from those
-that are optimal under another -- is
-plotted in a histogram, saved in the `histograms` directory.
+that are optimal under another -- is counted in `islandCounts` and plotted as a histogram
+in the `histograms` directory.
 
 ### Method 2. Overlap of islands in tree space.
 
