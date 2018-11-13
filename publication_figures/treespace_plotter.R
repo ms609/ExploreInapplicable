@@ -3,13 +3,10 @@ source('rPlot/functions.R')
 source('rPlot/definitions.R')
 OVERWRITE <- FALSE
 
-# nexusName <- 'Asher2005.nex'
-
 props <- read.csv('matrixProperties.csv', header=TRUE, row.names=1)
 
 par(mfrow=c(5, 6), bg='white', mar=rep(1.3, 4))
 for (nexusName in sort(nexusFiles)) {
-#for (nexusName in rep(nexusFiles[1], 30)) {
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")
 
