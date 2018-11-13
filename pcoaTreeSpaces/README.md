@@ -1,7 +1,14 @@
 # Quick explanation
-These plots show the MDS tree spaces, created using the Robinson Foulds distances between each 
-pair of trees.  Tree spaces based on the quartet distance are depicted in the folder 
-`quartetSpaces`.
+These plots show the MDS tree spaces of all optimal trees.
+The top row defines tree distances using the Robinson Foulds distances between each pair of trees;
+the bottom row uses the quartet distance.
+
+The left column includes the trees that are optimal when the raw data matrices (`Ambiguous`) 
+are used; the right column excludes, these trees, only comparing trees where inapplicable
+tokens in neomorphic characters have been replaced with the 'absent' state.
+
+The matrices in the right-hand column, therefore, only differ in the treatment of inapplicable
+tokens in transformational series.
 
 The different colours correspond to different optimizations:
 
