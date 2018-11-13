@@ -5,7 +5,7 @@ OVERWRITE <- FALSE
 # nexusName <- 'Vinther2008.nex'
 figuredDatasets <- c('DeAssis2011.nex', 'Asher2005.nex', 'Wetterer2000.nex', 'Vinther2008.nex')
 
-for (nexusName in nexusFiles) {
+for (nexusName in figuredDatasets) {
   # par(mfrow=c(1, 1), bg='white')   #par(mfrow=c(3, 1), bg='white') for portrait, for example
   nexusRoot <- gsub('.nex', '', nexusName)
   cat("\nEvaluating", nexusRoot, "...\n")

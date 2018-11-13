@@ -67,3 +67,7 @@ libs/
 
 # MS temporary files
 ~*
+treeSpaces/
+
+# Just for now:
+consTrees/
