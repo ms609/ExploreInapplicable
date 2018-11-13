@@ -12,6 +12,9 @@ of tree search algorithms that works with the inapplicable algorithm has not yet
 Comments and additional blocks were removed from the matrices to allow their easy parsing by
 different software packages, and the matrices placed in the `matrices` directory.
 
+Details of each matrix, including a full citation and interpretation details for each 
+character, are provided in `r_dataset_details.Rmd`, [viewable here](https://cdn.rawgit.com/ms609/ExploreInapplicable/master/r_dataset_details.html).
+
 ## Annotating character types
 
 Original character lists were obtained for each matrix.  For each matrix, a template annotation
@@ -69,7 +72,7 @@ The MPTs on each island were analysed by the other methods.  The scores that wer
 one method are often suboptimal under another.  The number of extra steps associated with each
 tree -- in a sense, how far the trees that are optimal under one method are from those
 that are optimal under another -- is
-plotted in a histogram, saved in the `islandCounts` directory.
+plotted in a histogram, saved in the `histograms` directory.
 
 ### Method 2. Overlap of islands in tree space.
 
