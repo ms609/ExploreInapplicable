@@ -44,7 +44,9 @@ Each matrix was then copied to each of four subfolders, and modified for analysi
     
     
 - Folder `inapplicable`: 
-  * inapplicable tokens left as `-`
+  * inapplicable tokens in transformational series left as `-`
+  * inapplicable tokens in neomorphic characters series replaced with non-derived token
+      for that character
     
 The Perl script `analyse_matrices.pl` performs these modifications.
 
