@@ -170,20 +170,22 @@ TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
   scaled <- MASS::isoMDS(distances, k = 2, trace = FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
-  plotCol <- rep(treePalette[2:4], nTrees)
-  plotPCh <- rep(plotChars[2:4], nTrees)
+  plotCol <- treePalette[rep(names(nTrees), nTrees)]
+  plotPCh <- rep(plotChars[names(nTrees)], nTrees)
   plot(x, y, type = "p", xlab = "", ylab = "", axes = FALSE,
        asp = 1, col = plotCol, pch = plotPCh)
-  iTrees <- TreeNumbers(nTrees)
-
+  
+  offset <- 0
   for (i in seq_along(nTrees)) {
-    convexHull <- chull(x[iTrees[[i]]], y[iTrees[[i]]])
+    iTrees <- offset + seq_len(nTrees[i])
+    offset <- nTrees[i]
+    convexHull <- chull(x[iTrees], y[iTrees])
     convexHull <- c(convexHull, convexHull[1])
-    convX <- x[iTrees[[i]]][convexHull]
-    convY <- y[iTrees[[i]]][convexHull]
+    convX <- x[iTrees][convexHull]
+    convY <- y[iTrees][convexHull]
     polygon(convX, convY,
-            col = paste0(treePalette[i + 1], '4B'), #4B = 30% alpha
-            border = treePalette[i + 1])
+            col = paste0(treePalette[names(nTrees[i])], '4B'), #4B = 30% alpha
+            border = treePalette[names(nTrees[i])])
   }
   title(sub = legendText, cex = legendSize, line = -0.5)
 }
