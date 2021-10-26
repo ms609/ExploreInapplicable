@@ -1,21 +1,18 @@
 require(ape)
 require(phangorn)
 require(TreeSearch)
+require(Quartet)
 library(MASS)
 library(venneuler)
-
-if (!require(rtqdist)) install.packages('http://users-cs.au.dk/cstorm/software/tqdist/files/tqDist-1.0.0.tar.gz', repos=NULL, type='source') # You can download it from http://users-cs.au.dk/cstorm/software/tqdist/
-# As of November 2018, I have encountered difficulties installing rtqDist.
-# The package Quartet provides the same functionality, albeit with different function names
-# Quartet will soon appear on CRAN, and can be installed with install.packages('Quartet')
-# The development version can be installed with devtools::install_github('ms609/Quartet')
+library(cli)
 
 readTntTrees <- function (directory, nexusName) {
-  cat ("   - Reading directory", directory, '... ')
+  cli::cli_alert_info(paste0("Reading directory ", directory, '... '))
   treeLines <- readLines(paste0(directory, '/', nexusName, '.nextrees', collapse=''), warn=FALSE)
   treeLinesLight <- gsub('tree\\d*|\\s+', '', treeLines)
-  if (!all(treeLinesLight %in% unique(treeLinesLight))) stop ("Non-unique trees found")
-  cat(" all trees unique. ")
+  if (!all(treeLinesLight %in% unique(treeLinesLight))) {
+    stop ("Non-unique trees found")
+  }
   treeList <- read.nexus(paste0(directory, '/', nexusName, '.nextrees', collapse=''))
   if (class(treeList) == 'phylo') {
     treeList <- list(treeList)
@@ -23,7 +20,7 @@ readTntTrees <- function (directory, nexusName) {
     cat("Single tree returned.\n")
     return(treeList)
   }
-  cat ("Read", length(treeList), "trees.\n")
+  cli::cli_alert_success(paste0("Read ", length(treeList), " unique trees.\n"))
   treeList
 }
 
@@ -50,12 +47,9 @@ RFDistances <- function(treeList) {
   distances
 }
 
-QuartetDistances <- function (treeList) {
-  if (class(treeList) == 'list') class(treeList) <- 'multiPhylo'
-  fileName <- paste0('~temp', substring(runif(1), 3), '.trees')
-  write.tree(treeList, file=fileName)
-  on.exit(file.remove(fileName))
-  rtqdist::allPairsQuartetDistance(fileName)
+QuartetDistances <- function (...) {
+  Quartet::QuartetDivergence(similarity = FALSE,
+                             Quartet::ManyToManyQuartetAgreement(...))
 }
 
 TreeNumbers <- function (nTrees) {
@@ -74,8 +68,8 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   x <- pcs$vectors[, 1]
   y <- pcs$vectors[, 2]
   plot(x, y, type = "p", xlab = "", ylab = "",
-       axes = FALSE, col=treeCol, pch=treePCh)
-  title(main = mainTitle, cex.main=0.81)
+       axes = FALSE, col = treeCol, pch = treePCh)
+  title(main = mainTitle, cex.main = 0.81)
   # Plot convex hulls
   iTrees <- TreeNumbers(nTrees)
   for (i in seq_along(nTrees)) {
@@ -85,7 +79,7 @@ PlotTreeSpace <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
   }
 
   legend(legendPos, bty='n', legend=paste0(englishName, ' (', nTrees, ')'),
-         cex = 0.75, pch = plotChars, col=treePalette)
+         cex = 0.75, pch = plotChars, col = treePalette)
 }
 
 PlotTreeSpace3 <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
@@ -172,10 +166,8 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
   c(hullArea / hullArea['inapplicable'])
 }
 
-MDSPoints <- memoise::memoise(function (x) MASS::isoMDS(x, k=2, trace=FALSE)$points)
-
 TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
-  scaled <- MDSPoints(distances) # Kruskal's non-multimetric MDS
+  scaled <- MASS::isoMDS(distances, k = 2, trace = FALSE)$points # Kruskal's non-multimetric MDS
   x <- scaled[, 1]
   y <- scaled[, 2]
   plotCol <- rep(treePalette[2:4], nTrees)
@@ -209,8 +201,8 @@ PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
 
   for (i in 2:4) {
     xyz <- pts[TreeNumbers(nTrees)[[i]] - nTrees[1], 1:3, drop=FALSE]
-    hull <- geometry::convhulln(xyz, option='FA')
-    triangles3d(xyz[t(hull$hull), ], col=treePalette[i], alpha=0.3)
+    hull <- geometry::convhulln(xyz, option = 'FA')
+    triangles3d(xyz[t(hull$hull), ], col = treePalette[i], alpha = 0.3)
   }
 
   aspect3d('iso')
@@ -248,12 +240,16 @@ GetTreeScores <- function(fileRoot, trees = NULL) {
     rownames(scores) <- rawScores[, 1]
   }
   if (is.null(nrow(scores)) || nrow(scores) != sum(nTrees)) {
-    cat("   - Calculating tree scores...\n")
+    cli::cli_alert_info("Calculating tree scores")
     if (is.null(trees)) trees <- GetTrees(fileRoot)
     nTrees <- vapply(trees, length, integer(1))
     flatTrees <- unlist(trees, recursive=FALSE)
     scores <- vapply(allDirectories, function (dirPath) {
-      TreeScorer <- if (dirPath %in% tntDirectories) phangorn::fitch else inapplicable::InapplicableFitch
+      TreeScorer <- if (dirPath %in% tntDirectories) {
+        phangorn::fitch
+      } else {
+        TreeSearch::TreeLength
+      }
       rawData <- read.nexus.data(paste0(dirPath, '/', fileRoot, '.nex'))
       phyData <- phangorn::phyDat(rawData, type='USER', levels=c('-', 0:9))
       as.integer(vapply(flatTrees, TreeScorer, double(1), phyData, USE.NAMES=FALSE))
@@ -320,13 +316,17 @@ ReplaceZeroes <- function (distMat, replaceZeroes = TRUE) {
   return(distMat)
 }
 
-GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FALSE) {
+GetQuartetDistances <- function (fileRoot, trees = GetTrees(fileRoot),
+                                 forPlot = FALSE) {
   flatTrees <- Flatten(trees)
-  qtFileName <- paste0('treeSpaces/', fileRoot, '.qt.csv')
+  if (!dir.exists('treeSpaceCache')) dir.create('treeSpaceCache')
+  qtFileName <- paste0('treeSpaceCache/', fileRoot, '.qt.csv')
   if (file.exists(qtFileName) && (file.mtime(qtFileName) > "2017-10-10 15:34:10 BST")) { # Don't read stale files, regenerate them
-    qtDistances <- data.matrix(read.csv(qtFileName, row.names=1))
+    qtDistances <- data.matrix(read.csv(qtFileName, row.names = 1))
     if (length(trees) == 3) {
-      if (sum(sapply(trees, length)) < ncol(qtDistances)) stop('Distances calculated from outdated trees.')
+      if (sum(sapply(trees, length)) < ncol(qtDistances)) {
+        stop('Distances calculated from outdated trees.')
+      }
       ambigTrees <- seq_len(ncol(qtDistances) - sum(sapply(trees, length)))
       qtDistances <- qtDistances[-ambigTrees, -ambigTrees]
       return (ReplaceZeroes(qtDistances, forPlot))
@@ -335,12 +335,10 @@ GetQuartetDistances <- function (fileRoot, trees=GetTrees(fileRoot), forPlot=FAL
       return (ReplaceZeroes(qtDistances, forPlot))
     }
   }
-  cat(" - Calculating quartet distances for ", fileRoot, "...")
-  if (length(trees) == 3) trees <- c(trees, GetRTrees(fileRoot))
-  if (length(trees) != 4) trees <- GetTrees(fileRoot)
-  qtDistances <- QuartetDistances(flatTrees)
-  cat(" Done.\n")
-  write.csv(qtDistances, file=qtFileName)
+  cli::cli_alert_info(paste0("Calculating quartet distances for ", fileRoot, "..."))
+  qtDistances <- as.matrix(QuartetDistances(flatTrees))
+  cli::cli_alert_success("Done.")
+  write.csv(qtDistances, file = qtFileName)
   ReplaceZeroes(qtDistances, forPlot)
 }
 

@@ -5,22 +5,21 @@ OVERWRITE <- FALSE
 # nexusName <- 'Asher2005.nex'
 
 for (nexusName in nexusFiles) {
-  par(mfrow=c(2, 2), bg='white')
+  par(mfrow = c(2, 2), bg = 'white')
   nexusRoot <- gsub('.nex', '', nexusName)
-  cat("\nEvaluating", nexusRoot, "...\n")
+  cli::cli_h2(paste0("Evaluating ", nexusRoot, "..."))
   
   if (nexusRoot %in% c('avoidThisFile')) { # add slowFiles to this list if quick results wanted first
-    cat (" ! Manual override\n")
+    cli::cli_alert_warning("Manual override")
     next
   }
 
-  rTrees <- lapply(rDirectories, readRTrees, nexusName=nexusName)
+  rTrees <- lapply(rDirectories, readRTrees, nexusName = nexusName)
   if (is.null(rTrees[[1]])) {
-    cat(" ! R trees not found.\n")
+    cli::cli_alert_danger("R trees not found.")
     next
   }
-  trees <- c(lapply(tntDirectories, readTntTrees, nexusName=nexusName), rTrees)
-  cat(" - Trees read OK.\n")
+  trees <- c(lapply(tntDirectories, readTntTrees, nexusName = nexusName), rTrees)
   nTrees <- vapply(trees, length, integer(1)); names(nTrees) <- allDirectories
   dirTrees <- TreeNumbers(nTrees)
   flatTrees <- unlist(trees, recursive=FALSE)
@@ -31,9 +30,9 @@ for (nexusName in nexusFiles) {
   treePCh <- rep(plotChars, nTrees)
   
   if (file.exists(paste0('histograms/landscape/', nexusRoot, '-300.png', collapse=''))  && !OVERWRITE) {
-    cat(" - MPT histograms already exist.\n")    
+    cli::cli_alert_info("MPT histograms already exist.")
   } else {
-    cat(" - Generating MPT histograms.\n")    
+    cli::cli_alert_info("Generating MPT histograms.")
     
     # Calculate tree scores
     scores <- GetTreeScores(nexusRoot, trees)
@@ -42,7 +41,7 @@ for (nexusName in nexusFiles) {
     rm(scores)
     
     # Plot tree scores: 4x4
-    cat(" - Plotting island scores...\n")
+    cli::cli_alert("Plotting island scores...\n")
     for (dirPath in allDirectories) {
       dirScores <- extraSteps[dirTrees[[dirPath]], , drop=FALSE]
       dirBreaks <- -0.5:(max(dirScores) + 0.5)
@@ -99,7 +98,7 @@ for (nexusName in nexusFiles) {
   
   par(mfrow=c(1, 1), bg='white')
   if (!file.exists(paste0('vennNodes/', nexusRoot, '.png')) || OVERWRITE) {
-    cat(" - Calculating consensus trees: ")
+    cli::cli_alert("Calculating consensus trees")
     consensi <- lapply(trees, consensus)
     nNodes <- vapply(consensi, function (tr) tr$Nnode, double(1))
     cat("done.\n")
@@ -118,7 +117,7 @@ for (nexusName in nexusFiles) {
         col.txt=NA, edges=1024, main=paste0('Node presence by method: ', nexusRoot))
     dev.copy(svg, file=paste0('vennNodes/', nexusRoot, '.svg', collapse='')); dev.off()
     dev.copy(png, file=paste0('vennNodes/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
-    cat(" - Plotted Venn diagram of nodes.\n")
+    cli::cli_alert_success("Plotted Venn diagram of nodes.")
   }
   
   if (!file.exists(paste0('vennTrees/', nexusRoot, '.png')) || OVERWRITE) {
@@ -134,12 +133,12 @@ for (nexusName in nexusFiles) {
         col.txt=NA, edges=1024, main=paste0('Shortest trees: ', nexusRoot))
     dev.copy(svg, file=paste0('vennTrees/', nexusRoot, '.svg', collapse='')); dev.off()
     dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
-    cat(" - Plotted Venn diagram of trees.\n")
+    cli::cli_alert_success("Plotted Venn diagram of trees.")
   }
   par(mfrow=c(2, 2), bg='white')
   
   if (file.exists(paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse='')) && !OVERWRITE) {
-    cat(" - Treespace plots already exist.\n")
+    cli::cli_alert_info("Treespace plots already exist.")
     next
   }
   
@@ -148,26 +147,16 @@ for (nexusName in nexusFiles) {
   charSummary <- paste(names(table(charTypes)), table(charTypes), sep=': ', collapse='; ')
   
   
-  rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse=''))
-  rfTitleText <- paste(nexusRoot, "R-F space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
+  rawData <- read.nexus.data(paste0('inapplicable/', nexusName, collapse = ''))
   qtTitleText <- paste(nexusRoot, "Quartet space\n",  length(rawData), 'taxa,', length(rawData[[1]]), 'chars -', charSummary)
 
-#  rfDistances <- GetRFDistances(nexusRoot, trees)
-#  cat(" - Got RF distances.\n")
-  qtDistances <- GetQuartetDistances(nexusRoot, trees, forPlot=TRUE)
-  cat(" - Got Quartet distances.\n")
+  qtDistances <- GetQuartetDistances(nexusRoot, trees[-1], forPlot = TRUE)
+  cli::cli_alert_success("Got Quartet distances.")
   
   ambigTrees <- seq_len(nTrees[1])
-#  PlotKruskalTreeSpace(rfDistances, nTrees, legendPos='bottomright', rfTitleText)
-#  rfAreas <- PlotKruskalTreeSpace3(rfDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomright', rfTitleText)
-#  PlotKruskalTreeSpace(qtDistances, nTrees, legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
-#  qtAreas <- PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), qtTitleText)
-#  dev.copy(svg, file=paste0('treeSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
-#  dev.copy(png, file=paste0('treeSpaces/', nexusRoot, '.png', collapse=''), width=1024, height=1024); dev.off()
-  
-  par(mfrow=c(1, 1), mar=rep(0, 4))
-  #qtAreas <- TreeSpacePanel(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), studyName[[nexusRoot]])
-  TreeSpacePanel(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos='bottomleft', studyName[[nexusRoot]], 1.0)
+
+  par(mfrow = c(1, 1), mar = rep(0, 4))
+  TreeSpacePanel(qtDistances, nTrees[-1], studyName[[nexusRoot]], 1.0)
   dev.copy(svg, file=paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse=''), width=2, height=2); dev.off()
    
   
