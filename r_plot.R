@@ -83,8 +83,10 @@ for (nexusName in nexusFiles) {
     }
     rm (extraSteps)
     
-    plot(-9, -9, axes=FALSE, , ylim=c(0, 100), xlim=c(0, 100), xlab='', ylab='')
-    ySpace <- 12; yHeight = 7
+    plot(-9, -9, axes = FALSE, ylim = c(0, 100), xlim = c(0, 100),
+         xlab = '', ylab = '')
+    ySpace <- 12
+    yHeight <- 7
     rect(10, ySpace * 1, 10 + yHeight - 1, yHeight + (ySpace * 1), col=paste0(treePalette[4], '99'), border=treePalette[4])
     rect(10, ySpace * 2, 10 + yHeight - 1, yHeight + (ySpace * 2), col=paste0(treePalette[3], '99'), border=treePalette[3])
     rect(10, ySpace * 3, 10 + yHeight - 1, yHeight + (ySpace * 3), col=paste0(treePalette[2], '99'), border=treePalette[2])
@@ -96,7 +98,7 @@ for (nexusName in nexusFiles) {
     dev.copy(png, file=paste0('islandCounts/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
   }
   
-  par(mfrow=c(1, 1), bg='white')
+  par(mfrow = c(1, 1), bg = 'white')
   if (!file.exists(paste0('vennNodes/', nexusRoot, '.png')) || OVERWRITE) {
     cli::cli_alert("Calculating consensus trees")
     consensi <- lapply(trees, consensus)
@@ -135,7 +137,7 @@ for (nexusName in nexusFiles) {
     dev.copy(png, file=paste0('vennTrees/', nexusRoot, '.png', collapse=''), width=800, height=800); dev.off()
     cli::cli_alert_success("Plotted Venn diagram of trees.")
   }
-  par(mfrow=c(2, 2), bg='white')
+  par(mfrow = c(2, 2), bg = 'white')
   
   if (file.exists(paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse='')) && !OVERWRITE) {
     cli::cli_alert_info("Treespace plots already exist.")
