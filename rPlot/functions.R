@@ -172,7 +172,8 @@ TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
   y <- scaled[, 2]
   plotCol <- rep(treePalette[2:4], nTrees)
   plotPCh <- rep(plotChars[2:4], nTrees)
-  plot(x, y, type = "p", xlab = "", ylab = "", axes = FALSE, col=plotCol, pch=plotPCh)
+  plot(x, y, type = "p", xlab = "", ylab = "", axes = FALSE,
+       asp = 1, col = plotCol, pch = plotPCh)
   iTrees <- TreeNumbers(nTrees)
 
   for (i in seq_along(nTrees)) {
@@ -180,9 +181,11 @@ TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
     convexHull <- c(convexHull, convexHull[1])
     convX <- x[iTrees[[i]]][convexHull]
     convY <- y[iTrees[[i]]][convexHull]
-    polygon(convX, convY, col=paste0(treePalette[i + 1], '4B'), border=treePalette[i + 1]) #4B = 30% alpha
+    polygon(convX, convY,
+            col = paste0(treePalette[i + 1], '4B'), #4B = 30% alpha
+            border = treePalette[i + 1])
   }
-  title(sub=legendText, cex=legendSize, line=-0.5)
+  title(sub = legendText, cex = legendSize, line = -0.5)
 }
 
 PlotTreeSpace3D <- function (pcs, nTrees, legendPos = 'bottomleft', mainTitle) {
