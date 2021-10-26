@@ -159,14 +159,16 @@ for (nexusName in nexusFiles) {
 
   par(mfrow = c(1, 1), mar = rep(0, 4))
   TreeSpacePanel(qtDistances, nTrees[-1], studyName[[nexusRoot]], 1.0)
-  dev.copy(svg, file=paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse=''), width=2, height=2); dev.off()
+  dev.copy(svg, file = paste0('treeSpaces/panels/', nexusRoot, '.svg', collapse=''),
+           width = 2, height = 2)
+  dev.off()
    
   
 #  areaFile <- paste0('treeSpaces/', nexusRoot, '.hullAreas.csv')
 #  write.csv(t(data.frame(rf.areas = rfAreas, qt.areas = qtAreas)), file=areaFile)
    
  
-  par(mfrow=c(1, 1), bg='white')
+  par(mfrow = c(1, 1), bg = 'white')
   
 #  PlotKruskalTreeSpace3(qtDistances[-ambigTrees, -ambigTrees], nTrees[-1], legendPos=QuartetLegendPos(nexusRoot), nexusRoot, fill=TRUE)
 #  dev.copy(svg, file=paste0('quartetSpaces/', nexusRoot, '.svg', collapse='')); dev.off()
