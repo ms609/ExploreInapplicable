@@ -166,8 +166,14 @@ PlotKruskalTreeSpace3 <- function (distances, nTrees, legendPos = 'bottomleft', 
   c(hullArea / hullArea['inapplicable'])
 }
 
-TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
-  scaled <- MASS::isoMDS(distances, k = 2, trace = FALSE)$points # Kruskal's non-multimetric MDS
+TreeSpacePanel <- function (distances, nTrees, legendText, legendSize = 1,
+                            kruskal = TRUE) {
+  scaled <- if (kruskal) {
+    # Kruskal's non-multimetric MDS
+    MASS::isoMDS(distances, k = 2, trace = FALSE)$points
+  } else {
+    cmdscale(distances)
+  }
   x <- scaled[, 1]
   y <- scaled[, 2]
   plotCol <- treePalette[rep(names(nTrees), nTrees)]
@@ -178,7 +184,7 @@ TreeSpacePanel <- function (distances, nTrees, legendText, legendSize=1) {
   offset <- 0
   for (i in seq_along(nTrees)) {
     iTrees <- offset + seq_len(nTrees[i])
-    offset <- nTrees[i]
+    offset <- offset + nTrees[i]
     convexHull <- chull(x[iTrees], y[iTrees])
     convexHull <- c(convexHull, convexHull[1])
     convX <- x[iTrees][convexHull]
